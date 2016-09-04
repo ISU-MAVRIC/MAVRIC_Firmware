@@ -42,6 +42,9 @@ public:
 	void StartPWM(TimerCapComUnit module, float pulse_width);
 	void StartPWM(TimerCapComUnit module, uint16_t pulse_width);
 
+	void SetPWM(TimerCapComUnit module, float pulse_width);
+	void SetPWM(TimerCapComUnit module, uint16_t pulse_width);
+
 	/**
 	 * Calls the interrupt on a timer reset (PWM mode),
 	 * a timer match (timer mode),

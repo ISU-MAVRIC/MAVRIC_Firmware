@@ -15,7 +15,7 @@ TIMER_A3, ACLK);
 
 Timer::Timer(Timer_A_Type* instance, TimerClockSource source) :
 		regs(*instance) {
-	regs.CTL = (source & (3 << 8)) | (TACLR);
+	regs.CTL = ((source & 3) << 8) | (TACLR);
 }
 
 void Timer::SetPeriod(uint16_t period) {
@@ -44,14 +44,14 @@ void Timer::SetPeriod(float period) {
 
 	case ACLK:
 		/* set the period to the computed value */
-		regs.CCR[0] = (uint16_t) ((ACLK * period) + 0.5);
+		regs.CCR[0] = (uint16_t) ((fACLK * period) + 0.5);
 		/* Set the mode to up (to make use of the period) */
 		regs.CTL = (regs.CTL & ~(3 << 4)) | (MC__UP);
 		break;
 
 	case SMCLK:
 		/* set the period to the computed value */
-		regs.CCR[0] = (uint16_t) ((SMCLK * period) + 0.5);
+		regs.CCR[0] = (uint16_t) ((fSMCLK * period) + 0.5);
 		/* Set the mode to up (to make use of the period) */
 		regs.CTL = (regs.CTL & ~(3 << 4)) | (MC__UP);
 		break;
@@ -59,6 +59,9 @@ void Timer::SetPeriod(float period) {
 }
 
 void Timer::StartPWM(TimerCapComUnit module, float pulse_width) {
+	if (module == CC0)
+		return;
+
 	switch ((TimerClockSource) (regs.CTL >> 8) & 0x3) {
 	/* umm, this is external without a fixed period, so do nothing */
 	case TAxCLK:
@@ -66,13 +69,13 @@ void Timer::StartPWM(TimerCapComUnit module, float pulse_width) {
 		break;
 
 	case ACLK:
-		regs.CCTL[(int) module] = CAP | OUTMOD_7;
-		regs.CCR[(int) module] = (uint16_t) ((pulse_width * ACLK) + 0.5);
+		regs.CCTL[(int) module] = OUTMOD_7 | CCIS__CCIB;
+		regs.CCR[(int) module] = (uint16_t) ((pulse_width * fACLK) + 0.5);
 		break;
 
 	case SMCLK:
-		regs.CCTL[(int) module] = CAP | OUTMOD_7;
-		regs.CCR[(int) module] = (uint16_t) ((pulse_width * SMCLK) + 0.5);
+		regs.CCTL[(int) module] = OUTMOD_7 | CCIS__CCIB;
+		regs.CCR[(int) module] = (uint16_t) ((pulse_width * fSMCLK) + 0.5);
 		break;
 	}
 }
@@ -87,6 +90,40 @@ void Timer::StartPWM(TimerCapComUnit module, uint16_t pulse_width) {
 	case ACLK:
 	case SMCLK:
 		regs.CCTL[(int) module] = CAP | OUTMOD_7;
+		regs.CCR[(int) module] = pulse_width;
+		break;
+	}
+}
+
+void Timer::SetPWM(TimerCapComUnit module, float pulse_width) {
+	if (module == CC0)
+		return;
+
+	switch ((TimerClockSource) (regs.CTL >> 8) & 0x3) {
+	/* umm, this is external without a fixed period, so do nothing */
+	case TAxCLK:
+	case INCLK:
+		break;
+
+	case ACLK:
+		regs.CCR[(int) module] = (uint16_t) ((pulse_width * fACLK) + 0.5);
+		break;
+
+	case SMCLK:
+		regs.CCR[(int) module] = (uint16_t) ((pulse_width * fSMCLK) + 0.5);
+		break;
+	}
+}
+
+void Timer::SetPWM(TimerCapComUnit module, uint16_t pulse_width) {
+	switch ((TimerClockSource) (regs.CTL >> 8) & 0x3) {
+	/* umm, this is external without a fixed period, so do nothing */
+	case TAxCLK:
+	case INCLK:
+		break;
+
+	case ACLK:
+	case SMCLK:
 		regs.CCR[(int) module] = pulse_width;
 		break;
 	}
