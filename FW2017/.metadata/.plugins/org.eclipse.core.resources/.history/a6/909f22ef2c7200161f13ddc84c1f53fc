@@ -1,0 +1,26 @@
+/*
+ * Timer.hpp
+ *
+ *  Created on: Sep 3, 2016
+ *      Author: James
+ */
+
+#ifndef TIMER_TIMER_HPP_
+#define TIMER_TIMER_HPP_
+
+#include "msp.h"
+
+namespace Peripherials {
+class Timer {
+private:
+	Timer_A_Type& regs;
+
+public:
+	/**
+	 * instance is one of TIMER_A0 - TIMER_A3
+	 */
+	Timer(Timer_A_Type* instance);
+} TA0(TIMER_A0), TA1(TIMER_A1), TA2(TIMER_A2), TA3(TIMER_A3);
+}
+
+#endif /* TIMER_TIMER_HPP_ */

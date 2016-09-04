@@ -6,6 +6,8 @@
 
 #include "msp.h"
 
+#include "timer.hpp"
+
 void main(void) {
 
 	WDTCTL = WDTPW | WDTHOLD;           // Stop watchdog timer
@@ -16,7 +18,7 @@ void main(void) {
 	while (true) {
 		__delay_cycles(100000);
 		P2->OUT = 0x00;
-		__delay_cycles(100000);
+		__delay_cycles(1000000);
 		P2->OUT = 0x07;
 	}
 }

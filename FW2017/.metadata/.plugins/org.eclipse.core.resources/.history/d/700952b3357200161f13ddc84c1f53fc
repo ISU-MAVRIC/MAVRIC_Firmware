@@ -1,0 +1,43 @@
+/*
+ * Timer.hpp
+ *
+ *  Created on: Sep 3, 2016
+ *      Author: James
+ */
+
+#ifndef TIMER_TIMER_HPP_
+#define TIMER_TIMER_HPP_
+
+#include "msp.h"
+#include <stdint.h>
+
+namespace Peripherials {
+
+typedef enum TimerClockSource {
+	TAxCLK = 0, ACLK = 1, SMCLK = 2, INCLK = 3,
+} TimerClockSource;
+
+typedef enum TimerCapComUnit {
+	CC0, CC1, CC2, CC3
+} TimerClockSource;
+
+class Timer {
+private:
+	Timer_A_Type& regs;
+
+public:
+	/**
+	 * instance is one of TIMER_A0 - TIMER_A3
+	 */
+	Timer(Timer_A_Type* instance, TimerClockSource source);
+
+	void SetPeriod(uint16_t period);
+	void SetPeriod(float period);
+
+	void StartPWM(TimerCapComunit module, uint16_t pulse_width);
+};
+
+extern Timer TA0, TA1, TA2, TA3;
+}
+
+#endif /* TIMER_TIMER_HPP_ */

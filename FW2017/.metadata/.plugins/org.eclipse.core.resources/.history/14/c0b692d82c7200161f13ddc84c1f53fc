@@ -1,0 +1,13 @@
+/*
+ * timer.cpp
+ *
+ *  Created on: Sep 3, 2016
+ *      Author: James
+ */
+
+#include "timer.hpp"
+
+namespace Peripherials
+{
+	TimerA
+}
