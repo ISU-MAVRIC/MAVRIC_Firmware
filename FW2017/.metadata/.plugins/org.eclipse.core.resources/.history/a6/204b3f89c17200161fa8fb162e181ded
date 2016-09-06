@@ -1,0 +1,38 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+CPP_SRCS += \
+../Timer/timer.cpp 
+
+C_SRCS += \
+../Timer/timer_interrupts.c 
+
+OBJS += \
+./Timer/timer.obj \
+./Timer/timer_interrupts.obj 
+
+CPP_DEPS += \
+./Timer/timer.d 
+
+C_DEPS += \
+./Timer/timer_interrupts.d 
+
+CPP_DEPS__QUOTED += \
+"Timer\timer.d" 
+
+C_DEPS__QUOTED += \
+"Timer\timer_interrupts.d" 
+
+OBJS__QUOTED += \
+"Timer\timer.obj" \
+"Timer\timer_interrupts.obj" 
+
+CPP_SRCS__QUOTED += \
+"../Timer/timer.cpp" 
+
+C_SRCS__QUOTED += \
+"../Timer/timer_interrupts.c" 
+
+

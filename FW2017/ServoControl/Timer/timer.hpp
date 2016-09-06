@@ -24,6 +24,7 @@ typedef enum TimerCapComUnit {
 class Timer {
 private:
 	Timer_A_Type& regs;
+	int timer_module;
 	void (*isr[5])(void);
 	void (*overflow_isr)(void);
 
@@ -46,9 +47,7 @@ public:
 	void SetPWM(TimerCapComUnit module, uint16_t pulse_width);
 
 	/**
-	 * Calls the interrupt on a timer reset (PWM mode),
-	 * a timer match (timer mode),
-	 * or a input event (capture mode).
+	 * Calls the interrupt on a timer reset (PWM mode)
 	 */
 	void AttachOverflowInterrupt(void (*new_interrupt)(void));
 	void AttachInterrupt(TimerCapComUnit module, void (*new_interrupt)(void));
@@ -64,6 +63,21 @@ public:
 };
 
 extern Timer TA0, TA1, TA2, TA3;
+}
+
+extern "C"
+{
+void TA0_0_IRQHandler();
+void TA0_N_IRQHandler();
+////////////////////////
+void TA1_0_IRQHandler();
+void TA1_N_IRQHandler();
+////////////////////////
+void TA2_0_IRQHandler();
+void TA2_N_IRQHandler();
+////////////////////////
+void TA3_0_IRQHandler();
+void TA3_N_IRQHandler();
 }
 
 #endif /* TIMER_TIMER_HPP_ */

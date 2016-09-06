@@ -16,6 +16,22 @@ TIMER_A3, ACLK);
 Timer::Timer(Timer_A_Type* instance, TimerClockSource source) :
 		regs(*instance) {
 	regs.CTL = ((source & 3) << 8) | (TACLR);
+
+	if (instance == TIMER_A0) {
+		timer_module = 0;
+	} else if (instance == TIMER_A1) {
+		timer_module = 1;
+	} else if (instance == TIMER_A2) {
+		timer_module = 2;
+	} else if (instance == TIMER_A3) {
+		timer_module = 3;
+	}
+
+	overflow_isr = 0;
+	int i;
+	for (i = 0; i < sizeof(isr); i++) {
+		isr[i] = 0;
+	}
 }
 
 void Timer::SetPeriod(uint16_t period) {
@@ -69,12 +85,14 @@ void Timer::StartPWM(TimerCapComUnit module, float pulse_width) {
 		break;
 
 	case ACLK:
-		regs.CCTL[(int) module] = OUTMOD_7 | CCIS__CCIB;
+		regs.CCTL[(int) module] = (regs.CCTL[(int) module] & ~OUTMOD_7 & ~CAP)
+				| OUTMOD_7;
 		regs.CCR[(int) module] = (uint16_t) ((pulse_width * fACLK) + 0.5);
 		break;
 
 	case SMCLK:
-		regs.CCTL[(int) module] = OUTMOD_7 | CCIS__CCIB;
+		regs.CCTL[(int) module] = (regs.CCTL[(int) module] & ~OUTMOD_7 & ~CAP)
+				| OUTMOD_7;
 		regs.CCR[(int) module] = (uint16_t) ((pulse_width * fSMCLK) + 0.5);
 		break;
 	}
@@ -89,7 +107,8 @@ void Timer::StartPWM(TimerCapComUnit module, uint16_t pulse_width) {
 
 	case ACLK:
 	case SMCLK:
-		regs.CCTL[(int) module] = CAP | OUTMOD_7;
+		regs.CCTL[(int) module] = (regs.CCTL[(int) module] & ~OUTMOD_7 & ~CAP)
+				| OUTMOD_7;
 		regs.CCR[(int) module] = pulse_width;
 		break;
 	}
@@ -133,6 +152,7 @@ void Timer::AttachOverflowInterrupt(void (*new_interrupt)(void)) {
 	overflow_isr = new_interrupt;
 	if (new_interrupt != 0) {
 		regs.CTL |= TAIE;
+		NVIC_EnableIRQ((IRQn_Type) (TA0_0_IRQn + (timer_module * 2)));
 	} else {
 		regs.CTL &= ~TAIE;
 	}
@@ -144,52 +164,68 @@ void Timer::AttachInterrupt(TimerCapComUnit module,
 
 	if (new_interrupt != 0) {
 		regs.CCTL[(int) module] |= CCIE;
+		if (module == CC0) {
+			NVIC_EnableIRQ((IRQn_Type) (TA0_0_IRQn + (timer_module * 2)));
+		} else {
+			NVIC_EnableIRQ((IRQn_Type) (TA0_N_IRQn + (timer_module * 2)));
+		}
 	} else {
 		regs.CCTL[(int) module] &= ~CCIE;
 	}
 }
 
 void Timer::_CCR0_ISR(void) {
-	if (isr[0] != 0) {
-		isr[0]();
+	if ((regs.CTL & TAIE) && (regs.CTL & TAIFG)) {
+		if (overflow_isr != 0) {
+			overflow_isr();
+		}
+		regs.CTL &= ~TAIFG;
+	}
+	if ((regs.CCTL[0] & CCIE) && (regs.CCTL[0] & CCIFG)) {
+		if (isr[0] != 0) {
+			isr[0]();
+		}
+		regs.CCTL[0] &= ~CCIFG;
 	}
 }
 
 void Timer::_CCRn_ISR(void) {
 	int n = regs.IV / 2;
+	if (n <= 0 || n > 4) {
+		return;
+	}
 	if (isr[n] != 0) {
 		isr[n]();
 	}
 }
+}
 
-namespace {
-
+extern "C" {
 void TA0_0_IRQHandler() {
-	TA0._CCR0_ISR();
+	Peripherials::TA0._CCR0_ISR();
 }
 void TA0_N_IRQHandler() {
-	TA0._CCRn_ISR();
+	Peripherials::TA0._CCRn_ISR();
 }
 /////////////////////////
 void TA1_0_IRQHandler() {
-	TA1._CCR0_ISR();
+	Peripherials::TA1._CCR0_ISR();
 }
 void TA1_N_IRQHandler() {
-	TA1._CCRn_ISR();
+	Peripherials::TA1._CCRn_ISR();
 }
 /////////////////////////
 void TA2_0_IRQHandler() {
-	TA2._CCR0_ISR();
+	Peripherials::TA2._CCR0_ISR();
 }
 void TA2_N_IRQHandler() {
-	TA2._CCRn_ISR();
+	Peripherials::TA2._CCRn_ISR();
 }
 /////////////////////////
 void TA3_0_IRQHandler() {
-	TA3._CCR0_ISR();
+	Peripherials::TA3._CCR0_ISR();
 }
 void TA3_N_IRQHandler() {
-	TA3._CCRn_ISR();
-}
+	Peripherials::TA3._CCRn_ISR();
 }
 }

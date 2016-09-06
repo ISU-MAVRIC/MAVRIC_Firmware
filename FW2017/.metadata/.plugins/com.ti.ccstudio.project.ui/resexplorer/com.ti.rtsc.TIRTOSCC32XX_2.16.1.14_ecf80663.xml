@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resource.explorer version="1.0" name="TI-RTOS for CC32XX" dir="" href="http://processors.wiki.ti.com/index.php/TI-RTOS">
+
+    <content name="Release Notes" href="C:/TI/tirtos_cc32xx_2_16_01_14/release_notes_tirtos_cc32xx_2_16_01_14.html">
+	<type>weblink</type>
+    </content>
+    <content name="Documentation Links" href="C:/TI/tirtos_cc32xx_2_16_01_14/docs/Documentation_Overview_cc32xx.html">
+	<type>weblink</type>
+    </content>
+	<contents name="Wireless Connectivity MCU" desc="Wireless Connectivity MCU" icon="plugin://icons/obj16/targetFamily.png">
+		<contents name="CC3200" desc="CC3200" icon="plugin://icons/obj16/target.png">
+				<filter id="filter_216341153982765">
+					<devices><device>ARM</device></devices>
+					<search.tags>
+					<tag>CC3200</tag>
+					<tag>Wireless Connectivity MCU</tag>
+					</search.tags>
+				</filter>
+				<contents name="CC3200-LAUNCHXL SimpleLink Wi-Fi Launchpad" desc="TI-RTOS example projects for CC3200-LAUNCHXL SimpleLink Wi-Fi Launchpad" customPageType="genericNote">
+				<filter id="filter_216341153984476">
+					<devices><device>ARM</device></devices>
+					<search.tags>
+					<tag>CC3200</tag>
+					<tag>Wireless Connectivity MCU</tag>
+					<tag>CC3200-LAUNCHXL SimpleLink Wi-Fi Launchpad</tag>
+					</search.tags>
+				</filter>
+				<contents name="Driver Examples" desc="TI-RTOS driver example projects for CC3200-LAUNCHXL SimpleLink Wi-Fi Launchpad" customPageType="genericNote">
+				<filter id="filter_216341153986187">
+					<devices><device>ARM</device></devices>
+					<search.tags>
+					<tag>CC3200</tag>
+					<tag>Wireless Connectivity MCU</tag>
+					<tag>Driver Examples</tag>
+					</search.tags>
+				</filter>
+				<contents name="GNU Driver Examples" desc="GNU driver example projects for CC3200-LAUNCHXL SimpleLink Wi-Fi Launchpad" customPageType="genericNote">
+				<filter id="filter_216341153987897">
+					<devices><device>ARM</device></devices>
+					<search.tags>
+					<tag>CC3200</tag>
+					<tag>Wireless Connectivity MCU</tag>
+					<tag>GNU Driver Examples</tag>
+					</search.tags>
+				</filter>
+				<contents name="Empty Examples" desc="Empty example projects for CC3200-LAUNCHXL SimpleLink Wi-Fi Launchpad" customPageType="genericNote">
+				<filter id="filter_216341153989950">
+					<devices><device>ARM</device></devices>
+					<search.tags>
+					<tag>CC3200</tag>
+					<tag>Wireless Connectivity MCU</tag>
+					<tag>Empty Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="Empty (Minimal) Project" desc="An empty TI-RTOS project with minimal footprint" href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\driverExamples\gnuDriverExamples\emptyExamples\com_ti_rtsc_tirtoscc32XX_example_27.projectspec">
+					<filter.ref ref.id="filter_216341153989950"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="empty_min_CC3200_LAUNCHXL_GNU_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Empty Project" desc="An empty TI-RTOS project" href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\driverExamples\gnuDriverExamples\emptyExamples\com_ti_rtsc_tirtoscc32XX_example_26.projectspec">
+					<filter.ref ref.id="filter_216341153989950"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="empty_CC3200_LAUNCHXL_GNU_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="FatFs Examples" desc="FatFs example projects for CC3200-LAUNCHXL SimpleLink Wi-Fi Launchpad" customPageType="genericNote">
+				<filter id="filter_216341154049137">
+					<devices><device>ARM</device></devices>
+					<search.tags>
+					<tag>CC3200</tag>
+					<tag>Wireless Connectivity MCU</tag>
+					<tag>FatFs Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="FatSD Raw" desc="An example using an SDcard with FatFs API calls" href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\driverExamples\gnuDriverExamples\fatFsExamples\com_ti_rtsc_tirtoscc32XX_example_28.projectspec">
+					<filter.ref ref.id="filter_216341154049137"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="fatsdraw_CC3200_LAUNCHXL_GNU_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="GPIO Examples" desc="GPIO example projects for CC3200-LAUNCHXL SimpleLink Wi-Fi Launchpad" customPageType="genericNote">
+				<filter id="filter_216341154073770">
+					<devices><device>ARM</device></devices>
+					<search.tags>
+					<tag>CC3200</tag>
+					<tag>Wireless Connectivity MCU</tag>
+					<tag>GPIO Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="GPIO Interrupt" desc="An example using interrupts to toggle an LED after a button press" href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\driverExamples\gnuDriverExamples\gpioExamples\com_ti_rtsc_tirtoscc32XX_example_29.projectspec">
+					<filter.ref ref.id="filter_216341154073770"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="gpiointerrupt_CC3200_LAUNCHXL_GNU_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="I2C Examples" desc="I2C example projects for CC3200-LAUNCHXL SimpleLink Wi-Fi Launchpad" customPageType="genericNote">
+				<filter id="filter_216341154097719">
+					<devices><device>ARM</device></devices>
+					<search.tags>
+					<tag>CC3200</tag>
+					<tag>Wireless Connectivity MCU</tag>
+					<tag>I2C Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="I2C TMP006" desc="An example on how to use the I2C driver with the TMP006 boosterpack" href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\driverExamples\gnuDriverExamples\i2CExamples\com_ti_rtsc_tirtoscc32XX_example_30.projectspec">
+					<filter.ref ref.id="filter_216341154097719"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="i2ctmp006_CC3200_LAUNCHXL_GNU_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="I2S Examples" desc="I2S example projects for CC3200-LAUNCHXL SimpleLink Wi-Fi Launchpad" customPageType="genericNote">
+				<filter id="filter_216341154117904">
+					<devices><device>ARM</device></devices>
+					<search.tags>
+					<tag>CC3200</tag>
+					<tag>Wireless Connectivity MCU</tag>
+					<tag>I2S Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="I2S Echo" desc="An example that performs audio echo on the CC3200AUDBOOST boosterpack" href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\driverExamples\gnuDriverExamples\i2SExamples\com_ti_rtsc_tirtoscc32XX_example_31.projectspec">
+					<filter.ref ref.id="filter_216341154117904"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="i2secho_CC3200_LAUNCHXL_GNU_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="PWM Examples" desc="PWM example projects for CC3200-LAUNCHXL SimpleLink Wi-Fi Launchpad" customPageType="genericNote">
+				<filter id="filter_216341154137405">
+					<devices><device>ARM</device></devices>
+					<search.tags>
+					<tag>CC3200</tag>
+					<tag>Wireless Connectivity MCU</tag>
+					<tag>PWM Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="PWM LED" desc="An example on how to use the PWM driver to control on-board LEDs" href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\driverExamples\gnuDriverExamples\pwmExamples\com_ti_rtsc_tirtoscc32XX_example_32.projectspec">
+					<filter.ref ref.id="filter_216341154137405"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="pwmled_CC3200_LAUNCHXL_GNU_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="UART Examples" desc="UART example projects for CC3200-LAUNCHXL SimpleLink Wi-Fi Launchpad" customPageType="genericNote">
+				<filter id="filter_216341154162038">
+					<devices><device>ARM</device></devices>
+					<search.tags>
+					<tag>CC3200</tag>
+					<tag>Wireless Connectivity MCU</tag>
+					<tag>UART Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="UART Echo" desc="Echoes characters back using the UART driver" href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\driverExamples\gnuDriverExamples\uartExamples\com_ti_rtsc_tirtoscc32XX_example_33.projectspec">
+					<filter.ref ref.id="filter_216341154162038"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="uartecho_CC3200_LAUNCHXL_GNU_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="UART Echo DMA" desc="Echoes characters back using the UART DMA driver" href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\driverExamples\gnuDriverExamples\uartExamples\com_ti_rtsc_tirtoscc32XX_example_34.projectspec">
+					<filter.ref ref.id="filter_216341154162038"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="uartechodma_CC3200_LAUNCHXL_GNU_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="UART Logging" desc="A simple example that sends Log data to the UART" href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\driverExamples\gnuDriverExamples\uartExamples\com_ti_rtsc_tirtoscc32XX_example_35.projectspec">
+					<filter.ref ref.id="filter_216341154162038"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="uartlogging_CC3200_LAUNCHXL_GNU_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="UART Power" desc="UART loopback example with power management" href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\driverExamples\gnuDriverExamples\uartExamples\com_ti_rtsc_tirtoscc32XX_example_36.projectspec">
+					<filter.ref ref.id="filter_216341154162038"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="uartpower_CC3200_LAUNCHXL_GNU_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="Watchdog Examples" desc="Watchdog example projects for CC3200-LAUNCHXL SimpleLink Wi-Fi Launchpad" customPageType="genericNote">
+				<filter id="filter_216341154205829">
+					<devices><device>ARM</device></devices>
+					<search.tags>
+					<tag>CC3200</tag>
+					<tag>Wireless Connectivity MCU</tag>
+					<tag>Watchdog Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="Watchdog" desc="Watchdog Timer example that services a watchdog until a button press and release" href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\driverExamples\gnuDriverExamples\watchdogExamples\com_ti_rtsc_tirtoscc32XX_example_37.projectspec">
+					<filter.ref ref.id="filter_216341154205829"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="watchdog_CC3200_LAUNCHXL_GNU_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				</contents>
+				<contents name="TI Driver Examples" desc="TI driver example projects for CC3200-LAUNCHXL SimpleLink Wi-Fi Launchpad" customPageType="genericNote">
+				<filter id="filter_216341154250647">
+					<devices><device>ARM</device></devices>
+					<search.tags>
+					<tag>CC3200</tag>
+					<tag>Wireless Connectivity MCU</tag>
+					<tag>TI Driver Examples</tag>
+					</search.tags>
+				</filter>
+				<contents name="Empty Examples" desc="Empty example projects for CC3200-LAUNCHXL SimpleLink Wi-Fi Launchpad" customPageType="genericNote">
+				<filter id="filter_216341154253042">
+					<devices><device>ARM</device></devices>
+					<search.tags>
+					<tag>CC3200</tag>
+					<tag>Wireless Connectivity MCU</tag>
+					<tag>Empty Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="Empty (Minimal) Project" desc="An empty TI-RTOS project with minimal footprint" href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\driverExamples\tiDriverExamples\emptyExamples\com_ti_rtsc_tirtoscc32XX_example_1.projectspec">
+					<filter.ref ref.id="filter_216341154253042"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="empty_min_CC3200_LAUNCHXL_TI_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Empty Project" desc="An empty TI-RTOS project" href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\driverExamples\tiDriverExamples\emptyExamples\com_ti_rtsc_tirtoscc32XX_example_0.projectspec">
+					<filter.ref ref.id="filter_216341154253042"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="empty_CC3200_LAUNCHXL_TI_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="FatFs Examples" desc="FatFs example projects for CC3200-LAUNCHXL SimpleLink Wi-Fi Launchpad" customPageType="genericNote">
+				<filter id="filter_216341154281438">
+					<devices><device>ARM</device></devices>
+					<search.tags>
+					<tag>CC3200</tag>
+					<tag>Wireless Connectivity MCU</tag>
+					<tag>FatFs Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="FatSD" desc="An example using an SDcard" href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\driverExamples\tiDriverExamples\fatFsExamples\com_ti_rtsc_tirtoscc32XX_example_2.projectspec">
+					<filter.ref ref.id="filter_216341154281438"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="fatsd_CC3200_LAUNCHXL_TI_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="FatSD Raw" desc="An example using an SDcard with FatFs API calls" href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\driverExamples\tiDriverExamples\fatFsExamples\com_ti_rtsc_tirtoscc32XX_example_3.projectspec">
+					<filter.ref ref.id="filter_216341154281438"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="fatsdraw_CC3200_LAUNCHXL_TI_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="GPIO Examples" desc="GPIO example projects for CC3200-LAUNCHXL SimpleLink Wi-Fi Launchpad" customPageType="genericNote">
+				<filter id="filter_216341154310177">
+					<devices><device>ARM</device></devices>
+					<search.tags>
+					<tag>CC3200</tag>
+					<tag>Wireless Connectivity MCU</tag>
+					<tag>GPIO Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="GPIO Interrupt" desc="An example using interrupts to toggle an LED after a button press" href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\driverExamples\tiDriverExamples\gpioExamples\com_ti_rtsc_tirtoscc32XX_example_4.projectspec">
+					<filter.ref ref.id="filter_216341154310177"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="gpiointerrupt_CC3200_LAUNCHXL_TI_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="I2C Examples" desc="I2C example projects for CC3200-LAUNCHXL SimpleLink Wi-Fi Launchpad" customPageType="genericNote">
+				<filter id="filter_216341154328651">
+					<devices><device>ARM</device></devices>
+					<search.tags>
+					<tag>CC3200</tag>
+					<tag>Wireless Connectivity MCU</tag>
+					<tag>I2C Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="I2C TMP006" desc="An example on how to use the I2C driver with the TMP006 boosterpack" href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\driverExamples\tiDriverExamples\i2CExamples\com_ti_rtsc_tirtoscc32XX_example_5.projectspec">
+					<filter.ref ref.id="filter_216341154328651"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="i2ctmp006_CC3200_LAUNCHXL_TI_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="I2S Examples" desc="I2S example projects for CC3200-LAUNCHXL SimpleLink Wi-Fi Launchpad" customPageType="genericNote">
+				<filter id="filter_216341154347810">
+					<devices><device>ARM</device></devices>
+					<search.tags>
+					<tag>CC3200</tag>
+					<tag>Wireless Connectivity MCU</tag>
+					<tag>I2S Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="I2S Echo" desc="An example that performs audio echo on the CC3200AUDBOOST boosterpack" href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\driverExamples\tiDriverExamples\i2SExamples\com_ti_rtsc_tirtoscc32XX_example_6.projectspec">
+					<filter.ref ref.id="filter_216341154347810"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="i2secho_CC3200_LAUNCHXL_TI_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="PWM Examples" desc="PWM example projects for CC3200-LAUNCHXL SimpleLink Wi-Fi Launchpad" customPageType="genericNote">
+				<filter id="filter_216341154366285">
+					<devices><device>ARM</device></devices>
+					<search.tags>
+					<tag>CC3200</tag>
+					<tag>Wireless Connectivity MCU</tag>
+					<tag>PWM Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="PWM LED" desc="An example on how to use the PWM driver to control on-board LEDs" href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\driverExamples\tiDriverExamples\pwmExamples\com_ti_rtsc_tirtoscc32XX_example_7.projectspec">
+					<filter.ref ref.id="filter_216341154366285"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="pwmled_CC3200_LAUNCHXL_TI_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="UART Examples" desc="UART example projects for CC3200-LAUNCHXL SimpleLink Wi-Fi Launchpad" customPageType="genericNote">
+				<filter id="filter_216341154389549">
+					<devices><device>ARM</device></devices>
+					<search.tags>
+					<tag>CC3200</tag>
+					<tag>Wireless Connectivity MCU</tag>
+					<tag>UART Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="UART Echo" desc="Echoes characters back using the UART driver" href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\driverExamples\tiDriverExamples\uartExamples\com_ti_rtsc_tirtoscc32XX_example_8.projectspec">
+					<filter.ref ref.id="filter_216341154389549"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="uartecho_CC3200_LAUNCHXL_TI_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="UART Echo DMA" desc="Echoes characters back using the UART DMA driver" href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\driverExamples\tiDriverExamples\uartExamples\com_ti_rtsc_tirtoscc32XX_example_9.projectspec">
+					<filter.ref ref.id="filter_216341154389549"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="uartechodma_CC3200_LAUNCHXL_TI_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="UART Logging" desc="A simple example that sends Log data to the UART" href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\driverExamples\tiDriverExamples\uartExamples\com_ti_rtsc_tirtoscc32XX_example_10.projectspec">
+					<filter.ref ref.id="filter_216341154389549"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="uartlogging_CC3200_LAUNCHXL_TI_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="UART Power" desc="UART loopback example with power management" href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\driverExamples\tiDriverExamples\uartExamples\com_ti_rtsc_tirtoscc32XX_example_11.projectspec">
+					<filter.ref ref.id="filter_216341154389549"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="uartpower_CC3200_LAUNCHXL_TI_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="Watchdog Examples" desc="Watchdog example projects for CC3200-LAUNCHXL SimpleLink Wi-Fi Launchpad" customPageType="genericNote">
+				<filter id="filter_216341154429919">
+					<devices><device>ARM</device></devices>
+					<search.tags>
+					<tag>CC3200</tag>
+					<tag>Wireless Connectivity MCU</tag>
+					<tag>Watchdog Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="Watchdog" desc="Watchdog Timer example that services a watchdog until a button press and release" href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\driverExamples\tiDriverExamples\watchdogExamples\com_ti_rtsc_tirtoscc32XX_example_12.projectspec">
+					<filter.ref ref.id="filter_216341154429919"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="watchdog_CC3200_LAUNCHXL_TI_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				</contents>
+				</contents>
+				<contents name="Instrumentation Examples" desc="Instrumentation examples for CC3200-LAUNCHXL SimpleLink Wi-Fi Launchpad" customPageType="genericNote">
+				<filter id="filter_216341154502449">
+					<devices><device>ARM</device></devices>
+					<search.tags>
+					<tag>CC3200</tag>
+					<tag>Wireless Connectivity MCU</tag>
+					<tag>Instrumentation Examples</tag>
+					</search.tags>
+				</filter>
+				<contents name="GNU Instrumentation Examples" desc="GNU Instrumentation examples for CC3200-LAUNCHXL SimpleLink Wi-Fi Launchpad" customPageType="genericNote">
+				<filter id="filter_216341154504844">
+					<devices><device>ARM</device></devices>
+					<search.tags>
+					<tag>CC3200</tag>
+					<tag>Wireless Connectivity MCU</tag>
+					<tag>GNU Instrumentation Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="Hello World" desc="A basic example that logs a hello world string that can be viewed using System Analyzer." href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\instrumentationExamples\gnuInstrumentationExamples\com_ti_rtsc_tirtoscc32XX_example_38.projectspec">
+					<filter.ref ref.id="filter_216341154504844"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="helloworld_CC3200_LAUNCHXL_GNU_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Stairstep JTAG StopMode" desc="The stairstep example runs continuously and periodically generates log events. Different threads (Hwi, Swi, Task) run to present a CPU load to the system.  The Log data is obtained when the target is halted.  The sizes of the loggers in LoggingSetup might need to be decreased if your target does not have enough memory." href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\instrumentationExamples\gnuInstrumentationExamples\com_ti_rtsc_tirtoscc32XX_example_39.projectspec">
+					<filter.ref ref.id="filter_216341154504844"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="stairstepStopMode_CC3200_LAUNCHXL_GNU_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="TI Instrumentation Examples" desc="TI Instrumentation examples for CC3200-LAUNCHXL SimpleLink Wi-Fi Launchpad" customPageType="genericNote">
+				<filter id="filter_216341154535293">
+					<devices><device>ARM</device></devices>
+					<search.tags>
+					<tag>CC3200</tag>
+					<tag>Wireless Connectivity MCU</tag>
+					<tag>TI Instrumentation Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="Hello World" desc="A basic example that logs a hello world string that can be viewed using System Analyzer." href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\instrumentationExamples\tiInstrumentationExamples\com_ti_rtsc_tirtoscc32XX_example_13.projectspec">
+					<filter.ref ref.id="filter_216341154535293"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="helloworld_CC3200_LAUNCHXL_TI_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Stairstep JTAG StopMode" desc="The stairstep example runs continuously and periodically generates log events. Different threads (Hwi, Swi, Task) run to present a CPU load to the system.  The Log data is obtained when the target is halted.  The sizes of the loggers in LoggingSetup might need to be decreased if your target does not have enough memory." href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\instrumentationExamples\tiInstrumentationExamples\com_ti_rtsc_tirtoscc32XX_example_14.projectspec">
+					<filter.ref ref.id="filter_216341154535293"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="stairstepStopMode_CC3200_LAUNCHXL_TI_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				</contents>
+				<contents name="Kernel Examples" desc="SYS/BIOS kernel examples for CC3200-LAUNCHXL SimpleLink Wi-Fi Launchpad" customPageType="genericNote">
+				<filter id="filter_216341154574979">
+					<devices><device>ARM</device></devices>
+					<search.tags>
+					<tag>CC3200</tag>
+					<tag>Wireless Connectivity MCU</tag>
+					<tag>Kernel Examples</tag>
+					</search.tags>
+				</filter>
+				<contents name="GNU Kernel Examples" desc="GNU SYS/BIOS kernel examples for CC3200-LAUNCHXL SimpleLink Wi-Fi Launchpad" customPageType="genericNote">
+				<filter id="filter_216341154577032">
+					<devices><device>ARM</device></devices>
+					<search.tags>
+					<tag>CC3200</tag>
+					<tag>Wireless Connectivity MCU</tag>
+					<tag>GNU Kernel Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="Benchmark Example" desc="This example gathers and prints benchmark timing data for some representative SYS/BIOS APIs." href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\kernelExamples\gnuKernelExamples\com_ti_rtsc_tirtoscc32XX_example_40.projectspec">
+					<filter.ref ref.id="filter_216341154577032"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="benchloop_CC3200_LAUNCHXL_GNU_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="C++ Example (bigtime)" desc="In this program, C++ is used to create a real-time clock/calendar." href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\kernelExamples\gnuKernelExamples\com_ti_rtsc_tirtoscc32XX_example_41.projectspec">
+					<filter.ref ref.id="filter_216341154577032"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="bigtime_CC3200_LAUNCHXL_GNU_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Clock Example" desc="The clock example shows how to use the ti.sysbios.knl.Clock module to create one-shot and periodic Clock Instances. Clock Instances are essentially functions that run after a certain number of Clock ticks." href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\kernelExamples\gnuKernelExamples\com_ti_rtsc_tirtoscc32XX_example_42.projectspec">
+					<filter.ref ref.id="filter_216341154577032"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="clock_CC3200_LAUNCHXL_GNU_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Error Example" desc="This example shows how to use Error_Blocks to catch runtime errors. An Error_Block is passed to Task_create() and then checked for create failure. When no Error_Block is passed, the application will terminate when an error occurs. The error.cfg file shows how to plug an error hook." href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\kernelExamples\gnuKernelExamples\com_ti_rtsc_tirtoscc32XX_example_43.projectspec">
+					<filter.ref ref.id="filter_216341154577032"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="error_CC3200_LAUNCHXL_GNU_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Event Example" desc="The event example shows how to use the ti.sysbios.knl.Event module. The ti.sysbios.knl.Event module solves the 'Wait on Multiple' problem. In this example a reader task waits on several events." href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\kernelExamples\gnuKernelExamples\com_ti_rtsc_tirtoscc32XX_example_44.projectspec">
+					<filter.ref ref.id="filter_216341154577032"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="event_CC3200_LAUNCHXL_GNU_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Hello Example" desc="The hello example serves as a basic sanity check program for SYS/BIOS. It demonstrates how to print the string 'hello world' to stdout." href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\kernelExamples\gnuKernelExamples\com_ti_rtsc_tirtoscc32XX_example_45.projectspec">
+					<filter.ref ref.id="filter_216341154577032"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="hello_CC3200_LAUNCHXL_GNU_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Memory Example" desc="This example shows the use of xdc.runtime.Memory module and different xdc.runtime.IHeap implementations to manage memory. A system heap is created statically using ti.sysbios.heaps.HeapMem." href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\kernelExamples\gnuKernelExamples\com_ti_rtsc_tirtoscc32XX_example_46.projectspec">
+					<filter.ref ref.id="filter_216341154577032"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="memory_CC3200_LAUNCHXL_GNU_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Semi-Hosting Example" desc="This example leverages Semi-Hosting for printf IO.  The configuration disables non-essential and debug-related SYS/BIOS features to reduce the application memory footprint." href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\kernelExamples\gnuKernelExamples\com_ti_rtsc_tirtoscc32XX_example_48.projectspec">
+					<filter.ref ref.id="filter_216341154577032"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="semihost_CC3200_LAUNCHXL_GNU_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Swi Example" desc="The swi example shows how to use the ti.sysbios.knl.Swi module. It demonstrates how the various Swi APIs work." href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\kernelExamples\gnuKernelExamples\com_ti_rtsc_tirtoscc32XX_example_49.projectspec">
+					<filter.ref ref.id="filter_216341154577032"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="swi_CC3200_LAUNCHXL_GNU_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Task Mutex Example" desc="This example shows the use of two tasks and one semaphore to protect data access." href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\kernelExamples\gnuKernelExamples\com_ti_rtsc_tirtoscc32XX_example_47.projectspec">
+					<filter.ref ref.id="filter_216341154577032"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="mutex_CC3200_LAUNCHXL_GNU_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				<contents name="TI Kernel Examples" desc="TI SYS/BIOS kernel examples for CC3200-LAUNCHXL SimpleLink Wi-Fi Launchpad" customPageType="genericNote">
+				<filter id="filter_216341154669063">
+					<devices><device>ARM</device></devices>
+					<search.tags>
+					<tag>CC3200</tag>
+					<tag>Wireless Connectivity MCU</tag>
+					<tag>TI Kernel Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="Benchmark Example" desc="This example gathers and prints benchmark timing data for some representative SYS/BIOS APIs." href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtoscc32XX_example_15.projectspec">
+					<filter.ref ref.id="filter_216341154669063"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="benchloop_CC3200_LAUNCHXL_TI_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="C++ Example (bigtime)" desc="In this program, C++ is used to create a real-time clock/calendar." href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtoscc32XX_example_16.projectspec">
+					<filter.ref ref.id="filter_216341154669063"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="bigtime_CC3200_LAUNCHXL_TI_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Clock Example" desc="The clock example shows how to use the ti.sysbios.knl.Clock module to create one-shot and periodic Clock Instances. Clock Instances are essentially functions that run after a certain number of Clock ticks." href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtoscc32XX_example_17.projectspec">
+					<filter.ref ref.id="filter_216341154669063"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="clock_CC3200_LAUNCHXL_TI_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Error Example" desc="This example shows how to use Error_Blocks to catch runtime errors. An Error_Block is passed to Task_create() and then checked for create failure. When no Error_Block is passed, the application will terminate when an error occurs. The error.cfg file shows how to plug an error hook." href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtoscc32XX_example_18.projectspec">
+					<filter.ref ref.id="filter_216341154669063"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="error_CC3200_LAUNCHXL_TI_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Event Example" desc="The event example shows how to use the ti.sysbios.knl.Event module. The ti.sysbios.knl.Event module solves the 'Wait on Multiple' problem. In this example a reader task waits on several events." href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtoscc32XX_example_19.projectspec">
+					<filter.ref ref.id="filter_216341154669063"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="event_CC3200_LAUNCHXL_TI_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Hello Example" desc="The hello example serves as a basic sanity check program for SYS/BIOS. It demonstrates how to print the string 'hello world' to stdout." href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtoscc32XX_example_20.projectspec">
+					<filter.ref ref.id="filter_216341154669063"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="hello_CC3200_LAUNCHXL_TI_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Memory Example" desc="This example shows the use of xdc.runtime.Memory module and different xdc.runtime.IHeap implementations to manage memory. A system heap is created statically using ti.sysbios.heaps.HeapMem." href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtoscc32XX_example_21.projectspec">
+					<filter.ref ref.id="filter_216341154669063"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="memory_CC3200_LAUNCHXL_TI_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Swi Example" desc="The swi example shows how to use the ti.sysbios.knl.Swi module. It demonstrates how the various Swi APIs work." href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtoscc32XX_example_23.projectspec">
+					<filter.ref ref.id="filter_216341154669063"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="swi_CC3200_LAUNCHXL_TI_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="Task Mutex Example" desc="This example shows the use of two tasks and one semaphore to protect data access." href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\kernelExamples\tiKernelExamples\com_ti_rtsc_tirtoscc32XX_example_22.projectspec">
+					<filter.ref ref.id="filter_216341154669063"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="mutex_CC3200_LAUNCHXL_TI_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				</contents>
+				<contents name="Network Examples" desc="TI-RTOS network examples for CC3200-LAUNCHXL SimpleLink Wi-Fi Launchpad" customPageType="genericNote">
+				<filter id="filter_216341154768278">
+					<devices><device>ARM</device></devices>
+					<search.tags>
+					<tag>CC3200</tag>
+					<tag>Wireless Connectivity MCU</tag>
+					<tag>Network Examples</tag>
+					</search.tags>
+				</filter>
+				<contents name="GNU Network Examples" desc="GNU TI-RTOS network examples for  CC3200-LAUNCHXL SimpleLink Wi-Fi Launchpad" customPageType="genericNote">
+				<filter id="filter_216341154770673">
+					<devices><device>ARM</device></devices>
+					<search.tags>
+					<tag>CC3200</tag>
+					<tag>Wireless Connectivity MCU</tag>
+					<tag>GNU Network Examples</tag>
+					</search.tags>
+				</filter>
+				<contents name="WiFi Examples" desc="WiFi example projects for CC3200-LAUNCHXL SimpleLink Wi-Fi Launchpad" customPageType="genericNote">
+				<filter id="filter_216341154772726">
+					<devices><device>ARM</device></devices>
+					<search.tags>
+					<tag>CC3200</tag>
+					<tag>Wireless Connectivity MCU</tag>
+					<tag>WiFi Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="TCP Echo for CC3X00" desc="The TCP Echo example showing how to use sockets with the SimpleLink Wi-Fi CC3X00" href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\networkExamples\gnuNetworkExamples\wiFiExamples\com_ti_rtsc_tirtoscc32XX_example_50.projectspec">
+					<filter.ref ref.id="filter_216341154772726"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="tcpEchoCC3X00_CC3200_LAUNCHXL_GNU_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="UDP Echo for CC3X00" desc="The UDP Echo example showing how to use sockets with the SimpleLink Wi-Fi CC3X00" href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\networkExamples\gnuNetworkExamples\wiFiExamples\com_ti_rtsc_tirtoscc32XX_example_51.projectspec">
+					<filter.ref ref.id="filter_216341154772726"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="udpEchoCC3X00_CC3200_LAUNCHXL_GNU_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				</contents>
+				<contents name="TI Network Examples" desc="TI TI-RTOS network examples for  CC3200-LAUNCHXL SimpleLink Wi-Fi Launchpad" customPageType="genericNote">
+				<filter id="filter_216341154811044">
+					<devices><device>ARM</device></devices>
+					<search.tags>
+					<tag>CC3200</tag>
+					<tag>Wireless Connectivity MCU</tag>
+					<tag>TI Network Examples</tag>
+					</search.tags>
+				</filter>
+				<contents name="WiFi Examples" desc="WiFi example projects for CC3200-LAUNCHXL SimpleLink Wi-Fi Launchpad" customPageType="genericNote">
+				<filter id="filter_216341154813438">
+					<devices><device>ARM</device></devices>
+					<search.tags>
+					<tag>CC3200</tag>
+					<tag>Wireless Connectivity MCU</tag>
+					<tag>WiFi Examples</tag>
+					</search.tags>
+				</filter>
+				<content name="TCP Echo for CC3X00" desc="The TCP Echo example showing how to use sockets with the SimpleLink Wi-Fi CC3X00" href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\networkExamples\tiNetworkExamples\wiFiExamples\com_ti_rtsc_tirtoscc32XX_example_24.projectspec">
+					<filter.ref ref.id="filter_216341154813438"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="tcpEchoCC3X00_CC3200_LAUNCHXL_TI_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				<content name="UDP Echo for CC3X00" desc="The UDP Echo example showing how to use sockets with the SimpleLink Wi-Fi CC3X00" href="C:\TI\tirtos_cc32xx_2_16_01_14\resources\cc3200_launchxlSimpleLinkWi_fiLaunchpad\networkExamples\tiNetworkExamples\wiFiExamples\com_ti_rtsc_tirtoscc32XX_example_25.projectspec">
+					<filter.ref ref.id="filter_216341154813438"/>
+					<type>projectSpec
+						<attributes>
+							<attribute key="project.name" value="udpEchoCC3X00_CC3200_LAUNCHXL_TI_CC3200"/>
+							<attribute key="device.variant" value="Cortex M.CC3200"/>
+						</attributes>
+					</type>
+				</content>
+				</contents>
+				</contents>
+				</contents>
+				</contents>
+		</contents>
+	</contents>
+
+</resource.explorer>

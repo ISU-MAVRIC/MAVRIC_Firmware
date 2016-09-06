@@ -1,0 +1,34 @@
+/*
+ * timer_interrupts.c
+ *
+ *  Created on: Sep 4, 2016
+ *      Author: James
+ */
+
+void TA0_0_IRQHandler() {
+	TA0._CCR0_ISR();
+}
+void TA0_N_IRQHandler() {
+	TA0._CCRn_ISR();
+}
+/////////////////////////
+void TA1_0_IRQHandler() {
+	TA1._CCR0_ISR();
+}
+void TA1_N_IRQHandler() {
+	TA1._CCRn_ISR();
+}
+/////////////////////////
+void TA2_0_IRQHandler() {
+	TA2._CCR0_ISR();
+}
+void TA2_N_IRQHandler() {
+	TA2._CCRn_ISR();
+}
+/////////////////////////
+void TA3_0_IRQHandler() {
+	TA3._CCR0_ISR();
+}
+void TA3_N_IRQHandler() {
+	TA3._CCRn_ISR();
+}

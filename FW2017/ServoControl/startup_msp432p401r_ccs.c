@@ -39,6 +39,8 @@
 /* Linker variable that marks the top of the stack. */
 extern unsigned long __STACK_END;
 
+//extern "C" {
+
 /* External declaration for the reset handler that is to be called when the */
 /* processor is started                                                     */
 extern void _c_int00(void);
@@ -108,7 +110,9 @@ extern void PORT6_IRQHandler    (void) __attribute__((weak,alias("Default_Handle
 /* ensure that it ends up at physical address 0x0000.0000 or at the start of          */
 /* the program if located at a start address other than 0.                            */
 #pragma RETAIN(interruptVectors)
+//#pragma RETAIN
 #pragma DATA_SECTION(interruptVectors, ".intvecs")
+//#pragma DATA_SECTION(".intvecs")
 void (* const interruptVectors[])(void) =
 {
     (void (*)(void))((uint32_t)&__STACK_END),
@@ -204,3 +208,4 @@ void Default_Handler(void)
 
 	#pragma diag_pop
 }
+//}

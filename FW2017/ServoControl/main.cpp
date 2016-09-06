@@ -10,23 +10,42 @@
 
 using namespace Peripherials;
 
+void ClearRed() {
+	P2->OUT &= ~1;
+}
+
+void SetRed() {
+	P2->OUT |= 1;
+}
+
+void ToggleGreen() {
+	P2->OUT ^= 2;
+}
+
 void main(void) {
 
 	WDTCTL = WDTPW | WDTHOLD;           // Stop watchdog timer
 
-	P2->DIR = 0x07 | (1 << 4);
-	P2->OUT = 0x07;
+	P2->DIR = 0xFF;
 	P2->SEL0 = 1 << 4;
-
-	TA0.SetPeriod((float)20.0 / 1000);
-	TA0.StartPWM(CC1, (float)1.5/1000);
-	TA0.SetPWM(CC1, (float)1/1000);
-	TA0.SetPWM(CC1, (float)2/1000);
-
+	P2->OUT = 0;
+	TA0.AttachOverflowInterrupt(ToggleGreen);
+	TA0.AttachInterrupt(CC0, SetRed);
+	TA0.AttachInterrupt(CC1, ClearRed);
+	__enable_interrupt();
+	TA0.SetPeriod((uint16_t)0xFFFF);
+	TA0.StartPWM(CC1, (uint16_t)0x7FFF);
+	/*
+	uint16_t ledTime;
 	while (true) {
-		__delay_cycles(3000000);
-		P2->OUT = 0x00;
-		__delay_cycles(50000000);
-		P2->OUT = 0x07;
+		for (ledTime = 0; ledTime < 0xFFFF; ledTime += 0x1000) {
+			TA0.SetPWM(CC1, (uint16_t)ledTime);
+			__delay_cycles(4800000);
+		}
+	for (ledTime = 0xFFFF; ledTime > 0x0000; ledTime -= 0x1000) {
+		TA0.SetPWM(CC1, (uint16_t)ledTime);
+		__delay_cycles(4800000);
 	}
+	*/
+	while (true);
 }
