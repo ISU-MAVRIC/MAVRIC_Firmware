@@ -19,7 +19,7 @@ private:
 	Peripherials::TimerCapComUnit module;
 	float angle;
 
-	struct servo_cal_point
+	struct internal_servo_cal_point
 	{
 		float period, angle;
 	} calibration[2];
@@ -29,7 +29,7 @@ public:
 	 * Creates a Servo that is controlled by the given timer compare module
 	 */
 	InternalServoControl(Peripherials::Timer& timer,
-			Peripherials::TimerCapComUnit unit, struct servo_cal_point low, struct servo_cal_point high);
+			Peripherials::TimerCapComUnit unit, struct internal_servo_cal_point low, struct internal_servo_cal_point high);
 	/*
 	 * Disables the control signal to the servo
 	 */

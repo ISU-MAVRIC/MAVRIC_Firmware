@@ -9567,3 +9567,1613 @@ remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recom
 ' '
 
 **** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/TimerPWM_Servo.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/TimerPWM_Servo.d" --obj_directory="Servo"  "../Servo/TimerPWM_Servo.cpp"
+'Finished building: ../Servo/TimerPWM_Servo.cpp'
+' '
+'Building target: ServoControl.out'
+'Invoking: MSP432 Linker'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"ServoControl.map" --heap_size=1024 --stack_size=2048 -i"C:/TI/ccsv6/ccs_base/arm/include" -i"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/lib" -i"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="ServoControl_linkInfo.xml" --rom_model -o "ServoControl.out" "./main.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "./Servo/TimerPWM_Servo.obj" "./Timer/timer.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+'Finished building target: ServoControl.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/TimerPWM_Servo.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/TimerPWM_Servo.d" --obj_directory="Servo"  "../Servo/TimerPWM_Servo.cpp"
+'Finished building: ../Servo/TimerPWM_Servo.cpp'
+' '
+'Building target: ServoControl.out'
+'Invoking: MSP432 Linker'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"ServoControl.map" --heap_size=1024 --stack_size=2048 -i"C:/TI/ccsv6/ccs_base/arm/include" -i"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/lib" -i"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="ServoControl_linkInfo.xml" --rom_model -o "ServoControl.out" "./main.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "./Servo/TimerPWM_Servo.obj" "./Timer/timer.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+'Finished building target: ServoControl.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../I2C/I2C.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="I2C/I2C.d" --obj_directory="I2C"  "../I2C/I2C.cpp"
+"../I2C/I2C.cpp", line 52: remark #1528-D: (ULP 3.1) Detected flag polling using UCRXIFG. Recommend using an interrupt combined with enter LPMx and ISR
+"../I2C/I2C.cpp", line 47: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../I2C/I2C.cpp", line 59: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../I2C/I2C.cpp", line 74: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
+"../I2C/I2C.cpp", line 69: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../I2C/I2C.cpp", line 79: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+'Finished building: ../I2C/I2C.cpp'
+' '
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+
+>> Compilation failure
+Servo/subdir_rules.mk:7: recipe for target 'Servo/PCA9685.obj' failed
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 33: error #20: identifier "ServoDriver" is undefined
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 54: warning #262-D: explicit type is missing ("int" assumed)
+"../Servo/PCA9685.cpp", line 10: fatal error #1965: cannot open source file "I2C.hpp"
+1 error and 1 catastrophic error detected in the compilation of "../Servo/PCA9685.cpp".
+Compilation terminated.
+gmake: *** [Servo/PCA9685.obj] Error 1
+'Building file: ../Servo/TimerPWM_Servo.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/TimerPWM_Servo.d" --obj_directory="Servo"  "../Servo/TimerPWM_Servo.cpp"
+'Finished building: ../Servo/TimerPWM_Servo.cpp'
+' '
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../main.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d"  "../main.cpp"
+"../main.cpp", line 53: warning #129-D: loop is not reachable
+"../main.cpp", line 45: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../main.cpp", line 49: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../main.cpp", line 53: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+'Finished building: ../main.cpp'
+' '
+'Building file: ../startup_msp432p401r_ccs.c'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="startup_msp432p401r_ccs.d"  "../startup_msp432p401r_ccs.c"
+'Finished building: ../startup_msp432p401r_ccs.c'
+' '
+'Building file: ../system_msp432p401r.c'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="system_msp432p401r.d"  "../system_msp432p401r.c"
+"../system_msp432p401r.c", line 112: remark #2623-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
+"../system_msp432p401r.c", line 160: remark #2623-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
+"../system_msp432p401r.c", line 193: remark #2623-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
+"../system_msp432p401r.c", line 376: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"../system_msp432p401r.c", line 378: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+'Finished building: ../system_msp432p401r.c'
+' '
+'Building file: ../I2C/I2C.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="I2C/I2C.d" --obj_directory="I2C"  "../I2C/I2C.cpp"
+"../I2C/I2C.cpp", line 52: remark #1528-D: (ULP 3.1) Detected flag polling using UCRXIFG. Recommend using an interrupt combined with enter LPMx and ISR
+"../I2C/I2C.cpp", line 47: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../I2C/I2C.cpp", line 59: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../I2C/I2C.cpp", line 74: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
+"../I2C/I2C.cpp", line 69: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../I2C/I2C.cpp", line 79: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+'Finished building: ../I2C/I2C.cpp'
+' '
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+
+>> Compilation failure
+Servo/subdir_rules.mk:7: recipe for target 'Servo/PCA9685.obj' failed
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 33: error #20: identifier "ServoDriver" is undefined
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 54: warning #262-D: explicit type is missing ("int" assumed)
+"../Servo/PCA9685.cpp", line 14: error #495: no instance of overloaded function "Devices::PCA9685::PCA9685" matches the specified type
+"../Servo/PCA9685.cpp", line 15: error #131: expected a "{"
+"../Servo/PCA9685.cpp", line 90: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../Servo/PCA9685.cpp", line 93: error #495: no instance of overloaded function "Devices::PCA9685::Servo::Servo" matches the specified type
+"../Servo/PCA9685.cpp", line 93: error #131: expected a "{"
+5 errors detected in the compilation of "../Servo/PCA9685.cpp".
+gmake: *** [Servo/PCA9685.obj] Error 1
+'Building file: ../Servo/TimerPWM_Servo.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/TimerPWM_Servo.d" --obj_directory="Servo"  "../Servo/TimerPWM_Servo.cpp"
+'Finished building: ../Servo/TimerPWM_Servo.cpp'
+' '
+'Building file: ../Timer/timer.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Timer/timer.d" --obj_directory="Timer"  "../Timer/timer.cpp"
+'Finished building: ../Timer/timer.cpp'
+' '
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+"../Servo/PCA9685.cpp", line 91: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+'Finished building: ../Servo/PCA9685.cpp'
+' '
+'Building target: ServoControl.out'
+'Invoking: MSP432 Linker'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"ServoControl.map" --heap_size=1024 --stack_size=2048 -i"C:/TI/ccsv6/ccs_base/arm/include" -i"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/lib" -i"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="ServoControl_linkInfo.xml" --rom_model -o "ServoControl.out" "./main.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "./I2C/I2C.obj" "./Servo/PCA9685.obj" "./Servo/TimerPWM_Servo.obj" "./Timer/timer.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+'Finished building target: ServoControl.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+
+>> Compilation failure
+Servo/subdir_rules.mk:7: recipe for target 'Servo/PCA9685.obj' failed
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 12: fatal error #1965: cannot open source file "Servo.h"
+1 catastrophic error detected in the compilation of "../Servo/PCA9685.cpp".
+Compilation terminated.
+gmake: *** [Servo/PCA9685.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+
+>> Compilation failure
+Servo/subdir_rules.mk:7: recipe for target 'Servo/PCA9685.obj' failed
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 22: error #278: name followed by "::" must be a class or namespace name
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 22: error #264: not a class or struct name
+"../Servo/PCA9685.cpp", line 91: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+2 errors detected in the compilation of "../Servo/PCA9685.cpp".
+gmake: *** [Servo/PCA9685.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+
+>> Compilation failure
+Servo/subdir_rules.mk:7: recipe for target 'Servo/PCA9685.obj' failed
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 34: error #41: expected an identifier
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 34: error #18: expected a ")"
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 34: error #324: object of abstract class type "Servo" is not allowed:
+            function "Servo::Suspend" is a pure virtual function
+            function "Servo::Resume" is a pure virtual function
+            function "Servo::GoToAngle" is a pure virtual function
+            function "Servo::Center" is a pure virtual function
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 34: error #324: object of abstract class type "Servo" is not allowed:
+            function "Servo::Suspend" is a pure virtual function
+            function "Servo::Resume" is a pure virtual function
+            function "Servo::GoToAngle" is a pure virtual function
+            function "Servo::Center" is a pure virtual function
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 34: error #66: expected a ";"
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 22: warning #370-D: class "Externals::PCA9685::Port" defines no constructor to initialize the following:
+            reference member "Externals::PCA9685::Port::_parent"
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 38: error #324: object of abstract class type "Servo" is not allowed:
+            function "Servo::Suspend" is a pure virtual function
+            function "Servo::Resume" is a pure virtual function
+            function "Servo::GoToAngle" is a pure virtual function
+            function "Servo::Center" is a pure virtual function
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 39: error #324: object of abstract class type "Servo" is not allowed:
+            function "Servo::Suspend" is a pure virtual function
+            function "Servo::Resume" is a pure virtual function
+            function "Servo::GoToAngle" is a pure virtual function
+            function "Servo::Center" is a pure virtual function
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 40: error #324: object of abstract class type "Servo" is not allowed:
+            function "Servo::Suspend" is a pure virtual function
+            function "Servo::Resume" is a pure virtual function
+            function "Servo::GoToAngle" is a pure virtual function
+            function "Servo::Center" is a pure virtual function
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 41: error #324: object of abstract class type "Servo" is not allowed:
+            function "Servo::Suspend" is a pure virtual function
+            function "Servo::Resume" is a pure virtual function
+            function "Servo::GoToAngle" is a pure virtual function
+            function "Servo::Center" is a pure virtual function
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 42: error #324: object of abstract class type "Servo" is not allowed:
+            function "Servo::Suspend" is a pure virtual function
+            function "Servo::Resume" is a pure virtual function
+            function "Servo::GoToAngle" is a pure virtual function
+            function "Servo::Center" is a pure virtual function
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 43: error #324: object of abstract class type "Servo" is not allowed:
+            function "Servo::Suspend" is a pure virtual function
+            function "Servo::Resume" is a pure virtual function
+            function "Servo::GoToAngle" is a pure virtual function
+            function "Servo::Center" is a pure virtual function
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 44: error #324: object of abstract class type "Servo" is not allowed:
+            function "Servo::Suspend" is a pure virtual function
+            function "Servo::Resume" is a pure virtual function
+            function "Servo::GoToAngle" is a pure virtual function
+            function "Servo::Center" is a pure virtual function
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 45: error #324: object of abstract class type "Servo" is not allowed:
+            function "Servo::Suspend" is a pure virtual function
+            function "Servo::Resume" is a pure virtual function
+            function "Servo::GoToAngle" is a pure virtual function
+            function "Servo::Center" is a pure virtual function
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 46: error #324: object of abstract class type "Servo" is not allowed:
+            function "Servo::Suspend" is a pure virtual function
+            function "Servo::Resume" is a pure virtual function
+            function "Servo::GoToAngle" is a pure virtual function
+            function "Servo::Center" is a pure virtual function
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 47: error #324: object of abstract class type "Servo" is not allowed:
+            function "Servo::Suspend" is a pure virtual function
+            function "Servo::Resume" is a pure virtual function
+            function "Servo::GoToAngle" is a pure virtual function
+            function "Servo::Center" is a pure virtual function
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 48: error #324: object of abstract class type "Servo" is not allowed:
+            function "Servo::Suspend" is a pure virtual function
+            function "Servo::Resume" is a pure virtual function
+            function "Servo::GoToAngle" is a pure virtual function
+            function "Servo::Center" is a pure virtual function
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 49: error #324: object of abstract class type "Servo" is not allowed:
+            function "Servo::Suspend" is a pure virtual function
+            function "Servo::Resume" is a pure virtual function
+            function "Servo::GoToAngle" is a pure virtual function
+            function "Servo::Center" is a pure virtual function
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 50: error #324: object of abstract class type "Servo" is not allowed:
+            function "Servo::Suspend" is a pure virtual function
+            function "Servo::Resume" is a pure virtual function
+            function "Servo::GoToAngle" is a pure virtual function
+            function "Servo::Center" is a pure virtual function
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 51: error #324: object of abstract class type "Servo" is not allowed:
+            function "Servo::Suspend" is a pure virtual function
+            function "Servo::Resume" is a pure virtual function
+            function "Servo::GoToAngle" is a pure virtual function
+            function "Servo::Center" is a pure virtual function
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 52: error #324: object of abstract class type "Servo" is not allowed:
+            function "Servo::Suspend" is a pure virtual function
+            function "Servo::Resume" is a pure virtual function
+            function "Servo::GoToAngle" is a pure virtual function
+            function "Servo::Center" is a pure virtual function
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 53: error #324: object of abstract class type "Servo" is not allowed:
+            function "Servo::Suspend" is a pure virtual function
+            function "Servo::Resume" is a pure virtual function
+            function "Servo::GoToAngle" is a pure virtual function
+            function "Servo::Center" is a pure virtual function
+"../Servo/PCA9685.cpp", line 15: error #291: no instance of constructor "Servo::Servo" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 15: error #291: no instance of constructor "Servo::Servo" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 15: error #291: no instance of constructor "Servo::Servo" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 15: error #291: no instance of constructor "Servo::Servo" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 15: error #291: no instance of constructor "Servo::Servo" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 16: error #291: no instance of constructor "Servo::Servo" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 16: error #291: no instance of constructor "Servo::Servo" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 16: error #291: no instance of constructor "Servo::Servo" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 16: error #291: no instance of constructor "Servo::Servo" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 17: error #291: no instance of constructor "Servo::Servo" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 17: error #291: no instance of constructor "Servo::Servo" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 17: error #291: no instance of constructor "Servo::Servo" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 18: error #291: no instance of constructor "Servo::Servo" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 18: error #291: no instance of constructor "Servo::Servo" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 18: error #291: no instance of constructor "Servo::Servo" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 18: error #291: no instance of constructor "Servo::Servo" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 91: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../Servo/PCA9685.cpp", line 94: error #278: name followed by "::" must be a class or namespace name
+"../Servo/PCA9685.cpp", line 94: warning #262-D: explicit type is missing ("int" assumed)
+"../Servo/PCA9685.cpp", line 94: error #131: expected a "{"
+"../Servo/PCA9685.cpp", line 97: warning #994-D: missing return statement at end of non-void function "Externals::Servo"
+"../Servo/PCA9685.cpp", line 100: error #278: name followed by "::" must be a class or namespace name
+"../Servo/PCA9685.cpp", line 101: error #20: identifier "GoTo" is undefined
+"../Servo/PCA9685.cpp", line 105: error #278: name followed by "::" must be a class or namespace name
+"../Servo/PCA9685.cpp", line 106: error #20: identifier "Position" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_parent" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_index" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_offset" is undefined
+"../Servo/PCA9685.cpp", line 108: error #20: identifier "UpperLimit" is undefined
+"../Servo/PCA9685.cpp", line 108: error #20: identifier "LowerLimit" is undefined
+48 errors detected in the compilation of "../Servo/PCA9685.cpp".
+gmake: *** [Servo/PCA9685.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+
+>> Compilation failure
+Servo/subdir_rules.mk:7: recipe for target 'Servo/PCA9685.obj' failed
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 38: error #324: object of abstract class type "Servo" is not allowed:
+            function "Servo::Suspend" is a pure virtual function
+            function "Servo::Resume" is a pure virtual function
+            function "Servo::GoToAngle" is a pure virtual function
+            function "Servo::Center" is a pure virtual function
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 39: error #324: object of abstract class type "Servo" is not allowed:
+            function "Servo::Suspend" is a pure virtual function
+            function "Servo::Resume" is a pure virtual function
+            function "Servo::GoToAngle" is a pure virtual function
+            function "Servo::Center" is a pure virtual function
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 40: error #324: object of abstract class type "Servo" is not allowed:
+            function "Servo::Suspend" is a pure virtual function
+            function "Servo::Resume" is a pure virtual function
+            function "Servo::GoToAngle" is a pure virtual function
+            function "Servo::Center" is a pure virtual function
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 41: error #324: object of abstract class type "Servo" is not allowed:
+            function "Servo::Suspend" is a pure virtual function
+            function "Servo::Resume" is a pure virtual function
+            function "Servo::GoToAngle" is a pure virtual function
+            function "Servo::Center" is a pure virtual function
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 42: error #324: object of abstract class type "Servo" is not allowed:
+            function "Servo::Suspend" is a pure virtual function
+            function "Servo::Resume" is a pure virtual function
+            function "Servo::GoToAngle" is a pure virtual function
+            function "Servo::Center" is a pure virtual function
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 43: error #324: object of abstract class type "Servo" is not allowed:
+            function "Servo::Suspend" is a pure virtual function
+            function "Servo::Resume" is a pure virtual function
+            function "Servo::GoToAngle" is a pure virtual function
+            function "Servo::Center" is a pure virtual function
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 44: error #324: object of abstract class type "Servo" is not allowed:
+            function "Servo::Suspend" is a pure virtual function
+            function "Servo::Resume" is a pure virtual function
+            function "Servo::GoToAngle" is a pure virtual function
+            function "Servo::Center" is a pure virtual function
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 45: error #324: object of abstract class type "Servo" is not allowed:
+            function "Servo::Suspend" is a pure virtual function
+            function "Servo::Resume" is a pure virtual function
+            function "Servo::GoToAngle" is a pure virtual function
+            function "Servo::Center" is a pure virtual function
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 46: error #324: object of abstract class type "Servo" is not allowed:
+            function "Servo::Suspend" is a pure virtual function
+            function "Servo::Resume" is a pure virtual function
+            function "Servo::GoToAngle" is a pure virtual function
+            function "Servo::Center" is a pure virtual function
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 47: error #324: object of abstract class type "Servo" is not allowed:
+            function "Servo::Suspend" is a pure virtual function
+            function "Servo::Resume" is a pure virtual function
+            function "Servo::GoToAngle" is a pure virtual function
+            function "Servo::Center" is a pure virtual function
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 48: error #324: object of abstract class type "Servo" is not allowed:
+            function "Servo::Suspend" is a pure virtual function
+            function "Servo::Resume" is a pure virtual function
+            function "Servo::GoToAngle" is a pure virtual function
+            function "Servo::Center" is a pure virtual function
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 49: error #324: object of abstract class type "Servo" is not allowed:
+            function "Servo::Suspend" is a pure virtual function
+            function "Servo::Resume" is a pure virtual function
+            function "Servo::GoToAngle" is a pure virtual function
+            function "Servo::Center" is a pure virtual function
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 50: error #324: object of abstract class type "Servo" is not allowed:
+            function "Servo::Suspend" is a pure virtual function
+            function "Servo::Resume" is a pure virtual function
+            function "Servo::GoToAngle" is a pure virtual function
+            function "Servo::Center" is a pure virtual function
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 51: error #324: object of abstract class type "Servo" is not allowed:
+            function "Servo::Suspend" is a pure virtual function
+            function "Servo::Resume" is a pure virtual function
+            function "Servo::GoToAngle" is a pure virtual function
+            function "Servo::Center" is a pure virtual function
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 52: error #324: object of abstract class type "Servo" is not allowed:
+            function "Servo::Suspend" is a pure virtual function
+            function "Servo::Resume" is a pure virtual function
+            function "Servo::GoToAngle" is a pure virtual function
+            function "Servo::Center" is a pure virtual function
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 53: error #324: object of abstract class type "Servo" is not allowed:
+            function "Servo::Suspend" is a pure virtual function
+            function "Servo::Resume" is a pure virtual function
+            function "Servo::GoToAngle" is a pure virtual function
+            function "Servo::Center" is a pure virtual function
+"../Servo/PCA9685.cpp", line 15: error #291: no instance of constructor "Servo::Servo" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 15: error #291: no instance of constructor "Servo::Servo" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 15: error #291: no instance of constructor "Servo::Servo" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 15: error #291: no instance of constructor "Servo::Servo" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 15: error #291: no instance of constructor "Servo::Servo" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 16: error #291: no instance of constructor "Servo::Servo" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 16: error #291: no instance of constructor "Servo::Servo" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 16: error #291: no instance of constructor "Servo::Servo" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 16: error #291: no instance of constructor "Servo::Servo" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 17: error #291: no instance of constructor "Servo::Servo" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 17: error #291: no instance of constructor "Servo::Servo" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 17: error #291: no instance of constructor "Servo::Servo" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 18: error #291: no instance of constructor "Servo::Servo" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 18: error #291: no instance of constructor "Servo::Servo" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 18: error #291: no instance of constructor "Servo::Servo" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 18: error #291: no instance of constructor "Servo::Servo" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 91: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../Servo/PCA9685.cpp", line 94: error #278: name followed by "::" must be a class or namespace name
+"../Servo/PCA9685.cpp", line 94: warning #262-D: explicit type is missing ("int" assumed)
+"../Servo/PCA9685.cpp", line 94: error #131: expected a "{"
+"../Servo/PCA9685.cpp", line 97: warning #994-D: missing return statement at end of non-void function "Externals::Servo"
+"../Servo/PCA9685.cpp", line 100: error #278: name followed by "::" must be a class or namespace name
+"../Servo/PCA9685.cpp", line 101: error #20: identifier "GoTo" is undefined
+"../Servo/PCA9685.cpp", line 105: error #278: name followed by "::" must be a class or namespace name
+"../Servo/PCA9685.cpp", line 106: error #20: identifier "Position" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_parent" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_index" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_offset" is undefined
+"../Servo/PCA9685.cpp", line 108: error #20: identifier "UpperLimit" is undefined
+"../Servo/PCA9685.cpp", line 108: error #20: identifier "LowerLimit" is undefined
+43 errors detected in the compilation of "../Servo/PCA9685.cpp".
+gmake: *** [Servo/PCA9685.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+
+>> Compilation failure
+Servo/subdir_rules.mk:7: recipe for target 'Servo/PCA9685.obj' failed
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 12: fatal error #1965: cannot open source file "Port.hpp"
+1 catastrophic error detected in the compilation of "../Servo/PCA9685.cpp".
+Compilation terminated.
+gmake: *** [Servo/PCA9685.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+
+>> Compilation failure
+Servo/subdir_rules.mk:7: recipe for target 'Servo/PCA9685.obj' failed
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 38: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+            pure virtual function "Servo::GoToAngle" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 39: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+            pure virtual function "Servo::GoToAngle" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 40: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+            pure virtual function "Servo::GoToAngle" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 41: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+            pure virtual function "Servo::GoToAngle" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 42: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+            pure virtual function "Servo::GoToAngle" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 43: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+            pure virtual function "Servo::GoToAngle" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 44: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+            pure virtual function "Servo::GoToAngle" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 45: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+            pure virtual function "Servo::GoToAngle" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 46: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+            pure virtual function "Servo::GoToAngle" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 47: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+            pure virtual function "Servo::GoToAngle" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 48: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+            pure virtual function "Servo::GoToAngle" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 49: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+            pure virtual function "Servo::GoToAngle" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 50: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+            pure virtual function "Servo::GoToAngle" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 51: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+            pure virtual function "Servo::GoToAngle" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 52: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+            pure virtual function "Servo::GoToAngle" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 53: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+            pure virtual function "Servo::GoToAngle" has no overrider
+"../Servo/PCA9685.cpp", line 73: error #136: class "Externals::PCA9685" has no member "SetServoCounts"
+"../Servo/PCA9685.cpp", line 89: error #20: identifier "_bus" is undefined
+"../Servo/PCA9685.cpp", line 89: error #20: identifier "_address" is undefined
+"../Servo/PCA9685.cpp", line 91: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../Servo/PCA9685.cpp", line 94: error #278: name followed by "::" must be a class or namespace name
+"../Servo/PCA9685.cpp", line 94: warning #262-D: explicit type is missing ("int" assumed)
+"../Servo/PCA9685.cpp", line 94: error #131: expected a "{"
+"../Servo/PCA9685.cpp", line 97: warning #994-D: missing return statement at end of non-void function "Externals::Servo"
+"../Servo/PCA9685.cpp", line 100: error #278: name followed by "::" must be a class or namespace name
+"../Servo/PCA9685.cpp", line 101: error #20: identifier "GoTo" is undefined
+"../Servo/PCA9685.cpp", line 105: error #278: name followed by "::" must be a class or namespace name
+"../Servo/PCA9685.cpp", line 106: error #20: identifier "Position" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_parent" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_index" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_offset" is undefined
+"../Servo/PCA9685.cpp", line 108: error #20: identifier "UpperLimit" is undefined
+"../Servo/PCA9685.cpp", line 108: error #20: identifier "LowerLimit" is undefined
+30 errors detected in the compilation of "../Servo/PCA9685.cpp".
+gmake: *** [Servo/PCA9685.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/TimerPWM_Servo.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/TimerPWM_Servo.d" --obj_directory="Servo"  "../Servo/TimerPWM_Servo.cpp"
+
+>> Compilation failure
+Servo/subdir_rules.mk:14: recipe for target 'Servo/TimerPWM_Servo.obj' failed
+"../Servo/TimerPWM_Servo.cpp", line 10: error #495: no instance of overloaded function "InternalServoControl::InternalServoControl" matches the specified type
+"../Servo/TimerPWM_Servo.cpp", line 11: error #71: incomplete type is not allowed
+"../Servo/TimerPWM_Servo.cpp", line 12: error #71: incomplete type is not allowed
+"../Servo/TimerPWM_Servo.cpp", line 12: error #131: expected a "{"
+4 errors detected in the compilation of "../Servo/TimerPWM_Servo.cpp".
+gmake: *** [Servo/TimerPWM_Servo.obj] Error 1
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+
+>> Compilation failure
+Servo/subdir_rules.mk:7: recipe for target 'Servo/PCA9685.obj' failed
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 41: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 42: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 43: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 44: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 45: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 46: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 47: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 48: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 49: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 50: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 51: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 52: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 53: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 54: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 55: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 56: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"../Servo/PCA9685.cpp", line 73: error #136: class "Externals::PCA9685" has no member "SetServoCounts"
+"../Servo/PCA9685.cpp", line 89: error #20: identifier "_bus" is undefined
+"../Servo/PCA9685.cpp", line 89: error #20: identifier "_address" is undefined
+"../Servo/PCA9685.cpp", line 91: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../Servo/PCA9685.cpp", line 94: error #278: name followed by "::" must be a class or namespace name
+"../Servo/PCA9685.cpp", line 94: warning #262-D: explicit type is missing ("int" assumed)
+"../Servo/PCA9685.cpp", line 94: error #131: expected a "{"
+"../Servo/PCA9685.cpp", line 97: warning #994-D: missing return statement at end of non-void function "Externals::Servo"
+"../Servo/PCA9685.cpp", line 100: error #278: name followed by "::" must be a class or namespace name
+"../Servo/PCA9685.cpp", line 101: error #20: identifier "GoTo" is undefined
+"../Servo/PCA9685.cpp", line 105: error #278: name followed by "::" must be a class or namespace name
+"../Servo/PCA9685.cpp", line 106: error #20: identifier "Position" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_parent" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_index" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_offset" is undefined
+"../Servo/PCA9685.cpp", line 108: error #20: identifier "UpperLimit" is undefined
+"../Servo/PCA9685.cpp", line 108: error #20: identifier "LowerLimit" is undefined
+30 errors detected in the compilation of "../Servo/PCA9685.cpp".
+gmake: *** [Servo/PCA9685.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/TimerPWM_Servo.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/TimerPWM_Servo.d" --obj_directory="Servo"  "../Servo/TimerPWM_Servo.cpp"
+
+>> Compilation failure
+Servo/subdir_rules.mk:14: recipe for target 'Servo/TimerPWM_Servo.obj' failed
+"../Servo/TimerPWM_Servo.cpp", line 10: error #495: no instance of overloaded function "InternalServoControl::InternalServoControl" matches the specified type
+"../Servo/TimerPWM_Servo.cpp", line 11: error #71: incomplete type is not allowed
+"../Servo/TimerPWM_Servo.cpp", line 12: error #71: incomplete type is not allowed
+"../Servo/TimerPWM_Servo.cpp", line 12: error #131: expected a "{"
+4 errors detected in the compilation of "../Servo/TimerPWM_Servo.cpp".
+gmake: *** [Servo/TimerPWM_Servo.obj] Error 1
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+
+>> Compilation failure
+Servo/subdir_rules.mk:7: recipe for target 'Servo/PCA9685.obj' failed
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 42: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 43: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 44: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 45: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 46: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 47: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 48: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 49: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 50: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 51: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 52: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 53: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 54: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 55: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 56: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 57: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"../Servo/PCA9685.cpp", line 73: error #136: class "Externals::PCA9685" has no member "SetServoCounts"
+"../Servo/PCA9685.cpp", line 89: error #20: identifier "_bus" is undefined
+"../Servo/PCA9685.cpp", line 89: error #20: identifier "_address" is undefined
+"../Servo/PCA9685.cpp", line 91: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../Servo/PCA9685.cpp", line 94: error #278: name followed by "::" must be a class or namespace name
+"../Servo/PCA9685.cpp", line 94: warning #262-D: explicit type is missing ("int" assumed)
+"../Servo/PCA9685.cpp", line 94: error #131: expected a "{"
+"../Servo/PCA9685.cpp", line 97: warning #994-D: missing return statement at end of non-void function "Externals::Servo"
+"../Servo/PCA9685.cpp", line 100: error #278: name followed by "::" must be a class or namespace name
+"../Servo/PCA9685.cpp", line 101: error #20: identifier "GoTo" is undefined
+"../Servo/PCA9685.cpp", line 105: error #278: name followed by "::" must be a class or namespace name
+"../Servo/PCA9685.cpp", line 106: error #20: identifier "Position" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_parent" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_index" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_offset" is undefined
+"../Servo/PCA9685.cpp", line 108: error #20: identifier "UpperLimit" is undefined
+"../Servo/PCA9685.cpp", line 108: error #20: identifier "LowerLimit" is undefined
+30 errors detected in the compilation of "../Servo/PCA9685.cpp".
+gmake: *** [Servo/PCA9685.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+
+>> Compilation failure
+Servo/subdir_rules.mk:7: recipe for target 'Servo/PCA9685.obj' failed
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 42: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 43: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 44: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 45: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 46: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 47: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 48: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 49: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 50: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 51: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 52: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 53: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 54: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 55: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 56: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 57: error #324: object of abstract class type "Externals::PCA9685::Port" is not allowed:
+            pure virtual function "Servo::Suspend" has no overrider
+            pure virtual function "Servo::Resume" has no overrider
+"../Servo/PCA9685.cpp", line 73: error #136: class "Externals::PCA9685" has no member "SetServoCounts"
+"../Servo/PCA9685.cpp", line 89: error #20: identifier "_bus" is undefined
+"../Servo/PCA9685.cpp", line 89: error #20: identifier "_address" is undefined
+"../Servo/PCA9685.cpp", line 91: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../Servo/PCA9685.cpp", line 94: error #278: name followed by "::" must be a class or namespace name
+"../Servo/PCA9685.cpp", line 94: warning #262-D: explicit type is missing ("int" assumed)
+"../Servo/PCA9685.cpp", line 94: error #131: expected a "{"
+"../Servo/PCA9685.cpp", line 97: warning #994-D: missing return statement at end of non-void function "Externals::Servo"
+"../Servo/PCA9685.cpp", line 100: error #278: name followed by "::" must be a class or namespace name
+"../Servo/PCA9685.cpp", line 101: error #20: identifier "GoTo" is undefined
+"../Servo/PCA9685.cpp", line 105: error #278: name followed by "::" must be a class or namespace name
+"../Servo/PCA9685.cpp", line 106: error #20: identifier "Position" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_parent" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_index" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_offset" is undefined
+"../Servo/PCA9685.cpp", line 108: error #20: identifier "UpperLimit" is undefined
+"../Servo/PCA9685.cpp", line 108: error #20: identifier "LowerLimit" is undefined
+30 errors detected in the compilation of "../Servo/PCA9685.cpp".
+gmake: *** [Servo/PCA9685.obj] Error 1
+'Building file: ../Servo/TimerPWM_Servo.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/TimerPWM_Servo.d" --obj_directory="Servo"  "../Servo/TimerPWM_Servo.cpp"
+'Finished building: ../Servo/TimerPWM_Servo.cpp'
+' '
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+
+>> Compilation failure
+Servo/subdir_rules.mk:7: recipe for target 'Servo/PCA9685.obj' failed
+"../Servo/PCA9685.cpp", line 73: error #136: class "Externals::PCA9685" has no member "SetServoCounts"
+"../Servo/PCA9685.cpp", line 89: error #20: identifier "_bus" is undefined
+"../Servo/PCA9685.cpp", line 89: error #20: identifier "_address" is undefined
+"../Servo/PCA9685.cpp", line 91: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../Servo/PCA9685.cpp", line 94: error #278: name followed by "::" must be a class or namespace name
+"../Servo/PCA9685.cpp", line 94: warning #262-D: explicit type is missing ("int" assumed)
+"../Servo/PCA9685.cpp", line 94: error #131: expected a "{"
+"../Servo/PCA9685.cpp", line 97: warning #994-D: missing return statement at end of non-void function "Externals::Servo"
+"../Servo/PCA9685.cpp", line 100: error #278: name followed by "::" must be a class or namespace name
+"../Servo/PCA9685.cpp", line 101: error #20: identifier "GoTo" is undefined
+"../Servo/PCA9685.cpp", line 105: error #278: name followed by "::" must be a class or namespace name
+"../Servo/PCA9685.cpp", line 106: error #20: identifier "Position" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_parent" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_index" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_offset" is undefined
+"../Servo/PCA9685.cpp", line 108: error #20: identifier "UpperLimit" is undefined
+"../Servo/PCA9685.cpp", line 108: error #20: identifier "LowerLimit" is undefined
+14 errors detected in the compilation of "../Servo/PCA9685.cpp".
+gmake: *** [Servo/PCA9685.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+
+>> Compilation failure
+Servo/subdir_rules.mk:7: recipe for target 'Servo/PCA9685.obj' failed
+"../Servo/PCA9685.cpp", line 91: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../Servo/PCA9685.cpp", line 94: error #278: name followed by "::" must be a class or namespace name
+"../Servo/PCA9685.cpp", line 94: warning #262-D: explicit type is missing ("int" assumed)
+"../Servo/PCA9685.cpp", line 94: error #131: expected a "{"
+"../Servo/PCA9685.cpp", line 97: warning #994-D: missing return statement at end of non-void function "Externals::Servo"
+"../Servo/PCA9685.cpp", line 100: error #278: name followed by "::" must be a class or namespace name
+"../Servo/PCA9685.cpp", line 101: error #20: identifier "GoTo" is undefined
+"../Servo/PCA9685.cpp", line 105: error #278: name followed by "::" must be a class or namespace name
+"../Servo/PCA9685.cpp", line 106: error #20: identifier "Position" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_parent" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_index" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_offset" is undefined
+"../Servo/PCA9685.cpp", line 108: error #20: identifier "UpperLimit" is undefined
+"../Servo/PCA9685.cpp", line 108: error #20: identifier "LowerLimit" is undefined
+11 errors detected in the compilation of "../Servo/PCA9685.cpp".
+gmake: *** [Servo/PCA9685.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+
+>> Compilation failure
+Servo/subdir_rules.mk:7: recipe for target 'Servo/PCA9685.obj' failed
+"../Servo/PCA9685.cpp", line 91: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../Servo/PCA9685.cpp", line 94: error #278: name followed by "::" must be a class or namespace name
+"../Servo/PCA9685.cpp", line 94: warning #262-D: explicit type is missing ("int" assumed)
+"../Servo/PCA9685.cpp", line 94: error #131: expected a "{"
+"../Servo/PCA9685.cpp", line 97: warning #994-D: missing return statement at end of non-void function "Externals::Port"
+"../Servo/PCA9685.cpp", line 100: error #278: name followed by "::" must be a class or namespace name
+"../Servo/PCA9685.cpp", line 101: error #20: identifier "GoTo" is undefined
+"../Servo/PCA9685.cpp", line 105: error #278: name followed by "::" must be a class or namespace name
+"../Servo/PCA9685.cpp", line 106: error #20: identifier "Position" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_parent" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_index" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_offset" is undefined
+"../Servo/PCA9685.cpp", line 108: error #20: identifier "UpperLimit" is undefined
+"../Servo/PCA9685.cpp", line 108: error #20: identifier "LowerLimit" is undefined
+11 errors detected in the compilation of "../Servo/PCA9685.cpp".
+gmake: *** [Servo/PCA9685.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+
+>> Compilation failure
+Servo/subdir_rules.mk:7: recipe for target 'Servo/PCA9685.obj' failed
+"../Servo/PCA9685.cpp", line 91: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../Servo/PCA9685.cpp", line 96: error #294: "Position" is not a nonstatic data member or base class of class "Externals::PCA9685::Port"
+"../Servo/PCA9685.cpp", line 100: error #278: name followed by "::" must be a class or namespace name
+"../Servo/PCA9685.cpp", line 101: error #20: identifier "GoTo" is undefined
+"../Servo/PCA9685.cpp", line 105: error #278: name followed by "::" must be a class or namespace name
+"../Servo/PCA9685.cpp", line 106: error #20: identifier "Position" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_parent" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_index" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_offset" is undefined
+"../Servo/PCA9685.cpp", line 108: error #20: identifier "UpperLimit" is undefined
+"../Servo/PCA9685.cpp", line 108: error #20: identifier "LowerLimit" is undefined
+10 errors detected in the compilation of "../Servo/PCA9685.cpp".
+gmake: *** [Servo/PCA9685.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+
+>> Compilation failure
+Servo/subdir_rules.mk:7: recipe for target 'Servo/PCA9685.obj' failed
+"../Servo/PCA9685.cpp", line 91: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../Servo/PCA9685.cpp", line 100: error #278: name followed by "::" must be a class or namespace name
+"../Servo/PCA9685.cpp", line 101: error #20: identifier "GoTo" is undefined
+"../Servo/PCA9685.cpp", line 105: error #278: name followed by "::" must be a class or namespace name
+"../Servo/PCA9685.cpp", line 106: error #20: identifier "Position" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_parent" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_index" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_offset" is undefined
+"../Servo/PCA9685.cpp", line 108: error #20: identifier "UpperLimit" is undefined
+"../Servo/PCA9685.cpp", line 108: error #20: identifier "LowerLimit" is undefined
+9 errors detected in the compilation of "../Servo/PCA9685.cpp".
+gmake: *** [Servo/PCA9685.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+
+>> Compilation failure
+Servo/subdir_rules.mk:7: recipe for target 'Servo/PCA9685.obj' failed
+"../Servo/PCA9685.cpp", line 91: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../Servo/PCA9685.cpp", line 105: error #278: name followed by "::" must be a class or namespace name
+"../Servo/PCA9685.cpp", line 106: error #20: identifier "Position" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_parent" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_index" is undefined
+"../Servo/PCA9685.cpp", line 107: error #20: identifier "_offset" is undefined
+"../Servo/PCA9685.cpp", line 108: error #20: identifier "UpperLimit" is undefined
+"../Servo/PCA9685.cpp", line 108: error #20: identifier "LowerLimit" is undefined
+7 errors detected in the compilation of "../Servo/PCA9685.cpp".
+gmake: *** [Servo/PCA9685.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+
+>> Compilation failure
+Servo/subdir_rules.mk:7: recipe for target 'Servo/PCA9685.obj' failed
+"../Servo/PCA9685.cpp", line 91: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../Servo/PCA9685.cpp", line 103: error #278: name followed by "::" must be a class or namespace name
+"../Servo/PCA9685.cpp", line 104: error #20: identifier "Position" is undefined
+"../Servo/PCA9685.cpp", line 105: error #20: identifier "_parent" is undefined
+"../Servo/PCA9685.cpp", line 105: error #20: identifier "_index" is undefined
+"../Servo/PCA9685.cpp", line 105: error #20: identifier "_offset" is undefined
+"../Servo/PCA9685.cpp", line 106: error #20: identifier "UpperLimit" is undefined
+"../Servo/PCA9685.cpp", line 106: error #20: identifier "LowerLimit" is undefined
+7 errors detected in the compilation of "../Servo/PCA9685.cpp".
+gmake: *** [Servo/PCA9685.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+
+>> Compilation failure
+Servo/subdir_rules.mk:7: recipe for target 'Servo/PCA9685.obj' failed
+"../Servo/PCA9685.cpp", line 91: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../Servo/PCA9685.cpp", line 106: error #136: class "Externals::PCA9685::Port::pca9685_servo_cal_point" has no member "period"
+"../Servo/PCA9685.cpp", line 107: error #136: class "Externals::PCA9685::Port::pca9685_servo_cal_point" has no member "period"
+"../Servo/PCA9685.cpp", line 107: error #136: class "Externals::PCA9685::Port::pca9685_servo_cal_point" has no member "period"
+"../Servo/PCA9685.cpp", line 109: error #20: identifier "position" is undefined
+4 errors detected in the compilation of "../Servo/PCA9685.cpp".
+gmake: *** [Servo/PCA9685.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+"../Servo/PCA9685.cpp", line 91: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+'Finished building: ../Servo/PCA9685.cpp'
+' '
+'Building target: ServoControl.out'
+'Invoking: MSP432 Linker'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"ServoControl.map" --heap_size=1024 --stack_size=2048 -i"C:/TI/ccsv6/ccs_base/arm/include" -i"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/lib" -i"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="ServoControl_linkInfo.xml" --rom_model -o "ServoControl.out" "./main.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "./I2C/I2C.obj" "./Servo/PCA9685.obj" "./Servo/TimerPWM_Servo.obj" "./Timer/timer.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+'Finished building target: ServoControl.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+"../Servo/PCA9685.cpp", line 91: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+'Finished building: ../Servo/PCA9685.cpp'
+' '
+'Building target: ServoControl.out'
+'Invoking: MSP432 Linker'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"ServoControl.map" --heap_size=1024 --stack_size=2048 -i"C:/TI/ccsv6/ccs_base/arm/include" -i"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/lib" -i"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="ServoControl_linkInfo.xml" --rom_model -o "ServoControl.out" "./main.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "./I2C/I2C.obj" "./Servo/PCA9685.obj" "./Servo/TimerPWM_Servo.obj" "./Timer/timer.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+'Finished building target: ServoControl.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+
+>> Compilation failure
+Servo/subdir_rules.mk:7: recipe for target 'Servo/PCA9685.obj' failed
+"../Servo/PCA9685.cpp", line 91: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../Servo/PCA9685.cpp", line 94: error #495: no instance of overloaded function "Externals::PCA9685::Port::Port" matches the specified type
+"../Servo/PCA9685.cpp", line 94: error #131: expected a "{"
+2 errors detected in the compilation of "../Servo/PCA9685.cpp".
+gmake: *** [Servo/PCA9685.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+
+>> Compilation failure
+Servo/subdir_rules.mk:7: recipe for target 'Servo/PCA9685.obj' failed
+"../Servo/PCA9685.cpp", line 91: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../Servo/PCA9685.cpp", line 94: error #495: no instance of overloaded function "Externals::PCA9685::Port::Port" matches the specified type
+"../Servo/PCA9685.cpp", line 95: error #131: expected a "{"
+2 errors detected in the compilation of "../Servo/PCA9685.cpp".
+gmake: *** [Servo/PCA9685.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+
+>> Compilation failure
+Servo/subdir_rules.mk:7: recipe for target 'Servo/PCA9685.obj' failed
+"../Servo/PCA9685.cpp", line 91: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../Servo/PCA9685.cpp", line 94: error #495: no instance of overloaded function "Externals::PCA9685::Port::Port" matches the specified type
+"../Servo/PCA9685.cpp", line 95: error #131: expected a "{"
+2 errors detected in the compilation of "../Servo/PCA9685.cpp".
+gmake: *** [Servo/PCA9685.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+
+>> Compilation failure
+Servo/subdir_rules.mk:7: recipe for target 'Servo/PCA9685.obj' failed
+"../Servo/PCA9685.cpp", line 15: error #291: no instance of constructor "Externals::PCA9685::Port::Port" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 15: error #291: no instance of constructor "Externals::PCA9685::Port::Port" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 15: error #291: no instance of constructor "Externals::PCA9685::Port::Port" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 15: error #291: no instance of constructor "Externals::PCA9685::Port::Port" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 15: error #291: no instance of constructor "Externals::PCA9685::Port::Port" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 16: error #291: no instance of constructor "Externals::PCA9685::Port::Port" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 16: error #291: no instance of constructor "Externals::PCA9685::Port::Port" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 16: error #291: no instance of constructor "Externals::PCA9685::Port::Port" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 16: error #291: no instance of constructor "Externals::PCA9685::Port::Port" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 17: error #291: no instance of constructor "Externals::PCA9685::Port::Port" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 17: error #291: no instance of constructor "Externals::PCA9685::Port::Port" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 17: error #291: no instance of constructor "Externals::PCA9685::Port::Port" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 18: error #291: no instance of constructor "Externals::PCA9685::Port::Port" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 18: error #291: no instance of constructor "Externals::PCA9685::Port::Port" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 18: error #291: no instance of constructor "Externals::PCA9685::Port::Port" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 18: error #291: no instance of constructor "Externals::PCA9685::Port::Port" matches the argument list
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 91: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+16 errors detected in the compilation of "../Servo/PCA9685.cpp".
+gmake: *** [Servo/PCA9685.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+"../Servo/PCA9685.cpp", line 91: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+'Finished building: ../Servo/PCA9685.cpp'
+' '
+'Building target: ServoControl.out'
+'Invoking: MSP432 Linker'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"ServoControl.map" --heap_size=1024 --stack_size=2048 -i"C:/TI/ccsv6/ccs_base/arm/include" -i"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/lib" -i"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="ServoControl_linkInfo.xml" --rom_model -o "ServoControl.out" "./main.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "./I2C/I2C.obj" "./Servo/PCA9685.obj" "./Servo/TimerPWM_Servo.obj" "./Timer/timer.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+'Finished building target: ServoControl.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+
+>> Compilation failure
+Servo/subdir_rules.mk:7: recipe for target 'Servo/PCA9685.obj' failed
+"../Servo/PCA9685.cpp", line 91: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../Servo/PCA9685.cpp", line 101: error #294: "Port" is not a nonstatic data member or base class of class "Externals::PCA9685::Port"
+"../Servo/PCA9685.cpp", line 101: error #18: expected a ")"
+"../Servo/PCA9685.cpp", line 101: error #368: "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &)" provides no initializer for:
+            reference member "Externals::PCA9685::Port::_parent"
+"../Servo/PCA9685.cpp", line 101: warning #176-D: expression has no effect
+"../Servo/PCA9685.cpp", line 101: warning #176-D: expression has no effect
+"../Servo/PCA9685.cpp", line 101: error #66: expected a ";"
+"../Servo/PCA9685.cpp", line 101: error #171: expected a declaration
+"../Servo/PCA9685.cpp", line 118: warning #12-D: parsing restarts here after previous syntax error
+5 errors detected in the compilation of "../Servo/PCA9685.cpp".
+gmake: *** [Servo/PCA9685.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+
+>> Compilation failure
+Servo/subdir_rules.mk:7: recipe for target 'Servo/PCA9685.obj' failed
+"../Servo/PCA9685.cpp", line 91: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../Servo/PCA9685.cpp", line 101: error #41: expected an identifier
+"../Servo/PCA9685.cpp", line 101: error #368: "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &)" provides no initializer for:
+            reference member "Externals::PCA9685::Port::_parent"
+"../Servo/PCA9685.cpp", line 102: error #20: identifier "low" is undefined
+"../Servo/PCA9685.cpp", line 103: error #20: identifier "high" is undefined
+4 errors detected in the compilation of "../Servo/PCA9685.cpp".
+gmake: *** [Servo/PCA9685.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+
+>> Compilation failure
+Servo/subdir_rules.mk:7: recipe for target 'Servo/PCA9685.obj' failed
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 38: error #29: expected an expression
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 39: error #29: expected an expression
+"../Servo/PCA9685.cpp", line 15: error #311: more than one instance of constructor "Externals::PCA9685::Port::Port" matches the argument list:
+            function "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &, Externals::PCA9685::Port::pca9685_servo_cal_point, Externals::PCA9685::Port::pca9685_servo_cal_point)"
+            function "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &)"
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 15: error #311: more than one instance of constructor "Externals::PCA9685::Port::Port" matches the argument list:
+            function "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &, Externals::PCA9685::Port::pca9685_servo_cal_point, Externals::PCA9685::Port::pca9685_servo_cal_point)"
+            function "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &)"
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 15: error #311: more than one instance of constructor "Externals::PCA9685::Port::Port" matches the argument list:
+            function "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &, Externals::PCA9685::Port::pca9685_servo_cal_point, Externals::PCA9685::Port::pca9685_servo_cal_point)"
+            function "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &)"
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 15: error #311: more than one instance of constructor "Externals::PCA9685::Port::Port" matches the argument list:
+            function "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &, Externals::PCA9685::Port::pca9685_servo_cal_point, Externals::PCA9685::Port::pca9685_servo_cal_point)"
+            function "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &)"
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 15: error #311: more than one instance of constructor "Externals::PCA9685::Port::Port" matches the argument list:
+            function "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &, Externals::PCA9685::Port::pca9685_servo_cal_point, Externals::PCA9685::Port::pca9685_servo_cal_point)"
+            function "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &)"
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 16: error #311: more than one instance of constructor "Externals::PCA9685::Port::Port" matches the argument list:
+            function "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &, Externals::PCA9685::Port::pca9685_servo_cal_point, Externals::PCA9685::Port::pca9685_servo_cal_point)"
+            function "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &)"
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 16: error #311: more than one instance of constructor "Externals::PCA9685::Port::Port" matches the argument list:
+            function "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &, Externals::PCA9685::Port::pca9685_servo_cal_point, Externals::PCA9685::Port::pca9685_servo_cal_point)"
+            function "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &)"
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 16: error #311: more than one instance of constructor "Externals::PCA9685::Port::Port" matches the argument list:
+            function "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &, Externals::PCA9685::Port::pca9685_servo_cal_point, Externals::PCA9685::Port::pca9685_servo_cal_point)"
+            function "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &)"
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 16: error #311: more than one instance of constructor "Externals::PCA9685::Port::Port" matches the argument list:
+            function "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &, Externals::PCA9685::Port::pca9685_servo_cal_point, Externals::PCA9685::Port::pca9685_servo_cal_point)"
+            function "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &)"
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 17: error #311: more than one instance of constructor "Externals::PCA9685::Port::Port" matches the argument list:
+            function "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &, Externals::PCA9685::Port::pca9685_servo_cal_point, Externals::PCA9685::Port::pca9685_servo_cal_point)"
+            function "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &)"
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 17: error #311: more than one instance of constructor "Externals::PCA9685::Port::Port" matches the argument list:
+            function "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &, Externals::PCA9685::Port::pca9685_servo_cal_point, Externals::PCA9685::Port::pca9685_servo_cal_point)"
+            function "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &)"
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 17: error #311: more than one instance of constructor "Externals::PCA9685::Port::Port" matches the argument list:
+            function "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &, Externals::PCA9685::Port::pca9685_servo_cal_point, Externals::PCA9685::Port::pca9685_servo_cal_point)"
+            function "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &)"
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 18: error #311: more than one instance of constructor "Externals::PCA9685::Port::Port" matches the argument list:
+            function "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &, Externals::PCA9685::Port::pca9685_servo_cal_point, Externals::PCA9685::Port::pca9685_servo_cal_point)"
+            function "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &)"
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 18: error #311: more than one instance of constructor "Externals::PCA9685::Port::Port" matches the argument list:
+            function "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &, Externals::PCA9685::Port::pca9685_servo_cal_point, Externals::PCA9685::Port::pca9685_servo_cal_point)"
+            function "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &)"
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 18: error #311: more than one instance of constructor "Externals::PCA9685::Port::Port" matches the argument list:
+            function "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &, Externals::PCA9685::Port::pca9685_servo_cal_point, Externals::PCA9685::Port::pca9685_servo_cal_point)"
+            function "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &)"
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 18: error #311: more than one instance of constructor "Externals::PCA9685::Port::Port" matches the argument list:
+            function "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &, Externals::PCA9685::Port::pca9685_servo_cal_point, Externals::PCA9685::Port::pca9685_servo_cal_point)"
+            function "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &)"
+            argument types are: (int, Externals::PCA9685)
+"../Servo/PCA9685.cpp", line 91: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../Servo/PCA9685.cpp", line 101: error #41: expected an identifier
+"../Servo/PCA9685.cpp", line 101: error #368: "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &)" provides no initializer for:
+            reference member "Externals::PCA9685::Port::_parent"
+20 errors detected in the compilation of "../Servo/PCA9685.cpp".
+gmake: *** [Servo/PCA9685.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+
+>> Compilation failure
+Servo/subdir_rules.mk:7: recipe for target 'Servo/PCA9685.obj' failed
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 38: error #29: expected an expression
+"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp", line 39: error #29: expected an expression
+"../Servo/PCA9685.cpp", line 91: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../Servo/PCA9685.cpp", line 101: error #495: no instance of overloaded function "Externals::PCA9685::Port::Port" matches the specified type
+"../Servo/PCA9685.cpp", line 101: error #131: expected a "{"
+4 errors detected in the compilation of "../Servo/PCA9685.cpp".
+gmake: *** [Servo/PCA9685.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+
+>> Compilation failure
+Servo/subdir_rules.mk:7: recipe for target 'Servo/PCA9685.obj' failed
+"../Servo/PCA9685.cpp", line 91: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../Servo/PCA9685.cpp", line 101: error #368: "Externals::PCA9685::Port::Port(int, Externals::PCA9685 &)" provides no initializer for:
+            reference member "Externals::PCA9685::Port::_parent"
+"../Servo/PCA9685.cpp", line 102: error #29: expected an expression
+"../Servo/PCA9685.cpp", line 102: error #29: expected an expression
+"../Servo/PCA9685.cpp", line 103: error #66: expected a ";"
+4 errors detected in the compilation of "../Servo/PCA9685.cpp".
+gmake: *** [Servo/PCA9685.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+
+>> Compilation failure
+Servo/subdir_rules.mk:7: recipe for target 'Servo/PCA9685.obj' failed
+"../Servo/PCA9685.cpp", line 91: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../Servo/PCA9685.cpp", line 103: error #29: expected an expression
+"../Servo/PCA9685.cpp", line 104: error #29: expected an expression
+2 errors detected in the compilation of "../Servo/PCA9685.cpp".
+gmake: *** [Servo/PCA9685.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+"../Servo/PCA9685.cpp", line 91: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+'Finished building: ../Servo/PCA9685.cpp'
+' '
+'Building target: ServoControl.out'
+'Invoking: MSP432 Linker'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"ServoControl.map" --heap_size=1024 --stack_size=2048 -i"C:/TI/ccsv6/ccs_base/arm/include" -i"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/lib" -i"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="ServoControl_linkInfo.xml" --rom_model -o "ServoControl.out" "./main.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "./I2C/I2C.obj" "./Servo/PCA9685.obj" "./Servo/TimerPWM_Servo.obj" "./Timer/timer.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+'Finished building target: ServoControl.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+"../Servo/PCA9685.cpp", line 91: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+'Finished building: ../Servo/PCA9685.cpp'
+' '
+'Building target: ServoControl.out'
+'Invoking: MSP432 Linker'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"ServoControl.map" --heap_size=1024 --stack_size=2048 -i"C:/TI/ccsv6/ccs_base/arm/include" -i"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/lib" -i"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="ServoControl_linkInfo.xml" --rom_model -o "ServoControl.out" "./main.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "./I2C/I2C.obj" "./Servo/PCA9685.obj" "./Servo/TimerPWM_Servo.obj" "./Timer/timer.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+'Finished building target: ServoControl.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+"../Servo/PCA9685.cpp", line 91: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+'Finished building: ../Servo/PCA9685.cpp'
+' '
+'Building target: ServoControl.out'
+'Invoking: MSP432 Linker'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"ServoControl.map" --heap_size=1024 --stack_size=2048 -i"C:/TI/ccsv6/ccs_base/arm/include" -i"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/lib" -i"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="ServoControl_linkInfo.xml" --rom_model -o "ServoControl.out" "./main.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "./I2C/I2C.obj" "./Servo/PCA9685.obj" "./Servo/TimerPWM_Servo.obj" "./Timer/timer.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+'Finished building target: ServoControl.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ServoControl ****
+
+"C:\\TI\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Servo/PCA9685.cpp'
+'Invoking: MSP432 Compiler'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/TI/ccsv6/ccs_base/arm/include" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/I2C" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo" --include_path="G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer" --include_path="C:/TI/ccsv6/ccs_base/arm/include/CMSIS" --include_path="C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Servo/PCA9685.d" --obj_directory="Servo"  "../Servo/PCA9685.cpp"
+"../Servo/PCA9685.cpp", line 91: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+'Finished building: ../Servo/PCA9685.cpp'
+' '
+'Building target: ServoControl.out'
+'Invoking: MSP432 Linker'
+"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"ServoControl.map" --heap_size=1024 --stack_size=2048 -i"C:/TI/ccsv6/ccs_base/arm/include" -i"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/lib" -i"C:/TI/ccsv6/tools/compiler/ti-cgt-arm_16.6.0.STS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="ServoControl_linkInfo.xml" --rom_model -o "ServoControl.out" "./main.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "./I2C/I2C.obj" "./Servo/PCA9685.obj" "./Servo/TimerPWM_Servo.obj" "./Timer/timer.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+'Finished building target: ServoControl.out'
+' '
+
+**** Build Finished ****

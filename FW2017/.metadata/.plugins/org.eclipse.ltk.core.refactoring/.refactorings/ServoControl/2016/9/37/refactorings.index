@@ -1,3 +1,6 @@
 1472947705288	Rename resource 'device'
 1473008501498	Rename resource 'startup_msp432p401r_ccs.c'
 1473008785316	Rename resource 'startup_msp432p401r_ccs.cpp'
+1473194141681	Rename resource 'ServoDriver.cpp'
+1473194163805	Rename resource 'I2C.cpp'
+1473194236431	Rename resource 'ServoDriver.hpp'

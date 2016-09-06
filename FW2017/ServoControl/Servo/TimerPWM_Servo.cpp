@@ -8,14 +8,14 @@
 #include "TimerPWM_Servo.hpp"
 
 InternalServoControl::InternalServoControl(Peripherials::Timer& timer,
-		Peripherials::TimerCapComUnit unit, struct servo_cal_point low,
-		struct servo_cal_point high) :
-		angle(0), _timer(timer), module(unit) {
+		Peripherials::TimerCapComUnit unit, struct internal_servo_cal_point low,
+		struct internal_servo_cal_point high) :
+		_timer(timer), module(unit) {
 	calibration[0] = low;
 	calibration[1] = high;
 	// 20 ms
 	_timer.SetPeriod(0.020f);
-	_timer.StartPWM(module, (uint16_t)0);
+	_timer.StartPWM(module, (uint16_t) 0);
 	Center();
 	Suspend();
 }
@@ -44,5 +44,5 @@ void InternalServoControl::GoToAngle(float angle) {
 }
 
 void InternalServoControl::Center() {
-	_timer.SetPWM(module, (calibration[1].period + calibration[0].period) / 2);
+	GoToAngle((calibration[1].angle + calibration[0].angle) / 2);
 }
