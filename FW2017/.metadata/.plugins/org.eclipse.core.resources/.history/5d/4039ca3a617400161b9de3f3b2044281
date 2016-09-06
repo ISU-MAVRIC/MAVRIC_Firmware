@@ -1,0 +1,22 @@
+/*
+ * Servo.hpp
+ *
+ *  Created on: Sep 6, 2016
+ *      Author: James
+ */
+
+#ifndef SERVO_SERVO_HPP_
+#define SERVO_SERVO_HPP_
+
+
+class Servo
+{
+public:
+	virtual void TurnOff() = 0;
+	virtual void Resume() = 0;
+	virtual void GoToAngle(float angle) = 0;
+
+};
+
+
+#endif /* SERVO_SERVO_HPP_ */

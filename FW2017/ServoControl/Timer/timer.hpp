@@ -11,6 +11,8 @@
 #include "msp.h"
 #include <stdint.h>
 
+#define _ms * (1.0 / 1000)
+
 namespace Peripherials {
 
 typedef enum TimerClockSource {
@@ -45,6 +47,9 @@ public:
 
 	void SetPWM(TimerCapComUnit module, float pulse_width);
 	void SetPWM(TimerCapComUnit module, uint16_t pulse_width);
+
+	void DisablePWM(TimerCapComUnit module);
+	void EnablePWM(TimerCapComUnit module);
 
 	/**
 	 * Calls the interrupt on a timer reset (PWM mode)

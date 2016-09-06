@@ -52,6 +52,7 @@ void Timer::SetPeriod(uint16_t period) {
 }
 
 void Timer::SetPeriod(float period) {
+	int clock_divider_base = ((regs.CTL >> 6) & 0x03) + (regs.EX0 & 0x07);
 	switch ((TimerClockSource) (regs.CTL >> 8) & 0x3) {
 	/* umm, this is external without a fixed period, so do nothing */
 	case TAxCLK:
@@ -60,14 +61,16 @@ void Timer::SetPeriod(float period) {
 
 	case ACLK:
 		/* set the period to the computed value */
-		regs.CCR[0] = (uint16_t) ((fACLK * period) + 0.5);
+		regs.CCR[0] =
+				(uint16_t) (((fACLK >> clock_divider_base) * period) + 0.5);
 		/* Set the mode to up (to make use of the period) */
 		regs.CTL = (regs.CTL & ~(3 << 4)) | (MC__UP);
 		break;
 
 	case SMCLK:
 		/* set the period to the computed value */
-		regs.CCR[0] = (uint16_t) ((fSMCLK * period) + 0.5);
+		regs.CCR[0] = (uint16_t) (((fSMCLK >> clock_divider_base) * period)
+				+ 0.5);
 		/* Set the mode to up (to make use of the period) */
 		regs.CTL = (regs.CTL & ~(3 << 4)) | (MC__UP);
 		break;
@@ -77,6 +80,7 @@ void Timer::SetPeriod(float period) {
 void Timer::StartPWM(TimerCapComUnit module, float pulse_width) {
 	if (module == CC0)
 		return;
+	int clock_divider_base = ((regs.CTL >> 6) & 0x03) + (regs.EX0 & 0x07);
 
 	switch ((TimerClockSource) (regs.CTL >> 8) & 0x3) {
 	/* umm, this is external without a fixed period, so do nothing */
@@ -87,13 +91,15 @@ void Timer::StartPWM(TimerCapComUnit module, float pulse_width) {
 	case ACLK:
 		regs.CCTL[(int) module] = (regs.CCTL[(int) module] & ~OUTMOD_7 & ~CAP)
 				| OUTMOD_7;
-		regs.CCR[(int) module] = (uint16_t) ((pulse_width * fACLK) + 0.5);
+		regs.CCR[(int) module] = (uint16_t) ((pulse_width
+				* (fACLK >> clock_divider_base)) + 0.5);
 		break;
 
 	case SMCLK:
 		regs.CCTL[(int) module] = (regs.CCTL[(int) module] & ~OUTMOD_7 & ~CAP)
 				| OUTMOD_7;
-		regs.CCR[(int) module] = (uint16_t) ((pulse_width * fSMCLK) + 0.5);
+		regs.CCR[(int) module] = (uint16_t) ((pulse_width
+				* (fSMCLK >> clock_divider_base)) + 0.5);
 		break;
 	}
 }
@@ -146,6 +152,14 @@ void Timer::SetPWM(TimerCapComUnit module, uint16_t pulse_width) {
 		regs.CCR[(int) module] = pulse_width;
 		break;
 	}
+}
+
+void Timer::DisablePWM(TimerCapComUnit module) {
+	regs.CCTL[(int)module] = (regs.CCTL[(int)module] & ~OUTMOD_7) | OUTMOD_5;
+}
+
+void Timer::EnablePWM(TimerCapComUnit module) {
+	regs.CCTL[(int)module] = (regs.CCTL[(int)module] & ~OUTMOD_7) | OUTMOD_7;
 }
 
 void Timer::AttachOverflowInterrupt(void (*new_interrupt)(void)) {

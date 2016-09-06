@@ -1,0 +1,42 @@
+/*
+ * TimerPWM_Servo.cpp
+ *
+ *  Created on: Sep 6, 2016
+ *      Author: James
+ */
+
+#ifndef TIMER_PWM_SERVO_HPP_
+#define TIMER_PWM_SERVO_HPP_
+
+#include "Servo.hpp"
+#include "Timer.hpp"
+
+using namespace Peripherials;
+
+class InternalServoControl : Servo {
+private:
+	Timer Timer;
+	float angle;
+
+public:
+	InternalServoControl(Timer& timer);
+	/*
+	 * Disables the control signal to the servo
+	 */
+	virtual void Suspend();
+	/*
+	 * Enables the control signal to the servo.
+	 */
+	virtual void Resume();
+	/*
+	 * Sets the control to the angle given
+	 */
+	virtual void GoToAngle(float angle);
+	/*
+	 * Alias for GoToAngle(0);
+	 */
+	virtual void Center();
+};
+
+#endif
+

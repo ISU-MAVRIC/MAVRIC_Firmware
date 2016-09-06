@@ -7,6 +7,7 @@
 #include "msp.h"
 
 #include "timer.hpp"
+#include "servo.hpp"
 
 using namespace Peripherials;
 
@@ -21,6 +22,7 @@ void SetRed() {
 void ToggleGreen() {
 	P2->OUT ^= 2;
 }
+#define scale 1000
 
 void main(void) {
 
@@ -30,22 +32,24 @@ void main(void) {
 	P2->SEL0 = 1 << 4;
 	P2->OUT = 0;
 	TA0.AttachOverflowInterrupt(ToggleGreen);
-	TA0.AttachInterrupt(CC0, SetRed);
-	TA0.AttachInterrupt(CC1, ClearRed);
+	TA0.AttachInterrupt(CC0, ClearRed);
+	TA0.AttachInterrupt(CC1, SetRed);
 	__enable_interrupt();
-	TA0.SetPeriod((uint16_t)0xFFFF);
-	TA0.StartPWM(CC1, (uint16_t)0x7FFF);
-	/*
-	uint16_t ledTime;
+	TA0.SetPeriod((float) (20.0 / scale));
+	TA0.StartPWM(CC1, (float) (1.5 / scale));
+
+	float PWM_time = 0;
 	while (true) {
-		for (ledTime = 0; ledTime < 0xFFFF; ledTime += 0x1000) {
-			TA0.SetPWM(CC1, (uint16_t)ledTime);
-			__delay_cycles(4800000);
+		for (PWM_time = 0; PWM_time < 20; PWM_time += 0.1) {
+			TA0.SetPWM(CC1, (PWM_time / scale));
+			__delay_cycles(480000);
 		}
-	for (ledTime = 0xFFFF; ledTime > 0x0000; ledTime -= 0x1000) {
-		TA0.SetPWM(CC1, (uint16_t)ledTime);
-		__delay_cycles(4800000);
+		for (PWM_time = 20; PWM_time > 0; PWM_time -= 0.1) {
+			TA0.SetPWM(CC1, (PWM_time / scale));
+			__delay_cycles(480000);
+		}
 	}
-	*/
-	while (true);
+
+	while (true)
+		;
 }

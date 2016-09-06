@@ -1,0 +1,18 @@
+/*
+ * TimerPWM_Servo.cpp
+ *
+ *  Created on: Sep 6, 2016
+ *      Author: James
+ */
+
+#ifndef TIMER_PWM_SERVO_HPP_
+#define TIMER_PWM_SERVO_HPP_
+
+#include "Servo.hpp"
+
+class InternalServoControl : Servo {
+
+};
+
+#endif
+

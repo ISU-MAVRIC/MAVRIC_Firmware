@@ -1,0 +1,41 @@
+/*
+ * TimerPWM_Servo.cpp
+ *
+ *  Created on: Sep 6, 2016
+ *      Author: James
+ */
+
+#include "TimerPWM_Servo.hpp"
+
+InternalServoControl::InternalServoControl(Peripherials::Timer& timer,
+		Peripherials::TimerCapComUnit unit, struct cal_point low, struct cal_point high) :
+		angle(0), _timer(timer), module(unit) {
+	// 20 ms
+	_timer.SetPeriod(0.020f);
+	_timer.StartPWM(module, 0.0015f);
+	Suspend();
+}
+
+/*
+ * Disables the control signal to the servo
+ */
+void InternalServoControl::Suspend() {
+	_timer.DisablePWM(module);
+}
+/*
+ * Enables the control signal to the servo.
+ */
+void InternalServoControl::Resume() {
+	_timer.EnablePWM(module);
+}
+/*
+ * Sets the control to the angle given
+ */
+void InternalServoControl::GoToAngle(float angle) {
+	float percent_range = (angle - calibration[0].angle)/(calibration[1].angle - calibration[0].angle);
+	_timer.SetPWM(calibration[0].period + ());
+}
+/*
+ * Alias for GoToAngle(0);
+ */
+void Center();
