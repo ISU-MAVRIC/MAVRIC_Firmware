@@ -18,6 +18,7 @@ main.obj: C:/TI/ccsv6/ccs_base/arm/include/system_msp432p401r.h
 main.obj: G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer/timer.hpp
 main.obj: G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/TimerPWM_Servo.hpp
 main.obj: G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/Servo.hpp
+main.obj: G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp
 main.obj: G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device/clocks.h
 
 ../main.cpp: 
@@ -38,4 +39,5 @@ C:/TI/ccsv6/ccs_base/arm/include/system_msp432p401r.h:
 G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Timer/timer.hpp: 
 G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/TimerPWM_Servo.hpp: 
 G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/Servo.hpp: 
+G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Servo/PCA9685.hpp: 
 G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/ServoControl/Device/clocks.h: 

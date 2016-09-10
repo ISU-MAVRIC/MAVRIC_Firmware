@@ -9,32 +9,11 @@
 
 #include "timer.hpp"
 #include "TimerPWM_Servo.hpp"
+#include "PCA9685.hpp"
 #include "clocks.h"
 
 using namespace Peripherials;
-
-void ClearRed() {
-	P2->OUT &= ~1;
-}
-
-void SetRed() {
-	P2->OUT |= 1;
-}
-
-void ToggleGreen() {
-	P2->OUT ^= 2;
-}
-
-void CycleRGB() {
-	static int phase = 0;
-	static const int divider = 10;
-	static int counter = 0;
-	counter = (counter + 1) % divider;
-	if (!counter) {
-		P2->OUT = (P2->OUT & ~0x07) | (1 << phase);
-		phase = (phase + 1) % 3;
-	}
-}
+using namespace Externals;
 
 void main(void) {
 
@@ -45,25 +24,35 @@ void main(void) {
 	P2->OUT = 0;
 	PA->DS = 0;
 	PB->DS = 0;
+
+	P10->DIR = (1 << 2) | (1 << 3);
+	P10->SEL0 = (1 << 2) | (1 << 3);
+	/*
 	struct internal_servo_cal_point cal_low = { -90, 0.0005 };
 	struct internal_servo_cal_point cal_high = { 0, 0.0015 };
     InternalServoControl tmp = InternalServoControl(TA0, CC1, cal_low, cal_high);
 	//InternalServoControl* servo = &tmp;
-	Servo* servo = &tmp;
-	TA0.AttachInterrupt(CC0, CycleRGB);
+	*/
+	struct pca9685_servo_cal_point cal_low = { -90, 100 };
+	struct pca9685_servo_cal_point cal_high = { 90, 490 };
+	PCA9685 driver = PCA9685(EUSCI_B3, 0x40);
+	driver.Port0.SetCalibration(cal_low, cal_high);
+
+	Servo* servo = &driver.Port0;
 	servo->Resume();
 	float i, high = 90, low = -90;
 	while (true) {
-		for (i = low; i < high; i+= .1) {
+		for (i = low; i < high; i+= 2
+		) {
 			servo->GoToAngle(i);
-			__delay_cycles(fSMCLK/1000);
+			__delay_cycles(fSMCLK/100);
 		}
 		//servo->Suspend();
 		__delay_cycles(fSMCLK/3);
 		servo->Resume();
-		for (i = high; i > low; i-=.1) {
+		for (i = high; i > low; i-= 2) {
 			servo->GoToAngle(i);
-			__delay_cycles(fSMCLK/1000);
+			__delay_cycles(fSMCLK/100);
 		}
 		//servo->Suspend();
 		__delay_cycles(fSMCLK/3);

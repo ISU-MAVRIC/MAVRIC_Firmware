@@ -20,7 +20,7 @@ PCA9685::PCA9685(EUSCI_B_Type* I2C_bus, unsigned char I2C_address) :
 	_address = I2C_address;
 	_bus = I2C_bus;
 
-	InitI2C (_bus);
+	InitI2C(_bus);
 
 	unsigned char buffer[256];
 	int index = 0;
@@ -93,7 +93,7 @@ void PCA9685::SetServoCounts(int ServoIndex, unsigned short OnCounts,
 
 PCA9685::Port::Port(int index, PCA9685& parent,
 		struct pca9685_servo_cal_point low, struct pca9685_servo_cal_point high) :
-		_index(index), _offset(3500 * index), _parent(parent) {
+		_index(index), _offset(3500 * index), _parent(parent), _on(0), _off(0) {
 	calibration[0] = low;
 	calibration[1] = high;
 }
@@ -108,6 +108,12 @@ PCA9685::Port::Port(int index, PCA9685& parent) :
 	calibration[1].counts = 500;
 }
 
+void PCA9685::Port::SetCalibration(struct pca9685_servo_cal_point low, struct pca9685_servo_cal_point high)
+{
+	calibration[0] = low;
+	calibration[1] = high;
+}
+
 void PCA9685::Port::Center() {
 	GoToAngle((calibration[1].angle + calibration[0].angle) / 2);
 }
@@ -117,7 +123,18 @@ void PCA9685::Port::GoToAngle(float angle) {
 			/ (calibration[1].angle - calibration[0].angle);
 	float counts = calibration[0].counts
 			+ percent_range * (calibration[1].counts - calibration[0].counts);
-	_parent.SetServoCounts(_index, _offset, _offset + counts);
+
+	_on = _offset;
+	_off = _offset + counts;
+	_parent.SetServoCounts(_index, _on, _off);
 }
 
+void PCA9685::Port::Suspend() {
+	_parent.SetServoCounts(_index, 0, 0);
+}
+
+void PCA9685::Port::Resume()
+{
+	_parent.SetServoCounts(_index, _on, _off);
+}
 } /* namespace Devices */

@@ -13,22 +13,25 @@
 
 namespace Externals {
 
+struct pca9685_servo_cal_point {
+	float angle;
+	uint16_t counts;
+};
+
 class PCA9685 {
 private:
 	unsigned char _address;
 	EUSCI_B_Type* _bus;
 
 public:
-	class Port: Servo {
+	class Port: public Servo {
 	private:
 		int _index;
 		unsigned short _offset;
 		PCA9685& _parent;
+		uint16_t _on, _off;
 
-		struct pca9685_servo_cal_point {
-			float angle;
-			uint16_t counts;
-		} calibration[2];
+		struct pca9685_servo_cal_point calibration[2];
 
 	public:
 
@@ -38,6 +41,7 @@ public:
 		Port(int index, PCA9685& parent, struct pca9685_servo_cal_point low,
 				struct pca9685_servo_cal_point high);
 		Port(int index, PCA9685& parent);
+		void SetCalibration(struct pca9685_servo_cal_point low, struct pca9685_servo_cal_point high);
 		virtual void GoToAngle(float percent);
 		virtual void Center();
 		virtual void Suspend();
