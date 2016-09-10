@@ -9,6 +9,6 @@
 #define DEVICE_CLOCKS_H_
 
 #define fACLK 32768ul
-#define fSMCLK (48*1000000ul)
+#define fSMCLK (3*1000000ul)
 
 #endif /* DEVICE_CLOCKS_H_ */

@@ -4,10 +4,12 @@
 //
 //****************************************************************************
 
+#include <math.h>
 #include "msp.h"
 
 #include "timer.hpp"
-#include "servo.hpp"
+#include "TimerPWM_Servo.hpp"
+#include "clocks.h"
 
 using namespace Peripherials;
 
@@ -22,7 +24,17 @@ void SetRed() {
 void ToggleGreen() {
 	P2->OUT ^= 2;
 }
-#define scale 1000
+
+void CycleRGB() {
+	static int phase = 0;
+	static const int divider = 10;
+	static int counter = 0;
+	counter = (counter + 1) % divider;
+	if (!counter) {
+		P2->OUT = (P2->OUT & ~0x07) | (1 << phase);
+		phase = (phase + 1) % 3;
+	}
+}
 
 void main(void) {
 
@@ -31,25 +43,30 @@ void main(void) {
 	P2->DIR = 0xFF;
 	P2->SEL0 = 1 << 4;
 	P2->OUT = 0;
-	TA0.AttachOverflowInterrupt(ToggleGreen);
-	TA0.AttachInterrupt(CC0, ClearRed);
-	TA0.AttachInterrupt(CC1, SetRed);
-	__enable_interrupt();
-	TA0.SetPeriod((float) (20.0 / scale));
-	TA0.StartPWM(CC1, (float) (1.5 / scale));
-
-	float PWM_time = 0;
+	PA->DS = 0;
+	PB->DS = 0;
+	struct internal_servo_cal_point cal_low = { -90, 0.0005 };
+	struct internal_servo_cal_point cal_high = { 0, 0.0015 };
+    InternalServoControl tmp = InternalServoControl(TA0, CC1, cal_low, cal_high);
+	//InternalServoControl* servo = &tmp;
+	Servo* servo = &tmp;
+	TA0.AttachInterrupt(CC0, CycleRGB);
+	servo->Resume();
+	float i, high = 90, low = -90;
 	while (true) {
-		for (PWM_time = 0; PWM_time < 20; PWM_time += 0.1) {
-			TA0.SetPWM(CC1, (PWM_time / scale));
-			__delay_cycles(480000);
+		for (i = low; i < high; i+= .1) {
+			servo->GoToAngle(i);
+			__delay_cycles(fSMCLK/1000);
 		}
-		for (PWM_time = 20; PWM_time > 0; PWM_time -= 0.1) {
-			TA0.SetPWM(CC1, (PWM_time / scale));
-			__delay_cycles(480000);
+		//servo->Suspend();
+		__delay_cycles(fSMCLK/3);
+		servo->Resume();
+		for (i = high; i > low; i-=.1) {
+			servo->GoToAngle(i);
+			__delay_cycles(fSMCLK/1000);
 		}
+		//servo->Suspend();
+		__delay_cycles(fSMCLK/3);
+		servo->Resume();
 	}
-
-	while (true)
-		;
 }

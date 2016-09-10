@@ -11,25 +11,26 @@
 #include "Servo.hpp"
 #include "Timer.hpp"
 
-//using namespace Peripherials;
+struct internal_servo_cal_point {
+	float angle, period;
+};
 
-class InternalServoControl: Servo {
+class InternalServoControl : public Servo {
 private:
 	Peripherials::Timer& _timer;
 	Peripherials::TimerCapComUnit module;
 	float angle;
 
-	struct internal_servo_cal_point
-	{
-		float period, angle;
-	} calibration[2];
+	struct internal_servo_cal_point calibration[2];
 
 public:
 	/*
 	 * Creates a Servo that is controlled by the given timer compare module
 	 */
 	InternalServoControl(Peripherials::Timer& timer,
-			Peripherials::TimerCapComUnit unit, struct internal_servo_cal_point low, struct internal_servo_cal_point high);
+			Peripherials::TimerCapComUnit unit,
+			struct internal_servo_cal_point low,
+			struct internal_servo_cal_point high);
 	/*
 	 * Disables the control signal to the servo
 	 */

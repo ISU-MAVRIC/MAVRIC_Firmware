@@ -1,2 +1,4 @@
-commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<messages>\r\n<message>Preliminary servo controller for the internal PWM channels.</message>\r\n<message>Added the CCS workspace for the new FW and a project to create/test&\#x0A;servo control.</message>\r\n</messages>
+commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<messages>\r\n<message>Added my old(ish) PCA9685 PWM driver code, not well tested, but I have&\#x0A;made it move servos in the past.</message>\r\n<message>Preliminary servo controller for the internal PWM channels.</message>\r\n<message>Added the CCS workspace for the new FW and a project to create/test&\#x0A;servo control.</message>\r\n</messages>
 eclipse.preferences.version=1
+resourcehistory_graph_split=500,500
+resourcehistory_rev_split=700,300
