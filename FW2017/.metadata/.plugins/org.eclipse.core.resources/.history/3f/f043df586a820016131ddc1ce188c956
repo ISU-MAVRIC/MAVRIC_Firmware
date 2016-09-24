@@ -1,0 +1,44 @@
+/*
+ * RollingBuffer.hpp
+ *
+ *  Created on: Sep 24, 2016
+ *      Author: James
+ */
+
+#ifndef BUFFERS_ROLLINGBUFFER_HPP_
+#define BUFFERS_ROLLINGBUFFER_HPP_
+
+namespace Buffers {
+
+template<int size>
+class AutoBuffer {
+private:
+	unsigned char data[size];
+	const int length;
+
+public:
+	AutoBuffer();
+	unsigned char* GetData();
+	int GetSize();
+};
+
+template<int size>
+class BaseBuffer {
+private:
+	unsigned char data[size];
+	const int length;
+
+public:
+	BaseBufferWrapper();
+	unsigned char* GetData();
+	int GetSize();
+};
+
+class RollingBuffer {
+public:
+	RollingBuffer(AutoBuffer base);
+};
+
+} /* namespace Buffers */
+
+#endif /* BUFFERS_ROLLINGBUFFER_HPP_ */

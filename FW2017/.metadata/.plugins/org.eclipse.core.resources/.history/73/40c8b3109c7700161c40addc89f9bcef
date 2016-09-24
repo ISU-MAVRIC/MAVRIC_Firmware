@@ -1,0 +1,30 @@
+/*
+ * uart.cpp
+ *
+ *  Created on: Sep 10, 2016
+ *      Author: James
+ */
+
+#ifndef UART_UART_HPP_
+#define UART_UART_HPP_
+
+#include "msp.h"
+
+
+namespace Peripherials
+{
+class UART
+{
+private:
+	EUSCI_A_Type& regs;
+
+public:
+	UART(EUSCI_A_Type& instance, int baud);
+	void Send(char c);
+	//void Send(char[] string);
+	//void Send(char* arr, int length);
+};
+}
+
+
+#endif /* UART_UART_HPP_ */

@@ -1,0 +1,22 @@
+/*
+ * uart.cpp
+ *
+ *  Created on: Sep 10, 2016
+ *      Author: James
+ */
+
+#include "uart.hpp"
+
+namespace Peripherials
+{
+	UART::UART(EUSCI_A_Type& instance, int baud) : regs(instance)
+	{
+		regs.CTLW0 = UCPEN | UCPAR | UCMSB | UCSSEL__SMCLK | UCSWRST;
+		regs.BRW = fSMCLK/baud;
+	}
+
+	void UART::Send(char c)
+	{
+		regs.TXBUF = c;
+	}
+}

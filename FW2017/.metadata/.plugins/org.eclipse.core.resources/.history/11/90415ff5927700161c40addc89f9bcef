@@ -1,0 +1,23 @@
+/*
+ * uart.cpp
+ *
+ *  Created on: Sep 10, 2016
+ *      Author: James
+ */
+
+#ifndef UART_UART_CPP_
+#define UART_UART_CPP_
+
+#include "msp.h"
+
+namespace Peripherials
+{
+class UART
+{
+private:
+
+};
+}
+
+
+#endif /* UART_UART_CPP_ */

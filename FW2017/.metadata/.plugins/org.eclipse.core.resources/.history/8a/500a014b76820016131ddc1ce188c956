@@ -1,0 +1,53 @@
+/*
+ * uart.cpp
+ *
+ *  Created on: Sep 10, 2016
+ *      Author: James
+ */
+
+#include "uart.hpp"
+#include "clocks.h"
+
+namespace Peripherials {
+
+UART UART_A1(EUSCI_A1)
+
+UART::UART(EUSCI_A_Type& instance, int baud, Buffers::RollingBuffer backing) :
+		regs(instance), buffer(backing) {
+	regs.CTLW0 = UCPEN | UCPAR | UCMSB | (1 << 7) | UCSWRST;
+	regs.BRW = (fSMCLK / baud) / 2;
+	regs.CTLW0 &= ~UCSWRST;
+}
+
+void UART::Send(char c) {
+	regs.TXBUF = c;
+	while (regs.STATW & UCBUSY)
+		;
+}
+
+void UART::OnInterrupt() {
+	switch (regs.IV) {
+	case 0:
+		// no interrupt (shouldn't occur)
+		break;
+	case 2:
+		// RX interrupt
+		break;
+	case 4:
+		// TX empty interrupt
+		if (!buffer.IsEmpty()) {
+			regs.TXBUF = buffer.Dequeue();
+		}
+		break;
+	}
+}
+
+namespace {
+extern "C" {
+void EUSCIA1_IRQHandler() {
+
+}
+}
+}
+}
+

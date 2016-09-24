@@ -1,0 +1,73 @@
+/*
+ * RollingBuffer.cpp
+ *
+ *  Created on: Sep 24, 2016
+ *      Author: James
+ */
+
+#include "Buffers.hpp"
+
+namespace Buffers {
+
+RollingBuffer::RollingBuffer(BaseBuffer base) :
+		_start(base.GetData()), _end(base.GetData() + base.GetSize() - 1), _read(
+				_start), _write(_start), _full(false), _empty(true) {
+
+}
+
+void RollingBuffer::Enqueue(unsigned char c) {
+	*_write = c;
+
+	if (_write == _end) {
+		_write = _start;
+	} else {
+		_write++;
+	}
+
+	if (_write == _read) {
+		_full = true;
+	}
+
+	_empty = false;
+}
+
+unsigned char RollingBuffer::Dequeue() {
+	unsigned char c = *_read;
+
+	if (_read == _end) {
+		_read = _start;
+	} else {
+		_read++;
+	}
+
+	if (_write == _read) {
+		_empty = true;
+	}
+
+	_full = false;
+
+	return c;
+}
+
+bool RollingBuffer::IsEmpty() {
+	return _empty;
+}
+
+bool RollingBuffer::IsFull() {
+	return _full;
+}
+
+BaseBuffer::BaseBuffer(unsigned char *array, const int size) :
+		_length(size) {
+	_data = array;
+}
+
+unsigned char* BaseBuffer::GetData() {
+	return _data;
+}
+
+int BaseBuffer::GetSize() {
+	return _length;
+}
+
+} /* namespace Buffers */

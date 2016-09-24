@@ -37,14 +37,18 @@ void main(void) {
 	struct pca9685_servo_cal_point cal_high = { 90, 490 };
 	PCA9685 driver = PCA9685(EUSCI_B3, 0x40);
 	driver.Port0.SetCalibration(cal_low, cal_high);
+	driver.Port1.SetCalibration(cal_low, cal_high);
 
 	Servo* servo = &driver.Port0;
+	Servo* servo1 = &driver.Port1;
+
 	servo->Resume();
+	servo1->Resume();
 	float i, high = 90, low = -90;
 	while (true) {
-		for (i = low; i < high; i+= 2
-		) {
+		for (i = low; i < high; i+= 2) {
 			servo->GoToAngle(i);
+			servo1->GoToAngle(i);
 			__delay_cycles(fSMCLK/100);
 		}
 		//servo->Suspend();
@@ -52,10 +56,12 @@ void main(void) {
 		servo->Resume();
 		for (i = high; i > low; i-= 2) {
 			servo->GoToAngle(i);
+			servo1->GoToAngle(i);
 			__delay_cycles(fSMCLK/100);
 		}
 		//servo->Suspend();
 		__delay_cycles(fSMCLK/3);
 		servo->Resume();
+		servo1->Resume();
 	}
 }
