@@ -1,36 +1,35 @@
 ******************************************************************************
                   TI ARM Linker PC v16.6.0                     
 ******************************************************************************
->> Linked Sat Sep 10 16:06:12 2016
+>> Linked Sat Oct 01 10:30:45 2016
 
 OUTPUT FILE NAME:   <ServoControl.out>
-ENTRY POINT SYMBOL: "_c_int00"  address: 000018d9
+ENTRY POINT SYMBOL: "_c_int00"  address: 0000126d
 
 
 MEMORY CONFIGURATION
 
          name            origin    length      used     unused   attr    fill
 ----------------------  --------  ---------  --------  --------  ----  --------
-  MAIN                  00000000   00040000  00001c79  0003e387  R  X
+  MAIN                  00000000   00040000  00001609  0003e9f7  R  X
   INFO                  00200000   00004000  00000000  00004000  R  X
-  SRAM_CODE             01000000   00010000  00000cac  0000f354  RW X
-  SRAM_DATA             20000000   00010000  00000cac  0000f354  RW  
+  SRAM_CODE             01000000   00010000  00000c2c  0000f3d4  RW X
+  SRAM_DATA             20000000   00010000  00000c2c  0000f3d4  RW  
 
 
 SEGMENT ALLOCATION MAP
 
 run origin  load origin   length   init length attrs members
 ----------  ----------- ---------- ----------- ----- -------
-00000000    00000000    00001c80   00001c80    r-x
+00000000    00000000    00001610   00001610    r-x
   00000000    00000000    000000e4   000000e4    r-- .intvecs
-  000000e4    000000e4    00001976   00001976    r-x .text
-  00001a5c    00001a5c    000001db   000001db    r-- .const
-  00001c38    00001c38    00000004   00000004    r-- .init_array
-  00001c40    00001c40    00000040   00000040    r-- .cinit
-20000000    20000000    000004ac   00000000    rw-
+  000000e4    000000e4    0000130a   0000130a    r-x .text
+  000013f0    000013f0    000001db   000001db    r-- .const
+  000015d0    000015d0    00000040   00000040    r-- .cinit
+20000000    20000000    0000042c   00000000    rw-
   20000000    20000000    00000400   00000000    rw- .sysmem
-  20000400    20000400    00000084   00000000    rw- .bss
-  20000484    20000484    00000028   00000000    rw- .data
+  20000400    20000400    00000028   00000000    rw- .data
+  20000428    20000428    00000004   00000000    rw- .bss
 2000f800    2000f800    00000800   00000000    rw-
   2000f800    2000f800    00000800   00000000    rw- .stack
 
@@ -45,94 +44,88 @@ section   page    origin      length       input sections
 
 .binit     0    00000000    00000000     
 
-.text      0    000000e4    00001976     
-                  000000e4    0000066c     timer.obj (.text)
-                  00000750    000004a8     PCA9685.obj (.text)
-                  00000bf8    000003d0     rtsv7M4_T_le_v4SPD16_eabi.lib : memory.obj (.text)
-                  00000fc8    0000032c     system_msp432p401r.obj (.text)
-                  000012f4    000001e8     main.obj (.text)
-                  000014dc    00000150     I2C.obj (.text)
-                  0000162c    000000bc     rtsv7M4_T_le_v4SPD16_eabi.lib : typeinfo_.obj (.text)
-                  000016e8    0000009c                                   : memcpy_t2.obj (.text)
-                  00001784    0000007a                                   : memset_t2.obj (.text)
-                  000017fe    00000002                                   : mpu_init.obj (.text)
-                  00001800    00000070                                   : autoinit.obj (.text)
-                  00001870    00000066                                   : copy_decompress_lzss.obj (.text:decompress:lzss)
-                  000018d6    00000002                                   : startup.obj (.text)
-                  000018d8    00000054                                   : boot.obj (.text)
-                  0000192c    00000054                                   : exit.obj (.text)
-                  00001980    0000004c                                   : cpy_tbl.obj (.text)
-                  000019cc    00000018     PCA9685.obj (.text:_ZN5ServoC1Ev)
-                  000019e4    00000018     rtsv7M4_T_le_v4SPD16_eabi.lib : args_main.obj (.text)
-                  000019fc    00000014                                   : _lock.obj (.text)
-                  00001a10    0000000e                                   : copy_decompress_none.obj (.text:decompress:none)
-                  00001a1e    0000000e     startup_msp432p401r_ccs.obj (.text)
-                  00001a2c    0000000c     PCA9685.obj (.text:_ZN5ServoC2Ev)
-                  00001a38    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_zero_init.obj (.text:decompress:ZI)
-                  00001a44    00000008                                   : delete.obj (.text)
-                  00001a4c    00000006                                   : pure_virt.obj (.text)
-                  00001a52    00000004                                   : error.obj (.text)
-                  00001a56    00000004                                   : pre_init.obj (.text)
+.text      0    000000e4    0000130a     
+                  000000e4    000004a8     Shared.lib : PCA9685.obj (.text)
+                  0000058c    000003d0     rtsv7M4_T_le_v4SPD16_eabi.lib : memory.obj (.text)
+                  0000095c    0000032c     system_msp432p401r.obj (.text)
+                  00000c88    000001e8     main.obj (.text)
+                  00000e70    00000150     Shared.lib : I2C.obj (.text)
+                  00000fc0    000000bc     rtsv7M4_T_le_v4SPD16_eabi.lib : typeinfo_.obj (.text)
+                  0000107c    0000009c                                   : memcpy_t2.obj (.text)
+                  00001118    0000007a                                   : memset_t2.obj (.text)
+                  00001192    00000002                                   : mpu_init.obj (.text)
+                  00001194    00000070                                   : autoinit.obj (.text)
+                  00001204    00000066                                   : copy_decompress_lzss.obj (.text:decompress:lzss)
+                  0000126a    00000002                                   : startup.obj (.text)
+                  0000126c    00000054                                   : boot.obj (.text)
+                  000012c0    00000054                                   : exit.obj (.text)
+                  00001314    0000004c                                   : cpy_tbl.obj (.text)
+                  00001360    00000018     Shared.lib : PCA9685.obj (.text:_ZN5ServoC1Ev)
+                  00001378    00000018     rtsv7M4_T_le_v4SPD16_eabi.lib : args_main.obj (.text)
+                  00001390    00000014                                   : _lock.obj (.text)
+                  000013a4    0000000e                                   : copy_decompress_none.obj (.text:decompress:none)
+                  000013b2    0000000e     startup_msp432p401r_ccs.obj (.text)
+                  000013c0    0000000c     Shared.lib : PCA9685.obj (.text:_ZN5ServoC2Ev)
+                  000013cc    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_zero_init.obj (.text:decompress:ZI)
+                  000013d8    00000008                                   : delete.obj (.text)
+                  000013e0    00000006                                   : pure_virt.obj (.text)
+                  000013e6    00000004                                   : error.obj (.text)
+                  000013ea    00000004                                   : pre_init.obj (.text)
 
-.const     0    00001a5c    000001db     
-                  00001a5c    00000028     rtsv7M4_T_le_v4SPD16_eabi.lib : typeinfo_.obj (.const:.typeinfo:_ZTSN10__cxxabiv123__fundamental_type_infoE)
-                  00001a84    00000025                                   : typeinfo_.obj (.const:.typeinfo:_ZTSN10__cxxabiv120__si_class_type_infoE)
-                  00001aa9    00000024                                   : typeinfo_.obj (.const:.typeinfo:_ZTSN10__cxxabiv119__pointer_type_infoE)
-                  00001acd    00000022                                   : typeinfo_.obj (.const:.typeinfo:_ZTSN10__cxxabiv117__class_type_infoE)
-                  00001aef    00000022                                   : typeinfo_.obj (.const:.typeinfo:_ZTSN10__cxxabiv117__pbase_type_infoE)
-                  00001b11    0000001a     PCA9685.obj (.const:.typeinfo:_ZTSN9Externals7PCA96854PortE)
-                  00001b2b    00000001     --HOLE-- [fill = 0]
-                  00001b2c    00000018     PCA9685.obj (.const:_ZTV5Servo)
-                  00001b44    00000018     PCA9685.obj (.const:_ZTVN9Externals7PCA96854PortE)
-                  00001b5c    00000010     rtsv7M4_T_le_v4SPD16_eabi.lib : typeinfo_.obj (.const:.typeinfo:_ZTIPKe)
-                  00001b6c    00000010                                   : typeinfo_.obj (.const:_ZTVN10__cxxabiv117__class_type_infoE)
-                  00001b7c    00000010                                   : typeinfo_.obj (.const:_ZTVN10__cxxabiv119__pointer_type_infoE)
-                  00001b8c    00000010                                   : typeinfo_.obj (.const:_ZTVN10__cxxabiv120__si_class_type_infoE)
-                  00001b9c    00000010                                   : typeinfo_.obj (.const:_ZTVN10__cxxabiv123__fundamental_type_infoE)
-                  00001bac    0000000d                                   : typeinfo_.obj (.const:.typeinfo:_ZTSSt9type_info)
-                  00001bb9    00000002                                   : typeinfo_.obj (.const:.typeinfo:_ZTSe)
-                  00001bbb    00000001     --HOLE-- [fill = 0]
-                  00001bbc    0000000c                                   : typeinfo_.obj (.const:.typeinfo:_ZTIN10__cxxabiv117__class_type_infoE)
-                  00001bc8    0000000c                                   : typeinfo_.obj (.const:.typeinfo:_ZTIN10__cxxabiv117__pbase_type_infoE)
-                  00001bd4    0000000c                                   : typeinfo_.obj (.const:.typeinfo:_ZTIN10__cxxabiv119__pointer_type_infoE)
-                  00001be0    0000000c                                   : typeinfo_.obj (.const:.typeinfo:_ZTIN10__cxxabiv120__si_class_type_infoE)
-                  00001bec    0000000c                                   : typeinfo_.obj (.const:.typeinfo:_ZTIN10__cxxabiv123__fundamental_type_infoE)
-                  00001bf8    0000000c     PCA9685.obj (.const:.typeinfo:_ZTIN9Externals7PCA96854PortE)
-                  00001c04    00000008     main.obj (.const:$P$T40$1)
-                  00001c0c    00000008     main.obj (.const:$P$T41$2)
-                  00001c14    00000008     PCA9685.obj (.const:.typeinfo:_ZTI5Servo)
-                  00001c1c    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : typeinfo_.obj (.const:.typeinfo:_ZTISt9type_info)
-                  00001c24    00000008                                   : typeinfo_.obj (.const:.typeinfo:_ZTIe)
-                  00001c2c    00000007     PCA9685.obj (.const:.typeinfo:_ZTS5Servo)
-                  00001c33    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : typeinfo_.obj (.const:.typeinfo:_ZTSPKe)
+.const     0    000013f0    000001db     
+                  000013f0    00000028     rtsv7M4_T_le_v4SPD16_eabi.lib : typeinfo_.obj (.const:.typeinfo:_ZTSN10__cxxabiv123__fundamental_type_infoE)
+                  00001418    00000025                                   : typeinfo_.obj (.const:.typeinfo:_ZTSN10__cxxabiv120__si_class_type_infoE)
+                  0000143d    00000024                                   : typeinfo_.obj (.const:.typeinfo:_ZTSN10__cxxabiv119__pointer_type_infoE)
+                  00001461    00000022                                   : typeinfo_.obj (.const:.typeinfo:_ZTSN10__cxxabiv117__class_type_infoE)
+                  00001483    00000022                                   : typeinfo_.obj (.const:.typeinfo:_ZTSN10__cxxabiv117__pbase_type_infoE)
+                  000014a5    0000001a     Shared.lib : PCA9685.obj (.const:.typeinfo:_ZTSN9Externals7PCA96854PortE)
+                  000014bf    00000001     --HOLE-- [fill = 0]
+                  000014c0    00000018                : PCA9685.obj (.const:_ZTV5Servo)
+                  000014d8    00000018                : PCA9685.obj (.const:_ZTVN9Externals7PCA96854PortE)
+                  000014f0    00000010     rtsv7M4_T_le_v4SPD16_eabi.lib : typeinfo_.obj (.const:.typeinfo:_ZTIPKe)
+                  00001500    00000010                                   : typeinfo_.obj (.const:_ZTVN10__cxxabiv117__class_type_infoE)
+                  00001510    00000010                                   : typeinfo_.obj (.const:_ZTVN10__cxxabiv119__pointer_type_infoE)
+                  00001520    00000010                                   : typeinfo_.obj (.const:_ZTVN10__cxxabiv120__si_class_type_infoE)
+                  00001530    00000010                                   : typeinfo_.obj (.const:_ZTVN10__cxxabiv123__fundamental_type_infoE)
+                  00001540    0000000d                                   : typeinfo_.obj (.const:.typeinfo:_ZTSSt9type_info)
+                  0000154d    00000002                                   : typeinfo_.obj (.const:.typeinfo:_ZTSe)
+                  0000154f    00000001     --HOLE-- [fill = 0]
+                  00001550    0000000c                                   : typeinfo_.obj (.const:.typeinfo:_ZTIN10__cxxabiv117__class_type_infoE)
+                  0000155c    0000000c                                   : typeinfo_.obj (.const:.typeinfo:_ZTIN10__cxxabiv117__pbase_type_infoE)
+                  00001568    0000000c                                   : typeinfo_.obj (.const:.typeinfo:_ZTIN10__cxxabiv119__pointer_type_infoE)
+                  00001574    0000000c                                   : typeinfo_.obj (.const:.typeinfo:_ZTIN10__cxxabiv120__si_class_type_infoE)
+                  00001580    0000000c                                   : typeinfo_.obj (.const:.typeinfo:_ZTIN10__cxxabiv123__fundamental_type_infoE)
+                  0000158c    0000000c     Shared.lib : PCA9685.obj (.const:.typeinfo:_ZTIN9Externals7PCA96854PortE)
+                  00001598    00000008     main.obj (.const:$P$T40$1)
+                  000015a0    00000008     main.obj (.const:$P$T41$2)
+                  000015a8    00000008     Shared.lib : PCA9685.obj (.const:.typeinfo:_ZTI5Servo)
+                  000015b0    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : typeinfo_.obj (.const:.typeinfo:_ZTISt9type_info)
+                  000015b8    00000008                                   : typeinfo_.obj (.const:.typeinfo:_ZTIe)
+                  000015c0    00000007     Shared.lib : PCA9685.obj (.const:.typeinfo:_ZTS5Servo)
+                  000015c7    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : typeinfo_.obj (.const:.typeinfo:_ZTSPKe)
+
+.cinit     0    000015d0    00000040     
+                  000015d0    0000001c     (.cinit..data.load) [load image, compression = lzss]
+                  000015ec    0000000c     (__TI_handler_table)
+                  000015f8    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00001600    00000010     (__TI_cinit_table)
 
 .init_array 
-*          0    00001c38    00000004     
-                  00001c38    00000004     timer.obj (.init_array)
-
-.cinit     0    00001c40    00000040     
-                  00001c40    0000001c     (.cinit..data.load) [load image, compression = lzss]
-                  00001c5c    0000000c     (__TI_handler_table)
-                  00001c68    00000008     (.cinit..bss.load) [load image, compression = zero_init]
-                  00001c70    00000010     (__TI_cinit_table)
+*          0    00000000    00000000     UNINITIALIZED
 
 .sysmem    0    20000000    00000400     UNINITIALIZED
                   20000000    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : memory.obj (.sysmem)
                   20000008    000003f8     --HOLE--
 
-.bss       0    20000400    00000084     UNINITIALIZED
-                  20000400    00000020     timer.obj (.bss:_ZN12Peripherials3TA0E)
-                  20000420    00000020     timer.obj (.bss:_ZN12Peripherials3TA1E)
-                  20000440    00000020     timer.obj (.bss:_ZN12Peripherials3TA2E)
-                  20000460    00000020     timer.obj (.bss:_ZN12Peripherials3TA3E)
-                  20000480    00000004     (.common:_ZSt16__dummy_typeinfo)
+.data      0    20000400    00000028     UNINITIALIZED
+                  20000400    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : exit.obj (.data:$O1$$)
+                  2000040c    0000000c                                   : memory.obj (.data:$O1$$)
+                  20000418    00000008                                   : _lock.obj (.data:$O1$$)
+                  20000420    00000004                                   : stkdepth_vars.obj (.data)
+                  20000424    00000004     system_msp432p401r.obj (.data)
 
-.data      0    20000484    00000028     UNINITIALIZED
-                  20000484    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : exit.obj (.data:$O1$$)
-                  20000490    0000000c                                   : memory.obj (.data:$O1$$)
-                  2000049c    00000008                                   : _lock.obj (.data:$O1$$)
-                  200004a4    00000004                                   : stkdepth_vars.obj (.data)
-                  200004a8    00000004     system_msp432p401r.obj (.data)
+.bss       0    20000428    00000004     UNINITIALIZED
+                  20000428    00000004     (.common:_ZSt16__dummy_typeinfo)
 
 .stack     0    2000f800    00000800     UNINITIALIZED
                   2000f800    00000800     --HOLE--
@@ -147,21 +140,6 @@ MODULE SUMMARY
        startup_msp432p401r_ccs.obj   14     228       0      
     +--+-----------------------------+------+---------+---------+
        Total:                        1314   244       8      
-                                                             
-    .\I2C\
-       I2C.obj                       336    0         0      
-    +--+-----------------------------+------+---------+---------+
-       Total:                        336    0         0      
-                                                             
-    .\Servo\
-       PCA9685.obj                   1228   101       0      
-    +--+-----------------------------+------+---------+---------+
-       Total:                        1228   101       0      
-                                                             
-    .\Timer\
-       timer.obj                     1644   4         256    
-    +--+-----------------------------+------+---------+---------+
-       Total:                        1644   4         256    
                                                              
     C:\TI\ccsv6\tools\compiler\ti-cgt-arm_16.6.0.STS\lib\rtsv7M4_T_le_v4SPD16_eabi.lib
        memory.obj                    976    0         24     
@@ -187,23 +165,29 @@ MODULE SUMMARY
     +--+-----------------------------+------+---------+---------+
        Total:                        1996   356       80     
                                                              
+    G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/Shared/Debug/Shared.lib
+       PCA9685.obj                   1228   101       0      
+       I2C.obj                       336    0         0      
+    +--+-----------------------------+------+---------+---------+
+       Total:                        1564   101       0      
+                                                             
        Heap:                         0      0         2048   
        Stack:                        0      0         4096   
        Linker Generated:             0      64        0      
     +--+-----------------------------+------+---------+---------+
-       Grand Total:                  6518   769       6488   
+       Grand Total:                  4874   765       6232   
 
 
 LINKER GENERATED COPY TABLES
 
-__TI_cinit_table @ 00001c70 records: 2, size/record: 8, table size: 16
-	.data: load addr=00001c40, load size=0000001c bytes, run addr=20000484, run size=00000028 bytes, compression=lzss
-	.bss: load addr=00001c68, load size=00000008 bytes, run addr=20000400, run size=00000084 bytes, compression=zero_init
+__TI_cinit_table @ 00001600 records: 2, size/record: 8, table size: 16
+	.data: load addr=000015d0, load size=0000001c bytes, run addr=20000400, run size=00000028 bytes, compression=lzss
+	.bss: load addr=000015f8, load size=00000008 bytes, run addr=20000428, run size=00000004 bytes, compression=zero_init
 
 
 LINKER GENERATED HANDLER TABLE
 
-__TI_handler_table @ 00001c5c records: 3, size/record: 4, table size: 12
+__TI_handler_table @ 000015ec records: 3, size/record: 4, table size: 12
 	index: 0, handler: __TI_decompress_lzss
 	index: 1, handler: __TI_decompress_none
 	index: 2, handler: __TI_zero_init
@@ -213,233 +197,206 @@ GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name
 
 address   name                                                                       
 -------   ----                                                                       
-00001a2b  ADC14_IRQHandler                                                           
-00001a2b  AES256_IRQHandler                                                          
-00001a2b  BusFault_Handler                                                           
-0000192d  C$$EXIT                                                                    
-00001a2b  COMP_E0_IRQHandler                                                         
-00001a2b  COMP_E1_IRQHandler                                                         
-00001a2b  CS_IRQHandler                                                              
-00001a2b  DMA_ERR_IRQHandler                                                         
-00001a2b  DMA_INT0_IRQHandler                                                        
-00001a2b  DMA_INT1_IRQHandler                                                        
-00001a2b  DMA_INT2_IRQHandler                                                        
-00001a2b  DMA_INT3_IRQHandler                                                        
-00001a2b  DebugMon_Handler                                                           
-00001a2b  Default_Handler                                                            
-00001a2b  EUSCIA0_IRQHandler                                                         
-00001a2b  EUSCIA1_IRQHandler                                                         
-00001a2b  EUSCIA2_IRQHandler                                                         
-00001a2b  EUSCIA3_IRQHandler                                                         
-00001a2b  EUSCIB0_IRQHandler                                                         
-00001a2b  EUSCIB1_IRQHandler                                                         
-00001a2b  EUSCIB2_IRQHandler                                                         
-00001a2b  EUSCIB3_IRQHandler                                                         
-00001a2b  FLCTL_IRQHandler                                                           
-00001a2b  FPU_IRQHandler                                                             
-00001a2b  HardFault_Handler                                                          
-00001a2b  MemManage_Handler                                                          
-00001a2b  NMI_Handler                                                                
-00001a2b  PCM_IRQHandler                                                             
-00001a2b  PORT1_IRQHandler                                                           
-00001a2b  PORT2_IRQHandler                                                           
-00001a2b  PORT3_IRQHandler                                                           
-00001a2b  PORT4_IRQHandler                                                           
-00001a2b  PORT5_IRQHandler                                                           
-00001a2b  PORT6_IRQHandler                                                           
-00001a2b  PSS_IRQHandler                                                             
-00001a2b  PendSV_Handler                                                             
-00001a2b  RTC_C_IRQHandler                                                           
-00001a1f  Reset_Handler                                                              
-00001c38  SHT$$INIT_ARRAY$$Base                                                      
-00001c3c  SHT$$INIT_ARRAY$$Limit                                                     
-00001a2b  SVC_Handler                                                                
-00001a2b  SysTick_Handler                                                            
-200004a8  SystemCoreClock                                                            
-00000fc9  SystemCoreClockUpdate                                                      
-0000123d  SystemInit                                                                 
-00001a2b  T32_INT1_IRQHandler                                                        
-00001a2b  T32_INT2_IRQHandler                                                        
-00001a2b  T32_INTC_IRQHandler                                                        
-00000109  TA0_0_IRQHandler                                                           
-00000109  TA0_0_IRQHandler                                                           
-00000113  TA0_N_IRQHandler                                                           
-00000113  TA0_N_IRQHandler                                                           
-0000011d  TA1_0_IRQHandler                                                           
-0000011d  TA1_0_IRQHandler                                                           
-00000127  TA1_N_IRQHandler                                                           
-00000127  TA1_N_IRQHandler                                                           
-00000131  TA2_0_IRQHandler                                                           
-00000131  TA2_0_IRQHandler                                                           
-0000013b  TA2_N_IRQHandler                                                           
-0000013b  TA2_N_IRQHandler                                                           
-00000145  TA3_0_IRQHandler                                                           
-00000145  TA3_0_IRQHandler                                                           
-0000014f  TA3_N_IRQHandler                                                           
-0000014f  TA3_N_IRQHandler                                                           
-00001a2b  UsageFault_Handler                                                         
+000013bf  ADC14_IRQHandler                                                           
+000013bf  AES256_IRQHandler                                                          
+000013bf  BusFault_Handler                                                           
+000012c1  C$$EXIT                                                                    
+000013bf  COMP_E0_IRQHandler                                                         
+000013bf  COMP_E1_IRQHandler                                                         
+000013bf  CS_IRQHandler                                                              
+000013bf  DMA_ERR_IRQHandler                                                         
+000013bf  DMA_INT0_IRQHandler                                                        
+000013bf  DMA_INT1_IRQHandler                                                        
+000013bf  DMA_INT2_IRQHandler                                                        
+000013bf  DMA_INT3_IRQHandler                                                        
+000013bf  DebugMon_Handler                                                           
+000013bf  Default_Handler                                                            
+000013bf  EUSCIA0_IRQHandler                                                         
+000013bf  EUSCIA1_IRQHandler                                                         
+000013bf  EUSCIA2_IRQHandler                                                         
+000013bf  EUSCIA3_IRQHandler                                                         
+000013bf  EUSCIB0_IRQHandler                                                         
+000013bf  EUSCIB1_IRQHandler                                                         
+000013bf  EUSCIB2_IRQHandler                                                         
+000013bf  EUSCIB3_IRQHandler                                                         
+000013bf  FLCTL_IRQHandler                                                           
+000013bf  FPU_IRQHandler                                                             
+000013bf  HardFault_Handler                                                          
+000013bf  MemManage_Handler                                                          
+000013bf  NMI_Handler                                                                
+000013bf  PCM_IRQHandler                                                             
+000013bf  PORT1_IRQHandler                                                           
+000013bf  PORT2_IRQHandler                                                           
+000013bf  PORT3_IRQHandler                                                           
+000013bf  PORT4_IRQHandler                                                           
+000013bf  PORT5_IRQHandler                                                           
+000013bf  PORT6_IRQHandler                                                           
+000013bf  PSS_IRQHandler                                                             
+000013bf  PendSV_Handler                                                             
+000013bf  RTC_C_IRQHandler                                                           
+000013b3  Reset_Handler                                                              
+UNDEFED   SHT$$INIT_ARRAY$$Base                                                      
+UNDEFED   SHT$$INIT_ARRAY$$Limit                                                     
+000013bf  SVC_Handler                                                                
+000013bf  SysTick_Handler                                                            
+20000424  SystemCoreClock                                                            
+0000095d  SystemCoreClockUpdate                                                      
+00000bd1  SystemInit                                                                 
+000013bf  T32_INT1_IRQHandler                                                        
+000013bf  T32_INT2_IRQHandler                                                        
+000013bf  T32_INTC_IRQHandler                                                        
+000013bf  TA0_0_IRQHandler                                                           
+000013bf  TA0_N_IRQHandler                                                           
+000013bf  TA1_0_IRQHandler                                                           
+000013bf  TA1_N_IRQHandler                                                           
+000013bf  TA2_0_IRQHandler                                                           
+000013bf  TA2_N_IRQHandler                                                           
+000013bf  TA3_0_IRQHandler                                                           
+000013bf  TA3_N_IRQHandler                                                           
+000013bf  UsageFault_Handler                                                         
 4000480c  WDTCTL_SYM                                                                 
-00001a2b  WDT_A_IRQHandler                                                           
-000014dd  _Z7InitI2CP12EUSCI_B_Type                                                  
-00001535  _Z7ReadI2CP12EUSCI_B_TypehPhib                                             
-000015b1  _Z8WriteI2CP12EUSCI_B_TypehPhib                                            
-000016d9  _ZN10__cxxabiv116__enum_type_infoD0Ev                                      
-000016d7  _ZN10__cxxabiv116__enum_type_infoD1Ev                                      
-000016d7  _ZN10__cxxabiv116__enum_type_infoD2Ev                                      
-000016cf  _ZN10__cxxabiv117__array_type_infoD0Ev                                     
-000016cd  _ZN10__cxxabiv117__array_type_infoD1Ev                                     
-000016cd  _ZN10__cxxabiv117__array_type_infoD2Ev                                     
-000016c5  _ZN10__cxxabiv117__class_type_infoD0Ev                                     
-000016c3  _ZN10__cxxabiv117__class_type_infoD1Ev                                     
-000016c3  _ZN10__cxxabiv117__class_type_infoD2Ev                                     
-000016bb  _ZN10__cxxabiv117__pbase_type_infoD0Ev                                     
-000016b9  _ZN10__cxxabiv117__pbase_type_infoD1Ev                                     
-000016b9  _ZN10__cxxabiv117__pbase_type_infoD2Ev                                     
-000016b1  _ZN10__cxxabiv119__pointer_type_infoD0Ev                                   
-000016af  _ZN10__cxxabiv119__pointer_type_infoD1Ev                                   
-000016af  _ZN10__cxxabiv119__pointer_type_infoD2Ev                                   
-000016a7  _ZN10__cxxabiv120__function_type_infoD0Ev                                  
-000016a5  _ZN10__cxxabiv120__function_type_infoD1Ev                                  
-000016a5  _ZN10__cxxabiv120__function_type_infoD2Ev                                  
-0000169d  _ZN10__cxxabiv120__si_class_type_infoD0Ev                                  
-0000169b  _ZN10__cxxabiv120__si_class_type_infoD1Ev                                  
-0000169b  _ZN10__cxxabiv120__si_class_type_infoD2Ev                                  
-00001693  _ZN10__cxxabiv121__vmi_class_type_infoD0Ev                                 
-00001691  _ZN10__cxxabiv121__vmi_class_type_infoD1Ev                                 
-00001691  _ZN10__cxxabiv121__vmi_class_type_infoD2Ev                                 
-00001689  _ZN10__cxxabiv123__fundamental_type_infoD0Ev                               
-00001687  _ZN10__cxxabiv123__fundamental_type_infoD1Ev                               
-00001687  _ZN10__cxxabiv123__fundamental_type_infoD2Ev                               
-0000167f  _ZN10__cxxabiv129__pointer_to_member_type_infoD0Ev                         
-0000167d  _ZN10__cxxabiv129__pointer_to_member_type_infoD1Ev                         
-0000167d  _ZN10__cxxabiv129__pointer_to_member_type_infoD2Ev                         
-20000400  _ZN12Peripherials3TA0E                                                     
-20000420  _ZN12Peripherials3TA1E                                                     
-20000440  _ZN12Peripherials3TA2E                                                     
-20000460  _ZN12Peripherials3TA3E                                                     
-00000551  _ZN12Peripherials5Timer10DisablePWMENS_15TimerCapComUnitE                  
-000005f5  _ZN12Peripherials5Timer15AttachInterruptENS_15TimerCapComUnitEPFvvE        
-000005b9  _ZN12Peripherials5Timer23AttachOverflowInterruptEPFvvE                     
-00000481  _ZN12Peripherials5Timer6SetPWMENS_15TimerCapComUnitEf                      
-0000050d  _ZN12Peripherials5Timer6SetPWMENS_15TimerCapComUnitEt                      
-000002f9  _ZN12Peripherials5Timer8StartPWMENS_15TimerCapComUnitEf                    
-00000409  _ZN12Peripherials5Timer8StartPWMENS_15TimerCapComUnitEt                    
-00000583  _ZN12Peripherials5Timer9EnablePWMENS_15TimerCapComUnitE                    
-00000237  _ZN12Peripherials5Timer9SetPeriodEf                                        
-000001eb  _ZN12Peripherials5Timer9SetPeriodEt                                        
-00000665  _ZN12Peripherials5Timer9_CCR0_ISREv                                        
-000006c5  _ZN12Peripherials5Timer9_CCRn_ISREv                                        
-00000159  _ZN12Peripherials5TimerC1EP12Timer_A_TypeNS_16TimerClockSourceE            
-00000159  _ZN12Peripherials5TimerC2EP12Timer_A_TypeNS_16TimerClockSourceE            
-000019cd  _ZN5ServoC1Ev                                                              
-00001a2d  _ZN5ServoC2Ev                                                              
-0000097f  _ZN9Externals7PCA968514SetServoCountsEitt                                  
-00000acb  _ZN9Externals7PCA96854Port14SetCalibrationENS_23pca9685_servo_cal_pointES2_
-00000b93  _ZN9Externals7PCA96854Port6CenterEv                                        
-00000bd3  _ZN9Externals7PCA96854Port6ResumeEv                                        
-00000bbd  _ZN9Externals7PCA96854Port7SuspendEv                                       
-00000afb  _ZN9Externals7PCA96854Port9GoToAngleEf                                     
-00000a81  _ZN9Externals7PCA96854PortC1EiRS0_                                         
-00000a1b  _ZN9Externals7PCA96854PortC1EiRS0_NS_23pca9685_servo_cal_pointES3_         
-00000a81  _ZN9Externals7PCA96854PortC2EiRS0_                                         
-00000a1b  _ZN9Externals7PCA96854PortC2EiRS0_NS_23pca9685_servo_cal_pointES3_         
-00000751  _ZN9Externals7PCA9685C1EP12EUSCI_B_Typeh                                   
-00000751  _ZN9Externals7PCA9685C2EP12EUSCI_B_Typeh                                   
-0000163f  _ZNKSt9type_info4nameEv                                                    
-0000166f  _ZNKSt9type_info6beforeERKS_                                               
-00001659  _ZNKSt9type_infoeqERKS_                                                    
-00001643  _ZNKSt9type_infoneERKS_                                                    
-00001637  _ZNSt9type_infoD0Ev                                                        
-00001635  _ZNSt9type_infoD1Ev                                                        
-00001635  _ZNSt9type_infoD2Ev                                                        
-20000480  _ZSt16__dummy_typeinfo                                                     
-0000162d  _ZSt21__gen_dummy_typeinfosv                                               
-00001c14  _ZTI5Servo                                                                 
-00001bbc  _ZTIN10__cxxabiv117__class_type_infoE                                      
-00001bc8  _ZTIN10__cxxabiv117__pbase_type_infoE                                      
-00001bd4  _ZTIN10__cxxabiv119__pointer_type_infoE                                    
-00001be0  _ZTIN10__cxxabiv120__si_class_type_infoE                                   
-00001bec  _ZTIN10__cxxabiv123__fundamental_type_infoE                                
-00001bf8  _ZTIN9Externals7PCA96854PortE                                              
-00001b5c  _ZTIPKe                                                                    
-00001c1c  _ZTISt9type_info                                                           
-00001c24  _ZTIe                                                                      
-00001c2c  _ZTS5Servo                                                                 
-00001acd  _ZTSN10__cxxabiv117__class_type_infoE                                      
-00001aef  _ZTSN10__cxxabiv117__pbase_type_infoE                                      
-00001aa9  _ZTSN10__cxxabiv119__pointer_type_infoE                                    
-00001a84  _ZTSN10__cxxabiv120__si_class_type_infoE                                   
-00001a5c  _ZTSN10__cxxabiv123__fundamental_type_infoE                                
-00001b11  _ZTSN9Externals7PCA96854PortE                                              
-00001c33  _ZTSPKe                                                                    
-00001bac  _ZTSSt9type_info                                                           
-00001bb9  _ZTSe                                                                      
-00001b2c  _ZTV5Servo                                                                 
-00001b6c  _ZTVN10__cxxabiv117__class_type_infoE                                      
-00001b7c  _ZTVN10__cxxabiv119__pointer_type_infoE                                    
-00001b8c  _ZTVN10__cxxabiv120__si_class_type_infoE                                   
-00001b9c  _ZTVN10__cxxabiv123__fundamental_type_infoE                                
-00001b44  _ZTVN9Externals7PCA96854PortE                                              
-00001a45  _ZdlPv                                                                     
+000013bf  WDT_A_IRQHandler                                                           
+00000e71  _Z7InitI2CP12EUSCI_B_Type                                                  
+00000ec9  _Z7ReadI2CP12EUSCI_B_TypehPhib                                             
+00000f45  _Z8WriteI2CP12EUSCI_B_TypehPhib                                            
+0000106d  _ZN10__cxxabiv116__enum_type_infoD0Ev                                      
+0000106b  _ZN10__cxxabiv116__enum_type_infoD1Ev                                      
+0000106b  _ZN10__cxxabiv116__enum_type_infoD2Ev                                      
+00001063  _ZN10__cxxabiv117__array_type_infoD0Ev                                     
+00001061  _ZN10__cxxabiv117__array_type_infoD1Ev                                     
+00001061  _ZN10__cxxabiv117__array_type_infoD2Ev                                     
+00001059  _ZN10__cxxabiv117__class_type_infoD0Ev                                     
+00001057  _ZN10__cxxabiv117__class_type_infoD1Ev                                     
+00001057  _ZN10__cxxabiv117__class_type_infoD2Ev                                     
+0000104f  _ZN10__cxxabiv117__pbase_type_infoD0Ev                                     
+0000104d  _ZN10__cxxabiv117__pbase_type_infoD1Ev                                     
+0000104d  _ZN10__cxxabiv117__pbase_type_infoD2Ev                                     
+00001045  _ZN10__cxxabiv119__pointer_type_infoD0Ev                                   
+00001043  _ZN10__cxxabiv119__pointer_type_infoD1Ev                                   
+00001043  _ZN10__cxxabiv119__pointer_type_infoD2Ev                                   
+0000103b  _ZN10__cxxabiv120__function_type_infoD0Ev                                  
+00001039  _ZN10__cxxabiv120__function_type_infoD1Ev                                  
+00001039  _ZN10__cxxabiv120__function_type_infoD2Ev                                  
+00001031  _ZN10__cxxabiv120__si_class_type_infoD0Ev                                  
+0000102f  _ZN10__cxxabiv120__si_class_type_infoD1Ev                                  
+0000102f  _ZN10__cxxabiv120__si_class_type_infoD2Ev                                  
+00001027  _ZN10__cxxabiv121__vmi_class_type_infoD0Ev                                 
+00001025  _ZN10__cxxabiv121__vmi_class_type_infoD1Ev                                 
+00001025  _ZN10__cxxabiv121__vmi_class_type_infoD2Ev                                 
+0000101d  _ZN10__cxxabiv123__fundamental_type_infoD0Ev                               
+0000101b  _ZN10__cxxabiv123__fundamental_type_infoD1Ev                               
+0000101b  _ZN10__cxxabiv123__fundamental_type_infoD2Ev                               
+00001013  _ZN10__cxxabiv129__pointer_to_member_type_infoD0Ev                         
+00001011  _ZN10__cxxabiv129__pointer_to_member_type_infoD1Ev                         
+00001011  _ZN10__cxxabiv129__pointer_to_member_type_infoD2Ev                         
+00001361  _ZN5ServoC1Ev                                                              
+000013c1  _ZN5ServoC2Ev                                                              
+00000313  _ZN9Externals7PCA968514SetServoCountsEitt                                  
+0000045f  _ZN9Externals7PCA96854Port14SetCalibrationENS_23pca9685_servo_cal_pointES2_
+00000527  _ZN9Externals7PCA96854Port6CenterEv                                        
+00000567  _ZN9Externals7PCA96854Port6ResumeEv                                        
+00000551  _ZN9Externals7PCA96854Port7SuspendEv                                       
+0000048f  _ZN9Externals7PCA96854Port9GoToAngleEf                                     
+00000415  _ZN9Externals7PCA96854PortC1EiRS0_                                         
+000003af  _ZN9Externals7PCA96854PortC1EiRS0_NS_23pca9685_servo_cal_pointES3_         
+00000415  _ZN9Externals7PCA96854PortC2EiRS0_                                         
+000003af  _ZN9Externals7PCA96854PortC2EiRS0_NS_23pca9685_servo_cal_pointES3_         
+000000e5  _ZN9Externals7PCA9685C1EP12EUSCI_B_Typeh                                   
+000000e5  _ZN9Externals7PCA9685C2EP12EUSCI_B_Typeh                                   
+00000fd3  _ZNKSt9type_info4nameEv                                                    
+00001003  _ZNKSt9type_info6beforeERKS_                                               
+00000fed  _ZNKSt9type_infoeqERKS_                                                    
+00000fd7  _ZNKSt9type_infoneERKS_                                                    
+00000fcb  _ZNSt9type_infoD0Ev                                                        
+00000fc9  _ZNSt9type_infoD1Ev                                                        
+00000fc9  _ZNSt9type_infoD2Ev                                                        
+20000428  _ZSt16__dummy_typeinfo                                                     
+00000fc1  _ZSt21__gen_dummy_typeinfosv                                               
+000015a8  _ZTI5Servo                                                                 
+00001550  _ZTIN10__cxxabiv117__class_type_infoE                                      
+0000155c  _ZTIN10__cxxabiv117__pbase_type_infoE                                      
+00001568  _ZTIN10__cxxabiv119__pointer_type_infoE                                    
+00001574  _ZTIN10__cxxabiv120__si_class_type_infoE                                   
+00001580  _ZTIN10__cxxabiv123__fundamental_type_infoE                                
+0000158c  _ZTIN9Externals7PCA96854PortE                                              
+000014f0  _ZTIPKe                                                                    
+000015b0  _ZTISt9type_info                                                           
+000015b8  _ZTIe                                                                      
+000015c0  _ZTS5Servo                                                                 
+00001461  _ZTSN10__cxxabiv117__class_type_infoE                                      
+00001483  _ZTSN10__cxxabiv117__pbase_type_infoE                                      
+0000143d  _ZTSN10__cxxabiv119__pointer_type_infoE                                    
+00001418  _ZTSN10__cxxabiv120__si_class_type_infoE                                   
+000013f0  _ZTSN10__cxxabiv123__fundamental_type_infoE                                
+000014a5  _ZTSN9Externals7PCA96854PortE                                              
+000015c7  _ZTSPKe                                                                    
+00001540  _ZTSSt9type_info                                                           
+0000154d  _ZTSe                                                                      
+000014c0  _ZTV5Servo                                                                 
+00001500  _ZTVN10__cxxabiv117__class_type_infoE                                      
+00001510  _ZTVN10__cxxabiv119__pointer_type_infoE                                    
+00001520  _ZTVN10__cxxabiv120__si_class_type_infoE                                   
+00001530  _ZTVN10__cxxabiv123__fundamental_type_infoE                                
+000014d8  _ZTVN9Externals7PCA96854PortE                                              
+000013d9  _ZdlPv                                                                     
 20010000  __STACK_END                                                                
 00000800  __STACK_SIZE                                                               
 00000400  __SYSMEM_SIZE                                                              
-00001c70  __TI_CINIT_Base                                                            
-00001c80  __TI_CINIT_Limit                                                           
-00001c5c  __TI_Handler_Table_Base                                                    
-00001c68  __TI_Handler_Table_Limit                                                   
-00001801  __TI_auto_init                                                             
-20000484  __TI_cleanup_ptr                                                           
-00001871  __TI_decompress_lzss                                                       
-00001a11  __TI_decompress_none                                                       
-20000488  __TI_dtors_ptr                                                             
-2000048c  __TI_enable_exit_profile_output                                            
+00001600  __TI_CINIT_Base                                                            
+00001610  __TI_CINIT_Limit                                                           
+000015ec  __TI_Handler_Table_Base                                                    
+000015f8  __TI_Handler_Table_Limit                                                   
+00001195  __TI_auto_init                                                             
+20000400  __TI_cleanup_ptr                                                           
+00001205  __TI_decompress_lzss                                                       
+000013a5  __TI_decompress_none                                                       
+20000404  __TI_dtors_ptr                                                             
+20000408  __TI_enable_exit_profile_output                                            
 ffffffff  __TI_pprof_out_hndl                                                        
 ffffffff  __TI_prof_data_size                                                        
 ffffffff  __TI_prof_data_start                                                       
 00000000  __TI_static_base__                                                         
-00001a39  __TI_zero_init                                                             
-00001a53  __abort_execution                                                          
-00001785  __aeabi_memclr                                                             
-00001785  __aeabi_memclr4                                                            
-00001785  __aeabi_memclr8                                                            
-000016e9  __aeabi_memcpy                                                             
-000016e9  __aeabi_memcpy4                                                            
-000016e9  __aeabi_memcpy8                                                            
-00001787  __aeabi_memset                                                             
-00001787  __aeabi_memset4                                                            
-00001787  __aeabi_memset8                                                            
+000013cd  __TI_zero_init                                                             
+000013e7  __abort_execution                                                          
+00001119  __aeabi_memclr                                                             
+00001119  __aeabi_memclr4                                                            
+00001119  __aeabi_memclr8                                                            
+0000107d  __aeabi_memcpy                                                             
+0000107d  __aeabi_memcpy4                                                            
+0000107d  __aeabi_memcpy8                                                            
+0000111b  __aeabi_memset                                                             
+0000111b  __aeabi_memset4                                                            
+0000111b  __aeabi_memset8                                                            
 ffffffff  __binit__                                                                  
 ffffffff  __c_args__                                                                 
-00001a4d  __cxa_pure_virtual                                                         
-000017ff  __mpu_init                                                                 
+000013e1  __cxa_pure_virtual                                                         
+00001193  __mpu_init                                                                 
 2000f800  __stack                                                                    
-000006ff  __sti___9_timer_cpp_348070d1                                               
-000019e5  _args_main                                                                 
-000018d9  _c_int00                                                                   
-2000049c  _lock                                                                      
-00001a0b  _nop                                                                       
-00001a03  _register_lock                                                             
-000019fd  _register_unlock                                                           
+00001379  _args_main                                                                 
+0000126d  _c_int00                                                                   
+20000418  _lock                                                                      
+0000139f  _nop                                                                       
+00001397  _register_lock                                                             
+00001391  _register_unlock                                                           
 20000000  _sys_memory                                                                
-000018d7  _system_post_cinit                                                         
-00001a57  _system_pre_init                                                           
-200004a0  _unlock                                                                    
-00001931  abort                                                                      
+0000126b  _system_post_cinit                                                         
+000013eb  _system_pre_init                                                           
+2000041c  _unlock                                                                    
+000012c5  abort                                                                      
 ffffffff  binit                                                                      
-00000f99  calloc                                                                     
-00001981  copy_in                                                                    
-00001939  exit                                                                       
-00000ce3  free                                                                       
+0000092d  calloc                                                                     
+00001315  copy_in                                                                    
+000012cd  exit                                                                       
+00000677  free                                                                       
 00000000  interruptVectors                                                           
-000012f5  main                                                                       
-200004a4  main_func_sp                                                               
-00000c79  malloc                                                                     
-00000ead  memalign                                                                   
-000016e9  memcpy                                                                     
-0000178d  memset                                                                     
-00000bf9  minit                                                                      
-00000da5  realloc                                                                    
+00000c89  main                                                                       
+20000420  main_func_sp                                                               
+0000060d  malloc                                                                     
+00000841  memalign                                                                   
+0000107d  memcpy                                                                     
+00001121  memset                                                                     
+0000058d  minit                                                                      
+00000739  realloc                                                                    
 
 
 GLOBAL SYMBOLS: SORTED BY Symbol Address 
@@ -448,222 +405,193 @@ address   name
 -------   ----                                                                       
 00000000  __TI_static_base__                                                         
 00000000  interruptVectors                                                           
-00000109  TA0_0_IRQHandler                                                           
-00000109  TA0_0_IRQHandler                                                           
-00000113  TA0_N_IRQHandler                                                           
-00000113  TA0_N_IRQHandler                                                           
-0000011d  TA1_0_IRQHandler                                                           
-0000011d  TA1_0_IRQHandler                                                           
-00000127  TA1_N_IRQHandler                                                           
-00000127  TA1_N_IRQHandler                                                           
-00000131  TA2_0_IRQHandler                                                           
-00000131  TA2_0_IRQHandler                                                           
-0000013b  TA2_N_IRQHandler                                                           
-0000013b  TA2_N_IRQHandler                                                           
-00000145  TA3_0_IRQHandler                                                           
-00000145  TA3_0_IRQHandler                                                           
-0000014f  TA3_N_IRQHandler                                                           
-0000014f  TA3_N_IRQHandler                                                           
-00000159  _ZN12Peripherials5TimerC1EP12Timer_A_TypeNS_16TimerClockSourceE            
-00000159  _ZN12Peripherials5TimerC2EP12Timer_A_TypeNS_16TimerClockSourceE            
-000001eb  _ZN12Peripherials5Timer9SetPeriodEt                                        
-00000237  _ZN12Peripherials5Timer9SetPeriodEf                                        
-000002f9  _ZN12Peripherials5Timer8StartPWMENS_15TimerCapComUnitEf                    
+000000e5  _ZN9Externals7PCA9685C1EP12EUSCI_B_Typeh                                   
+000000e5  _ZN9Externals7PCA9685C2EP12EUSCI_B_Typeh                                   
+00000313  _ZN9Externals7PCA968514SetServoCountsEitt                                  
+000003af  _ZN9Externals7PCA96854PortC1EiRS0_NS_23pca9685_servo_cal_pointES3_         
+000003af  _ZN9Externals7PCA96854PortC2EiRS0_NS_23pca9685_servo_cal_pointES3_         
 00000400  __SYSMEM_SIZE                                                              
-00000409  _ZN12Peripherials5Timer8StartPWMENS_15TimerCapComUnitEt                    
-00000481  _ZN12Peripherials5Timer6SetPWMENS_15TimerCapComUnitEf                      
-0000050d  _ZN12Peripherials5Timer6SetPWMENS_15TimerCapComUnitEt                      
-00000551  _ZN12Peripherials5Timer10DisablePWMENS_15TimerCapComUnitE                  
-00000583  _ZN12Peripherials5Timer9EnablePWMENS_15TimerCapComUnitE                    
-000005b9  _ZN12Peripherials5Timer23AttachOverflowInterruptEPFvvE                     
-000005f5  _ZN12Peripherials5Timer15AttachInterruptENS_15TimerCapComUnitEPFvvE        
-00000665  _ZN12Peripherials5Timer9_CCR0_ISREv                                        
-000006c5  _ZN12Peripherials5Timer9_CCRn_ISREv                                        
-000006ff  __sti___9_timer_cpp_348070d1                                               
-00000751  _ZN9Externals7PCA9685C1EP12EUSCI_B_Typeh                                   
-00000751  _ZN9Externals7PCA9685C2EP12EUSCI_B_Typeh                                   
+00000415  _ZN9Externals7PCA96854PortC1EiRS0_                                         
+00000415  _ZN9Externals7PCA96854PortC2EiRS0_                                         
+0000045f  _ZN9Externals7PCA96854Port14SetCalibrationENS_23pca9685_servo_cal_pointES2_
+0000048f  _ZN9Externals7PCA96854Port9GoToAngleEf                                     
+00000527  _ZN9Externals7PCA96854Port6CenterEv                                        
+00000551  _ZN9Externals7PCA96854Port7SuspendEv                                       
+00000567  _ZN9Externals7PCA96854Port6ResumeEv                                        
+0000058d  minit                                                                      
+0000060d  malloc                                                                     
+00000677  free                                                                       
+00000739  realloc                                                                    
 00000800  __STACK_SIZE                                                               
-0000097f  _ZN9Externals7PCA968514SetServoCountsEitt                                  
-00000a1b  _ZN9Externals7PCA96854PortC1EiRS0_NS_23pca9685_servo_cal_pointES3_         
-00000a1b  _ZN9Externals7PCA96854PortC2EiRS0_NS_23pca9685_servo_cal_pointES3_         
-00000a81  _ZN9Externals7PCA96854PortC1EiRS0_                                         
-00000a81  _ZN9Externals7PCA96854PortC2EiRS0_                                         
-00000acb  _ZN9Externals7PCA96854Port14SetCalibrationENS_23pca9685_servo_cal_pointES2_
-00000afb  _ZN9Externals7PCA96854Port9GoToAngleEf                                     
-00000b93  _ZN9Externals7PCA96854Port6CenterEv                                        
-00000bbd  _ZN9Externals7PCA96854Port7SuspendEv                                       
-00000bd3  _ZN9Externals7PCA96854Port6ResumeEv                                        
-00000bf9  minit                                                                      
-00000c79  malloc                                                                     
-00000ce3  free                                                                       
-00000da5  realloc                                                                    
-00000ead  memalign                                                                   
-00000f99  calloc                                                                     
-00000fc9  SystemCoreClockUpdate                                                      
-0000123d  SystemInit                                                                 
-000012f5  main                                                                       
-000014dd  _Z7InitI2CP12EUSCI_B_Type                                                  
-00001535  _Z7ReadI2CP12EUSCI_B_TypehPhib                                             
-000015b1  _Z8WriteI2CP12EUSCI_B_TypehPhib                                            
-0000162d  _ZSt21__gen_dummy_typeinfosv                                               
-00001635  _ZNSt9type_infoD1Ev                                                        
-00001635  _ZNSt9type_infoD2Ev                                                        
-00001637  _ZNSt9type_infoD0Ev                                                        
-0000163f  _ZNKSt9type_info4nameEv                                                    
-00001643  _ZNKSt9type_infoneERKS_                                                    
-00001659  _ZNKSt9type_infoeqERKS_                                                    
-0000166f  _ZNKSt9type_info6beforeERKS_                                               
-0000167d  _ZN10__cxxabiv129__pointer_to_member_type_infoD1Ev                         
-0000167d  _ZN10__cxxabiv129__pointer_to_member_type_infoD2Ev                         
-0000167f  _ZN10__cxxabiv129__pointer_to_member_type_infoD0Ev                         
-00001687  _ZN10__cxxabiv123__fundamental_type_infoD1Ev                               
-00001687  _ZN10__cxxabiv123__fundamental_type_infoD2Ev                               
-00001689  _ZN10__cxxabiv123__fundamental_type_infoD0Ev                               
-00001691  _ZN10__cxxabiv121__vmi_class_type_infoD1Ev                                 
-00001691  _ZN10__cxxabiv121__vmi_class_type_infoD2Ev                                 
-00001693  _ZN10__cxxabiv121__vmi_class_type_infoD0Ev                                 
-0000169b  _ZN10__cxxabiv120__si_class_type_infoD1Ev                                  
-0000169b  _ZN10__cxxabiv120__si_class_type_infoD2Ev                                  
-0000169d  _ZN10__cxxabiv120__si_class_type_infoD0Ev                                  
-000016a5  _ZN10__cxxabiv120__function_type_infoD1Ev                                  
-000016a5  _ZN10__cxxabiv120__function_type_infoD2Ev                                  
-000016a7  _ZN10__cxxabiv120__function_type_infoD0Ev                                  
-000016af  _ZN10__cxxabiv119__pointer_type_infoD1Ev                                   
-000016af  _ZN10__cxxabiv119__pointer_type_infoD2Ev                                   
-000016b1  _ZN10__cxxabiv119__pointer_type_infoD0Ev                                   
-000016b9  _ZN10__cxxabiv117__pbase_type_infoD1Ev                                     
-000016b9  _ZN10__cxxabiv117__pbase_type_infoD2Ev                                     
-000016bb  _ZN10__cxxabiv117__pbase_type_infoD0Ev                                     
-000016c3  _ZN10__cxxabiv117__class_type_infoD1Ev                                     
-000016c3  _ZN10__cxxabiv117__class_type_infoD2Ev                                     
-000016c5  _ZN10__cxxabiv117__class_type_infoD0Ev                                     
-000016cd  _ZN10__cxxabiv117__array_type_infoD1Ev                                     
-000016cd  _ZN10__cxxabiv117__array_type_infoD2Ev                                     
-000016cf  _ZN10__cxxabiv117__array_type_infoD0Ev                                     
-000016d7  _ZN10__cxxabiv116__enum_type_infoD1Ev                                      
-000016d7  _ZN10__cxxabiv116__enum_type_infoD2Ev                                      
-000016d9  _ZN10__cxxabiv116__enum_type_infoD0Ev                                      
-000016e9  __aeabi_memcpy                                                             
-000016e9  __aeabi_memcpy4                                                            
-000016e9  __aeabi_memcpy8                                                            
-000016e9  memcpy                                                                     
-00001785  __aeabi_memclr                                                             
-00001785  __aeabi_memclr4                                                            
-00001785  __aeabi_memclr8                                                            
-00001787  __aeabi_memset                                                             
-00001787  __aeabi_memset4                                                            
-00001787  __aeabi_memset8                                                            
-0000178d  memset                                                                     
-000017ff  __mpu_init                                                                 
-00001801  __TI_auto_init                                                             
-00001871  __TI_decompress_lzss                                                       
-000018d7  _system_post_cinit                                                         
-000018d9  _c_int00                                                                   
-0000192d  C$$EXIT                                                                    
-00001931  abort                                                                      
-00001939  exit                                                                       
-00001981  copy_in                                                                    
-000019cd  _ZN5ServoC1Ev                                                              
-000019e5  _args_main                                                                 
-000019fd  _register_unlock                                                           
-00001a03  _register_lock                                                             
-00001a0b  _nop                                                                       
-00001a11  __TI_decompress_none                                                       
-00001a1f  Reset_Handler                                                              
-00001a2b  ADC14_IRQHandler                                                           
-00001a2b  AES256_IRQHandler                                                          
-00001a2b  BusFault_Handler                                                           
-00001a2b  COMP_E0_IRQHandler                                                         
-00001a2b  COMP_E1_IRQHandler                                                         
-00001a2b  CS_IRQHandler                                                              
-00001a2b  DMA_ERR_IRQHandler                                                         
-00001a2b  DMA_INT0_IRQHandler                                                        
-00001a2b  DMA_INT1_IRQHandler                                                        
-00001a2b  DMA_INT2_IRQHandler                                                        
-00001a2b  DMA_INT3_IRQHandler                                                        
-00001a2b  DebugMon_Handler                                                           
-00001a2b  Default_Handler                                                            
-00001a2b  EUSCIA0_IRQHandler                                                         
-00001a2b  EUSCIA1_IRQHandler                                                         
-00001a2b  EUSCIA2_IRQHandler                                                         
-00001a2b  EUSCIA3_IRQHandler                                                         
-00001a2b  EUSCIB0_IRQHandler                                                         
-00001a2b  EUSCIB1_IRQHandler                                                         
-00001a2b  EUSCIB2_IRQHandler                                                         
-00001a2b  EUSCIB3_IRQHandler                                                         
-00001a2b  FLCTL_IRQHandler                                                           
-00001a2b  FPU_IRQHandler                                                             
-00001a2b  HardFault_Handler                                                          
-00001a2b  MemManage_Handler                                                          
-00001a2b  NMI_Handler                                                                
-00001a2b  PCM_IRQHandler                                                             
-00001a2b  PORT1_IRQHandler                                                           
-00001a2b  PORT2_IRQHandler                                                           
-00001a2b  PORT3_IRQHandler                                                           
-00001a2b  PORT4_IRQHandler                                                           
-00001a2b  PORT5_IRQHandler                                                           
-00001a2b  PORT6_IRQHandler                                                           
-00001a2b  PSS_IRQHandler                                                             
-00001a2b  PendSV_Handler                                                             
-00001a2b  RTC_C_IRQHandler                                                           
-00001a2b  SVC_Handler                                                                
-00001a2b  SysTick_Handler                                                            
-00001a2b  T32_INT1_IRQHandler                                                        
-00001a2b  T32_INT2_IRQHandler                                                        
-00001a2b  T32_INTC_IRQHandler                                                        
-00001a2b  UsageFault_Handler                                                         
-00001a2b  WDT_A_IRQHandler                                                           
-00001a2d  _ZN5ServoC2Ev                                                              
-00001a39  __TI_zero_init                                                             
-00001a45  _ZdlPv                                                                     
-00001a4d  __cxa_pure_virtual                                                         
-00001a53  __abort_execution                                                          
-00001a57  _system_pre_init                                                           
-00001a5c  _ZTSN10__cxxabiv123__fundamental_type_infoE                                
-00001a84  _ZTSN10__cxxabiv120__si_class_type_infoE                                   
-00001aa9  _ZTSN10__cxxabiv119__pointer_type_infoE                                    
-00001acd  _ZTSN10__cxxabiv117__class_type_infoE                                      
-00001aef  _ZTSN10__cxxabiv117__pbase_type_infoE                                      
-00001b11  _ZTSN9Externals7PCA96854PortE                                              
-00001b2c  _ZTV5Servo                                                                 
-00001b44  _ZTVN9Externals7PCA96854PortE                                              
-00001b5c  _ZTIPKe                                                                    
-00001b6c  _ZTVN10__cxxabiv117__class_type_infoE                                      
-00001b7c  _ZTVN10__cxxabiv119__pointer_type_infoE                                    
-00001b8c  _ZTVN10__cxxabiv120__si_class_type_infoE                                   
-00001b9c  _ZTVN10__cxxabiv123__fundamental_type_infoE                                
-00001bac  _ZTSSt9type_info                                                           
-00001bb9  _ZTSe                                                                      
-00001bbc  _ZTIN10__cxxabiv117__class_type_infoE                                      
-00001bc8  _ZTIN10__cxxabiv117__pbase_type_infoE                                      
-00001bd4  _ZTIN10__cxxabiv119__pointer_type_infoE                                    
-00001be0  _ZTIN10__cxxabiv120__si_class_type_infoE                                   
-00001bec  _ZTIN10__cxxabiv123__fundamental_type_infoE                                
-00001bf8  _ZTIN9Externals7PCA96854PortE                                              
-00001c14  _ZTI5Servo                                                                 
-00001c1c  _ZTISt9type_info                                                           
-00001c24  _ZTIe                                                                      
-00001c2c  _ZTS5Servo                                                                 
-00001c33  _ZTSPKe                                                                    
-00001c38  SHT$$INIT_ARRAY$$Base                                                      
-00001c3c  SHT$$INIT_ARRAY$$Limit                                                     
-00001c5c  __TI_Handler_Table_Base                                                    
-00001c68  __TI_Handler_Table_Limit                                                   
-00001c70  __TI_CINIT_Base                                                            
-00001c80  __TI_CINIT_Limit                                                           
+00000841  memalign                                                                   
+0000092d  calloc                                                                     
+0000095d  SystemCoreClockUpdate                                                      
+00000bd1  SystemInit                                                                 
+00000c89  main                                                                       
+00000e71  _Z7InitI2CP12EUSCI_B_Type                                                  
+00000ec9  _Z7ReadI2CP12EUSCI_B_TypehPhib                                             
+00000f45  _Z8WriteI2CP12EUSCI_B_TypehPhib                                            
+00000fc1  _ZSt21__gen_dummy_typeinfosv                                               
+00000fc9  _ZNSt9type_infoD1Ev                                                        
+00000fc9  _ZNSt9type_infoD2Ev                                                        
+00000fcb  _ZNSt9type_infoD0Ev                                                        
+00000fd3  _ZNKSt9type_info4nameEv                                                    
+00000fd7  _ZNKSt9type_infoneERKS_                                                    
+00000fed  _ZNKSt9type_infoeqERKS_                                                    
+00001003  _ZNKSt9type_info6beforeERKS_                                               
+00001011  _ZN10__cxxabiv129__pointer_to_member_type_infoD1Ev                         
+00001011  _ZN10__cxxabiv129__pointer_to_member_type_infoD2Ev                         
+00001013  _ZN10__cxxabiv129__pointer_to_member_type_infoD0Ev                         
+0000101b  _ZN10__cxxabiv123__fundamental_type_infoD1Ev                               
+0000101b  _ZN10__cxxabiv123__fundamental_type_infoD2Ev                               
+0000101d  _ZN10__cxxabiv123__fundamental_type_infoD0Ev                               
+00001025  _ZN10__cxxabiv121__vmi_class_type_infoD1Ev                                 
+00001025  _ZN10__cxxabiv121__vmi_class_type_infoD2Ev                                 
+00001027  _ZN10__cxxabiv121__vmi_class_type_infoD0Ev                                 
+0000102f  _ZN10__cxxabiv120__si_class_type_infoD1Ev                                  
+0000102f  _ZN10__cxxabiv120__si_class_type_infoD2Ev                                  
+00001031  _ZN10__cxxabiv120__si_class_type_infoD0Ev                                  
+00001039  _ZN10__cxxabiv120__function_type_infoD1Ev                                  
+00001039  _ZN10__cxxabiv120__function_type_infoD2Ev                                  
+0000103b  _ZN10__cxxabiv120__function_type_infoD0Ev                                  
+00001043  _ZN10__cxxabiv119__pointer_type_infoD1Ev                                   
+00001043  _ZN10__cxxabiv119__pointer_type_infoD2Ev                                   
+00001045  _ZN10__cxxabiv119__pointer_type_infoD0Ev                                   
+0000104d  _ZN10__cxxabiv117__pbase_type_infoD1Ev                                     
+0000104d  _ZN10__cxxabiv117__pbase_type_infoD2Ev                                     
+0000104f  _ZN10__cxxabiv117__pbase_type_infoD0Ev                                     
+00001057  _ZN10__cxxabiv117__class_type_infoD1Ev                                     
+00001057  _ZN10__cxxabiv117__class_type_infoD2Ev                                     
+00001059  _ZN10__cxxabiv117__class_type_infoD0Ev                                     
+00001061  _ZN10__cxxabiv117__array_type_infoD1Ev                                     
+00001061  _ZN10__cxxabiv117__array_type_infoD2Ev                                     
+00001063  _ZN10__cxxabiv117__array_type_infoD0Ev                                     
+0000106b  _ZN10__cxxabiv116__enum_type_infoD1Ev                                      
+0000106b  _ZN10__cxxabiv116__enum_type_infoD2Ev                                      
+0000106d  _ZN10__cxxabiv116__enum_type_infoD0Ev                                      
+0000107d  __aeabi_memcpy                                                             
+0000107d  __aeabi_memcpy4                                                            
+0000107d  __aeabi_memcpy8                                                            
+0000107d  memcpy                                                                     
+00001119  __aeabi_memclr                                                             
+00001119  __aeabi_memclr4                                                            
+00001119  __aeabi_memclr8                                                            
+0000111b  __aeabi_memset                                                             
+0000111b  __aeabi_memset4                                                            
+0000111b  __aeabi_memset8                                                            
+00001121  memset                                                                     
+00001193  __mpu_init                                                                 
+00001195  __TI_auto_init                                                             
+00001205  __TI_decompress_lzss                                                       
+0000126b  _system_post_cinit                                                         
+0000126d  _c_int00                                                                   
+000012c1  C$$EXIT                                                                    
+000012c5  abort                                                                      
+000012cd  exit                                                                       
+00001315  copy_in                                                                    
+00001361  _ZN5ServoC1Ev                                                              
+00001379  _args_main                                                                 
+00001391  _register_unlock                                                           
+00001397  _register_lock                                                             
+0000139f  _nop                                                                       
+000013a5  __TI_decompress_none                                                       
+000013b3  Reset_Handler                                                              
+000013bf  ADC14_IRQHandler                                                           
+000013bf  AES256_IRQHandler                                                          
+000013bf  BusFault_Handler                                                           
+000013bf  COMP_E0_IRQHandler                                                         
+000013bf  COMP_E1_IRQHandler                                                         
+000013bf  CS_IRQHandler                                                              
+000013bf  DMA_ERR_IRQHandler                                                         
+000013bf  DMA_INT0_IRQHandler                                                        
+000013bf  DMA_INT1_IRQHandler                                                        
+000013bf  DMA_INT2_IRQHandler                                                        
+000013bf  DMA_INT3_IRQHandler                                                        
+000013bf  DebugMon_Handler                                                           
+000013bf  Default_Handler                                                            
+000013bf  EUSCIA0_IRQHandler                                                         
+000013bf  EUSCIA1_IRQHandler                                                         
+000013bf  EUSCIA2_IRQHandler                                                         
+000013bf  EUSCIA3_IRQHandler                                                         
+000013bf  EUSCIB0_IRQHandler                                                         
+000013bf  EUSCIB1_IRQHandler                                                         
+000013bf  EUSCIB2_IRQHandler                                                         
+000013bf  EUSCIB3_IRQHandler                                                         
+000013bf  FLCTL_IRQHandler                                                           
+000013bf  FPU_IRQHandler                                                             
+000013bf  HardFault_Handler                                                          
+000013bf  MemManage_Handler                                                          
+000013bf  NMI_Handler                                                                
+000013bf  PCM_IRQHandler                                                             
+000013bf  PORT1_IRQHandler                                                           
+000013bf  PORT2_IRQHandler                                                           
+000013bf  PORT3_IRQHandler                                                           
+000013bf  PORT4_IRQHandler                                                           
+000013bf  PORT5_IRQHandler                                                           
+000013bf  PORT6_IRQHandler                                                           
+000013bf  PSS_IRQHandler                                                             
+000013bf  PendSV_Handler                                                             
+000013bf  RTC_C_IRQHandler                                                           
+000013bf  SVC_Handler                                                                
+000013bf  SysTick_Handler                                                            
+000013bf  T32_INT1_IRQHandler                                                        
+000013bf  T32_INT2_IRQHandler                                                        
+000013bf  T32_INTC_IRQHandler                                                        
+000013bf  TA0_0_IRQHandler                                                           
+000013bf  TA0_N_IRQHandler                                                           
+000013bf  TA1_0_IRQHandler                                                           
+000013bf  TA1_N_IRQHandler                                                           
+000013bf  TA2_0_IRQHandler                                                           
+000013bf  TA2_N_IRQHandler                                                           
+000013bf  TA3_0_IRQHandler                                                           
+000013bf  TA3_N_IRQHandler                                                           
+000013bf  UsageFault_Handler                                                         
+000013bf  WDT_A_IRQHandler                                                           
+000013c1  _ZN5ServoC2Ev                                                              
+000013cd  __TI_zero_init                                                             
+000013d9  _ZdlPv                                                                     
+000013e1  __cxa_pure_virtual                                                         
+000013e7  __abort_execution                                                          
+000013eb  _system_pre_init                                                           
+000013f0  _ZTSN10__cxxabiv123__fundamental_type_infoE                                
+00001418  _ZTSN10__cxxabiv120__si_class_type_infoE                                   
+0000143d  _ZTSN10__cxxabiv119__pointer_type_infoE                                    
+00001461  _ZTSN10__cxxabiv117__class_type_infoE                                      
+00001483  _ZTSN10__cxxabiv117__pbase_type_infoE                                      
+000014a5  _ZTSN9Externals7PCA96854PortE                                              
+000014c0  _ZTV5Servo                                                                 
+000014d8  _ZTVN9Externals7PCA96854PortE                                              
+000014f0  _ZTIPKe                                                                    
+00001500  _ZTVN10__cxxabiv117__class_type_infoE                                      
+00001510  _ZTVN10__cxxabiv119__pointer_type_infoE                                    
+00001520  _ZTVN10__cxxabiv120__si_class_type_infoE                                   
+00001530  _ZTVN10__cxxabiv123__fundamental_type_infoE                                
+00001540  _ZTSSt9type_info                                                           
+0000154d  _ZTSe                                                                      
+00001550  _ZTIN10__cxxabiv117__class_type_infoE                                      
+0000155c  _ZTIN10__cxxabiv117__pbase_type_infoE                                      
+00001568  _ZTIN10__cxxabiv119__pointer_type_infoE                                    
+00001574  _ZTIN10__cxxabiv120__si_class_type_infoE                                   
+00001580  _ZTIN10__cxxabiv123__fundamental_type_infoE                                
+0000158c  _ZTIN9Externals7PCA96854PortE                                              
+000015a8  _ZTI5Servo                                                                 
+000015b0  _ZTISt9type_info                                                           
+000015b8  _ZTIe                                                                      
+000015c0  _ZTS5Servo                                                                 
+000015c7  _ZTSPKe                                                                    
+000015ec  __TI_Handler_Table_Base                                                    
+000015f8  __TI_Handler_Table_Limit                                                   
+00001600  __TI_CINIT_Base                                                            
+00001610  __TI_CINIT_Limit                                                           
 20000000  _sys_memory                                                                
-20000400  _ZN12Peripherials3TA0E                                                     
-20000420  _ZN12Peripherials3TA1E                                                     
-20000440  _ZN12Peripherials3TA2E                                                     
-20000460  _ZN12Peripherials3TA3E                                                     
-20000480  _ZSt16__dummy_typeinfo                                                     
-20000484  __TI_cleanup_ptr                                                           
-20000488  __TI_dtors_ptr                                                             
-2000048c  __TI_enable_exit_profile_output                                            
-2000049c  _lock                                                                      
-200004a0  _unlock                                                                    
-200004a4  main_func_sp                                                               
-200004a8  SystemCoreClock                                                            
+20000400  __TI_cleanup_ptr                                                           
+20000404  __TI_dtors_ptr                                                             
+20000408  __TI_enable_exit_profile_output                                            
+20000418  _lock                                                                      
+2000041c  _unlock                                                                    
+20000420  main_func_sp                                                               
+20000424  SystemCoreClock                                                            
+20000428  _ZSt16__dummy_typeinfo                                                     
 2000f800  __stack                                                                    
 20010000  __STACK_END                                                                
 4000480c  WDTCTL_SYM                                                                 
@@ -673,5 +601,7 @@ ffffffff  __TI_prof_data_start
 ffffffff  __binit__                                                                  
 ffffffff  __c_args__                                                                 
 ffffffff  binit                                                                      
+UNDEFED   SHT$$INIT_ARRAY$$Base                                                      
+UNDEFED   SHT$$INIT_ARRAY$$Limit                                                     
 
-[227 symbols]
+[200 symbols]

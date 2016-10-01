@@ -13,13 +13,10 @@ ORDERED_OBJS += \
 "./main.obj" \
 "./startup_msp432p401r_ccs.obj" \
 "./system_msp432p401r.obj" \
-"./I2C/I2C.obj" \
-"./Servo/PCA9685.obj" \
-"./Servo/TimerPWM_Servo.obj" \
-"./Timer/timer.obj" \
 "../msp432p401r.cmd" \
 $(GEN_CMDS__FLAG) \
 -llibc.a \
+-l"G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/Shared/Debug/Shared.lib" \
 
 -include ../makefile.init
 
@@ -29,13 +26,7 @@ RMDIR := RMDIR /S/Q
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir_vars.mk
--include I2C/subdir_vars.mk
--include Servo/subdir_vars.mk
--include Timer/subdir_vars.mk
 -include subdir_rules.mk
--include I2C/subdir_rules.mk
--include Servo/subdir_rules.mk
--include Timer/subdir_rules.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -164,9 +155,9 @@ ServoControl.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)$(BIN_OUTPUTS__QUOTED)
-	-$(RM) "main.d" "I2C\I2C.d" "Servo\PCA9685.d" "Servo\TimerPWM_Servo.d" "Timer\timer.d" 
+	-$(RM) "main.d" 
 	-$(RM) "startup_msp432p401r_ccs.d" "system_msp432p401r.d" 
-	-$(RM) "main.obj" "startup_msp432p401r_ccs.obj" "system_msp432p401r.obj" "I2C\I2C.obj" "Servo\PCA9685.obj" "Servo\TimerPWM_Servo.obj" "Timer\timer.obj" 
+	-$(RM) "main.obj" "startup_msp432p401r_ccs.obj" "system_msp432p401r.obj" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

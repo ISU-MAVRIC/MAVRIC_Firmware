@@ -40,10 +40,13 @@
 									<listOptionValue builtIn="false" value="ccs"/>
 								</option>
 								<option id="com.ti.ccstudio.buildDefinitions.MSP432_16.6.compilerID.INCLUDE_PATH.450885405" name="Add dir to #include search path (--include_path, -I)" superClass="com.ti.ccstudio.buildDefinitions.MSP432_16.6.compilerID.INCLUDE_PATH" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Shared/Buffers}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Shared/Device}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Shared/I2C}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Shared/Servo}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Shared/Timer}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Shared/UART}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${CCS_BASE_ROOT}/arm/include&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Buffers}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Device}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/UART}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${CCS_BASE_ROOT}/arm/include/CMSIS&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/include&quot;"/>
 								</option>
@@ -77,6 +80,7 @@
 									<listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/include&quot;"/>
 								</option>
 								<option id="com.ti.ccstudio.buildDefinitions.MSP432_16.6.linkerID.LIBRARY.1463773746" name="Include library file or command file as input (--library, -l)" superClass="com.ti.ccstudio.buildDefinitions.MSP432_16.6.linkerID.LIBRARY" valueType="libs">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Shared/Debug/Shared.lib}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;libc.a&quot;"/>
 								</option>
 								<inputType id="com.ti.ccstudio.buildDefinitions.MSP432_16.6.exeLinker.inputType__CMD_SRCS.1606971327" name="Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.MSP432_16.6.exeLinker.inputType__CMD_SRCS"/>

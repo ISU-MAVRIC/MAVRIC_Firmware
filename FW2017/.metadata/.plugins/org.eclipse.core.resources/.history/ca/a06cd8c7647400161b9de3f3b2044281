@@ -1,9 +1,0 @@
-/*
- * TimerPWM_Servo.cpp
- *
- *  Created on: Sep 6, 2016
- *      Author: James
- */
-
-#include "TimerPWM_Servo.hpp"
-

@@ -39,12 +39,14 @@
 									<listOptionValue builtIn="false" value="TARGET_IS_MSP432P4XX"/>
 									<listOptionValue builtIn="false" value="ccs"/>
 								</option>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP432_16.6.compilerID.INCLUDE_PATH.485852226" name="Add dir to #include search path (--include_path, -I)" superClass="com.ti.ccstudio.buildDefinitions.MSP432_16.6.compilerID.INCLUDE_PATH" valueType="includePath">
+								<option id="com.ti.ccstudio.buildDefinitions.MSP432_16.6.compilerID.INCLUDE_PATH.450885405" name="Add dir to #include search path (--include_path, -I)" superClass="com.ti.ccstudio.buildDefinitions.MSP432_16.6.compilerID.INCLUDE_PATH" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Shared/Buffers}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Shared/Device}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Shared/I2C}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Shared/Servo}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Shared/Timer}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Shared/UART}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${CCS_BASE_ROOT}/arm/include&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/I2C}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Device}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Servo}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Timer}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${CCS_BASE_ROOT}/arm/include/CMSIS&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/include&quot;"/>
 								</option>
@@ -76,6 +78,7 @@
 								</option>
 								<option id="com.ti.ccstudio.buildDefinitions.MSP432_16.6.linkerID.LIBRARY.1674869668" name="Include library file or command file as input (--library, -l)" superClass="com.ti.ccstudio.buildDefinitions.MSP432_16.6.linkerID.LIBRARY" valueType="libs">
 									<listOptionValue builtIn="false" value="&quot;libc.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Shared/Debug/Shared.lib}&quot;"/>
 								</option>
 								<inputType id="com.ti.ccstudio.buildDefinitions.MSP432_16.6.exeLinker.inputType__CMD_SRCS.1197171333" name="Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.MSP432_16.6.exeLinker.inputType__CMD_SRCS"/>
 								<inputType id="com.ti.ccstudio.buildDefinitions.MSP432_16.6.exeLinker.inputType__CMD2_SRCS.1618855920" name="Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.MSP432_16.6.exeLinker.inputType__CMD2_SRCS"/>
