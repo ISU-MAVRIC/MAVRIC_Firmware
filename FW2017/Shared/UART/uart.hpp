@@ -22,7 +22,7 @@ private:
 	int rxIndex;
 
 public:
-	UART(EUSCI_A_Type& instance, int baud, Buffers::RollingBuffer backingTx, Buffers::BaseBuffer backingRx);
+	UART(EUSCI_A_Type& instance, int baud, Buffers::RollingBuffer backingTx, Buffers::BaseBuffer backingRx, bool msb);
 	void Send(char c);
 	void Send(char* str);
 	//void Send(char* arr, int length);

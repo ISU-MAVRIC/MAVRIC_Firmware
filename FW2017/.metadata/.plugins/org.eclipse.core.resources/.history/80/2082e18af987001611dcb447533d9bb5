@@ -1,0 +1,26 @@
+/*
+ * Protocol.c
+ *
+ *  Created on: Oct 1, 2016
+ *      Author: James
+ */
+
+#include "ProtocolData.h"
+
+bool IsComplete(IncomingHeader header, int count) {
+	int needed = 0;
+	if (header.wheels) {
+		needed += 2;
+	}
+	if (header.mastCamera) {
+		needed += 4;
+	}
+	if (header.cameraMux) {
+		needed += 1;
+	}
+	if (header.modulePower) {
+		needed += 1;
+	}
+
+	return needed >= count;
+}

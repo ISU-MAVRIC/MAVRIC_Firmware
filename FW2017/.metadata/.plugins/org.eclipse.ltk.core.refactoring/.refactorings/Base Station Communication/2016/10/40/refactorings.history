@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Base Station Communication/Protocol/Protocol.c&apos; to &apos;Protocol.cpp&apos;" description="Rename resource &apos;Protocol.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Protocol/Protocol.c" name="Protocol.cpp" stamp="1475340917863" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Base Station Communication/Protocol/Protocol.h&apos; to &apos;Protocol.hpp&apos;" description="Rename resource &apos;Protocol.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Protocol/Protocol.h" name="Protocol.hpp" stamp="1475343607328" updateReferences="true"/>
+</session>

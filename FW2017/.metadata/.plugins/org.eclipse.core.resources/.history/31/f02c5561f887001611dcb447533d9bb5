@@ -1,0 +1,90 @@
+/*
+ * ProtocolData.h
+ *
+ *  Created on: Oct 1, 2016
+ *      Author: James
+ */
+
+#ifndef PROTOCOL_PROTOCOLDATA_H_
+#define PROTOCOL_PROTOCOLDATA_H_
+
+/* typedef'd in case we want to change it later */
+typedef signed char WheelSpeed;
+
+typedef struct
+{
+	unsigned char wheels      : 1;
+	unsigned char mastCamera  : 1;
+	unsigned char cameraMux   : 1;
+	unsigned char modulePower : 1;
+	unsigned char soilControl : 1;
+
+	unsigned char GPS         : 1;
+	unsigned char readSoil: 1;
+	unsigned char wheels : 1;
+	unsigned char wheels : 1;
+	unsigned char wheels : 1;
+
+} IncomingHeader;
+
+typedef struct
+{
+	signed char mastTilt;
+	signed char mastPan;
+	signed char zoomCtl;
+
+	unsigned char camSel;
+
+} CameraControl;
+
+typedef struct
+{
+	unsigned char arm    : 1;
+	unsigned char wheels : 1;
+	unsigned char soil   : 1;
+	unsigned char mast   : 1;
+
+} HW_Modules;
+
+typedef struct
+{
+	/* Need info from the soil team */
+
+} SoilControl;
+
+typedef struct
+{
+	/* wheels */
+	union
+	{
+		WheelSpeed wheels[2];
+		struct
+		{
+			WheelSpeed lWheel;
+			WheelSpeed rWheel;
+		};
+	};
+
+	CameraControl camera;
+	HW_Modules enables;
+	SoilControl soilCtl;
+
+} Command;
+
+typedef struct
+{
+	unsigned char GPS         : 1;
+	unsigned char Soil        : 1;
+	unsigned char PowerSystem : 1;
+	/* address for camera system */
+	unsigned char Temperature : 5;
+
+} Request;
+
+typedef struct
+{
+	Command command;
+	Request request;
+} Incoming;
+
+#endif /* PROTOCOL_PROTOCOLDATA_H_ */
