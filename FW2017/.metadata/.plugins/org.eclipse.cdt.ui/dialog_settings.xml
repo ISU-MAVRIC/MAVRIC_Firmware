@@ -3,20 +3,22 @@
 	<item value="Default C++ source template" key="LastUsedSourceTemplate"/>
 	<item value="Default C header template" key="LastUsedHeaderTemplate"/>
 	<section name="completion_proposal_size">
+		<item value="331" key="contextSelector.size.x"/>
+		<item value="221" key="contextSelector.size.y"/>
 	</section>
 	<section name="PDOMSearchPage">
 	</section>
+	<section name="RenameInformationPopup">
+	</section>
 	<section name="NewClassWizardPage">
 		<item value="false" key="stubSelected1"/>
-		<item value="false" key="testFileSelected"/>
 		<item value="true" key="namespaceSelected"/>
+		<item value="false" key="testFileSelected"/>
 		<item value="false" key="stubInline1"/>
 		<item value="true" key="stubVirtual1"/>
 		<item value="false" key="stubInline0"/>
-		<item value="true" key="stubSelected0"/>
 		<item value="Buffers" key="namespace"/>
-	</section>
-	<section name="RenameInformationPopup">
+		<item value="true" key="stubSelected0"/>
 	</section>
 	<section name="CRenameRefactoringInputPage">
 	</section>

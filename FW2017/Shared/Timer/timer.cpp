@@ -159,7 +159,7 @@ void Timer::DisablePWM(TimerCapComUnit module) {
 }
 
 void Timer::EnablePWM(TimerCapComUnit module) {
-	regs.CCTL[(int)module] = (regs.CCTL[(int)module] & ~OUTMOD_7) | OUTMOD_7;
+	regs.CCTL[(int)module] = (regs.CCTL[(int)module] & ~OUTMOD_7 & ~CAP & ~CM_3) | OUTMOD_7;
 }
 
 void Timer::AttachOverflowInterrupt(void (*new_interrupt)(void)) {

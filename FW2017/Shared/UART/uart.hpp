@@ -34,7 +34,7 @@ public:
 	void OnInterrupt();
 };
 
-extern UART UART_A1, UART_A3;
+extern UART UART_A1, UART_A2, UART_A3;
 }
 
 
