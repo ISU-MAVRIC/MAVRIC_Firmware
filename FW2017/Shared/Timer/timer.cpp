@@ -14,7 +14,7 @@ Timer TA0(TIMER_A0, SMCLK), TA1(TIMER_A1, ACLK), TA2(TIMER_A2, ACLK), TA3(
 TIMER_A3, ACLK);
 
 Timer::Timer(Timer_A_Type* instance, TimerClockSource source) :
-		regs(*instance) {
+		regs(*instance), overflow_count(0) {
 	regs.CTL = ((source & 3) << 8) | (TACLR);
 
 	if (instance == TIMER_A0) {
@@ -26,6 +26,8 @@ Timer::Timer(Timer_A_Type* instance, TimerClockSource source) :
 	} else if (instance == TIMER_A3) {
 		timer_module = 3;
 	}
+
+	regs.CTL |= TAIE;
 
 	overflow_isr = 0;
 	int i;
@@ -188,11 +190,17 @@ void Timer::AttachInterrupt(TimerCapComUnit module,
 	}
 }
 
+unsigned int Timer::GetOverflowCount()
+{
+	return overflow_count;
+}
+
 void Timer::_CCR0_ISR(void) {
 	if ((regs.CTL & TAIE) && (regs.CTL & TAIFG)) {
 		if (overflow_isr != 0) {
 			overflow_isr();
 		}
+		overflow_count++;
 		regs.CTL &= ~TAIFG;
 	}
 	if ((regs.CCTL[0] & CCIE) && (regs.CCTL[0] & CCIFG)) {
@@ -205,6 +213,14 @@ void Timer::_CCR0_ISR(void) {
 
 void Timer::_CCRn_ISR(void) {
 	int n = regs.IV / 2;
+	if (n == 7)
+	{
+		if (overflow_isr != 0)
+		{
+			overflow_isr();
+		}
+		overflow_count++;
+	}
 	if (n <= 0 || n > 4) {
 		return;
 	}

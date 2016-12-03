@@ -45,16 +45,16 @@ void main(void) {
 	driver.Port0.SetCalibration(low, high);
 	driver.Port1.SetCalibration(low, high);
 
-	driver.Port0.GoToAngle(45);
-	driver.Port1.GoToAngle(45);
+	driver.Port0.GoTo(45);
+	driver.Port1.GoTo(45);
 
 	driver.Port0.Resume();
 	driver.Port1.Resume();
 
 	__delay_cycles(fMCLK / 2);
 
-	driver.Port0.GoToAngle(-45);
-	driver.Port1.GoToAngle(-45);
+	driver.Port0.GoTo(-45);
+	driver.Port1.GoTo(-45);
 
 	__delay_cycles(fMCLK / 2);
 
@@ -78,8 +78,8 @@ void main(void) {
 
 		if (packet.header.wheels)
 		{
-			driver.Port0.GoToAngle(packet.command.lWheel);
-			driver.Port1.GoToAngle(packet.command.rWheel);
+			driver.Port0.GoTo(packet.command.lWheel);
+			driver.Port1.GoTo(packet.command.rWheel);
 		}
 
 		if (packet.header.ding) {

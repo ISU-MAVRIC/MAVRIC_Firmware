@@ -42,7 +42,7 @@ public:
 				struct pca9685_servo_cal_point high);
 		Port(int index, PCA9685& parent);
 		void SetCalibration(struct pca9685_servo_cal_point low, struct pca9685_servo_cal_point high);
-		virtual void GoToAngle(float percent);
+		virtual void GoTo(float percent);
 		virtual void Center();
 		virtual void Suspend();
 		virtual void Resume();

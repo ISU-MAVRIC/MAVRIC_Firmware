@@ -35,7 +35,7 @@ void InternalServoControl::Resume() {
 /*
  * Sets the control to the angle given
  */
-void InternalServoControl::GoToAngle(float angle) {
+void InternalServoControl::GoTo(float angle) {
 	float percent_range = (angle - calibration[0].angle)
 			/ (calibration[1].angle - calibration[0].angle);
 	float period = calibration[0].period
@@ -44,5 +44,6 @@ void InternalServoControl::GoToAngle(float angle) {
 }
 
 void InternalServoControl::Center() {
-	GoToAngle((calibration[1].angle + calibration[0].angle) / 2);
+	GoTo((calibration[1].angle + calibration[0].angle) / 2);
 }
+

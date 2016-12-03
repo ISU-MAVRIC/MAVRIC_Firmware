@@ -47,16 +47,16 @@ void main(void) {
 	float i, high = 90, low = -90;
 	while (true) {
 		for (i = low; i < high; i+= 2) {
-			servo->GoToAngle(i);
-			servo1->GoToAngle(i);
+			servo->GoTo(i);
+			servo1->GoTo(i);
 			__delay_cycles(fSMCLK/100);
 		}
 		//servo->Suspend();
 		__delay_cycles(fSMCLK/3);
 		servo->Resume();
 		for (i = high; i > low; i-= 2) {
-			servo->GoToAngle(i);
-			servo1->GoToAngle(i);
+			servo->GoTo(i);
+			servo1->GoTo(i);
 			__delay_cycles(fSMCLK/100);
 		}
 		//servo->Suspend();

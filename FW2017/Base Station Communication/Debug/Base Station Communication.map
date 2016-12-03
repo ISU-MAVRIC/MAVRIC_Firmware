@@ -1,7 +1,7 @@
 ******************************************************************************
                   TI ARM Linker PC v16.6.0                     
 ******************************************************************************
->> Linked Mon Nov 28 18:26:13 2016
+>> Linked Sat Dec 03 11:09:21 2016
 
 OUTPUT FILE NAME:   <Base Station Communication.out>
 ENTRY POINT SYMBOL: "_c_int00"  address: 00001995
@@ -346,12 +346,12 @@ address   name
 200007c8  _ZN12Peripherials11A2_txBufferE                                                     
 200007d0  _ZN12Peripherials11A3_rxBufferE                                                     
 200007d8  _ZN12Peripherials11A3_txBufferE                                                     
-000006ef  _ZN12Peripherials4UART11ClearBufferEv                                               
-0000070d  _ZN12Peripherials4UART11OnInterruptEv                                               
-000006ff  _ZN12Peripherials4UART15GetBufferLengthEv                                           
-000006ad  _ZN12Peripherials4UART4SendEPc                                                      
-0000068b  _ZN12Peripherials4UART4SendEc                                                       
-000006db  _ZN12Peripherials4UART9GetBufferEv                                                  
+000006ed  _ZN12Peripherials4UART11ClearBufferEv                                               
+0000070b  _ZN12Peripherials4UART11OnInterruptEv                                               
+000006fd  _ZN12Peripherials4UART15GetBufferLengthEv                                           
+000006ab  _ZN12Peripherials4UART4SendEPc                                                      
+00000689  _ZN12Peripherials4UART4SendEc                                                       
+000006d9  _ZN12Peripherials4UART9GetBufferEv                                                  
 000005ab  _ZN12Peripherials4UARTC1ER12EUSCI_A_TypeiN7Buffers13RollingBufferENS3_10BaseBufferEb
 000005ab  _ZN12Peripherials4UARTC2ER12EUSCI_A_TypeiN7Buffers13RollingBufferENS3_10BaseBufferEb
 20000708  _ZN12Peripherials7UART_A1E                                                          
@@ -377,10 +377,10 @@ address   name
 0000193f  _ZN7Buffers13RollingBufferC1ENS_10BaseBufferE                                       
 00000313  _ZN9Externals7PCA968514SetServoCountsEitt                                           
 0000045f  _ZN9Externals7PCA96854Port14SetCalibrationENS_23pca9685_servo_cal_pointES2_         
+0000048f  _ZN9Externals7PCA96854Port4GoToEf                                                   
 00000527  _ZN9Externals7PCA96854Port6CenterEv                                                 
 00000567  _ZN9Externals7PCA96854Port6ResumeEv                                                 
 00000551  _ZN9Externals7PCA96854Port7SuspendEv                                                
-0000048f  _ZN9Externals7PCA96854Port9GoToAngleEf                                              
 00000415  _ZN9Externals7PCA96854PortC1EiRS0_                                                  
 000003af  _ZN9Externals7PCA96854PortC1EiRS0_NS_23pca9685_servo_cal_pointES3_                  
 00000415  _ZN9Externals7PCA96854PortC2EiRS0_                                                  
@@ -501,7 +501,7 @@ address   name
 00000415  _ZN9Externals7PCA96854PortC1EiRS0_                                                  
 00000415  _ZN9Externals7PCA96854PortC2EiRS0_                                                  
 0000045f  _ZN9Externals7PCA96854Port14SetCalibrationENS_23pca9685_servo_cal_pointES2_         
-0000048f  _ZN9Externals7PCA96854Port9GoToAngleEf                                              
+0000048f  _ZN9Externals7PCA96854Port4GoToEf                                                   
 00000527  _ZN9Externals7PCA96854Port6CenterEv                                                 
 00000551  _ZN9Externals7PCA96854Port7SuspendEv                                                
 00000567  _ZN9Externals7PCA96854Port6ResumeEv                                                 
@@ -513,12 +513,12 @@ address   name
 000005a1  EUSCIA3_IRQHandler                                                                  
 000005ab  _ZN12Peripherials4UARTC1ER12EUSCI_A_TypeiN7Buffers13RollingBufferENS3_10BaseBufferEb
 000005ab  _ZN12Peripherials4UARTC2ER12EUSCI_A_TypeiN7Buffers13RollingBufferENS3_10BaseBufferEb
-0000068b  _ZN12Peripherials4UART4SendEc                                                       
-000006ad  _ZN12Peripherials4UART4SendEPc                                                      
-000006db  _ZN12Peripherials4UART9GetBufferEv                                                  
-000006ef  _ZN12Peripherials4UART11ClearBufferEv                                               
-000006ff  _ZN12Peripherials4UART15GetBufferLengthEv                                           
-0000070d  _ZN12Peripherials4UART11OnInterruptEv                                               
+00000689  _ZN12Peripherials4UART4SendEc                                                       
+000006ab  _ZN12Peripherials4UART4SendEPc                                                      
+000006d9  _ZN12Peripherials4UART9GetBufferEv                                                  
+000006ed  _ZN12Peripherials4UART11ClearBufferEv                                               
+000006fd  _ZN12Peripherials4UART15GetBufferLengthEv                                           
+0000070b  _ZN12Peripherials4UART11OnInterruptEv                                               
 00000791  __sti___8_uart_cpp_4dae890a                                                         
 00000965  minit                                                                               
 000009e5  malloc                                                                              

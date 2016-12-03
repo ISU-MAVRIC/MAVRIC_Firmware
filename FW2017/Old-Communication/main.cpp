@@ -13,6 +13,23 @@
 #include "TimerPWM_Servo.hpp"
 #include "timer.hpp"
 
+int ramp(int leftWheel, unsigned char data) {
+	if (leftWheel < data) {
+		if (leftWheel + 10 < data) {
+			leftWheel += 10;
+		} else {
+			leftWheel = data;
+		}
+	} else {
+		if (leftWheel - 10 > data) {
+			leftWheel -= 10;
+		} else {
+			leftWheel = data;
+		}
+	}
+	return leftWheel;
+}
+
 void main(void) {
 
 	WDTCTL = WDTPW | WDTHOLD;           // Stop watchdog timer
@@ -34,32 +51,51 @@ void main(void) {
 	//EUSCI_A1->STATW |= UCLISTEN;
 
 	NVIC_EnableIRQ(EUSCIA2_IRQn);
+	NVIC_EnableIRQ(TA3_0_IRQn);
+	NVIC_EnableIRQ(TA3_N_IRQn);
 
 	Incoming packet;
 	packet.header.raw = 0;
 	packet.header.ding = 1;
 
-	internal_servo_cal_point low = { 0, 0.001 };
-	internal_servo_cal_point high = { 255, 0.002 };
+	internal_servo_cal_point low = { 0, 0.0012 };
+	internal_servo_cal_point high = { 255, 0.0018 };
+
+//	internal_servo_cal_point low = { 0, 0.001 };
+//	internal_servo_cal_point high = { 255, 0.002 };
 
 	Servo& Left = *new InternalServoControl(Peripherials::TA3,
 			Peripherials::CC1, low, high);
 	Servo& Right = *new InternalServoControl(Peripherials::TA3,
 			Peripherials::CC2, low, high);
 
+	Left.GoTo(127);
+	Right.GoTo(127);
+
 	Left.Resume();
 	Right.Resume();
-
+	int last_time = Peripherials::TA3.GetOverflowCount();
 	Peripherials::UART& RFD900 = Peripherials::UART_A2;
-
+	int leftWheel = 127;
+	int rightWheel = 127;
 	while (1) {
-		while (RFD900.GetBufferLength() < 4)
-			;
+
+		while (RFD900.GetBufferLength() < 4) {
+			int new_time = Peripherials::TA3.GetOverflowCount();
+			// 2 Seconds
+			if (new_time - last_time > 50 * 1) {
+				Left.GoTo(127);
+				Right.GoTo(127);
+			}
+		}
 		unsigned char* data = RFD900.GetBuffer().GetData();
 		if (data[0] == '<') {
+			last_time = Peripherials::TA3.GetOverflowCount();
 			RFD900.ClearBuffer();
-			Left.GoToAngle(data[1]);
-			Right.GoToAngle(data[2]);
+			leftWheel = ramp(leftWheel, data[1]);
+			rightWheel = ramp(rightWheel, data[2]);
+			Left.GoTo(leftWheel);
+			Right.GoTo(rightWheel);
 		} else {
 			int count = 4;
 			char c = data[3];

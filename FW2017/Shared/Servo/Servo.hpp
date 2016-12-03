@@ -23,7 +23,7 @@ public:
 	/*
 	 * Sets the control to the angle given
 	 */
-	virtual void GoToAngle(float angle) = 0;
+	virtual void GoTo(float point) = 0;
 	/*
 	 * Moves to the center of the calibrated range.
 	 */

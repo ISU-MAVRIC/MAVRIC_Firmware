@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Create method ramp" description="Extract Method Refactoring" fileName="file:/G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/Old-Communication/main.cpp" flags="4" id="org.eclipse.cdt.internal.ui.refactoring.extractfunction.ExtractFunctionRefactoring" name="ramp" replaceDuplicates="false" selection="1864,271" stamp="1480801039676" visibility="private"/>
+</session>

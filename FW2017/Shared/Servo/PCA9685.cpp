@@ -115,10 +115,10 @@ void PCA9685::Port::SetCalibration(struct pca9685_servo_cal_point low, struct pc
 }
 
 void PCA9685::Port::Center() {
-	GoToAngle((calibration[1].angle + calibration[0].angle) / 2);
+	GoTo((calibration[1].angle + calibration[0].angle) / 2);
 }
 
-void PCA9685::Port::GoToAngle(float angle) {
+void PCA9685::Port::GoTo(float angle) {
 	float percent_range = (angle - calibration[0].angle)
 			/ (calibration[1].angle - calibration[0].angle);
 	float counts = calibration[0].counts

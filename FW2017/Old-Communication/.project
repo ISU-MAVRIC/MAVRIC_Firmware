@@ -24,4 +24,41 @@
 		<nature>org.eclipse.cdt.core.ccnature</nature>
 		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>Buffers.cpp</name>
+			<type>1</type>
+			<locationURI>WORKSPACE_LOC/Shared/Buffers/Buffers.cpp</locationURI>
+		</link>
+		<link>
+			<name>Buffers.hpp</name>
+			<type>1</type>
+			<locationURI>WORKSPACE_LOC/Shared/Buffers/Buffers.hpp</locationURI>
+		</link>
+		<link>
+			<name>I2C.cpp</name>
+			<type>1</type>
+			<locationURI>WORKSPACE_LOC/Shared/I2C/I2C.cpp</locationURI>
+		</link>
+		<link>
+			<name>PCA9685.cpp</name>
+			<type>1</type>
+			<locationURI>WORKSPACE_LOC/Shared/Servo/PCA9685.cpp</locationURI>
+		</link>
+		<link>
+			<name>TimerPWM_Servo.cpp</name>
+			<type>1</type>
+			<locationURI>WORKSPACE_LOC/Shared/Servo/TimerPWM_Servo.cpp</locationURI>
+		</link>
+		<link>
+			<name>timer.cpp</name>
+			<type>1</type>
+			<locationURI>WORKSPACE_LOC/Shared/Timer/timer.cpp</locationURI>
+		</link>
+		<link>
+			<name>uart.cpp</name>
+			<type>1</type>
+			<locationURI>WORKSPACE_LOC/Shared/UART/uart.cpp</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>

@@ -29,6 +29,7 @@ private:
 	int timer_module;
 	void (*isr[5])(void);
 	void (*overflow_isr)(void);
+	unsigned int overflow_count;
 
 public:
 	/**
@@ -56,6 +57,8 @@ public:
 	 */
 	void AttachOverflowInterrupt(void (*new_interrupt)(void));
 	void AttachInterrupt(TimerCapComUnit module, void (*new_interrupt)(void));
+
+	unsigned int GetOverflowCount();
 
 	/**
 	 * Don't call this, used exclusively by library code

@@ -1,7 +1,7 @@
 ******************************************************************************
                   TI ARM Linker PC v16.6.0                     
 ******************************************************************************
->> Linked Mon Nov 28 18:26:16 2016
+>> Linked Sat Dec 03 11:09:25 2016
 
 OUTPUT FILE NAME:   <ServoControl.out>
 ENTRY POINT SYMBOL: "_c_int00"  address: 0000126d
@@ -293,10 +293,10 @@ UNDEFED   SHT$$INIT_ARRAY$$Limit
 000013c1  _ZN5ServoC2Ev                                                              
 00000313  _ZN9Externals7PCA968514SetServoCountsEitt                                  
 0000045f  _ZN9Externals7PCA96854Port14SetCalibrationENS_23pca9685_servo_cal_pointES2_
+0000048f  _ZN9Externals7PCA96854Port4GoToEf                                          
 00000527  _ZN9Externals7PCA96854Port6CenterEv                                        
 00000567  _ZN9Externals7PCA96854Port6ResumeEv                                        
 00000551  _ZN9Externals7PCA96854Port7SuspendEv                                       
-0000048f  _ZN9Externals7PCA96854Port9GoToAngleEf                                     
 00000415  _ZN9Externals7PCA96854PortC1EiRS0_                                         
 000003af  _ZN9Externals7PCA96854PortC1EiRS0_NS_23pca9685_servo_cal_pointES3_         
 00000415  _ZN9Externals7PCA96854PortC2EiRS0_                                         
@@ -414,7 +414,7 @@ address   name
 00000415  _ZN9Externals7PCA96854PortC1EiRS0_                                         
 00000415  _ZN9Externals7PCA96854PortC2EiRS0_                                         
 0000045f  _ZN9Externals7PCA96854Port14SetCalibrationENS_23pca9685_servo_cal_pointES2_
-0000048f  _ZN9Externals7PCA96854Port9GoToAngleEf                                     
+0000048f  _ZN9Externals7PCA96854Port4GoToEf                                          
 00000527  _ZN9Externals7PCA96854Port6CenterEv                                        
 00000551  _ZN9Externals7PCA96854Port7SuspendEv                                       
 00000567  _ZN9Externals7PCA96854Port6ResumeEv                                        

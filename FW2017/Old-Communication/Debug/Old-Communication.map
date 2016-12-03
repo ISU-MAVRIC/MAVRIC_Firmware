@@ -1,36 +1,36 @@
 ******************************************************************************
                   TI ARM Linker PC v16.6.0                     
 ******************************************************************************
->> Linked Mon Nov 28 20:22:12 2016
+>> Linked Sat Dec 03 15:39:39 2016
 
 OUTPUT FILE NAME:   <Old-Communication.out>
-ENTRY POINT SYMBOL: "_c_int00"  address: 00001a41
+ENTRY POINT SYMBOL: "_c_int00"  address: 00001b69
 
 
 MEMORY CONFIGURATION
 
          name            origin    length      used     unused   attr    fill
 ----------------------  --------  ---------  --------  --------  ----  --------
-  MAIN                  00000000   00040000  00001f83  0003e07d  R  X
+  MAIN                  00000000   00040000  000020ab  0003df55  R  X
   INFO                  00200000   00004000  00000000  00004000  R  X
-  SRAM_CODE             01000000   00010000  00000e90  0000f170  RW X
-  SRAM_DATA             20000000   00010000  00000e90  0000f170  RW  
+  SRAM_CODE             01000000   00010000  00000ea0  0000f160  RW X
+  SRAM_DATA             20000000   00010000  00000ea0  0000f160  RW  
 
 
 SEGMENT ALLOCATION MAP
 
 run origin  load origin   length   init length attrs members
 ----------  ----------- ---------- ----------- ----- -------
-00000000    00000000    00001f88   00001f88    r-x
+00000000    00000000    000020b0   000020b0    r-x
   00000000    00000000    000000e4   000000e4    r-- .intvecs
-  000000e4    000000e4    00001c74   00001c74    r-x .text
-  00001d58    00001d58    000001db   000001db    r-- .const
-  00001f34    00001f34    00000008   00000008    r-- .init_array
-  00001f40    00001f40    00000048   00000048    r-- .cinit
-20000000    20000000    00000c94   00000000    rw-
-  20000000    20000000    00000864   00000000    rw- .bss
-  20000868    20000868    00000400   00000000    rw- .sysmem
-  20000c68    20000c68    0000002c   00000000    rw- .data
+  000000e4    000000e4    00001d9c   00001d9c    r-x .text
+  00001e80    00001e80    000001db   000001db    r-- .const
+  0000205c    0000205c    00000008   00000008    r-- .init_array
+  00002068    00002068    00000048   00000048    r-- .cinit
+20000000    20000000    00000ca4   00000000    rw-
+  20000000    20000000    00000874   00000000    rw- .bss
+  20000878    20000878    00000400   00000000    rw- .sysmem
+  20000c78    20000c78    0000002c   00000000    rw- .data
 2000fe00    2000fe00    00000200   00000000    rw-
   2000fe00    2000fe00    00000200   00000000    rw- .stack
 
@@ -45,133 +45,133 @@ section   page    origin      length       input sections
 
 .binit     0    00000000    00000000     
 
-.text      0    000000e4    00001c74     
-                  000000e4    00000670     Shared.lib : timer.obj (.text)
-                  00000754    000003d8                : uart.obj (.text)
-                  00000b2c    000003d0     rtsv7M4_T_le_v4SPD16_eabi.lib : memory.obj (.text)
-                  00000efc    0000032c     system_msp432p401r.obj (.text)
-                  00001228    000001f4     rtsv7M4_T_le_v4SPD16_eabi.lib : ull_div_t2.obj (.text)
-                  0000141c    000001e8     main.obj (.text)
-                  00001604    0000013c     Shared.lib : TimerPWM_Servo.obj (.text)
-                  00001740    000000bc     rtsv7M4_T_le_v4SPD16_eabi.lib : typeinfo_.obj (.text)
-                  000017fc    0000009c                                   : memcpy_t2.obj (.text)
-                  00001898    0000007a                                   : memset_t2.obj (.text)
-                  00001912    00000002                                   : mpu_init.obj (.text)
-                  00001914    00000070                                   : autoinit.obj (.text)
-                  00001984    00000066                                   : copy_decompress_lzss.obj (.text:decompress:lzss)
-                  000019ea    00000054     Shared.lib : uart.obj (.text:_ZN7Buffers13RollingBufferC1ENS_10BaseBufferE)
-                  00001a3e    00000002     rtsv7M4_T_le_v4SPD16_eabi.lib : newhandler.obj (.text)
-                  00001a40    00000054                                   : boot.obj (.text)
-                  00001a94    00000054                                   : exit.obj (.text)
-                  00001ae8    0000004e     Shared.lib : uart.obj (.text:_ZN7Buffers13RollingBuffer7DequeueEv)
-                  00001b36    0000004e                : uart.obj (.text:_ZN7Buffers13RollingBuffer7EnqueueEh)
-                  00001b84    0000004c     rtsv7M4_T_le_v4SPD16_eabi.lib : cpy_tbl.obj (.text)
-                  00001bd0    00000036                                   : ull_tofs_t2.obj (.text)
-                  00001c06    00000002                                   : startup.obj (.text)
-                  00001c08    00000030                                   : new_.obj (.text)
-                  00001c38    0000001e                                   : ll_lsr_t2.obj (.text)
-                  00001c56    0000001c     Shared.lib : uart.obj (.text:_ZN7Buffers10BaseBufferC1EPhi)
-                  00001c72    00000002     --HOLE-- [fill = 0]
-                  00001c74    00000018                : TimerPWM_Servo.obj (.text:_ZN5ServoC1Ev)
-                  00001c8c    00000018     rtsv7M4_T_le_v4SPD16_eabi.lib : args_main.obj (.text)
-                  00001ca4    00000014     Shared.lib : uart.obj (.text:_ZN7Buffers13RollingBuffer7IsEmptyEv)
-                  00001cb8    00000014     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.text)
-                  00001ccc    0000000e     Shared.lib : uart.obj (.text:_ZN7Buffers10AutoBufferILi300EE7GetSizeEv)
-                  00001cda    0000000e     main.obj (.text:_ZN7Buffers10BaseBuffer7GetDataEv)
-                  00001ce8    0000000e     Shared.lib : uart.obj (.text:_ZN7Buffers10BaseBuffer7GetSizeEv)
-                  00001cf6    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.obj (.text:decompress:none)
-                  00001d04    0000000e     startup_msp432p401r_ccs.obj (.text)
-                  00001d12    0000000c     Shared.lib : TimerPWM_Servo.obj (.text:_ZN5ServoC2Ev)
-                  00001d1e    0000000c                : uart.obj (.text:_ZN7Buffers10AutoBufferILi300EE7GetDataEv)
-                  00001d2a    0000000c                : uart.obj (.text:_ZN7Buffers10AutoBufferILi300EEC1Ev)
-                  00001d36    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_zero_init.obj (.text:decompress:ZI)
-                  00001d42    00000008                                   : delete.obj (.text)
-                  00001d4a    00000006                                   : pure_virt.obj (.text)
-                  00001d50    00000004                                   : error.obj (.text)
-                  00001d54    00000004                                   : pre_init.obj (.text)
+.text      0    000000e4    00001d9c     
+                  000000e4    000006b8     timer.obj (.text)
+                  0000079c    000003d8     uart.obj (.text)
+                  00000b74    000003d0     rtsv7M4_T_le_v4SPD16_eabi.lib : memory.obj (.text)
+                  00000f44    0000032c     system_msp432p401r.obj (.text)
+                  00001270    000002c8     main.obj (.text)
+                  00001538    000001f4     rtsv7M4_T_le_v4SPD16_eabi.lib : ull_div_t2.obj (.text)
+                  0000172c    0000013c     TimerPWM_Servo.obj (.text)
+                  00001868    000000bc     rtsv7M4_T_le_v4SPD16_eabi.lib : typeinfo_.obj (.text)
+                  00001924    0000009c                                   : memcpy_t2.obj (.text)
+                  000019c0    0000007a                                   : memset_t2.obj (.text)
+                  00001a3a    00000002                                   : mpu_init.obj (.text)
+                  00001a3c    00000070                                   : autoinit.obj (.text)
+                  00001aac    00000066                                   : copy_decompress_lzss.obj (.text:decompress:lzss)
+                  00001b12    00000054     uart.obj (.text:_ZN7Buffers13RollingBufferC1ENS_10BaseBufferE)
+                  00001b66    00000002     rtsv7M4_T_le_v4SPD16_eabi.lib : newhandler.obj (.text)
+                  00001b68    00000054                                   : boot.obj (.text)
+                  00001bbc    00000054                                   : exit.obj (.text)
+                  00001c10    0000004e     uart.obj (.text:_ZN7Buffers13RollingBuffer7DequeueEv)
+                  00001c5e    0000004e     uart.obj (.text:_ZN7Buffers13RollingBuffer7EnqueueEh)
+                  00001cac    0000004c     rtsv7M4_T_le_v4SPD16_eabi.lib : cpy_tbl.obj (.text)
+                  00001cf8    00000036                                   : ull_tofs_t2.obj (.text)
+                  00001d2e    00000002                                   : startup.obj (.text)
+                  00001d30    00000030                                   : new_.obj (.text)
+                  00001d60    0000001e                                   : ll_lsr_t2.obj (.text)
+                  00001d7e    0000001c     uart.obj (.text:_ZN7Buffers10BaseBufferC1EPhi)
+                  00001d9a    00000002     --HOLE-- [fill = 0]
+                  00001d9c    00000018     PCA9685.obj (.text:_ZN5ServoC1Ev)
+                  00001db4    00000018     rtsv7M4_T_le_v4SPD16_eabi.lib : args_main.obj (.text)
+                  00001dcc    00000014     uart.obj (.text:_ZN7Buffers13RollingBuffer7IsEmptyEv)
+                  00001de0    00000014     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.text)
+                  00001df4    0000000e     uart.obj (.text:_ZN7Buffers10AutoBufferILi300EE7GetSizeEv)
+                  00001e02    0000000e     main.obj (.text:_ZN7Buffers10BaseBuffer7GetDataEv)
+                  00001e10    0000000e     uart.obj (.text:_ZN7Buffers10BaseBuffer7GetSizeEv)
+                  00001e1e    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.obj (.text:decompress:none)
+                  00001e2c    0000000e     startup_msp432p401r_ccs.obj (.text)
+                  00001e3a    0000000c     PCA9685.obj (.text:_ZN5ServoC2Ev)
+                  00001e46    0000000c     uart.obj (.text:_ZN7Buffers10AutoBufferILi300EE7GetDataEv)
+                  00001e52    0000000c     uart.obj (.text:_ZN7Buffers10AutoBufferILi300EEC1Ev)
+                  00001e5e    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_zero_init.obj (.text:decompress:ZI)
+                  00001e6a    00000008                                   : delete.obj (.text)
+                  00001e72    00000006                                   : pure_virt.obj (.text)
+                  00001e78    00000004                                   : error.obj (.text)
+                  00001e7c    00000004                                   : pre_init.obj (.text)
 
-.const     0    00001d58    000001db     
-                  00001d58    00000028     rtsv7M4_T_le_v4SPD16_eabi.lib : typeinfo_.obj (.const:.typeinfo:_ZTSN10__cxxabiv123__fundamental_type_infoE)
-                  00001d80    00000025                                   : typeinfo_.obj (.const:.typeinfo:_ZTSN10__cxxabiv120__si_class_type_infoE)
-                  00001da5    00000024                                   : typeinfo_.obj (.const:.typeinfo:_ZTSN10__cxxabiv119__pointer_type_infoE)
-                  00001dc9    00000022                                   : typeinfo_.obj (.const:.typeinfo:_ZTSN10__cxxabiv117__class_type_infoE)
-                  00001deb    00000022                                   : typeinfo_.obj (.const:.typeinfo:_ZTSN10__cxxabiv117__pbase_type_infoE)
-                  00001e0d    00000002                                   : typeinfo_.obj (.const:.typeinfo:_ZTSe)
-                  00001e0f    00000001     --HOLE-- [fill = 0]
-                  00001e10    00000018     Shared.lib : TimerPWM_Servo.obj (.const:_ZTV20InternalServoControl)
-                  00001e28    00000018                : TimerPWM_Servo.obj (.const:_ZTV5Servo)
-                  00001e40    00000017                : TimerPWM_Servo.obj (.const:.typeinfo:_ZTS20InternalServoControl)
-                  00001e57    00000001     --HOLE-- [fill = 0]
-                  00001e58    00000010     rtsv7M4_T_le_v4SPD16_eabi.lib : typeinfo_.obj (.const:.typeinfo:_ZTIPKe)
-                  00001e68    00000010                                   : typeinfo_.obj (.const:_ZTVN10__cxxabiv117__class_type_infoE)
-                  00001e78    00000010                                   : typeinfo_.obj (.const:_ZTVN10__cxxabiv119__pointer_type_infoE)
-                  00001e88    00000010                                   : typeinfo_.obj (.const:_ZTVN10__cxxabiv120__si_class_type_infoE)
-                  00001e98    00000010                                   : typeinfo_.obj (.const:_ZTVN10__cxxabiv123__fundamental_type_infoE)
-                  00001ea8    0000000d                                   : typeinfo_.obj (.const:.typeinfo:_ZTSSt9type_info)
-                  00001eb5    00000003     --HOLE-- [fill = 0]
-                  00001eb8    0000000c     Shared.lib : TimerPWM_Servo.obj (.const:.typeinfo:_ZTI20InternalServoControl)
-                  00001ec4    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : typeinfo_.obj (.const:.typeinfo:_ZTIN10__cxxabiv117__class_type_infoE)
-                  00001ed0    0000000c                                   : typeinfo_.obj (.const:.typeinfo:_ZTIN10__cxxabiv117__pbase_type_infoE)
-                  00001edc    0000000c                                   : typeinfo_.obj (.const:.typeinfo:_ZTIN10__cxxabiv119__pointer_type_infoE)
-                  00001ee8    0000000c                                   : typeinfo_.obj (.const:.typeinfo:_ZTIN10__cxxabiv120__si_class_type_infoE)
-                  00001ef4    0000000c                                   : typeinfo_.obj (.const:.typeinfo:_ZTIN10__cxxabiv123__fundamental_type_infoE)
-                  00001f00    00000008     main.obj (.const:$P$T47$1)
-                  00001f08    00000008     main.obj (.const:$P$T48$2)
-                  00001f10    00000008     Shared.lib : TimerPWM_Servo.obj (.const:.typeinfo:_ZTI5Servo)
-                  00001f18    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : typeinfo_.obj (.const:.typeinfo:_ZTISt9type_info)
-                  00001f20    00000008                                   : typeinfo_.obj (.const:.typeinfo:_ZTIe)
-                  00001f28    00000007     Shared.lib : TimerPWM_Servo.obj (.const:.typeinfo:_ZTS5Servo)
-                  00001f2f    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : typeinfo_.obj (.const:.typeinfo:_ZTSPKe)
+.const     0    00001e80    000001db     
+                  00001e80    00000028     rtsv7M4_T_le_v4SPD16_eabi.lib : typeinfo_.obj (.const:.typeinfo:_ZTSN10__cxxabiv123__fundamental_type_infoE)
+                  00001ea8    00000025                                   : typeinfo_.obj (.const:.typeinfo:_ZTSN10__cxxabiv120__si_class_type_infoE)
+                  00001ecd    00000024                                   : typeinfo_.obj (.const:.typeinfo:_ZTSN10__cxxabiv119__pointer_type_infoE)
+                  00001ef1    00000022                                   : typeinfo_.obj (.const:.typeinfo:_ZTSN10__cxxabiv117__class_type_infoE)
+                  00001f13    00000022                                   : typeinfo_.obj (.const:.typeinfo:_ZTSN10__cxxabiv117__pbase_type_infoE)
+                  00001f35    00000002                                   : typeinfo_.obj (.const:.typeinfo:_ZTSe)
+                  00001f37    00000001     --HOLE-- [fill = 0]
+                  00001f38    00000018     TimerPWM_Servo.obj (.const:_ZTV20InternalServoControl)
+                  00001f50    00000018     PCA9685.obj (.const:_ZTV5Servo)
+                  00001f68    00000017     TimerPWM_Servo.obj (.const:.typeinfo:_ZTS20InternalServoControl)
+                  00001f7f    00000001     --HOLE-- [fill = 0]
+                  00001f80    00000010     rtsv7M4_T_le_v4SPD16_eabi.lib : typeinfo_.obj (.const:.typeinfo:_ZTIPKe)
+                  00001f90    00000010                                   : typeinfo_.obj (.const:_ZTVN10__cxxabiv117__class_type_infoE)
+                  00001fa0    00000010                                   : typeinfo_.obj (.const:_ZTVN10__cxxabiv119__pointer_type_infoE)
+                  00001fb0    00000010                                   : typeinfo_.obj (.const:_ZTVN10__cxxabiv120__si_class_type_infoE)
+                  00001fc0    00000010                                   : typeinfo_.obj (.const:_ZTVN10__cxxabiv123__fundamental_type_infoE)
+                  00001fd0    0000000d                                   : typeinfo_.obj (.const:.typeinfo:_ZTSSt9type_info)
+                  00001fdd    00000003     --HOLE-- [fill = 0]
+                  00001fe0    0000000c     TimerPWM_Servo.obj (.const:.typeinfo:_ZTI20InternalServoControl)
+                  00001fec    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : typeinfo_.obj (.const:.typeinfo:_ZTIN10__cxxabiv117__class_type_infoE)
+                  00001ff8    0000000c                                   : typeinfo_.obj (.const:.typeinfo:_ZTIN10__cxxabiv117__pbase_type_infoE)
+                  00002004    0000000c                                   : typeinfo_.obj (.const:.typeinfo:_ZTIN10__cxxabiv119__pointer_type_infoE)
+                  00002010    0000000c                                   : typeinfo_.obj (.const:.typeinfo:_ZTIN10__cxxabiv120__si_class_type_infoE)
+                  0000201c    0000000c                                   : typeinfo_.obj (.const:.typeinfo:_ZTIN10__cxxabiv123__fundamental_type_infoE)
+                  00002028    00000008     main.obj (.const:$P$T47$1)
+                  00002030    00000008     main.obj (.const:$P$T48$2)
+                  00002038    00000008     PCA9685.obj (.const:.typeinfo:_ZTI5Servo)
+                  00002040    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : typeinfo_.obj (.const:.typeinfo:_ZTISt9type_info)
+                  00002048    00000008                                   : typeinfo_.obj (.const:.typeinfo:_ZTIe)
+                  00002050    00000007     PCA9685.obj (.const:.typeinfo:_ZTS5Servo)
+                  00002057    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : typeinfo_.obj (.const:.typeinfo:_ZTSPKe)
 
 .init_array 
-*          0    00001f34    00000008     
-                  00001f34    00000004     Shared.lib : timer.obj (.init_array)
-                  00001f38    00000004                : uart.obj (.init_array)
+*          0    0000205c    00000008     
+                  0000205c    00000004     timer.obj (.init_array)
+                  00002060    00000004     uart.obj (.init_array)
 
-.cinit     0    00001f40    00000048     
-                  00001f40    0000001e     (.cinit..data.load) [load image, compression = lzss]
-                  00001f5e    00000002     --HOLE-- [fill = 0]
-                  00001f60    0000000c     (__TI_handler_table)
-                  00001f6c    00000004     --HOLE-- [fill = 0]
-                  00001f70    00000008     (.cinit..bss.load) [load image, compression = zero_init]
-                  00001f78    00000010     (__TI_cinit_table)
+.cinit     0    00002068    00000048     
+                  00002068    0000001e     (.cinit..data.load) [load image, compression = lzss]
+                  00002086    00000002     --HOLE-- [fill = 0]
+                  00002088    0000000c     (__TI_handler_table)
+                  00002094    00000004     --HOLE-- [fill = 0]
+                  00002098    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  000020a0    00000010     (__TI_cinit_table)
 
-.bss       0    20000000    00000864     UNINITIALIZED
-                  20000000    0000012c     Shared.lib : uart.obj (.bss:_ZN12Peripherials8A1_rawRxE)
-                  2000012c    0000012c                : uart.obj (.bss:_ZN12Peripherials8A1_rawTxE)
-                  20000258    0000012c                : uart.obj (.bss:_ZN12Peripherials8A2_rawRxE)
-                  20000384    0000012c                : uart.obj (.bss:_ZN12Peripherials8A2_rawTxE)
-                  200004b0    0000012c                : uart.obj (.bss:_ZN12Peripherials8A3_rawRxE)
-                  200005dc    0000012c                : uart.obj (.bss:_ZN12Peripherials8A3_rawTxE)
-                  20000708    00000024                : uart.obj (.bss:_ZN12Peripherials7UART_A1E)
-                  2000072c    00000024                : uart.obj (.bss:_ZN12Peripherials7UART_A2E)
-                  20000750    00000024                : uart.obj (.bss:_ZN12Peripherials7UART_A3E)
-                  20000774    00000020                : timer.obj (.bss:_ZN12Peripherials3TA0E)
-                  20000794    00000020                : timer.obj (.bss:_ZN12Peripherials3TA1E)
-                  200007b4    00000020                : timer.obj (.bss:_ZN12Peripherials3TA2E)
-                  200007d4    00000020                : timer.obj (.bss:_ZN12Peripherials3TA3E)
-                  200007f4    00000014                : uart.obj (.bss:_ZN12Peripherials10A1_txQueueE)
-                  20000808    00000014                : uart.obj (.bss:_ZN12Peripherials10A2_txQueueE)
-                  2000081c    00000014                : uart.obj (.bss:_ZN12Peripherials10A3_txQueueE)
-                  20000830    00000008                : uart.obj (.bss:_ZN12Peripherials11A1_rxBufferE)
-                  20000838    00000008                : uart.obj (.bss:_ZN12Peripherials11A1_txBufferE)
-                  20000840    00000008                : uart.obj (.bss:_ZN12Peripherials11A2_rxBufferE)
-                  20000848    00000008                : uart.obj (.bss:_ZN12Peripherials11A2_txBufferE)
-                  20000850    00000008                : uart.obj (.bss:_ZN12Peripherials11A3_rxBufferE)
-                  20000858    00000008                : uart.obj (.bss:_ZN12Peripherials11A3_txBufferE)
-                  20000860    00000004     (.common:_ZSt16__dummy_typeinfo)
+.bss       0    20000000    00000874     UNINITIALIZED
+                  20000000    0000012c     uart.obj (.bss:_ZN12Peripherials8A1_rawRxE)
+                  2000012c    0000012c     uart.obj (.bss:_ZN12Peripherials8A1_rawTxE)
+                  20000258    0000012c     uart.obj (.bss:_ZN12Peripherials8A2_rawRxE)
+                  20000384    0000012c     uart.obj (.bss:_ZN12Peripherials8A2_rawTxE)
+                  200004b0    0000012c     uart.obj (.bss:_ZN12Peripherials8A3_rawRxE)
+                  200005dc    0000012c     uart.obj (.bss:_ZN12Peripherials8A3_rawTxE)
+                  20000708    00000024     timer.obj (.bss:_ZN12Peripherials3TA0E)
+                  2000072c    00000024     timer.obj (.bss:_ZN12Peripherials3TA1E)
+                  20000750    00000024     timer.obj (.bss:_ZN12Peripherials3TA2E)
+                  20000774    00000024     timer.obj (.bss:_ZN12Peripherials3TA3E)
+                  20000798    00000024     uart.obj (.bss:_ZN12Peripherials7UART_A1E)
+                  200007bc    00000024     uart.obj (.bss:_ZN12Peripherials7UART_A2E)
+                  200007e0    00000024     uart.obj (.bss:_ZN12Peripherials7UART_A3E)
+                  20000804    00000014     uart.obj (.bss:_ZN12Peripherials10A1_txQueueE)
+                  20000818    00000014     uart.obj (.bss:_ZN12Peripherials10A2_txQueueE)
+                  2000082c    00000014     uart.obj (.bss:_ZN12Peripherials10A3_txQueueE)
+                  20000840    00000008     uart.obj (.bss:_ZN12Peripherials11A1_rxBufferE)
+                  20000848    00000008     uart.obj (.bss:_ZN12Peripherials11A1_txBufferE)
+                  20000850    00000008     uart.obj (.bss:_ZN12Peripherials11A2_rxBufferE)
+                  20000858    00000008     uart.obj (.bss:_ZN12Peripherials11A2_txBufferE)
+                  20000860    00000008     uart.obj (.bss:_ZN12Peripherials11A3_rxBufferE)
+                  20000868    00000008     uart.obj (.bss:_ZN12Peripherials11A3_txBufferE)
+                  20000870    00000004     (.common:_ZSt16__dummy_typeinfo)
 
-.sysmem    0    20000868    00000400     UNINITIALIZED
-                  20000868    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : memory.obj (.sysmem)
-                  20000870    000003f8     --HOLE--
+.sysmem    0    20000878    00000400     UNINITIALIZED
+                  20000878    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : memory.obj (.sysmem)
+                  20000880    000003f8     --HOLE--
 
-.data      0    20000c68    0000002c     UNINITIALIZED
-                  20000c68    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : exit.obj (.data:$O1$$)
-                  20000c74    0000000c                                   : memory.obj (.data:$O1$$)
-                  20000c80    00000008                                   : _lock.obj (.data:$O1$$)
-                  20000c88    00000004                                   : stkdepth_vars.obj (.data)
-                  20000c8c    00000004                                   : vars.obj (.data)
-                  20000c90    00000004     system_msp432p401r.obj (.data)
+.data      0    20000c78    0000002c     UNINITIALIZED
+                  20000c78    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : exit.obj (.data:$O1$$)
+                  20000c84    0000000c                                   : memory.obj (.data:$O1$$)
+                  20000c90    00000008                                   : _lock.obj (.data:$O1$$)
+                  20000c98    00000004                                   : stkdepth_vars.obj (.data)
+                  20000c9c    00000004                                   : vars.obj (.data)
+                  20000ca0    00000004     system_msp432p401r.obj (.data)
 
 .stack     0    2000fe00    00000200     UNINITIALIZED
                   2000fe00    00000200     --HOLE--
@@ -181,11 +181,15 @@ MODULE SUMMARY
        Module                        code   ro data   rw data
        ------                        ----   -------   -------
     .\
+       uart.obj                      1324   4         4032   
+       timer.obj                     1720   4         288    
        system_msp432p401r.obj        812    0         8      
-       main.obj                      502    16        0      
+       main.obj                      726    16        0      
+       TimerPWM_Servo.obj            316    59        0      
        startup_msp432p401r_ccs.obj   14     228       0      
+       PCA9685.obj                   36     39        0      
     +--+-----------------------------+------+---------+---------+
-       Total:                        1328   244       8      
+       Total:                        4948   350       4328   
                                                              
     C:\TI\ccsv6\tools\compiler\ti-cgt-arm_16.6.0.STS\lib\rtsv7M4_T_le_v4SPD16_eabi.lib
        memory.obj                    976    0         24     
@@ -217,30 +221,23 @@ MODULE SUMMARY
     +--+-----------------------------+------+---------+---------+
        Total:                        2630   356       88     
                                                              
-    G:/Data/MAVRIC/MAVRIC_Firmware/FW2017/Shared/Debug/Shared.lib
-       uart.obj                      1324   4         4032   
-       timer.obj                     1648   4         256    
-       TimerPWM_Servo.obj            352    98        0      
-    +--+-----------------------------+------+---------+---------+
-       Total:                        3324   106       4288   
-                                                             
        Heap:                         0      0         2048   
        Stack:                        0      0         1024   
        Linker Generated:             0      66        0      
     +--+-----------------------------+------+---------+---------+
-       Grand Total:                  7282   772       7456   
+       Grand Total:                  7578   772       7488   
 
 
 LINKER GENERATED COPY TABLES
 
-__TI_cinit_table @ 00001f78 records: 2, size/record: 8, table size: 16
-	.data: load addr=00001f40, load size=0000001e bytes, run addr=20000c68, run size=0000002c bytes, compression=lzss
-	.bss: load addr=00001f70, load size=00000008 bytes, run addr=20000000, run size=00000864 bytes, compression=zero_init
+__TI_cinit_table @ 000020a0 records: 2, size/record: 8, table size: 16
+	.data: load addr=00002068, load size=0000001e bytes, run addr=20000c78, run size=0000002c bytes, compression=lzss
+	.bss: load addr=00002098, load size=00000008 bytes, run addr=20000000, run size=00000874 bytes, compression=zero_init
 
 
 LINKER GENERATED HANDLER TABLE
 
-__TI_handler_table @ 00001f60 records: 3, size/record: 4, table size: 12
+__TI_handler_table @ 00002088 records: 3, size/record: 4, table size: 12
 	index: 0, handler: __TI_decompress_lzss
 	index: 1, handler: __TI_decompress_none
 	index: 2, handler: __TI_zero_init
@@ -250,57 +247,57 @@ GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name
 
 address   name                                                                                                  
 -------   ----                                                                                                  
-00001d11  ADC14_IRQHandler                                                                                      
-00001d11  AES256_IRQHandler                                                                                     
-00001d11  BusFault_Handler                                                                                      
-00001a95  C$$EXIT                                                                                               
-00001d11  COMP_E0_IRQHandler                                                                                    
-00001d11  COMP_E1_IRQHandler                                                                                    
-00001d11  CS_IRQHandler                                                                                         
-00001d11  DMA_ERR_IRQHandler                                                                                    
-00001d11  DMA_INT0_IRQHandler                                                                                   
-00001d11  DMA_INT1_IRQHandler                                                                                   
-00001d11  DMA_INT2_IRQHandler                                                                                   
-00001d11  DMA_INT3_IRQHandler                                                                                   
-00001d11  DebugMon_Handler                                                                                      
-00001d11  Default_Handler                                                                                       
-00001d11  EUSCIA0_IRQHandler                                                                                    
-00000755  EUSCIA1_IRQHandler                                                                                    
-00000755  EUSCIA1_IRQHandler                                                                                    
-0000075f  EUSCIA2_IRQHandler                                                                                    
-0000075f  EUSCIA2_IRQHandler                                                                                    
-00000769  EUSCIA3_IRQHandler                                                                                    
-00000769  EUSCIA3_IRQHandler                                                                                    
-00001d11  EUSCIB0_IRQHandler                                                                                    
-00001d11  EUSCIB1_IRQHandler                                                                                    
-00001d11  EUSCIB2_IRQHandler                                                                                    
-00001d11  EUSCIB3_IRQHandler                                                                                    
-00001d11  FLCTL_IRQHandler                                                                                      
-00001d11  FPU_IRQHandler                                                                                        
-00001d11  HardFault_Handler                                                                                     
-00001d11  MemManage_Handler                                                                                     
-00001d11  NMI_Handler                                                                                           
-00001d11  PCM_IRQHandler                                                                                        
-00001d11  PORT1_IRQHandler                                                                                      
-00001d11  PORT2_IRQHandler                                                                                      
-00001d11  PORT3_IRQHandler                                                                                      
-00001d11  PORT4_IRQHandler                                                                                      
-00001d11  PORT5_IRQHandler                                                                                      
-00001d11  PORT6_IRQHandler                                                                                      
-00001d11  PSS_IRQHandler                                                                                        
-00001d11  PendSV_Handler                                                                                        
-00001d11  RTC_C_IRQHandler                                                                                      
-00001d05  Reset_Handler                                                                                         
-00001f34  SHT$$INIT_ARRAY$$Base                                                                                 
-00001f3c  SHT$$INIT_ARRAY$$Limit                                                                                
-00001d11  SVC_Handler                                                                                           
-00001d11  SysTick_Handler                                                                                       
-20000c90  SystemCoreClock                                                                                       
-00000efd  SystemCoreClockUpdate                                                                                 
-00001171  SystemInit                                                                                            
-00001d11  T32_INT1_IRQHandler                                                                                   
-00001d11  T32_INT2_IRQHandler                                                                                   
-00001d11  T32_INTC_IRQHandler                                                                                   
+00001e39  ADC14_IRQHandler                                                                                      
+00001e39  AES256_IRQHandler                                                                                     
+00001e39  BusFault_Handler                                                                                      
+00001bbd  C$$EXIT                                                                                               
+00001e39  COMP_E0_IRQHandler                                                                                    
+00001e39  COMP_E1_IRQHandler                                                                                    
+00001e39  CS_IRQHandler                                                                                         
+00001e39  DMA_ERR_IRQHandler                                                                                    
+00001e39  DMA_INT0_IRQHandler                                                                                   
+00001e39  DMA_INT1_IRQHandler                                                                                   
+00001e39  DMA_INT2_IRQHandler                                                                                   
+00001e39  DMA_INT3_IRQHandler                                                                                   
+00001e39  DebugMon_Handler                                                                                      
+00001e39  Default_Handler                                                                                       
+00001e39  EUSCIA0_IRQHandler                                                                                    
+0000079d  EUSCIA1_IRQHandler                                                                                    
+0000079d  EUSCIA1_IRQHandler                                                                                    
+000007a7  EUSCIA2_IRQHandler                                                                                    
+000007a7  EUSCIA2_IRQHandler                                                                                    
+000007b1  EUSCIA3_IRQHandler                                                                                    
+000007b1  EUSCIA3_IRQHandler                                                                                    
+00001e39  EUSCIB0_IRQHandler                                                                                    
+00001e39  EUSCIB1_IRQHandler                                                                                    
+00001e39  EUSCIB2_IRQHandler                                                                                    
+00001e39  EUSCIB3_IRQHandler                                                                                    
+00001e39  FLCTL_IRQHandler                                                                                      
+00001e39  FPU_IRQHandler                                                                                        
+00001e39  HardFault_Handler                                                                                     
+00001e39  MemManage_Handler                                                                                     
+00001e39  NMI_Handler                                                                                           
+00001e39  PCM_IRQHandler                                                                                        
+00001e39  PORT1_IRQHandler                                                                                      
+00001e39  PORT2_IRQHandler                                                                                      
+00001e39  PORT3_IRQHandler                                                                                      
+00001e39  PORT4_IRQHandler                                                                                      
+00001e39  PORT5_IRQHandler                                                                                      
+00001e39  PORT6_IRQHandler                                                                                      
+00001e39  PSS_IRQHandler                                                                                        
+00001e39  PendSV_Handler                                                                                        
+00001e39  RTC_C_IRQHandler                                                                                      
+00001e2d  Reset_Handler                                                                                         
+0000205c  SHT$$INIT_ARRAY$$Base                                                                                 
+00002064  SHT$$INIT_ARRAY$$Limit                                                                                
+00001e39  SVC_Handler                                                                                           
+00001e39  SysTick_Handler                                                                                       
+20000ca0  SystemCoreClock                                                                                       
+00000f45  SystemCoreClockUpdate                                                                                 
+000011b9  SystemInit                                                                                            
+00001e39  T32_INT1_IRQHandler                                                                                   
+00001e39  T32_INT2_IRQHandler                                                                                   
+00001e39  T32_INTC_IRQHandler                                                                                   
 00000109  TA0_0_IRQHandler                                                                                      
 00000109  TA0_0_IRQHandler                                                                                      
 00000113  TA0_N_IRQHandler                                                                                      
@@ -317,203 +314,205 @@ address   name
 00000145  TA3_0_IRQHandler                                                                                      
 0000014f  TA3_N_IRQHandler                                                                                      
 0000014f  TA3_N_IRQHandler                                                                                      
-00001d11  UsageFault_Handler                                                                                    
+00001e39  UsageFault_Handler                                                                                    
 4000480c  WDTCTL_SYM                                                                                            
-00001d11  WDT_A_IRQHandler                                                                                      
-00001a3f  _Z21__default_new_handlerv                                                                            
-000017ed  _ZN10__cxxabiv116__enum_type_infoD0Ev                                                                 
-000017eb  _ZN10__cxxabiv116__enum_type_infoD1Ev                                                                 
-000017eb  _ZN10__cxxabiv116__enum_type_infoD2Ev                                                                 
-000017e3  _ZN10__cxxabiv117__array_type_infoD0Ev                                                                
-000017e1  _ZN10__cxxabiv117__array_type_infoD1Ev                                                                
-000017e1  _ZN10__cxxabiv117__array_type_infoD2Ev                                                                
-000017d9  _ZN10__cxxabiv117__class_type_infoD0Ev                                                                
-000017d7  _ZN10__cxxabiv117__class_type_infoD1Ev                                                                
-000017d7  _ZN10__cxxabiv117__class_type_infoD2Ev                                                                
-000017cf  _ZN10__cxxabiv117__pbase_type_infoD0Ev                                                                
-000017cd  _ZN10__cxxabiv117__pbase_type_infoD1Ev                                                                
-000017cd  _ZN10__cxxabiv117__pbase_type_infoD2Ev                                                                
-000017c5  _ZN10__cxxabiv119__pointer_type_infoD0Ev                                                              
-000017c3  _ZN10__cxxabiv119__pointer_type_infoD1Ev                                                              
-000017c3  _ZN10__cxxabiv119__pointer_type_infoD2Ev                                                              
-000017bb  _ZN10__cxxabiv120__function_type_infoD0Ev                                                             
-000017b9  _ZN10__cxxabiv120__function_type_infoD1Ev                                                             
-000017b9  _ZN10__cxxabiv120__function_type_infoD2Ev                                                             
-000017b1  _ZN10__cxxabiv120__si_class_type_infoD0Ev                                                             
-000017af  _ZN10__cxxabiv120__si_class_type_infoD1Ev                                                             
-000017af  _ZN10__cxxabiv120__si_class_type_infoD2Ev                                                             
-000017a7  _ZN10__cxxabiv121__vmi_class_type_infoD0Ev                                                            
-000017a5  _ZN10__cxxabiv121__vmi_class_type_infoD1Ev                                                            
-000017a5  _ZN10__cxxabiv121__vmi_class_type_infoD2Ev                                                            
-0000179d  _ZN10__cxxabiv123__fundamental_type_infoD0Ev                                                          
-0000179b  _ZN10__cxxabiv123__fundamental_type_infoD1Ev                                                          
-0000179b  _ZN10__cxxabiv123__fundamental_type_infoD2Ev                                                          
-00001793  _ZN10__cxxabiv129__pointer_to_member_type_infoD0Ev                                                    
-00001791  _ZN10__cxxabiv129__pointer_to_member_type_infoD1Ev                                                    
-00001791  _ZN10__cxxabiv129__pointer_to_member_type_infoD2Ev                                                    
-200007f4  _ZN12Peripherials10A1_txQueueE                                                                        
-20000808  _ZN12Peripherials10A2_txQueueE                                                                        
-2000081c  _ZN12Peripherials10A3_txQueueE                                                                        
-20000830  _ZN12Peripherials11A1_rxBufferE                                                                       
-20000838  _ZN12Peripherials11A1_txBufferE                                                                       
-20000840  _ZN12Peripherials11A2_rxBufferE                                                                       
-20000848  _ZN12Peripherials11A2_txBufferE                                                                       
-20000850  _ZN12Peripherials11A3_rxBufferE                                                                       
-20000858  _ZN12Peripherials11A3_txBufferE                                                                       
-20000774  _ZN12Peripherials3TA0E                                                                                
-20000794  _ZN12Peripherials3TA1E                                                                                
-200007b4  _ZN12Peripherials3TA2E                                                                                
-200007d4  _ZN12Peripherials3TA3E                                                                                
-000008b5  _ZN12Peripherials4UART11ClearBufferEv                                                                 
-000008d3  _ZN12Peripherials4UART11OnInterruptEv                                                                 
-000008c5  _ZN12Peripherials4UART15GetBufferLengthEv                                                             
-00000873  _ZN12Peripherials4UART4SendEPc                                                                        
-00000851  _ZN12Peripherials4UART4SendEc                                                                         
-000008a1  _ZN12Peripherials4UART9GetBufferEv                                                                    
-00000773  _ZN12Peripherials4UARTC1ER12EUSCI_A_TypeiN7Buffers13RollingBufferENS3_10BaseBufferEb                  
-00000773  _ZN12Peripherials4UARTC2ER12EUSCI_A_TypeiN7Buffers13RollingBufferENS3_10BaseBufferEb                  
-00000555  _ZN12Peripherials5Timer10DisablePWMENS_15TimerCapComUnitE                                             
-000005f5  _ZN12Peripherials5Timer15AttachInterruptENS_15TimerCapComUnitEPFvvE                                   
-000005b9  _ZN12Peripherials5Timer23AttachOverflowInterruptEPFvvE                                                
-00000485  _ZN12Peripherials5Timer6SetPWMENS_15TimerCapComUnitEf                                                 
-00000511  _ZN12Peripherials5Timer6SetPWMENS_15TimerCapComUnitEt                                                 
-000002f9  _ZN12Peripherials5Timer8StartPWMENS_15TimerCapComUnitEf                                               
-00000411  _ZN12Peripherials5Timer8StartPWMENS_15TimerCapComUnitEt                                               
-00000587  _ZN12Peripherials5Timer9EnablePWMENS_15TimerCapComUnitE                                               
-00000237  _ZN12Peripherials5Timer9SetPeriodEf                                                                   
-000001eb  _ZN12Peripherials5Timer9SetPeriodEt                                                                   
-00000665  _ZN12Peripherials5Timer9_CCR0_ISREv                                                                   
-000006c5  _ZN12Peripherials5Timer9_CCRn_ISREv                                                                   
+00001e39  WDT_A_IRQHandler                                                                                      
+00001b67  _Z21__default_new_handlerv                                                                            
+00001295  _Z4rampih                                                                                             
+00001915  _ZN10__cxxabiv116__enum_type_infoD0Ev                                                                 
+00001913  _ZN10__cxxabiv116__enum_type_infoD1Ev                                                                 
+00001913  _ZN10__cxxabiv116__enum_type_infoD2Ev                                                                 
+0000190b  _ZN10__cxxabiv117__array_type_infoD0Ev                                                                
+00001909  _ZN10__cxxabiv117__array_type_infoD1Ev                                                                
+00001909  _ZN10__cxxabiv117__array_type_infoD2Ev                                                                
+00001901  _ZN10__cxxabiv117__class_type_infoD0Ev                                                                
+000018ff  _ZN10__cxxabiv117__class_type_infoD1Ev                                                                
+000018ff  _ZN10__cxxabiv117__class_type_infoD2Ev                                                                
+000018f7  _ZN10__cxxabiv117__pbase_type_infoD0Ev                                                                
+000018f5  _ZN10__cxxabiv117__pbase_type_infoD1Ev                                                                
+000018f5  _ZN10__cxxabiv117__pbase_type_infoD2Ev                                                                
+000018ed  _ZN10__cxxabiv119__pointer_type_infoD0Ev                                                              
+000018eb  _ZN10__cxxabiv119__pointer_type_infoD1Ev                                                              
+000018eb  _ZN10__cxxabiv119__pointer_type_infoD2Ev                                                              
+000018e3  _ZN10__cxxabiv120__function_type_infoD0Ev                                                             
+000018e1  _ZN10__cxxabiv120__function_type_infoD1Ev                                                             
+000018e1  _ZN10__cxxabiv120__function_type_infoD2Ev                                                             
+000018d9  _ZN10__cxxabiv120__si_class_type_infoD0Ev                                                             
+000018d7  _ZN10__cxxabiv120__si_class_type_infoD1Ev                                                             
+000018d7  _ZN10__cxxabiv120__si_class_type_infoD2Ev                                                             
+000018cf  _ZN10__cxxabiv121__vmi_class_type_infoD0Ev                                                            
+000018cd  _ZN10__cxxabiv121__vmi_class_type_infoD1Ev                                                            
+000018cd  _ZN10__cxxabiv121__vmi_class_type_infoD2Ev                                                            
+000018c5  _ZN10__cxxabiv123__fundamental_type_infoD0Ev                                                          
+000018c3  _ZN10__cxxabiv123__fundamental_type_infoD1Ev                                                          
+000018c3  _ZN10__cxxabiv123__fundamental_type_infoD2Ev                                                          
+000018bb  _ZN10__cxxabiv129__pointer_to_member_type_infoD0Ev                                                    
+000018b9  _ZN10__cxxabiv129__pointer_to_member_type_infoD1Ev                                                    
+000018b9  _ZN10__cxxabiv129__pointer_to_member_type_infoD2Ev                                                    
+20000804  _ZN12Peripherials10A1_txQueueE                                                                        
+20000818  _ZN12Peripherials10A2_txQueueE                                                                        
+2000082c  _ZN12Peripherials10A3_txQueueE                                                                        
+20000840  _ZN12Peripherials11A1_rxBufferE                                                                       
+20000848  _ZN12Peripherials11A1_txBufferE                                                                       
+20000850  _ZN12Peripherials11A2_rxBufferE                                                                       
+20000858  _ZN12Peripherials11A2_txBufferE                                                                       
+20000860  _ZN12Peripherials11A3_rxBufferE                                                                       
+20000868  _ZN12Peripherials11A3_txBufferE                                                                       
+20000708  _ZN12Peripherials3TA0E                                                                                
+2000072c  _ZN12Peripherials3TA1E                                                                                
+20000750  _ZN12Peripherials3TA2E                                                                                
+20000774  _ZN12Peripherials3TA3E                                                                                
+000008fd  _ZN12Peripherials4UART11ClearBufferEv                                                                 
+0000091b  _ZN12Peripherials4UART11OnInterruptEv                                                                 
+0000090d  _ZN12Peripherials4UART15GetBufferLengthEv                                                             
+000008bb  _ZN12Peripherials4UART4SendEPc                                                                        
+00000899  _ZN12Peripherials4UART4SendEc                                                                         
+000008e9  _ZN12Peripherials4UART9GetBufferEv                                                                    
+000007bb  _ZN12Peripherials4UARTC1ER12EUSCI_A_TypeiN7Buffers13RollingBufferENS3_10BaseBufferEb                  
+000007bb  _ZN12Peripherials4UARTC2ER12EUSCI_A_TypeiN7Buffers13RollingBufferENS3_10BaseBufferEb                  
+00000569  _ZN12Peripherials5Timer10DisablePWMENS_15TimerCapComUnitE                                             
+0000060d  _ZN12Peripherials5Timer15AttachInterruptENS_15TimerCapComUnitEPFvvE                                   
+0000067d  _ZN12Peripherials5Timer16GetOverflowCountEv                                                           
+000005d1  _ZN12Peripherials5Timer23AttachOverflowInterruptEPFvvE                                                
+00000499  _ZN12Peripherials5Timer6SetPWMENS_15TimerCapComUnitEf                                                 
+00000525  _ZN12Peripherials5Timer6SetPWMENS_15TimerCapComUnitEt                                                 
+00000311  _ZN12Peripherials5Timer8StartPWMENS_15TimerCapComUnitEf                                               
+00000425  _ZN12Peripherials5Timer8StartPWMENS_15TimerCapComUnitEt                                               
+0000059b  _ZN12Peripherials5Timer9EnablePWMENS_15TimerCapComUnitE                                               
+00000249  _ZN12Peripherials5Timer9SetPeriodEf                                                                   
+000001fd  _ZN12Peripherials5Timer9SetPeriodEt                                                                   
+0000068b  _ZN12Peripherials5Timer9_CCR0_ISREv                                                                   
+000006f3  _ZN12Peripherials5Timer9_CCRn_ISREv                                                                   
 00000159  _ZN12Peripherials5TimerC1EP12Timer_A_TypeNS_16TimerClockSourceE                                       
 00000159  _ZN12Peripherials5TimerC2EP12Timer_A_TypeNS_16TimerClockSourceE                                       
-20000708  _ZN12Peripherials7UART_A1E                                                                            
-2000072c  _ZN12Peripherials7UART_A2E                                                                            
-20000750  _ZN12Peripherials7UART_A3E                                                                            
+20000798  _ZN12Peripherials7UART_A1E                                                                            
+200007bc  _ZN12Peripherials7UART_A2E                                                                            
+200007e0  _ZN12Peripherials7UART_A3E                                                                            
 20000000  _ZN12Peripherials8A1_rawRxE                                                                           
 2000012c  _ZN12Peripherials8A1_rawTxE                                                                           
 20000258  _ZN12Peripherials8A2_rawRxE                                                                           
 20000384  _ZN12Peripherials8A2_rawTxE                                                                           
 200004b0  _ZN12Peripherials8A3_rawRxE                                                                           
 200005dc  _ZN12Peripherials8A3_rawTxE                                                                           
-0000170f  _ZN20InternalServoControl6CenterEv                                                                    
-00001695  _ZN20InternalServoControl6ResumeEv                                                                    
-00001683  _ZN20InternalServoControl7SuspendEv                                                                   
-000016a7  _ZN20InternalServoControl9GoToAngleEf                                                                 
-00001605  _ZN20InternalServoControlC1ERN12Peripherials5TimerENS0_15TimerCapComUnitE24internal_servo_cal_pointS4_
-00001605  _ZN20InternalServoControlC2ERN12Peripherials5TimerENS0_15TimerCapComUnitE24internal_servo_cal_pointS4_
-00001c75  _ZN5ServoC1Ev                                                                                         
-00001d13  _ZN5ServoC2Ev                                                                                         
-00001d1f  _ZN7Buffers10AutoBufferILi300EE7GetDataEv                                                             
-00001ccd  _ZN7Buffers10AutoBufferILi300EE7GetSizeEv                                                             
-00001d2b  _ZN7Buffers10AutoBufferILi300EEC1Ev                                                                   
-00001cdb  _ZN7Buffers10BaseBuffer7GetDataEv                                                                     
-00001ce9  _ZN7Buffers10BaseBuffer7GetSizeEv                                                                     
-00001c57  _ZN7Buffers10BaseBufferC1EPhi                                                                         
-00001ae9  _ZN7Buffers13RollingBuffer7DequeueEv                                                                  
-00001b37  _ZN7Buffers13RollingBuffer7EnqueueEh                                                                  
-00001ca5  _ZN7Buffers13RollingBuffer7IsEmptyEv                                                                  
-000019eb  _ZN7Buffers13RollingBufferC1ENS_10BaseBufferE                                                         
-00001753  _ZNKSt9type_info4nameEv                                                                               
-00001783  _ZNKSt9type_info6beforeERKS_                                                                          
-0000176d  _ZNKSt9type_infoeqERKS_                                                                               
-00001757  _ZNKSt9type_infoneERKS_                                                                               
-0000174b  _ZNSt9type_infoD0Ev                                                                                   
-00001749  _ZNSt9type_infoD1Ev                                                                                   
-00001749  _ZNSt9type_infoD2Ev                                                                                   
-20000860  _ZSt16__dummy_typeinfo                                                                                
-00001741  _ZSt21__gen_dummy_typeinfosv                                                                          
-00001eb8  _ZTI20InternalServoControl                                                                            
-00001f10  _ZTI5Servo                                                                                            
-00001ec4  _ZTIN10__cxxabiv117__class_type_infoE                                                                 
-00001ed0  _ZTIN10__cxxabiv117__pbase_type_infoE                                                                 
-00001edc  _ZTIN10__cxxabiv119__pointer_type_infoE                                                               
-00001ee8  _ZTIN10__cxxabiv120__si_class_type_infoE                                                              
-00001ef4  _ZTIN10__cxxabiv123__fundamental_type_infoE                                                           
-00001e58  _ZTIPKe                                                                                               
-00001f18  _ZTISt9type_info                                                                                      
-00001f20  _ZTIe                                                                                                 
-00001e40  _ZTS20InternalServoControl                                                                            
-00001f28  _ZTS5Servo                                                                                            
-00001dc9  _ZTSN10__cxxabiv117__class_type_infoE                                                                 
-00001deb  _ZTSN10__cxxabiv117__pbase_type_infoE                                                                 
-00001da5  _ZTSN10__cxxabiv119__pointer_type_infoE                                                               
-00001d80  _ZTSN10__cxxabiv120__si_class_type_infoE                                                              
-00001d58  _ZTSN10__cxxabiv123__fundamental_type_infoE                                                           
-00001f2f  _ZTSPKe                                                                                               
-00001ea8  _ZTSSt9type_info                                                                                      
-00001e0d  _ZTSe                                                                                                 
-00001e10  _ZTV20InternalServoControl                                                                            
-00001e28  _ZTV5Servo                                                                                            
-00001e68  _ZTVN10__cxxabiv117__class_type_infoE                                                                 
-00001e78  _ZTVN10__cxxabiv119__pointer_type_infoE                                                               
-00001e88  _ZTVN10__cxxabiv120__si_class_type_infoE                                                              
-00001e98  _ZTVN10__cxxabiv123__fundamental_type_infoE                                                           
-00001d43  _ZdlPv                                                                                                
-00001c09  _Znwj                                                                                                 
+000017cf  _ZN20InternalServoControl4GoToEf                                                                      
+00001837  _ZN20InternalServoControl6CenterEv                                                                    
+000017bd  _ZN20InternalServoControl6ResumeEv                                                                    
+000017ab  _ZN20InternalServoControl7SuspendEv                                                                   
+0000172d  _ZN20InternalServoControlC1ERN12Peripherials5TimerENS0_15TimerCapComUnitE24internal_servo_cal_pointS4_
+0000172d  _ZN20InternalServoControlC2ERN12Peripherials5TimerENS0_15TimerCapComUnitE24internal_servo_cal_pointS4_
+00001d9d  _ZN5ServoC1Ev                                                                                         
+00001e3b  _ZN5ServoC2Ev                                                                                         
+00001e47  _ZN7Buffers10AutoBufferILi300EE7GetDataEv                                                             
+00001df5  _ZN7Buffers10AutoBufferILi300EE7GetSizeEv                                                             
+00001e53  _ZN7Buffers10AutoBufferILi300EEC1Ev                                                                   
+00001e03  _ZN7Buffers10BaseBuffer7GetDataEv                                                                     
+00001e11  _ZN7Buffers10BaseBuffer7GetSizeEv                                                                     
+00001d7f  _ZN7Buffers10BaseBufferC1EPhi                                                                         
+00001c11  _ZN7Buffers13RollingBuffer7DequeueEv                                                                  
+00001c5f  _ZN7Buffers13RollingBuffer7EnqueueEh                                                                  
+00001dcd  _ZN7Buffers13RollingBuffer7IsEmptyEv                                                                  
+00001b13  _ZN7Buffers13RollingBufferC1ENS_10BaseBufferE                                                         
+0000187b  _ZNKSt9type_info4nameEv                                                                               
+000018ab  _ZNKSt9type_info6beforeERKS_                                                                          
+00001895  _ZNKSt9type_infoeqERKS_                                                                               
+0000187f  _ZNKSt9type_infoneERKS_                                                                               
+00001873  _ZNSt9type_infoD0Ev                                                                                   
+00001871  _ZNSt9type_infoD1Ev                                                                                   
+00001871  _ZNSt9type_infoD2Ev                                                                                   
+20000870  _ZSt16__dummy_typeinfo                                                                                
+00001869  _ZSt21__gen_dummy_typeinfosv                                                                          
+00001fe0  _ZTI20InternalServoControl                                                                            
+00002038  _ZTI5Servo                                                                                            
+00001fec  _ZTIN10__cxxabiv117__class_type_infoE                                                                 
+00001ff8  _ZTIN10__cxxabiv117__pbase_type_infoE                                                                 
+00002004  _ZTIN10__cxxabiv119__pointer_type_infoE                                                               
+00002010  _ZTIN10__cxxabiv120__si_class_type_infoE                                                              
+0000201c  _ZTIN10__cxxabiv123__fundamental_type_infoE                                                           
+00001f80  _ZTIPKe                                                                                               
+00002040  _ZTISt9type_info                                                                                      
+00002048  _ZTIe                                                                                                 
+00001f68  _ZTS20InternalServoControl                                                                            
+00002050  _ZTS5Servo                                                                                            
+00001ef1  _ZTSN10__cxxabiv117__class_type_infoE                                                                 
+00001f13  _ZTSN10__cxxabiv117__pbase_type_infoE                                                                 
+00001ecd  _ZTSN10__cxxabiv119__pointer_type_infoE                                                               
+00001ea8  _ZTSN10__cxxabiv120__si_class_type_infoE                                                              
+00001e80  _ZTSN10__cxxabiv123__fundamental_type_infoE                                                           
+00002057  _ZTSPKe                                                                                               
+00001fd0  _ZTSSt9type_info                                                                                      
+00001f35  _ZTSe                                                                                                 
+00001f38  _ZTV20InternalServoControl                                                                            
+00001f50  _ZTV5Servo                                                                                            
+00001f90  _ZTVN10__cxxabiv117__class_type_infoE                                                                 
+00001fa0  _ZTVN10__cxxabiv119__pointer_type_infoE                                                               
+00001fb0  _ZTVN10__cxxabiv120__si_class_type_infoE                                                              
+00001fc0  _ZTVN10__cxxabiv123__fundamental_type_infoE                                                           
+00001e6b  _ZdlPv                                                                                                
+00001d31  _Znwj                                                                                                 
 20010000  __STACK_END                                                                                           
 00000200  __STACK_SIZE                                                                                          
 00000400  __SYSMEM_SIZE                                                                                         
-00001f78  __TI_CINIT_Base                                                                                       
-00001f88  __TI_CINIT_Limit                                                                                      
-00001f60  __TI_Handler_Table_Base                                                                               
-00001f6c  __TI_Handler_Table_Limit                                                                              
-00001915  __TI_auto_init                                                                                        
-20000c68  __TI_cleanup_ptr                                                                                      
-00001985  __TI_decompress_lzss                                                                                  
-00001cf7  __TI_decompress_none                                                                                  
-20000c6c  __TI_dtors_ptr                                                                                        
-20000c70  __TI_enable_exit_profile_output                                                                       
+000020a0  __TI_CINIT_Base                                                                                       
+000020b0  __TI_CINIT_Limit                                                                                      
+00002088  __TI_Handler_Table_Base                                                                               
+00002094  __TI_Handler_Table_Limit                                                                              
+00001a3d  __TI_auto_init                                                                                        
+20000c78  __TI_cleanup_ptr                                                                                      
+00001aad  __TI_decompress_lzss                                                                                  
+00001e1f  __TI_decompress_none                                                                                  
+20000c7c  __TI_dtors_ptr                                                                                        
+20000c80  __TI_enable_exit_profile_output                                                                       
 ffffffff  __TI_pprof_out_hndl                                                                                   
 ffffffff  __TI_prof_data_size                                                                                   
 ffffffff  __TI_prof_data_start                                                                                  
 00000000  __TI_static_base__                                                                                    
-00001d37  __TI_zero_init                                                                                        
-00001d51  __abort_execution                                                                                     
-00001c39  __aeabi_llsr                                                                                          
-00001899  __aeabi_memclr                                                                                        
-00001899  __aeabi_memclr4                                                                                       
-00001899  __aeabi_memclr8                                                                                       
-000017fd  __aeabi_memcpy                                                                                        
-000017fd  __aeabi_memcpy4                                                                                       
-000017fd  __aeabi_memcpy8                                                                                       
-0000189b  __aeabi_memset                                                                                        
-0000189b  __aeabi_memset4                                                                                       
-0000189b  __aeabi_memset8                                                                                       
-00001bd1  __aeabi_ul2f                                                                                          
-00001229  __aeabi_uldivmod                                                                                      
+00001e5f  __TI_zero_init                                                                                        
+00001e79  __abort_execution                                                                                     
+00001d61  __aeabi_llsr                                                                                          
+000019c1  __aeabi_memclr                                                                                        
+000019c1  __aeabi_memclr4                                                                                       
+000019c1  __aeabi_memclr8                                                                                       
+00001925  __aeabi_memcpy                                                                                        
+00001925  __aeabi_memcpy4                                                                                       
+00001925  __aeabi_memcpy8                                                                                       
+000019c3  __aeabi_memset                                                                                        
+000019c3  __aeabi_memset4                                                                                       
+000019c3  __aeabi_memset8                                                                                       
+00001cf9  __aeabi_ul2f                                                                                          
+00001539  __aeabi_uldivmod                                                                                      
 ffffffff  __binit__                                                                                             
 ffffffff  __c_args__                                                                                            
-00001d4b  __cxa_pure_virtual                                                                                    
-00001913  __mpu_init                                                                                            
+00001e73  __cxa_pure_virtual                                                                                    
+00001a3b  __mpu_init                                                                                            
 2000fe00  __stack                                                                                               
-00000959  __sti___8_uart_cpp_4dae890a                                                                           
-000006ff  __sti___9_timer_cpp_348070d1                                                                          
-00001c8d  _args_main                                                                                            
-00001a41  _c_int00                                                                                              
-20000c80  _lock                                                                                                 
-20000c8c  _new_handler                                                                                          
-00001cc7  _nop                                                                                                  
-00001cbf  _register_lock                                                                                        
-00001cb9  _register_unlock                                                                                      
-20000868  _sys_memory                                                                                           
-00001c07  _system_post_cinit                                                                                    
-00001d55  _system_pre_init                                                                                      
-20000c84  _unlock                                                                                               
-00001a99  abort                                                                                                 
+000009a1  __sti___8_uart_cpp_4dae890a                                                                           
+00000747  __sti___9_timer_cpp_348070d1                                                                          
+00001db5  _args_main                                                                                            
+00001b69  _c_int00                                                                                              
+20000c90  _lock                                                                                                 
+20000c9c  _new_handler                                                                                          
+00001def  _nop                                                                                                  
+00001de7  _register_lock                                                                                        
+00001de1  _register_unlock                                                                                      
+20000878  _sys_memory                                                                                           
+00001d2f  _system_post_cinit                                                                                    
+00001e7d  _system_pre_init                                                                                      
+20000c94  _unlock                                                                                               
+00001bc1  abort                                                                                                 
 ffffffff  binit                                                                                                 
-00000ecd  calloc                                                                                                
-00001b85  copy_in                                                                                               
-00001aa1  exit                                                                                                  
-00000c17  free                                                                                                  
+00000f15  calloc                                                                                                
+00001cad  copy_in                                                                                               
+00001bc9  exit                                                                                                  
+00000c5f  free                                                                                                  
 00000000  interruptVectors                                                                                      
-00001441  main                                                                                                  
-20000c88  main_func_sp                                                                                          
-00000bad  malloc                                                                                                
-00000de1  memalign                                                                                              
-000017fd  memcpy                                                                                                
-000018a1  memset                                                                                                
-00000b2d  minit                                                                                                 
-00000cd9  realloc                                                                                               
+000012e5  main                                                                                                  
+20000c98  main_func_sp                                                                                          
+00000bf5  malloc                                                                                                
+00000e29  memalign                                                                                              
+00001925  memcpy                                                                                                
+000019c9  memset                                                                                                
+00000b75  minit                                                                                                 
+00000d21  realloc                                                                                               
 
 
 GLOBAL SYMBOLS: SORTED BY Symbol Address 
@@ -540,241 +539,243 @@ address   name
 0000014f  TA3_N_IRQHandler                                                                                      
 00000159  _ZN12Peripherials5TimerC1EP12Timer_A_TypeNS_16TimerClockSourceE                                       
 00000159  _ZN12Peripherials5TimerC2EP12Timer_A_TypeNS_16TimerClockSourceE                                       
-000001eb  _ZN12Peripherials5Timer9SetPeriodEt                                                                   
+000001fd  _ZN12Peripherials5Timer9SetPeriodEt                                                                   
 00000200  __STACK_SIZE                                                                                          
-00000237  _ZN12Peripherials5Timer9SetPeriodEf                                                                   
-000002f9  _ZN12Peripherials5Timer8StartPWMENS_15TimerCapComUnitEf                                               
+00000249  _ZN12Peripherials5Timer9SetPeriodEf                                                                   
+00000311  _ZN12Peripherials5Timer8StartPWMENS_15TimerCapComUnitEf                                               
 00000400  __SYSMEM_SIZE                                                                                         
-00000411  _ZN12Peripherials5Timer8StartPWMENS_15TimerCapComUnitEt                                               
-00000485  _ZN12Peripherials5Timer6SetPWMENS_15TimerCapComUnitEf                                                 
-00000511  _ZN12Peripherials5Timer6SetPWMENS_15TimerCapComUnitEt                                                 
-00000555  _ZN12Peripherials5Timer10DisablePWMENS_15TimerCapComUnitE                                             
-00000587  _ZN12Peripherials5Timer9EnablePWMENS_15TimerCapComUnitE                                               
-000005b9  _ZN12Peripherials5Timer23AttachOverflowInterruptEPFvvE                                                
-000005f5  _ZN12Peripherials5Timer15AttachInterruptENS_15TimerCapComUnitEPFvvE                                   
-00000665  _ZN12Peripherials5Timer9_CCR0_ISREv                                                                   
-000006c5  _ZN12Peripherials5Timer9_CCRn_ISREv                                                                   
-000006ff  __sti___9_timer_cpp_348070d1                                                                          
-00000755  EUSCIA1_IRQHandler                                                                                    
-00000755  EUSCIA1_IRQHandler                                                                                    
-0000075f  EUSCIA2_IRQHandler                                                                                    
-0000075f  EUSCIA2_IRQHandler                                                                                    
-00000769  EUSCIA3_IRQHandler                                                                                    
-00000769  EUSCIA3_IRQHandler                                                                                    
-00000773  _ZN12Peripherials4UARTC1ER12EUSCI_A_TypeiN7Buffers13RollingBufferENS3_10BaseBufferEb                  
-00000773  _ZN12Peripherials4UARTC2ER12EUSCI_A_TypeiN7Buffers13RollingBufferENS3_10BaseBufferEb                  
-00000851  _ZN12Peripherials4UART4SendEc                                                                         
-00000873  _ZN12Peripherials4UART4SendEPc                                                                        
-000008a1  _ZN12Peripherials4UART9GetBufferEv                                                                    
-000008b5  _ZN12Peripherials4UART11ClearBufferEv                                                                 
-000008c5  _ZN12Peripherials4UART15GetBufferLengthEv                                                             
-000008d3  _ZN12Peripherials4UART11OnInterruptEv                                                                 
-00000959  __sti___8_uart_cpp_4dae890a                                                                           
-00000b2d  minit                                                                                                 
-00000bad  malloc                                                                                                
-00000c17  free                                                                                                  
-00000cd9  realloc                                                                                               
-00000de1  memalign                                                                                              
-00000ecd  calloc                                                                                                
-00000efd  SystemCoreClockUpdate                                                                                 
-00001171  SystemInit                                                                                            
-00001229  __aeabi_uldivmod                                                                                      
-00001441  main                                                                                                  
-00001605  _ZN20InternalServoControlC1ERN12Peripherials5TimerENS0_15TimerCapComUnitE24internal_servo_cal_pointS4_
-00001605  _ZN20InternalServoControlC2ERN12Peripherials5TimerENS0_15TimerCapComUnitE24internal_servo_cal_pointS4_
-00001683  _ZN20InternalServoControl7SuspendEv                                                                   
-00001695  _ZN20InternalServoControl6ResumeEv                                                                    
-000016a7  _ZN20InternalServoControl9GoToAngleEf                                                                 
-0000170f  _ZN20InternalServoControl6CenterEv                                                                    
-00001741  _ZSt21__gen_dummy_typeinfosv                                                                          
-00001749  _ZNSt9type_infoD1Ev                                                                                   
-00001749  _ZNSt9type_infoD2Ev                                                                                   
-0000174b  _ZNSt9type_infoD0Ev                                                                                   
-00001753  _ZNKSt9type_info4nameEv                                                                               
-00001757  _ZNKSt9type_infoneERKS_                                                                               
-0000176d  _ZNKSt9type_infoeqERKS_                                                                               
-00001783  _ZNKSt9type_info6beforeERKS_                                                                          
-00001791  _ZN10__cxxabiv129__pointer_to_member_type_infoD1Ev                                                    
-00001791  _ZN10__cxxabiv129__pointer_to_member_type_infoD2Ev                                                    
-00001793  _ZN10__cxxabiv129__pointer_to_member_type_infoD0Ev                                                    
-0000179b  _ZN10__cxxabiv123__fundamental_type_infoD1Ev                                                          
-0000179b  _ZN10__cxxabiv123__fundamental_type_infoD2Ev                                                          
-0000179d  _ZN10__cxxabiv123__fundamental_type_infoD0Ev                                                          
-000017a5  _ZN10__cxxabiv121__vmi_class_type_infoD1Ev                                                            
-000017a5  _ZN10__cxxabiv121__vmi_class_type_infoD2Ev                                                            
-000017a7  _ZN10__cxxabiv121__vmi_class_type_infoD0Ev                                                            
-000017af  _ZN10__cxxabiv120__si_class_type_infoD1Ev                                                             
-000017af  _ZN10__cxxabiv120__si_class_type_infoD2Ev                                                             
-000017b1  _ZN10__cxxabiv120__si_class_type_infoD0Ev                                                             
-000017b9  _ZN10__cxxabiv120__function_type_infoD1Ev                                                             
-000017b9  _ZN10__cxxabiv120__function_type_infoD2Ev                                                             
-000017bb  _ZN10__cxxabiv120__function_type_infoD0Ev                                                             
-000017c3  _ZN10__cxxabiv119__pointer_type_infoD1Ev                                                              
-000017c3  _ZN10__cxxabiv119__pointer_type_infoD2Ev                                                              
-000017c5  _ZN10__cxxabiv119__pointer_type_infoD0Ev                                                              
-000017cd  _ZN10__cxxabiv117__pbase_type_infoD1Ev                                                                
-000017cd  _ZN10__cxxabiv117__pbase_type_infoD2Ev                                                                
-000017cf  _ZN10__cxxabiv117__pbase_type_infoD0Ev                                                                
-000017d7  _ZN10__cxxabiv117__class_type_infoD1Ev                                                                
-000017d7  _ZN10__cxxabiv117__class_type_infoD2Ev                                                                
-000017d9  _ZN10__cxxabiv117__class_type_infoD0Ev                                                                
-000017e1  _ZN10__cxxabiv117__array_type_infoD1Ev                                                                
-000017e1  _ZN10__cxxabiv117__array_type_infoD2Ev                                                                
-000017e3  _ZN10__cxxabiv117__array_type_infoD0Ev                                                                
-000017eb  _ZN10__cxxabiv116__enum_type_infoD1Ev                                                                 
-000017eb  _ZN10__cxxabiv116__enum_type_infoD2Ev                                                                 
-000017ed  _ZN10__cxxabiv116__enum_type_infoD0Ev                                                                 
-000017fd  __aeabi_memcpy                                                                                        
-000017fd  __aeabi_memcpy4                                                                                       
-000017fd  __aeabi_memcpy8                                                                                       
-000017fd  memcpy                                                                                                
-00001899  __aeabi_memclr                                                                                        
-00001899  __aeabi_memclr4                                                                                       
-00001899  __aeabi_memclr8                                                                                       
-0000189b  __aeabi_memset                                                                                        
-0000189b  __aeabi_memset4                                                                                       
-0000189b  __aeabi_memset8                                                                                       
-000018a1  memset                                                                                                
-00001913  __mpu_init                                                                                            
-00001915  __TI_auto_init                                                                                        
-00001985  __TI_decompress_lzss                                                                                  
-000019eb  _ZN7Buffers13RollingBufferC1ENS_10BaseBufferE                                                         
-00001a3f  _Z21__default_new_handlerv                                                                            
-00001a41  _c_int00                                                                                              
-00001a95  C$$EXIT                                                                                               
-00001a99  abort                                                                                                 
-00001aa1  exit                                                                                                  
-00001ae9  _ZN7Buffers13RollingBuffer7DequeueEv                                                                  
-00001b37  _ZN7Buffers13RollingBuffer7EnqueueEh                                                                  
-00001b85  copy_in                                                                                               
-00001bd1  __aeabi_ul2f                                                                                          
-00001c07  _system_post_cinit                                                                                    
-00001c09  _Znwj                                                                                                 
-00001c39  __aeabi_llsr                                                                                          
-00001c57  _ZN7Buffers10BaseBufferC1EPhi                                                                         
-00001c75  _ZN5ServoC1Ev                                                                                         
-00001c8d  _args_main                                                                                            
-00001ca5  _ZN7Buffers13RollingBuffer7IsEmptyEv                                                                  
-00001cb9  _register_unlock                                                                                      
-00001cbf  _register_lock                                                                                        
-00001cc7  _nop                                                                                                  
-00001ccd  _ZN7Buffers10AutoBufferILi300EE7GetSizeEv                                                             
-00001cdb  _ZN7Buffers10BaseBuffer7GetDataEv                                                                     
-00001ce9  _ZN7Buffers10BaseBuffer7GetSizeEv                                                                     
-00001cf7  __TI_decompress_none                                                                                  
-00001d05  Reset_Handler                                                                                         
-00001d11  ADC14_IRQHandler                                                                                      
-00001d11  AES256_IRQHandler                                                                                     
-00001d11  BusFault_Handler                                                                                      
-00001d11  COMP_E0_IRQHandler                                                                                    
-00001d11  COMP_E1_IRQHandler                                                                                    
-00001d11  CS_IRQHandler                                                                                         
-00001d11  DMA_ERR_IRQHandler                                                                                    
-00001d11  DMA_INT0_IRQHandler                                                                                   
-00001d11  DMA_INT1_IRQHandler                                                                                   
-00001d11  DMA_INT2_IRQHandler                                                                                   
-00001d11  DMA_INT3_IRQHandler                                                                                   
-00001d11  DebugMon_Handler                                                                                      
-00001d11  Default_Handler                                                                                       
-00001d11  EUSCIA0_IRQHandler                                                                                    
-00001d11  EUSCIB0_IRQHandler                                                                                    
-00001d11  EUSCIB1_IRQHandler                                                                                    
-00001d11  EUSCIB2_IRQHandler                                                                                    
-00001d11  EUSCIB3_IRQHandler                                                                                    
-00001d11  FLCTL_IRQHandler                                                                                      
-00001d11  FPU_IRQHandler                                                                                        
-00001d11  HardFault_Handler                                                                                     
-00001d11  MemManage_Handler                                                                                     
-00001d11  NMI_Handler                                                                                           
-00001d11  PCM_IRQHandler                                                                                        
-00001d11  PORT1_IRQHandler                                                                                      
-00001d11  PORT2_IRQHandler                                                                                      
-00001d11  PORT3_IRQHandler                                                                                      
-00001d11  PORT4_IRQHandler                                                                                      
-00001d11  PORT5_IRQHandler                                                                                      
-00001d11  PORT6_IRQHandler                                                                                      
-00001d11  PSS_IRQHandler                                                                                        
-00001d11  PendSV_Handler                                                                                        
-00001d11  RTC_C_IRQHandler                                                                                      
-00001d11  SVC_Handler                                                                                           
-00001d11  SysTick_Handler                                                                                       
-00001d11  T32_INT1_IRQHandler                                                                                   
-00001d11  T32_INT2_IRQHandler                                                                                   
-00001d11  T32_INTC_IRQHandler                                                                                   
-00001d11  UsageFault_Handler                                                                                    
-00001d11  WDT_A_IRQHandler                                                                                      
-00001d13  _ZN5ServoC2Ev                                                                                         
-00001d1f  _ZN7Buffers10AutoBufferILi300EE7GetDataEv                                                             
-00001d2b  _ZN7Buffers10AutoBufferILi300EEC1Ev                                                                   
-00001d37  __TI_zero_init                                                                                        
-00001d43  _ZdlPv                                                                                                
-00001d4b  __cxa_pure_virtual                                                                                    
-00001d51  __abort_execution                                                                                     
-00001d55  _system_pre_init                                                                                      
-00001d58  _ZTSN10__cxxabiv123__fundamental_type_infoE                                                           
-00001d80  _ZTSN10__cxxabiv120__si_class_type_infoE                                                              
-00001da5  _ZTSN10__cxxabiv119__pointer_type_infoE                                                               
-00001dc9  _ZTSN10__cxxabiv117__class_type_infoE                                                                 
-00001deb  _ZTSN10__cxxabiv117__pbase_type_infoE                                                                 
-00001e0d  _ZTSe                                                                                                 
-00001e10  _ZTV20InternalServoControl                                                                            
-00001e28  _ZTV5Servo                                                                                            
-00001e40  _ZTS20InternalServoControl                                                                            
-00001e58  _ZTIPKe                                                                                               
-00001e68  _ZTVN10__cxxabiv117__class_type_infoE                                                                 
-00001e78  _ZTVN10__cxxabiv119__pointer_type_infoE                                                               
-00001e88  _ZTVN10__cxxabiv120__si_class_type_infoE                                                              
-00001e98  _ZTVN10__cxxabiv123__fundamental_type_infoE                                                           
-00001ea8  _ZTSSt9type_info                                                                                      
-00001eb8  _ZTI20InternalServoControl                                                                            
-00001ec4  _ZTIN10__cxxabiv117__class_type_infoE                                                                 
-00001ed0  _ZTIN10__cxxabiv117__pbase_type_infoE                                                                 
-00001edc  _ZTIN10__cxxabiv119__pointer_type_infoE                                                               
-00001ee8  _ZTIN10__cxxabiv120__si_class_type_infoE                                                              
-00001ef4  _ZTIN10__cxxabiv123__fundamental_type_infoE                                                           
-00001f10  _ZTI5Servo                                                                                            
-00001f18  _ZTISt9type_info                                                                                      
-00001f20  _ZTIe                                                                                                 
-00001f28  _ZTS5Servo                                                                                            
-00001f2f  _ZTSPKe                                                                                               
-00001f34  SHT$$INIT_ARRAY$$Base                                                                                 
-00001f3c  SHT$$INIT_ARRAY$$Limit                                                                                
-00001f60  __TI_Handler_Table_Base                                                                               
-00001f6c  __TI_Handler_Table_Limit                                                                              
-00001f78  __TI_CINIT_Base                                                                                       
-00001f88  __TI_CINIT_Limit                                                                                      
+00000425  _ZN12Peripherials5Timer8StartPWMENS_15TimerCapComUnitEt                                               
+00000499  _ZN12Peripherials5Timer6SetPWMENS_15TimerCapComUnitEf                                                 
+00000525  _ZN12Peripherials5Timer6SetPWMENS_15TimerCapComUnitEt                                                 
+00000569  _ZN12Peripherials5Timer10DisablePWMENS_15TimerCapComUnitE                                             
+0000059b  _ZN12Peripherials5Timer9EnablePWMENS_15TimerCapComUnitE                                               
+000005d1  _ZN12Peripherials5Timer23AttachOverflowInterruptEPFvvE                                                
+0000060d  _ZN12Peripherials5Timer15AttachInterruptENS_15TimerCapComUnitEPFvvE                                   
+0000067d  _ZN12Peripherials5Timer16GetOverflowCountEv                                                           
+0000068b  _ZN12Peripherials5Timer9_CCR0_ISREv                                                                   
+000006f3  _ZN12Peripherials5Timer9_CCRn_ISREv                                                                   
+00000747  __sti___9_timer_cpp_348070d1                                                                          
+0000079d  EUSCIA1_IRQHandler                                                                                    
+0000079d  EUSCIA1_IRQHandler                                                                                    
+000007a7  EUSCIA2_IRQHandler                                                                                    
+000007a7  EUSCIA2_IRQHandler                                                                                    
+000007b1  EUSCIA3_IRQHandler                                                                                    
+000007b1  EUSCIA3_IRQHandler                                                                                    
+000007bb  _ZN12Peripherials4UARTC1ER12EUSCI_A_TypeiN7Buffers13RollingBufferENS3_10BaseBufferEb                  
+000007bb  _ZN12Peripherials4UARTC2ER12EUSCI_A_TypeiN7Buffers13RollingBufferENS3_10BaseBufferEb                  
+00000899  _ZN12Peripherials4UART4SendEc                                                                         
+000008bb  _ZN12Peripherials4UART4SendEPc                                                                        
+000008e9  _ZN12Peripherials4UART9GetBufferEv                                                                    
+000008fd  _ZN12Peripherials4UART11ClearBufferEv                                                                 
+0000090d  _ZN12Peripherials4UART15GetBufferLengthEv                                                             
+0000091b  _ZN12Peripherials4UART11OnInterruptEv                                                                 
+000009a1  __sti___8_uart_cpp_4dae890a                                                                           
+00000b75  minit                                                                                                 
+00000bf5  malloc                                                                                                
+00000c5f  free                                                                                                  
+00000d21  realloc                                                                                               
+00000e29  memalign                                                                                              
+00000f15  calloc                                                                                                
+00000f45  SystemCoreClockUpdate                                                                                 
+000011b9  SystemInit                                                                                            
+00001295  _Z4rampih                                                                                             
+000012e5  main                                                                                                  
+00001539  __aeabi_uldivmod                                                                                      
+0000172d  _ZN20InternalServoControlC1ERN12Peripherials5TimerENS0_15TimerCapComUnitE24internal_servo_cal_pointS4_
+0000172d  _ZN20InternalServoControlC2ERN12Peripherials5TimerENS0_15TimerCapComUnitE24internal_servo_cal_pointS4_
+000017ab  _ZN20InternalServoControl7SuspendEv                                                                   
+000017bd  _ZN20InternalServoControl6ResumeEv                                                                    
+000017cf  _ZN20InternalServoControl4GoToEf                                                                      
+00001837  _ZN20InternalServoControl6CenterEv                                                                    
+00001869  _ZSt21__gen_dummy_typeinfosv                                                                          
+00001871  _ZNSt9type_infoD1Ev                                                                                   
+00001871  _ZNSt9type_infoD2Ev                                                                                   
+00001873  _ZNSt9type_infoD0Ev                                                                                   
+0000187b  _ZNKSt9type_info4nameEv                                                                               
+0000187f  _ZNKSt9type_infoneERKS_                                                                               
+00001895  _ZNKSt9type_infoeqERKS_                                                                               
+000018ab  _ZNKSt9type_info6beforeERKS_                                                                          
+000018b9  _ZN10__cxxabiv129__pointer_to_member_type_infoD1Ev                                                    
+000018b9  _ZN10__cxxabiv129__pointer_to_member_type_infoD2Ev                                                    
+000018bb  _ZN10__cxxabiv129__pointer_to_member_type_infoD0Ev                                                    
+000018c3  _ZN10__cxxabiv123__fundamental_type_infoD1Ev                                                          
+000018c3  _ZN10__cxxabiv123__fundamental_type_infoD2Ev                                                          
+000018c5  _ZN10__cxxabiv123__fundamental_type_infoD0Ev                                                          
+000018cd  _ZN10__cxxabiv121__vmi_class_type_infoD1Ev                                                            
+000018cd  _ZN10__cxxabiv121__vmi_class_type_infoD2Ev                                                            
+000018cf  _ZN10__cxxabiv121__vmi_class_type_infoD0Ev                                                            
+000018d7  _ZN10__cxxabiv120__si_class_type_infoD1Ev                                                             
+000018d7  _ZN10__cxxabiv120__si_class_type_infoD2Ev                                                             
+000018d9  _ZN10__cxxabiv120__si_class_type_infoD0Ev                                                             
+000018e1  _ZN10__cxxabiv120__function_type_infoD1Ev                                                             
+000018e1  _ZN10__cxxabiv120__function_type_infoD2Ev                                                             
+000018e3  _ZN10__cxxabiv120__function_type_infoD0Ev                                                             
+000018eb  _ZN10__cxxabiv119__pointer_type_infoD1Ev                                                              
+000018eb  _ZN10__cxxabiv119__pointer_type_infoD2Ev                                                              
+000018ed  _ZN10__cxxabiv119__pointer_type_infoD0Ev                                                              
+000018f5  _ZN10__cxxabiv117__pbase_type_infoD1Ev                                                                
+000018f5  _ZN10__cxxabiv117__pbase_type_infoD2Ev                                                                
+000018f7  _ZN10__cxxabiv117__pbase_type_infoD0Ev                                                                
+000018ff  _ZN10__cxxabiv117__class_type_infoD1Ev                                                                
+000018ff  _ZN10__cxxabiv117__class_type_infoD2Ev                                                                
+00001901  _ZN10__cxxabiv117__class_type_infoD0Ev                                                                
+00001909  _ZN10__cxxabiv117__array_type_infoD1Ev                                                                
+00001909  _ZN10__cxxabiv117__array_type_infoD2Ev                                                                
+0000190b  _ZN10__cxxabiv117__array_type_infoD0Ev                                                                
+00001913  _ZN10__cxxabiv116__enum_type_infoD1Ev                                                                 
+00001913  _ZN10__cxxabiv116__enum_type_infoD2Ev                                                                 
+00001915  _ZN10__cxxabiv116__enum_type_infoD0Ev                                                                 
+00001925  __aeabi_memcpy                                                                                        
+00001925  __aeabi_memcpy4                                                                                       
+00001925  __aeabi_memcpy8                                                                                       
+00001925  memcpy                                                                                                
+000019c1  __aeabi_memclr                                                                                        
+000019c1  __aeabi_memclr4                                                                                       
+000019c1  __aeabi_memclr8                                                                                       
+000019c3  __aeabi_memset                                                                                        
+000019c3  __aeabi_memset4                                                                                       
+000019c3  __aeabi_memset8                                                                                       
+000019c9  memset                                                                                                
+00001a3b  __mpu_init                                                                                            
+00001a3d  __TI_auto_init                                                                                        
+00001aad  __TI_decompress_lzss                                                                                  
+00001b13  _ZN7Buffers13RollingBufferC1ENS_10BaseBufferE                                                         
+00001b67  _Z21__default_new_handlerv                                                                            
+00001b69  _c_int00                                                                                              
+00001bbd  C$$EXIT                                                                                               
+00001bc1  abort                                                                                                 
+00001bc9  exit                                                                                                  
+00001c11  _ZN7Buffers13RollingBuffer7DequeueEv                                                                  
+00001c5f  _ZN7Buffers13RollingBuffer7EnqueueEh                                                                  
+00001cad  copy_in                                                                                               
+00001cf9  __aeabi_ul2f                                                                                          
+00001d2f  _system_post_cinit                                                                                    
+00001d31  _Znwj                                                                                                 
+00001d61  __aeabi_llsr                                                                                          
+00001d7f  _ZN7Buffers10BaseBufferC1EPhi                                                                         
+00001d9d  _ZN5ServoC1Ev                                                                                         
+00001db5  _args_main                                                                                            
+00001dcd  _ZN7Buffers13RollingBuffer7IsEmptyEv                                                                  
+00001de1  _register_unlock                                                                                      
+00001de7  _register_lock                                                                                        
+00001def  _nop                                                                                                  
+00001df5  _ZN7Buffers10AutoBufferILi300EE7GetSizeEv                                                             
+00001e03  _ZN7Buffers10BaseBuffer7GetDataEv                                                                     
+00001e11  _ZN7Buffers10BaseBuffer7GetSizeEv                                                                     
+00001e1f  __TI_decompress_none                                                                                  
+00001e2d  Reset_Handler                                                                                         
+00001e39  ADC14_IRQHandler                                                                                      
+00001e39  AES256_IRQHandler                                                                                     
+00001e39  BusFault_Handler                                                                                      
+00001e39  COMP_E0_IRQHandler                                                                                    
+00001e39  COMP_E1_IRQHandler                                                                                    
+00001e39  CS_IRQHandler                                                                                         
+00001e39  DMA_ERR_IRQHandler                                                                                    
+00001e39  DMA_INT0_IRQHandler                                                                                   
+00001e39  DMA_INT1_IRQHandler                                                                                   
+00001e39  DMA_INT2_IRQHandler                                                                                   
+00001e39  DMA_INT3_IRQHandler                                                                                   
+00001e39  DebugMon_Handler                                                                                      
+00001e39  Default_Handler                                                                                       
+00001e39  EUSCIA0_IRQHandler                                                                                    
+00001e39  EUSCIB0_IRQHandler                                                                                    
+00001e39  EUSCIB1_IRQHandler                                                                                    
+00001e39  EUSCIB2_IRQHandler                                                                                    
+00001e39  EUSCIB3_IRQHandler                                                                                    
+00001e39  FLCTL_IRQHandler                                                                                      
+00001e39  FPU_IRQHandler                                                                                        
+00001e39  HardFault_Handler                                                                                     
+00001e39  MemManage_Handler                                                                                     
+00001e39  NMI_Handler                                                                                           
+00001e39  PCM_IRQHandler                                                                                        
+00001e39  PORT1_IRQHandler                                                                                      
+00001e39  PORT2_IRQHandler                                                                                      
+00001e39  PORT3_IRQHandler                                                                                      
+00001e39  PORT4_IRQHandler                                                                                      
+00001e39  PORT5_IRQHandler                                                                                      
+00001e39  PORT6_IRQHandler                                                                                      
+00001e39  PSS_IRQHandler                                                                                        
+00001e39  PendSV_Handler                                                                                        
+00001e39  RTC_C_IRQHandler                                                                                      
+00001e39  SVC_Handler                                                                                           
+00001e39  SysTick_Handler                                                                                       
+00001e39  T32_INT1_IRQHandler                                                                                   
+00001e39  T32_INT2_IRQHandler                                                                                   
+00001e39  T32_INTC_IRQHandler                                                                                   
+00001e39  UsageFault_Handler                                                                                    
+00001e39  WDT_A_IRQHandler                                                                                      
+00001e3b  _ZN5ServoC2Ev                                                                                         
+00001e47  _ZN7Buffers10AutoBufferILi300EE7GetDataEv                                                             
+00001e53  _ZN7Buffers10AutoBufferILi300EEC1Ev                                                                   
+00001e5f  __TI_zero_init                                                                                        
+00001e6b  _ZdlPv                                                                                                
+00001e73  __cxa_pure_virtual                                                                                    
+00001e79  __abort_execution                                                                                     
+00001e7d  _system_pre_init                                                                                      
+00001e80  _ZTSN10__cxxabiv123__fundamental_type_infoE                                                           
+00001ea8  _ZTSN10__cxxabiv120__si_class_type_infoE                                                              
+00001ecd  _ZTSN10__cxxabiv119__pointer_type_infoE                                                               
+00001ef1  _ZTSN10__cxxabiv117__class_type_infoE                                                                 
+00001f13  _ZTSN10__cxxabiv117__pbase_type_infoE                                                                 
+00001f35  _ZTSe                                                                                                 
+00001f38  _ZTV20InternalServoControl                                                                            
+00001f50  _ZTV5Servo                                                                                            
+00001f68  _ZTS20InternalServoControl                                                                            
+00001f80  _ZTIPKe                                                                                               
+00001f90  _ZTVN10__cxxabiv117__class_type_infoE                                                                 
+00001fa0  _ZTVN10__cxxabiv119__pointer_type_infoE                                                               
+00001fb0  _ZTVN10__cxxabiv120__si_class_type_infoE                                                              
+00001fc0  _ZTVN10__cxxabiv123__fundamental_type_infoE                                                           
+00001fd0  _ZTSSt9type_info                                                                                      
+00001fe0  _ZTI20InternalServoControl                                                                            
+00001fec  _ZTIN10__cxxabiv117__class_type_infoE                                                                 
+00001ff8  _ZTIN10__cxxabiv117__pbase_type_infoE                                                                 
+00002004  _ZTIN10__cxxabiv119__pointer_type_infoE                                                               
+00002010  _ZTIN10__cxxabiv120__si_class_type_infoE                                                              
+0000201c  _ZTIN10__cxxabiv123__fundamental_type_infoE                                                           
+00002038  _ZTI5Servo                                                                                            
+00002040  _ZTISt9type_info                                                                                      
+00002048  _ZTIe                                                                                                 
+00002050  _ZTS5Servo                                                                                            
+00002057  _ZTSPKe                                                                                               
+0000205c  SHT$$INIT_ARRAY$$Base                                                                                 
+00002064  SHT$$INIT_ARRAY$$Limit                                                                                
+00002088  __TI_Handler_Table_Base                                                                               
+00002094  __TI_Handler_Table_Limit                                                                              
+000020a0  __TI_CINIT_Base                                                                                       
+000020b0  __TI_CINIT_Limit                                                                                      
 20000000  _ZN12Peripherials8A1_rawRxE                                                                           
 2000012c  _ZN12Peripherials8A1_rawTxE                                                                           
 20000258  _ZN12Peripherials8A2_rawRxE                                                                           
 20000384  _ZN12Peripherials8A2_rawTxE                                                                           
 200004b0  _ZN12Peripherials8A3_rawRxE                                                                           
 200005dc  _ZN12Peripherials8A3_rawTxE                                                                           
-20000708  _ZN12Peripherials7UART_A1E                                                                            
-2000072c  _ZN12Peripherials7UART_A2E                                                                            
-20000750  _ZN12Peripherials7UART_A3E                                                                            
-20000774  _ZN12Peripherials3TA0E                                                                                
-20000794  _ZN12Peripherials3TA1E                                                                                
-200007b4  _ZN12Peripherials3TA2E                                                                                
-200007d4  _ZN12Peripherials3TA3E                                                                                
-200007f4  _ZN12Peripherials10A1_txQueueE                                                                        
-20000808  _ZN12Peripherials10A2_txQueueE                                                                        
-2000081c  _ZN12Peripherials10A3_txQueueE                                                                        
-20000830  _ZN12Peripherials11A1_rxBufferE                                                                       
-20000838  _ZN12Peripherials11A1_txBufferE                                                                       
-20000840  _ZN12Peripherials11A2_rxBufferE                                                                       
-20000848  _ZN12Peripherials11A2_txBufferE                                                                       
-20000850  _ZN12Peripherials11A3_rxBufferE                                                                       
-20000858  _ZN12Peripherials11A3_txBufferE                                                                       
-20000860  _ZSt16__dummy_typeinfo                                                                                
-20000868  _sys_memory                                                                                           
-20000c68  __TI_cleanup_ptr                                                                                      
-20000c6c  __TI_dtors_ptr                                                                                        
-20000c70  __TI_enable_exit_profile_output                                                                       
-20000c80  _lock                                                                                                 
-20000c84  _unlock                                                                                               
-20000c88  main_func_sp                                                                                          
-20000c8c  _new_handler                                                                                          
-20000c90  SystemCoreClock                                                                                       
+20000708  _ZN12Peripherials3TA0E                                                                                
+2000072c  _ZN12Peripherials3TA1E                                                                                
+20000750  _ZN12Peripherials3TA2E                                                                                
+20000774  _ZN12Peripherials3TA3E                                                                                
+20000798  _ZN12Peripherials7UART_A1E                                                                            
+200007bc  _ZN12Peripherials7UART_A2E                                                                            
+200007e0  _ZN12Peripherials7UART_A3E                                                                            
+20000804  _ZN12Peripherials10A1_txQueueE                                                                        
+20000818  _ZN12Peripherials10A2_txQueueE                                                                        
+2000082c  _ZN12Peripherials10A3_txQueueE                                                                        
+20000840  _ZN12Peripherials11A1_rxBufferE                                                                       
+20000848  _ZN12Peripherials11A1_txBufferE                                                                       
+20000850  _ZN12Peripherials11A2_rxBufferE                                                                       
+20000858  _ZN12Peripherials11A2_txBufferE                                                                       
+20000860  _ZN12Peripherials11A3_rxBufferE                                                                       
+20000868  _ZN12Peripherials11A3_txBufferE                                                                       
+20000870  _ZSt16__dummy_typeinfo                                                                                
+20000878  _sys_memory                                                                                           
+20000c78  __TI_cleanup_ptr                                                                                      
+20000c7c  __TI_dtors_ptr                                                                                        
+20000c80  __TI_enable_exit_profile_output                                                                       
+20000c90  _lock                                                                                                 
+20000c94  _unlock                                                                                               
+20000c98  main_func_sp                                                                                          
+20000c9c  _new_handler                                                                                          
+20000ca0  SystemCoreClock                                                                                       
 2000fe00  __stack                                                                                               
 20010000  __STACK_END                                                                                           
 4000480c  WDTCTL_SYM                                                                                            
@@ -785,4 +786,4 @@ ffffffff  __binit__
 ffffffff  __c_args__                                                                                            
 ffffffff  binit                                                                                                 
 
-[264 symbols]
+[266 symbols]
