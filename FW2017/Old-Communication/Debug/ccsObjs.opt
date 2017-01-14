@@ -1,1 +1,0 @@
-"./Buffers.obj" "./I2C.obj" "./PCA9685.obj" "./TimerPWM_Servo.obj" "./main.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "./timer.obj" "./uart.obj" "./Protocol/Protocol.obj" "../msp432p401r.cmd" -llibc.a 
