@@ -88,6 +88,8 @@ void main(void) {
 
 		Left.Tick(0.020f);
 		Right.Tick(0.020f);
+		ArmUpper.Tick(0.020f);
+		ArmLower.Tick(0.020f);
 	}
 }
 

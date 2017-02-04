@@ -2,6 +2,7 @@
 #include "TimerPWM_Servo.hpp"
 #include "ControlledServo.hpp"
 #include "timer.hpp"
+#include "LinearActuator.hpp"
 
 //////////////////////////////////////////////////////////////////////////////
 ////////////////////////////Begin Wheel Drivers///////////////////////////////
@@ -26,14 +27,20 @@ ControlledServo& Right = *new ControlledServo(
 internal_servo_cal_point arm_upper_low = { 0, 0.0012 };
 internal_servo_cal_point arm_upper_high = { 255, 0.0018 };
 
-Servo& ArmUpper = *new InternalServoControl(Peripherials::GetTA2(),
-		Peripherials::CC3, arm_upper_low, arm_upper_high);
+PinID upper_fb = {5, 2};
+PinID upper_dir = {1, 6};
+
+LinearActuator& ArmUpper = *new LinearActuator(*new InternalServoControl(Peripherials::GetTA2(),
+		Peripherials::CC3, arm_upper_low, arm_upper_high), 3, upper_fb, upper_dir);
 
 internal_servo_cal_point arm_lower_low = { 0, 0.0012 };
 internal_servo_cal_point arm_lower_high = { 255, 0.0018 };
 
-Servo& ArmLower = *new InternalServoControl(Peripherials::GetTA2(),
-		Peripherials::CC2, arm_lower_low, arm_lower_high);
+PinID lower_fb = {5, 1};
+PinID lower_dir = {6, 7};
+
+LinearActuator& ArmLower = *new LinearActuator(*new InternalServoControl(Peripherials::GetTA2(),
+		Peripherials::CC2, arm_lower_low, arm_lower_high), 3, lower_fb, lower_dir);
 
 /////////////////////////////End Arm Drivers//////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////

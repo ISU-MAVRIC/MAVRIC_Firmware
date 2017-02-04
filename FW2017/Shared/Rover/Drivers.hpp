@@ -10,11 +10,12 @@
 
 #include "Servo.hpp"
 #include "ControlledServo.hpp"
+#include "LinearActuator.hpp"
 
 extern ControlledServo& Left;
 extern ControlledServo& Right;
 
-extern Servo& ArmUpper;
-extern Servo& ArmLower;
+extern LinearActuator& ArmUpper;
+extern LinearActuator& ArmLower;
 
 #endif /* ROVER_DRIVERS_HPP_ */
