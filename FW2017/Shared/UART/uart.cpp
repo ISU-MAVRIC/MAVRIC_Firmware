@@ -86,7 +86,8 @@ void UART::OnInterrupt() {
 		break;
 	case 2:
 		if (rxIndex < rxBuffer.GetSize()) {
-			rxBuffer.GetData()[rxIndex++] = regs.RXBUF;
+			char c = regs.RXBUF;
+			rxBuffer.GetData()[rxIndex++] = c;
 		}
 		break;
 	case 4:
@@ -100,6 +101,11 @@ void UART::OnInterrupt() {
 		break;
 	default:
 		break;
+	}
+
+	if (regs.STATW & (1 << 5))
+	{
+		volatile char a = regs.RXBUF;
 	}
 }
 

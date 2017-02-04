@@ -11,6 +11,7 @@ InternalServoControl::InternalServoControl(Peripherials::Timer& timer,
 		Peripherials::TimerCapComUnit unit, struct internal_servo_cal_point low,
 		struct internal_servo_cal_point high) :
 		_timer(timer), module(unit) {
+	//Peripherials::InitTimers();
 	calibration[0] = low;
 	calibration[1] = high;
 	// 20 ms

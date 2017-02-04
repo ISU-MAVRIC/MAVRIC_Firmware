@@ -68,9 +68,16 @@ public:
 	 * Don't call this, used exclusively by library code
 	 */
 	void _CCRn_ISR(void);
+
+	Timer &operator=(const Peripherials::Timer &);
 };
 
-extern Timer TA0, TA1, TA2, TA3;
+Timer& GetTA0();
+Timer& GetTA1();
+Timer& GetTA2();
+Timer& GetTA3();
+
+void InitTimers();
 }
 
 extern "C"

@@ -9,13 +9,48 @@
 #include "msp.h"
 #include "clocks.h"
 
+#include <string.h>
+
 namespace Peripherials {
-Timer TA0(TIMER_A0, SMCLK), TA1(TIMER_A1, ACLK), TA2(TIMER_A2, ACLK), TA3(
-TIMER_A3, ACLK);
+
+Timer& GetTA0()
+{
+	static Timer ta0(TIMER_A0, ACLK);
+	return ta0;
+}
+
+Timer& GetTA1()
+{
+	static Timer ta1(TIMER_A1, ACLK);
+	return ta1;
+}
+
+Timer& GetTA2()
+{
+	static Timer ta2(TIMER_A2, ACLK);
+	return ta2;
+}
+
+Timer& GetTA3()
+{
+	static Timer ta3(TIMER_A3, ACLK);
+	return ta3;
+}
+
+Timer &Timer::operator=(const Peripherials::Timer & other)
+{
+	regs = other.regs;
+	timer_module = other.timer_module;
+	memcpy(isr, other.isr, sizeof(isr));
+	overflow_isr = other.overflow_isr;
+	overflow_count = other.overflow_count;
+	return *this;
+}
 
 Timer::Timer(Timer_A_Type* instance, TimerClockSource source) :
 		regs(*instance), overflow_count(0) {
-	regs.CTL = ((source & 3) << 8) | (TACLR);
+
+	regs.CTL = ((source & 3) << 8) | (TACLR) | (TIMER_A_CTL_MC__UP);
 
 	if (instance == TIMER_A0) {
 		timer_module = 0;
@@ -28,10 +63,11 @@ Timer::Timer(Timer_A_Type* instance, TimerClockSource source) :
 	}
 
 	regs.CTL |= TAIE;
+	regs.CCTL[0] |= TIMER_A_CCTLN_CCIE;
 
 	overflow_isr = 0;
 	int i;
-	for (i = 0; i < sizeof(isr); i++) {
+	for (i = 0; i < sizeof(isr)/sizeof(*isr); i++) {
 		isr[i] = 0;
 	}
 }
@@ -157,11 +193,12 @@ void Timer::SetPWM(TimerCapComUnit module, uint16_t pulse_width) {
 }
 
 void Timer::DisablePWM(TimerCapComUnit module) {
-	regs.CCTL[(int)module] = (regs.CCTL[(int)module] & ~OUTMOD_7) | OUTMOD_5;
+	regs.CCTL[(int) module] = (regs.CCTL[(int) module] & ~OUTMOD_7) | OUTMOD_5;
 }
 
 void Timer::EnablePWM(TimerCapComUnit module) {
-	regs.CCTL[(int)module] = (regs.CCTL[(int)module] & ~OUTMOD_7 & ~CAP & ~CM_3) | OUTMOD_7;
+	regs.CCTL[(int) module] = (regs.CCTL[(int) module] & ~OUTMOD_7 & ~CAP
+			& ~CM_3) | OUTMOD_7;
 }
 
 void Timer::AttachOverflowInterrupt(void (*new_interrupt)(void)) {
@@ -190,8 +227,7 @@ void Timer::AttachInterrupt(TimerCapComUnit module,
 	}
 }
 
-unsigned int Timer::GetOverflowCount()
-{
+unsigned int Timer::GetOverflowCount() {
 	return overflow_count;
 }
 
@@ -213,10 +249,8 @@ void Timer::_CCR0_ISR(void) {
 
 void Timer::_CCRn_ISR(void) {
 	int n = regs.IV / 2;
-	if (n == 7)
-	{
-		if (overflow_isr != 0)
-		{
+	if (n == 7) {
+		if (overflow_isr != 0) {
 			overflow_isr();
 		}
 		overflow_count++;
@@ -232,30 +266,30 @@ void Timer::_CCRn_ISR(void) {
 
 extern "C" {
 void TA0_0_IRQHandler() {
-	Peripherials::TA0._CCR0_ISR();
+	Peripherials::GetTA0()._CCR0_ISR();
 }
 void TA0_N_IRQHandler() {
-	Peripherials::TA0._CCRn_ISR();
+	Peripherials::GetTA0()._CCRn_ISR();
 }
 /////////////////////////
 void TA1_0_IRQHandler() {
-	Peripherials::TA1._CCR0_ISR();
+	Peripherials::GetTA1()._CCR0_ISR();
 }
 void TA1_N_IRQHandler() {
-	Peripherials::TA1._CCRn_ISR();
+	Peripherials::GetTA1()._CCRn_ISR();
 }
 /////////////////////////
 void TA2_0_IRQHandler() {
-	Peripherials::TA2._CCR0_ISR();
+	Peripherials::GetTA2()._CCR0_ISR();
 }
 void TA2_N_IRQHandler() {
-	Peripherials::TA2._CCRn_ISR();
+	Peripherials::GetTA2()._CCRn_ISR();
 }
 /////////////////////////
 void TA3_0_IRQHandler() {
-	Peripherials::TA3._CCR0_ISR();
+	Peripherials::GetTA3()._CCR0_ISR();
 }
 void TA3_N_IRQHandler() {
-	Peripherials::TA3._CCRn_ISR();
+	Peripherials::GetTA3()._CCRn_ISR();
 }
 }

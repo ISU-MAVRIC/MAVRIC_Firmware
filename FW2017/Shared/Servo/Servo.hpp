@@ -28,6 +28,8 @@ public:
 	 * Moves to the center of the calibrated range.
 	 */
 	virtual void Center() = 0;
+
+friend class ControlledServo;
 };
 
 
