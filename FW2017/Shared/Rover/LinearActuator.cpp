@@ -5,6 +5,8 @@
  *      Author: Talonj123
  */
 
+#include <../driverlib/driverlib/msp432p4xx/driverlib.h>
+
 #include "LinearActuator.hpp"
 #include "msp.h"
 
@@ -12,65 +14,41 @@ int InitADC14() {
 	static int Actuators = 0;
 	static bool inited = false;
 	if (!inited) {
-		ADC14->CTL0 = ADC14_CTL0_PDIV_0 | ADC14_CTL0_SHS_0 | ADC14_CTL0_SHP
-				| ADC14_CTL0_DIV_0 | ADC14_CTL0_SSEL__MODCLK
-				| ADC14_CTL0_CONSEQ_3 | ADC14_CTL0_SHT1__192
-				| ADC14_CTL0_SHT1__192 | ADC14_CTL0_MSC | ADC14_CTL0_ON;
 
-		ADC14->CTL1 = (0 << ADC14_CTL1_CSTARTADD_OFS) | ADC14_CTL1_RES_3;
-
-		ADC14->MCTL[0] = ADC14_MCTLN_INCH_0 | ADC14_MCTLN_EOS;
-
-		ADC14->CTL0 |= ADC14_CTL0_ENC;
-
-		ADC14->CTL0 |= ADC14_CTL0_SC;
+		MAP_ADC14_configureMultiSequenceMode(ADC_MEM0, ADC_MEM0, true);
+		MAP_ADC14_configureConversionMemory(ADC_MEM0,
+		ADC_VREFPOS_AVCC_VREFNEG_VSS,
+		ADC_INPUT_A0, false);
 		inited = true;
 	}
 	return Actuators++;
 }
 
-static DIO_PORT_Interruptable_Type* ports[] = { PA, PB, PC, PD, PE };
-
 LinearActuator::LinearActuator(Servo& output, int fb_channel, PinID fb_pin,
-		PinID direction) :
-		control(output), feedback_channel(fb_channel), direction_pin(direction) {
+		PinID dir_pin) :
+		control(output), feedback_channel(fb_channel), direction_pin(dir_pin) {
 	sequence_num = InitADC14();
 
-	if (sequence_num > 0) {
-		ADC14->MCTL[sequence_num - 1] &= ~ADC14_MCTLN_EOS;
-	}
-	ADC14->MCTL[sequence_num] = (fb_channel << ADC14_MCTLN_INCH_OFS)
-			| ADC14_MCTLN_EOS;
+	MAP_GPIO_setAsPeripheralModuleFunctionInputPin(fb_pin.port, 1 << fb_pin.pin,
+	GPIO_TERTIARY_MODULE_FUNCTION);
 
-	int port = (fb_pin.port - 1) / 2;
-	int pin = fb_pin.pin;
-	if ((fb_pin.port % 2) == 0) {
-		pin += 8;
-	}
-	ports[port]->SEL0 |= (1 << pin);
-	ports[port]->SEL1 |= (1 << pin);
+	MAP_ADC14_configureMultiSequenceMode(ADC_MEM0, ADC_MEM0 << sequence_num,
+			true);
+	MAP_ADC14_configureConversionMemory(ADC_MEM0 << sequence_num,
+			ADC_VREFPOS_AVCC_VREFNEG_VSS,
+			fb_channel, false);
 
-	port = (direction_pin.port - 1) / 2;
-	pin = direction_pin.pin;
-	if ((direction_pin.port % 2) == 0) {
-		pin += 8;
-	}
-	ports[port]->SEL0 &= ~(1 << pin);
-	ports[port]->SEL1 &= ~(1 << pin);
-	ports[port]->DIR |= (1 << pin);
-
-	direction_pin.port = port;
-	direction_pin.pin = pin;
+	MAP_GPIO_setAsOutputPin(dir_pin.port, 1 << dir_pin.pin);
 }
 
 void LinearActuator::Tick(float seconds) {
-	int result = ADC14->MEM[sequence_num];
+	int result = MAP_ADC14_getResult(1 << sequence_num);
 	float percent = ((float) result) / ((2 << 14) - 1);
 	if (percent > target_value) {
-		ports[direction_pin.port]->OUT |= (1 << direction_pin.pin);
+		MAP_GPIO_setOutputHighOnPin(direction_pin.port, 1 << direction_pin.pin);
 		control.GoTo(1);
 	} else if (percent < target_value) {
-		ports[direction_pin.port]->OUT &= (1 << direction_pin.pin);
+		MAP_GPIO_setOutputLowOnPin(direction_pin.port, 1 << direction_pin.pin);
 		control.GoTo(1);
 	} else {
 		control.GoTo(0);

@@ -1,3 +1,18 @@
 *Debug*
 *.metadata*
 
+FW2017/Base Station Communication/.launches/
+FW2017/Base Station Communication/.settings/
+FW2017/Old-Communication/.launches/
+FW2017/Old-Communication/.settings/
+FW2017/RemoteSystemsTempFiles/
+FW2017/ServoControl/.launches/
+FW2017/ServoControl/.settings/
+FW2017/Shared/.settings/
+FW2017/UART/.settings/
+FW2017/UART/.launches/
+
+*.project
+*.cproject
+*.ccsproject
+.jxbrowser-data/

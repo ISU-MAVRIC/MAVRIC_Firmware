@@ -71,8 +71,8 @@ void main(void) {
 
 		int new_time = Peripherials::GetTA3().GetOverflowCount();
 //		if (new_time - last_time > 50 * 1) {
-//			Left.Center(127);
-//			Right.Center(127);
+//			Left.Center();
+//			Right.Center();
 //		}
 		if (uart_data[0] == '<') {
 			if (RFD900.GetBufferLength() >= 4) {
