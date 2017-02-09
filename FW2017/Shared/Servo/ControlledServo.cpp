@@ -29,7 +29,7 @@ void ControlledServo::Resume() {
  * Sets the control to the angle given
  */
 void ControlledServo::GoTo(float point) {
-	float percent = (point-min)/(max-min);
+	float percent = (point - min) / (max - min);
 	target_value = percent;
 }
 /*
@@ -47,13 +47,19 @@ void ControlledServo::Center() {
 
 void ControlledServo::Tick(float time) {
 	float delta = 0;
-	if (target_value > current_value) {
+	if (current_value < target_value) {
 		delta = rate * time;
+		if (current_value < 0) {
+			delta *= 1.5f;
+		}
 		if (current_value + delta > target_value) {
 			delta = current_value - target_value;
 		}
-	} else if (target_value < current_value) {
+	} else if (current_value > target_value) {
 		delta = -rate * time;
+		if (current_value > 0) {
+			delta *= 1.5f;
+		}
 		if (current_value + delta < target_value) {
 			delta = current_value - target_value;
 		}

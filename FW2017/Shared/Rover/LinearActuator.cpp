@@ -5,7 +5,7 @@
  *      Author: Talonj123
  */
 
-#include <../driverlib/driverlib/msp432p4xx/driverlib.h>
+#include <../../driverlib/driverlib/msp432p4xx/driverlib.h>
 
 #include "LinearActuator.hpp"
 #include "msp.h"
