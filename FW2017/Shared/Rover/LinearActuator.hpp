@@ -25,7 +25,7 @@ private:
 
 public:
 	LinearActuator(Servo& output, int fb_channel, PinID fb_pin,
-			PinID direction);
+			PinID direction, int adc_index);
 
 	void Tick(float seconds);
 
