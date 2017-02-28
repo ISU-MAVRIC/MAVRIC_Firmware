@@ -27,20 +27,59 @@ ControlledServo& Right = *new ControlledServo(
 internal_servo_cal_point arm_upper_low = { 0, 0 };
 internal_servo_cal_point arm_upper_high = { 1, 0.020 };
 
-PinID upper_fb = {5, 2};
-PinID upper_dir = {1, 7};
+PinID upper_fb = { 5, 2 };
+PinID upper_dir = { 1, 7 };
 
-LinearActuator& ArmUpper = *new LinearActuator(*new InternalServoControl(Peripherials::GetTA2(),
-		Peripherials::CC3, arm_upper_low, arm_upper_high), 3, upper_fb, upper_dir, 0);
+//ActuatorRange arm_upper_range = { 0.27450980392156862745098039215686, 1 };
+ActuatorRange arm_upper_range = { 0.27450980392156862745098039215686, 0.8 };
+
+LinearActuator& ArmUpper = *new LinearActuator(
+		*new InternalServoControl(Peripherials::GetTA2(), Peripherials::CC3,
+				arm_upper_low, arm_upper_high), 3, upper_fb, upper_dir, 0,
+		arm_upper_range, false);
 
 internal_servo_cal_point arm_lower_low = { 0, 0 };
 internal_servo_cal_point arm_lower_high = { 1, 0.020 };
 
-PinID lower_fb = {5, 1};
-PinID lower_dir = {6, 7};
+PinID lower_fb = { 5, 1 };
+PinID lower_dir = { 1, 6 };
 
-LinearActuator& ArmLower = *new LinearActuator(*new InternalServoControl(Peripherials::GetTA2(),
-		Peripherials::CC3, arm_lower_low, arm_lower_high), 4, lower_fb, lower_dir, 1);
+ActuatorRange arm_lower_range = { 0.25, 0.9 };
+
+LinearActuator& ArmLower = *new LinearActuator(
+		*new InternalServoControl(Peripherials::GetTA2(), Peripherials::CC2,
+				arm_lower_low, arm_lower_high), 4, lower_fb, lower_dir, 1,
+		arm_lower_range, true);
 
 /////////////////////////////End Arm Drivers//////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////
+////////////////////////////Begin Claw Drivers///////////////////////////////
+internal_servo_cal_point claw_pan_low = { 0, 0.0013 };
+internal_servo_cal_point claw_pan_high = { 255, 0.00157 };
+
+//	internal_servo_cal_point claw_pan_low = { 0, 0.001 };
+//	internal_servo_cal_point claw_pan_high = { 255, 0.002 };
+
+Servo& ClawPan = *new InternalServoControl(Peripherials::GetTA0(),
+		Peripherials::CC1, claw_pan_low, claw_pan_high);
+//ControlledServo& Right = *new ControlledServo(
+//		*new InternalServoControl(Peripherials::GetTA3(), Peripherials::CC2,
+//				wheels_low, wheels_high), 255, 0, 0.3);
+
+internal_servo_cal_point claw_pitch_low = { 0, 0.00095 };
+internal_servo_cal_point claw_pitch_high = { 255, 0.0015 };
+
+//	internal_servo_cal_point claw_pan_low = { 0, 0.001 };
+//	internal_servo_cal_point claw_pan_high = { 255, 0.002 };
+
+Servo& ClawPitch = *new InternalServoControl(Peripherials::GetTA0(),
+		Peripherials::CC2, claw_pitch_low, claw_pitch_high);
+//ControlledServo& Right = *new ControlledServo(
+//		*new InternalServoControl(Peripherials::GetTA3(), Peripherials::CC2,
+//				wheels_low, wheels_high), 255, 0, 0.3);
+
+
+/////////////////////////////End Claw Drivers////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////

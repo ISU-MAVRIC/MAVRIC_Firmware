@@ -15,17 +15,29 @@ typedef struct PinID {
 	int pin;
 } PinID;
 
+typedef struct ActuatorRange {
+	float min;
+	float max;
+} ActuatorRange;
+
 class LinearActuator: public Servo {
+public:
+	Servo& control;
+
 private:
 	int feedback_channel;
-	Servo& control;
 	int sequence_num;
 	PinID direction_pin;
 	float target_value;
+	ActuatorRange range;
+	bool inverted;
+	bool reached;
+	float current_value;
+	float previous_value;
 
 public:
 	LinearActuator(Servo& output, int fb_channel, PinID fb_pin,
-			PinID direction, int adc_index);
+			PinID direction, int adc_index, ActuatorRange limits, bool is_inverted);
 
 	void Tick(float seconds);
 

@@ -6,6 +6,8 @@
 
 #include "msp.h"
 
+#include <string.h>
+
 #include "clocks.h"
 #include "uart.hpp"
 #include "ProtocolData.h"
@@ -13,10 +15,12 @@
 #include "TimerPWM_Servo.hpp"
 #include "timer.hpp"
 #include "Drivers.hpp"
+#include <../../driverlib/driverlib/msp432p4xx/driverlib.h>
 
 void main(void) {
 
-	WDTCTL = WDTPW | WDTHOLD;           // Stop watchdog timer
+	WDTCTL = WDTPW | WDTHOLD;
+	// Stop watchdog timer
 	//<left right # # # # # # # # # # # # #>
 	//Peripherials::UART uart(*EUSCI_A1, 9600, txQueue);
 
@@ -34,62 +38,94 @@ void main(void) {
 	P5->DIR |= (1 << 7);
 	P5->SEL0 |= (1 << 7);
 
-	P6->DIR |= (1 << 6);
-	P6->SEL0 |= (1 << 6);
+	// Linear Actuator direction pins
+	MAP_GPIO_setAsOutputPin(GPIO_PORT_P1, GPIO_PIN6);
+	MAP_GPIO_setAsOutputPin(GPIO_PORT_P1, GPIO_PIN7);
+
+	// TA2.3 (P6.6)
+	MAP_GPIO_setAsPeripheralModuleFunctionOutputPin(GPIO_PORT_P6, GPIO_PIN6,
+	GPIO_PRIMARY_MODULE_FUNCTION);
+
+	// TA0.1 (P2.4)
+	MAP_GPIO_setAsPeripheralModuleFunctionOutputPin(GPIO_PORT_P2, GPIO_PIN4,
+	GPIO_PRIMARY_MODULE_FUNCTION);
+	// TA0.2 (P2.5)
+	MAP_GPIO_setAsPeripheralModuleFunctionOutputPin(GPIO_PORT_P2, GPIO_PIN5,
+	GPIO_PRIMARY_MODULE_FUNCTION);
 
 	//EUSCI_A1->STATW |= UCLISTEN;
 
-	NVIC_EnableIRQ (EUSCIA2_IRQn);
-	NVIC_EnableIRQ (TA0_0_IRQn);
-	NVIC_EnableIRQ (TA0_N_IRQn);
-	NVIC_EnableIRQ (TA1_0_IRQn);
-	NVIC_EnableIRQ (TA1_N_IRQn);
-	NVIC_EnableIRQ (TA2_0_IRQn);
-	NVIC_EnableIRQ (TA2_N_IRQn);
-	NVIC_EnableIRQ (TA3_0_IRQn);
-	NVIC_EnableIRQ (TA3_N_IRQn);
-	NVIC_EnableIRQ (ADC14_IRQn);
+	NVIC_EnableIRQ(EUSCIA2_IRQn);
+	NVIC_EnableIRQ(TA0_0_IRQn);
+	NVIC_EnableIRQ(TA0_N_IRQn);
+	NVIC_EnableIRQ(TA1_0_IRQn);
+	NVIC_EnableIRQ(TA1_N_IRQn);
+	NVIC_EnableIRQ(TA2_0_IRQn);
+	NVIC_EnableIRQ(TA2_N_IRQn);
+	NVIC_EnableIRQ(TA3_0_IRQn);
+	NVIC_EnableIRQ(TA3_N_IRQn);
+	NVIC_EnableIRQ(ADC14_IRQn);
 
 	Left.Center();
 	Right.Center();
 
 	ArmUpper.Center();
-	ArmUpper.Center();
+	ArmLower.GoTo(0.9);
+	ClawPan.Center();
+	ClawPitch.Center();
 
 	Left.Resume();
 	Right.Resume();
 	ArmUpper.Resume();
-//	ArmLower.Resume();
+	ArmLower.Resume();
+	ClawPan.Resume();
+	ClawPitch.Resume();
 
 	int last_time = Peripherials::GetTA3().GetOverflowCount();
-	int current_time = Peripherials::GetTA3().GetOverflowCount();
+	int current_time = last_time;
+	int message_time = current_time - 600;
 	Peripherials::UART& RFD900 = Peripherials::UART_A2;
-
 	unsigned char* uart_data = RFD900.GetBuffer().GetData();
+	bool suspended = true;
 
 	while (1) {
-		////////////////////////////////////////////////////////
-		do {
-			current_time = Peripherials::GetTA3().GetOverflowCount();
-		} while ((current_time - last_time) == 0);
-		last_time = current_time;
+		current_time = Peripherials::GetTA3().GetOverflowCount();
 		////////////////////////////////////////////////////////
 
-		int new_time = Peripherials::GetTA3().GetOverflowCount();
-//		if (new_time - last_time > 50 * 1) {
-//			Left.Center();
-//			Right.Center();
+		// 50 ticks = 1 second
+//		if (current_time - message_time > 50 * 1) {
+//			Left.Suspend();
+//			Right.Suspend();
+//			ArmUpper.Suspend();
+//			ArmLower.Suspend();
+//			ClawPan.Suspend();
+//			ClawPitch.Suspend();
+//			suspended = true;
 //		}
+
 		if (uart_data[0] == '<') {
 			if (RFD900.GetBufferLength() >= 8) {
-				last_time = Peripherials::GetTA3().GetOverflowCount();
+				message_time = Peripherials::GetTA3().GetOverflowCount();
+				unsigned char data[8];
+				memcpy(data, RFD900.GetBuffer().GetData(), sizeof(data));
 				RFD900.ClearBuffer();
-				Left.GoTo(uart_data[1]);
-				Right.GoTo(uart_data[2]);
-				float olower = (uart_data[3]) / 256.0f;
-				float oupper = (uart_data[3]) / 256.0f;
+				float olower = (data[3]) / 255.0f;
+				float oupper = (data[4]) / 255.0f;
+
+				Left.GoTo(data[1]);
+				Right.GoTo(data[2]);
+				ClawPan.GoTo(data[5]);
+				ClawPitch.GoTo(data[6]);
 				ArmLower.GoTo(olower);
 				ArmUpper.GoTo(oupper);
+
+				if (suspended) {
+					Right.Resume();
+					Left.Resume();
+					ArmUpper.Resume();
+					ArmLower.Resume();
+					suspended = false;
+				}
 //				Right.GoTo(uart_data[5]);
 //				Right.GoTo(uart_data[6]);
 				uart_data[0] = '\0';
@@ -98,10 +134,15 @@ void main(void) {
 			RFD900.ClearBuffer();
 		}
 
-		Left.Tick(0.020f);
-		Right.Tick(0.020f);
-		ArmUpper.Tick(0.020f);
-//		ArmLower.Tick(0.020f);
+		if (!suspended) {
+			float delta = 0.020f * (current_time - last_time);
+			Left.Tick(delta);
+			Right.Tick(delta);
+			ArmLower.Tick(delta);
+			ArmUpper.Tick(delta);
+		}
+
+		last_time = current_time;
 	}
 }
 

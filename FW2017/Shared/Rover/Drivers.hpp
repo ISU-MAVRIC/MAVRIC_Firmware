@@ -18,4 +18,7 @@ extern ControlledServo& Right;
 extern LinearActuator& ArmUpper;
 extern LinearActuator& ArmLower;
 
+extern Servo& ClawPan;
+extern Servo& ClawPitch;
+
 #endif /* ROVER_DRIVERS_HPP_ */
