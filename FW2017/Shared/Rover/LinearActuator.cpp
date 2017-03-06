@@ -50,12 +50,11 @@ void InitADC14() {
 	}
 }
 
-LinearActuator::LinearActuator(Servo& output, int fb_channel, PinID fb_pin,
-		PinID dir_pin, int adc_index, ActuatorRange limits, bool is_inverted) :
-		control(output), feedback_channel(fb_channel), direction_pin(dir_pin), sequence_num(
-				adc_index), range(limits), inverted(is_inverted) {
+LinearActuator::LinearActuator(H_Bridge& output, int fb_channel, PinID fb_pin,
+		int adc_index, ActuatorRange limits, bool is_inverted) :
+		control(output), feedback_channel(fb_channel), sequence_num(adc_index), range(
+				limits), inverted(is_inverted) {
 	InitADC14();
-	MAP_GPIO_setAsOutputPin(dir_pin.port, 1 << dir_pin.pin);
 }
 
 void LinearActuator::Tick(float seconds) {
@@ -67,16 +66,12 @@ void LinearActuator::Tick(float seconds) {
 
 	// if the sign changed (crossed the target)
 	if ((current_value > (target_value + softband)) ^ (inverted)) {
-		MAP_GPIO_setOutputLowOnPin(direction_pin.port, 1 << direction_pin.pin);
-		control.GoTo(1.01);
+		control.GoTo(-1.01);
 	} else if ((current_value > (target_value + deadband)) ^ (inverted)) {
-		MAP_GPIO_setOutputLowOnPin(direction_pin.port, 1 << direction_pin.pin);
-		control.GoTo(current_value - target_value - deadband);
+		control.GoTo(-(current_value - target_value - deadband));
 	} else if ((current_value < (target_value - softband)) ^ (inverted)) {
-		MAP_GPIO_setOutputHighOnPin(direction_pin.port, 1 << direction_pin.pin);
 		control.GoTo(1.01);
 	} else if ((current_value < (target_value - deadband)) ^ (inverted)) {
-		MAP_GPIO_setOutputHighOnPin(direction_pin.port, 1 << direction_pin.pin);
 		control.GoTo(target_value - deadband - current_value);
 	} else {
 		control.GoTo(0);
@@ -100,9 +95,6 @@ void LinearActuator::Resume() {
  * Sets the control to the angle given
  */
 void LinearActuator::GoTo(float point) {
-	if (target_value != point) {
-		reached = false;
-	}
 	target_value = point;
 	if (target_value < range.min) {
 		target_value = range.min;

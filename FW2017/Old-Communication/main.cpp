@@ -70,16 +70,16 @@ void main(void) {
 	Right.Center();
 
 	ArmUpper.Center();
-	ArmLower.GoTo(0.9);
+	ArmLower.GoTo(1);
 	ClawPan.Center();
 	ClawPitch.Center();
 
-	Left.Resume();
-	Right.Resume();
-	ArmUpper.Resume();
-	ArmLower.Resume();
-	ClawPan.Resume();
-	ClawPitch.Resume();
+//	Left.Resume();
+//	Right.Resume();
+//	ArmUpper.Resume();
+//	ArmLower.Resume();
+//	ClawPan.Resume();
+//	ClawPitch.Resume();
 
 	int last_time = Peripherials::GetTA3().GetOverflowCount();
 	int current_time = last_time;
@@ -93,15 +93,15 @@ void main(void) {
 		////////////////////////////////////////////////////////
 
 		// 50 ticks = 1 second
-//		if (current_time - message_time > 50 * 1) {
-//			Left.Suspend();
-//			Right.Suspend();
-//			ArmUpper.Suspend();
-//			ArmLower.Suspend();
-//			ClawPan.Suspend();
-//			ClawPitch.Suspend();
-//			suspended = true;
-//		}
+		if (current_time - message_time > 50 * 1) {
+			Left.Suspend();
+			Right.Suspend();
+			ArmUpper.Suspend();
+			ArmLower.Suspend();
+			ClawPan.Suspend();
+			ClawPitch.Suspend();
+			suspended = true;
+		}
 
 		if (uart_data[0] == '<') {
 			if (RFD900.GetBufferLength() >= 8) {
@@ -112,8 +112,8 @@ void main(void) {
 				float olower = (data[3]) / 255.0f;
 				float oupper = (data[4]) / 255.0f;
 
-				Left.GoTo(data[1]);
-				Right.GoTo(data[2]);
+				Right.GoTo(data[1]);
+				Left.GoTo(data[2]);
 				ClawPan.GoTo(data[5]);
 				ClawPitch.GoTo(data[6]);
 				ArmLower.GoTo(olower);
@@ -122,6 +122,8 @@ void main(void) {
 				if (suspended) {
 					Right.Resume();
 					Left.Resume();
+					ClawPan.Resume();
+					ClawPitch.Resume();
 					ArmUpper.Resume();
 					ArmLower.Resume();
 					suspended = false;

@@ -14,10 +14,10 @@ internal_servo_cal_point wheels_high = { 255, 0.0018 };
 
 ControlledServo& Left = *new ControlledServo(
 		*new InternalServoControl(Peripherials::GetTA3(), Peripherials::CC1,
-				wheels_low, wheels_high), 255, 0, 0.3);
+				wheels_low, wheels_high), 255, 0, 0.8);
 ControlledServo& Right = *new ControlledServo(
 		*new InternalServoControl(Peripherials::GetTA3(), Peripherials::CC2,
-				wheels_low, wheels_high), 255, 0, 0.3);
+				wheels_low, wheels_high), 255, 0, 0.8);
 
 /////////////////////////////End Wheel Drivers////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
@@ -34,9 +34,10 @@ PinID upper_dir = { 1, 7 };
 ActuatorRange arm_upper_range = { 0.27450980392156862745098039215686, 0.8 };
 
 LinearActuator& ArmUpper = *new LinearActuator(
-		*new InternalServoControl(Peripherials::GetTA2(), Peripherials::CC3,
-				arm_upper_low, arm_upper_high), 3, upper_fb, upper_dir, 0,
-		arm_upper_range, false);
+		*new H_Bridge(
+				*new InternalServoControl(Peripherials::GetTA2(),
+						Peripherials::CC3, arm_upper_low, arm_upper_high),
+				upper_dir), 3, upper_fb, 0, arm_upper_range, false);
 
 internal_servo_cal_point arm_lower_low = { 0, 0 };
 internal_servo_cal_point arm_lower_high = { 1, 0.020 };
@@ -47,9 +48,10 @@ PinID lower_dir = { 1, 6 };
 ActuatorRange arm_lower_range = { 0.25, 0.9 };
 
 LinearActuator& ArmLower = *new LinearActuator(
-		*new InternalServoControl(Peripherials::GetTA2(), Peripherials::CC2,
-				arm_lower_low, arm_lower_high), 4, lower_fb, lower_dir, 1,
-		arm_lower_range, true);
+		*new H_Bridge(
+				*new InternalServoControl(Peripherials::GetTA2(),
+						Peripherials::CC2, arm_lower_low, arm_lower_high),
+				lower_dir), 4, lower_fb, 1, arm_lower_range, true);
 
 /////////////////////////////End Arm Drivers//////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
@@ -79,7 +81,6 @@ Servo& ClawPitch = *new InternalServoControl(Peripherials::GetTA0(),
 //ControlledServo& Right = *new ControlledServo(
 //		*new InternalServoControl(Peripherials::GetTA3(), Peripherials::CC2,
 //				wheels_low, wheels_high), 255, 0, 0.3);
-
 
 /////////////////////////////End Claw Drivers////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////

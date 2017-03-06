@@ -50,7 +50,7 @@ void ControlledServo::Tick(float time) {
 	if (current_value < target_value) {
 		delta = rate * time;
 		if (current_value < 0) {
-			delta *= 1.5f;
+//			delta *= 1.5f;
 		}
 		if (current_value + delta > target_value) {
 			delta = current_value - target_value;
@@ -58,7 +58,7 @@ void ControlledServo::Tick(float time) {
 	} else if (current_value > target_value) {
 		delta = -rate * time;
 		if (current_value > 0) {
-			delta *= 1.5f;
+//			delta *= 1.5f;
 		}
 		if (current_value + delta < target_value) {
 			delta = current_value - target_value;

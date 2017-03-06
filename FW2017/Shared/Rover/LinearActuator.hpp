@@ -9,11 +9,12 @@
 #define ROVER_LINEARACTUATOR_HPP_
 
 #include "servo.hpp"
+#include "H_Bridge.hpp"
 
-typedef struct PinID {
-	int port;
-	int pin;
-} PinID;
+//typedef struct PinID {
+//	int port;
+//	int pin;
+//} PinID;
 
 typedef struct ActuatorRange {
 	float min;
@@ -22,22 +23,20 @@ typedef struct ActuatorRange {
 
 class LinearActuator: public Servo {
 public:
-	Servo& control;
+	H_Bridge& control;
 
 private:
 	int feedback_channel;
 	int sequence_num;
-	PinID direction_pin;
 	float target_value;
 	ActuatorRange range;
 	bool inverted;
-	bool reached;
 	float current_value;
 	float previous_value;
 
 public:
-	LinearActuator(Servo& output, int fb_channel, PinID fb_pin,
-			PinID direction, int adc_index, ActuatorRange limits, bool is_inverted);
+	LinearActuator(H_Bridge& output, int fb_channel, PinID fb_pin,
+			int adc_index, ActuatorRange limits, bool is_inverted);
 
 	void Tick(float seconds);
 
