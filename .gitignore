@@ -11,6 +11,7 @@ FW2017/ServoControl/.settings/
 FW2017/Shared/.settings/
 FW2017/UART/.settings/
 FW2017/UART/.launches/
+FW2017/driverlib/
 
 *.project
 *.cproject

@@ -32,12 +32,12 @@ void H_Bridge::Resume() {
 void H_Bridge::GoTo(float point) {
 	if (point < 0)
 	{
-		MAP_GPIO_setOutputLowOnPin(direction_pin.port, 1 << direction_pin.port);
+		MAP_GPIO_setOutputLowOnPin(direction_pin.port, 1 << direction_pin.pin);
 		point = -point;
 	}
 	else if (point > 0)
 	{
-		MAP_GPIO_setOutputHighOnPin(direction_pin.port, 1 << direction_pin.port);
+		MAP_GPIO_setOutputHighOnPin(direction_pin.port, 1 << direction_pin.pin);
 	}
 	control.GoTo(point);
 }
