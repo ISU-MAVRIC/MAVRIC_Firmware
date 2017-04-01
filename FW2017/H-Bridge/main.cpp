@@ -10,8 +10,6 @@
 
 #include "clocks.h"
 #include "uart.hpp"
-#include "ProtocolData.h"
-#include "Protocol.hpp"
 #include "TimerPWM_Servo.hpp"
 #include "timer.hpp"
 #include "Drivers.hpp"
