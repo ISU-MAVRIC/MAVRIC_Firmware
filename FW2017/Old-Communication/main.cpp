@@ -17,6 +17,8 @@
 #include "Drivers.hpp"
 #include <../../driverlib/driverlib/msp432p4xx/driverlib.h>
 
+void testCameraStep();
+
 void main(void) {
 
 	WDTCTL = WDTPW | WDTHOLD;
@@ -53,6 +55,13 @@ void main(void) {
 	MAP_GPIO_setAsPeripheralModuleFunctionOutputPin(GPIO_PORT_P2, GPIO_PIN5,
 	GPIO_PRIMARY_MODULE_FUNCTION);
 
+	// TA1.4 (P7.4) Camera pan
+	MAP_GPIO_setAsPeripheralModuleFunctionOutputPin(GPIO_PORT_P7, GPIO_PIN4,
+	GPIO_PRIMARY_MODULE_FUNCTION);
+	// TA1.3 (P7.5) Camera tilt
+	MAP_GPIO_setAsPeripheralModuleFunctionOutputPin(GPIO_PORT_P7, GPIO_PIN5,
+	GPIO_PRIMARY_MODULE_FUNCTION);
+
 	//EUSCI_A1->STATW |= UCLISTEN;
 
 	NVIC_EnableIRQ(EUSCIA2_IRQn);
@@ -74,12 +83,17 @@ void main(void) {
 	ClawPan.Center();
 	ClawPitch.Center();
 
+	CameraPan.Center();
+	CameraPitch.Center();
+
 //	Left.Resume();
 //	Right.Resume();
 //	ArmUpper.Resume();
 //	ArmLower.Resume();
 //	ClawPan.Resume();
 //	ClawPitch.Resume();
+	CameraPan.Resume();
+	CameraPitch.Resume();
 
 	int last_time = Peripherials::GetTA3().GetOverflowCount();
 	int current_time = last_time;
@@ -136,6 +150,8 @@ void main(void) {
 			RFD900.ClearBuffer();
 		}
 
+		testCameraStep();
+
 		if (!suspended) {
 			float delta = 0.020f * (current_time - last_time);
 			Left.Tick(delta);
@@ -148,3 +164,34 @@ void main(void) {
 	}
 }
 
+void testCameraStep() {
+//	static float pan = 127;
+	static float pitch = 127;
+//	static int panInc = 1;
+	static int pitchInc = 2;
+//	CameraPan.GoTo(pan);
+	CameraPitch.GoTo(pitch);
+//	if (pan + panInc >= 255 || pan + panInc <= 0) {
+//		panInc *= -1;
+//	}
+//
+	if (pitch + pitchInc >= 255 || pitch + pitchInc <= 0) {
+		pitchInc *= -1;
+	}
+//
+//	pan += panInc;
+	pitch += pitchInc;
+
+	static bool panSide = false;
+	static int panCounter = 0;
+	if (panCounter++ >= 150) {
+		panCounter = 0;
+		if (panSide) {
+			CameraPan.GoTo(255);
+		} else {
+			CameraPan.GoTo(0);
+		}
+		panSide = !panSide;
+	}
+	__delay_cycles(fMCLK / 50);
+}

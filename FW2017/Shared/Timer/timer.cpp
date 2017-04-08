@@ -15,25 +15,25 @@ namespace Peripherials {
 
 Timer& GetTA0()
 {
-	static Timer ta0(TIMER_A0, ACLK);
+	static Timer ta0(TIMER_A0, SMCLK);
 	return ta0;
 }
 
 Timer& GetTA1()
 {
-	static Timer ta1(TIMER_A1, ACLK);
+	static Timer ta1(TIMER_A1, SMCLK);
 	return ta1;
 }
 
 Timer& GetTA2()
 {
-	static Timer ta2(TIMER_A2, ACLK);
+	static Timer ta2(TIMER_A2, SMCLK);
 	return ta2;
 }
 
 Timer& GetTA3()
 {
-	static Timer ta3(TIMER_A3, ACLK);
+	static Timer ta3(TIMER_A3, SMCLK);
 	return ta3;
 }
 

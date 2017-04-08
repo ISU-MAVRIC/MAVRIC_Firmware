@@ -20,7 +20,7 @@ typedef enum TimerClockSource {
 } TimerClockSource;
 
 typedef enum TimerCapComUnit {
-	CC0, CC1, CC2, CC3
+	CC0, CC1, CC2, CC3, CC4
 } TimerCapComUnit;
 
 class Timer {

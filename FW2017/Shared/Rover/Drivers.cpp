@@ -12,10 +12,10 @@ internal_servo_cal_point wheels_high = { 255, 0.0018 };
 //	internal_servo_cal_point low = { 0, 0.001 };
 //	internal_servo_cal_point high = { 255, 0.002 };
 
-ControlledServo& Left = *new ControlledServo(
+Servo& Left = *new ControlledServo(
 		*new InternalServoControl(Peripherials::GetTA3(), Peripherials::CC1,
 				wheels_low, wheels_high), 255, 0, 0.8);
-ControlledServo& Right = *new ControlledServo(
+Servo& Right = *new ControlledServo(
 		*new InternalServoControl(Peripherials::GetTA3(), Peripherials::CC2,
 				wheels_low, wheels_high), 255, 0, 0.8);
 
@@ -83,4 +83,33 @@ Servo& ClawPitch = *new InternalServoControl(Peripherials::GetTA0(),
 //				wheels_low, wheels_high), 255, 0, 0.3);
 
 /////////////////////////////End Claw Drivers////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////
+////////////////////////////Begin Camera Drivers//////////////////////////////
+internal_servo_cal_point camera_pan_low = { 0, 0.0006 };
+internal_servo_cal_point camera_pan_high = { 255, 0.0024 };
+
+//	internal_servo_cal_point camera_pan_low = { 0, 0.001 };
+//	internal_servo_cal_point camera_pan_high = { 255, 0.002 };
+
+Servo& CameraPan = *new InternalServoControl(Peripherials::GetTA1(),
+		Peripherials::CC3, camera_pan_low, camera_pan_high);
+//ControlledServo& Right = *new ControlledServo(
+//		*new InternalServoControl(Peripherials::GetTA3(), Peripherials::CC2,
+//				wheels_low, wheels_high), 255, 0, 0.3);
+
+internal_servo_cal_point camera_pitch_low = { 0, 0.0006 };
+internal_servo_cal_point camera_pitch_high = { 255, 0.0024 };
+
+//	internal_servo_cal_point claw_pan_low = { 0, 0.001 };
+//	internal_servo_cal_point claw_pan_high = { 255, 0.002 };
+
+Servo& CameraPitch = *new InternalServoControl(Peripherials::GetTA1(),
+		Peripherials::CC4, camera_pitch_low, camera_pitch_high);
+//ControlledServo& Right = *new ControlledServo(
+//		*new InternalServoControl(Peripherials::GetTA3(), Peripherials::CC2,
+//				wheels_low, wheels_high), 255, 0, 0.3);
+
+/////////////////////////////End Camera Drivers///////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
