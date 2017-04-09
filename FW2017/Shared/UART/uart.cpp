@@ -41,15 +41,15 @@ UART::UART(EUSCI_A_Type& instance, int baud, Buffers::RollingBuffer backingTx,
 		Buffers::BaseBuffer backingRx, bool msb) :
 		regs(instance), txBuffer(backingTx), rxBuffer(backingRx), rxIndex(0) {
 
-	regs.CTLW0 = /*UCPEN | UCPAR | */(msb ? UCMSB : 0) | (1 << 7) | UCSWRST;
+	regs.CTLW0 = /*UCPEN | UCPAR | */(msb ? UCMSB : 0) | (1 << 7) | UCSWRST | UCSSEL__SMCLK;
 
-	int N = (fSMCLK * 256 / baud);
-	int NReg = N / 256;
-	int F = (N % 16);
-	int FReg = (F / 256);
+	float N = ((float)fSMCLK / baud);
+	int NReg = N / 16;
+	int F = ((N/16) - NReg) * 16;
+	int FReg = F;
 
-	regs.BRW = (NReg / 16) - 1;
-	regs.MCTLW = ((N % 256) << EUSCI_A_MCTLW_BRS_OFS)
+	regs.BRW = (NReg);
+	regs.MCTLW = ((int)((N - (int)N) * 256) << EUSCI_A_MCTLW_BRS_OFS)
 			| (FReg << EUSCI_A_MCTLW_BRF_OFS) | UCOS16;
 	regs.CTLW0 &= ~UCSWRST;
 	regs.IE |= EUSCI_A_IE_RXIE;
@@ -86,8 +86,17 @@ void UART::OnInterrupt() {
 		break;
 	case 2:
 		if (rxIndex < rxBuffer.GetSize()) {
+			volatile char stat = regs.STATW;
 			char c = regs.RXBUF;
 			rxBuffer.GetData()[rxIndex++] = c;
+			if (c != 255)
+			{
+				__no_operation();
+			}
+		}
+		else
+		{
+			volatile char c = regs.RXBUF;
 		}
 		break;
 	case 4:

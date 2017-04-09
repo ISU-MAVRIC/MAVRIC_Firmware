@@ -17,14 +17,18 @@
 #include "Drivers.hpp"
 #include <../../driverlib/driverlib/msp432p4xx/driverlib.h>
 
+#include <stdio.h>
+
 void testCameraStep();
 
 void main(void) {
 
 	WDTCTL = WDTPW | WDTHOLD;
-	// Stop watchdog timer
+	// Stop watchdog tim2
 	//<left right # # # # # # # # # # # # #>
 	//Peripherials::UART uart(*EUSCI_A1, 9600, txQueue);
+
+
 
 	P2->DIR |= 7;
 
@@ -74,6 +78,14 @@ void main(void) {
 	NVIC_EnableIRQ(TA3_0_IRQn);
 	NVIC_EnableIRQ(TA3_N_IRQn);
 	NVIC_EnableIRQ(ADC14_IRQn);
+
+
+//	ArmUpper.GoTo(0.5);
+//	ArmUpper.Resume();
+//	while (1)
+//	{
+//		ArmUpper.Tick(0);
+//	}
 
 	Left.Center();
 	Right.Center();
@@ -126,6 +138,8 @@ void main(void) {
 				float olower = (data[3]) / 255.0f;
 				float oupper = (data[4]) / 255.0f;
 
+				printf("%c%3d, %3d, %3d, %3d, %3d, %3d%c\n", data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7]);
+
 				Right.GoTo(data[1]);
 				Left.GoTo(data[2]);
 				ClawPan.GoTo(data[5]);
@@ -150,7 +164,7 @@ void main(void) {
 			RFD900.ClearBuffer();
 		}
 
-		testCameraStep();
+		//testCameraStep();
 
 		if (!suspended) {
 			float delta = 0.020f * (current_time - last_time);
