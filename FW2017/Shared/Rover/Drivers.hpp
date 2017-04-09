@@ -12,8 +12,8 @@
 #include "ControlledServo.hpp"
 #include "LinearActuator.hpp"
 
-extern ControlledServo& Left;
-extern ControlledServo& Right;
+extern Servo& Left;
+extern Servo& Right;
 
 extern LinearActuator& ArmUpper;
 extern LinearActuator& ArmLower;

@@ -12,12 +12,10 @@ internal_servo_cal_point wheels_high = { 255, 0.0018 };
 //	internal_servo_cal_point low = { 0, 0.001 };
 //	internal_servo_cal_point high = { 255, 0.002 };
 
-Servo& Left = *new ControlledServo(
-		*new InternalServoControl(Peripherials::GetTA3(), Peripherials::CC1,
-				wheels_low, wheels_high), 255, 0, 0.8);
-Servo& Right = *new ControlledServo(
-		*new InternalServoControl(Peripherials::GetTA3(), Peripherials::CC2,
-				wheels_low, wheels_high), 255, 0, 0.8);
+Servo& Left = *new InternalServoControl(Peripherials::GetTA3(), Peripherials::CC1,
+				wheels_low, wheels_high);
+Servo& Right = *new InternalServoControl(Peripherials::GetTA3(), Peripherials::CC2,
+				wheels_low, wheels_high);
 
 /////////////////////////////End Wheel Drivers////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
@@ -45,7 +43,7 @@ internal_servo_cal_point arm_lower_high = { 1, 0.020 };
 PinID lower_fb = { 5, 1 };
 PinID lower_dir = { 1, 6 };
 
-ActuatorRange arm_lower_range = { 0.25, 0.9 };
+ActuatorRange arm_lower_range = { 0.45, 0.9 };
 
 LinearActuator& ArmLower = *new LinearActuator(
 		*new H_Bridge(

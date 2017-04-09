@@ -55,7 +55,7 @@ void main(void) {
 	// TA0.1 (P2.4)
 	MAP_GPIO_setAsPeripheralModuleFunctionOutputPin(GPIO_PORT_P2, GPIO_PIN4,
 	GPIO_PRIMARY_MODULE_FUNCTION);
-	// TA0.2 (P2.5)
+	// TA0.2 (P2.5) ClawPitch
 	MAP_GPIO_setAsPeripheralModuleFunctionOutputPin(GPIO_PORT_P2, GPIO_PIN5,
 	GPIO_PRIMARY_MODULE_FUNCTION);
 
@@ -85,6 +85,13 @@ void main(void) {
 //	while (1)
 //	{
 //		ArmUpper.Tick(0);
+//	}
+
+//	ClawPitch.GoTo(0);
+//	ClawPitch.Resume();
+//	ClawPitch.Suspend();
+//	while (1) {
+////		ClawPitch.Tick(0);
 //	}
 
 	Left.Center();
@@ -168,8 +175,8 @@ void main(void) {
 
 		if (!suspended) {
 			float delta = 0.020f * (current_time - last_time);
-			Left.Tick(delta);
-			Right.Tick(delta);
+//			Left.Tick(delta);
+//			Right.Tick(delta);
 			ArmLower.Tick(delta);
 			ArmUpper.Tick(delta);
 		}
