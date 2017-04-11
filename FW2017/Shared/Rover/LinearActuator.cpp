@@ -68,11 +68,13 @@ void LinearActuator::Tick(float seconds) {
 	if ((current_value > (target_value + softband)) ^ (inverted)) {
 		control.GoTo(-1.01);
 	} else if ((current_value > (target_value + deadband)) ^ (inverted)) {
-		control.GoTo(-(current_value - target_value - deadband));
+//		control.GoTo(-(current_value - target_value - deadband));
+		control.GoTo(-0.25);
 	} else if ((current_value < (target_value - softband)) ^ (inverted)) {
 		control.GoTo(1.01);
 	} else if ((current_value < (target_value - deadband)) ^ (inverted)) {
-		control.GoTo(target_value - deadband - current_value);
+//		control.GoTo(target_value - deadband - current_value);
+		control.GoTo(0.25);
 	} else {
 		control.GoTo(0);
 	}

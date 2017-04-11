@@ -137,15 +137,16 @@ void main(void) {
 		}
 
 		if (uart_data[0] == '<') {
-			if (RFD900.GetBufferLength() >= 8) {
+			if (RFD900.GetBufferLength() >= 10) {
 				message_time = Peripherials::GetTA3().GetOverflowCount();
-				unsigned char data[8];
+				unsigned char data[10];
 				memcpy(data, RFD900.GetBuffer().GetData(), sizeof(data));
 				RFD900.ClearBuffer();
 				float olower = (data[3]) / 255.0f;
 				float oupper = (data[4]) / 255.0f;
 
-				printf("%c%3d, %3d, %3d, %3d, %3d, %3d%c\n", data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7]);
+
+				printf("%c%3d, %3d, %3d, %3d, %3d, %3d, %3d, %3d%c\n", data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9]);
 
 				Right.GoTo(data[1]);
 				Left.GoTo(data[2]);
@@ -153,6 +154,8 @@ void main(void) {
 				ClawPitch.GoTo(data[6]);
 				ArmLower.GoTo(olower);
 				ArmUpper.GoTo(oupper);
+				CameraPan.GoTo(data[7]);
+				CameraPitch.GoTo(data[8]);
 
 				if (suspended) {
 					Right.Resume();
