@@ -33,6 +33,9 @@ private:
 	bool inverted;
 	float current_value;
 	float previous_value;
+	bool deadbanding;
+	float deadband;
+	float softband;
 
 public:
 	LinearActuator(H_Bridge& output, int fb_channel, PinID fb_pin,

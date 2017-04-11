@@ -54,6 +54,9 @@ LinearActuator::LinearActuator(H_Bridge& output, int fb_channel, PinID fb_pin,
 		int adc_index, ActuatorRange limits, bool is_inverted) :
 		control(output), feedback_channel(fb_channel), sequence_num(adc_index), range(
 				limits), inverted(is_inverted) {
+
+	deadband = 0.008f * (inverted ? -1 : 1);
+	softband = 0.01f * (inverted ? -1 : 1);
 	InitADC14();
 }
 
@@ -61,8 +64,25 @@ void LinearActuator::Tick(float seconds) {
 	int result = MAP_ADC14_getResult(1 << sequence_num);
 	current_value = ((float) result) / (2 << 13);
 
-	const float deadband = 0.005f * (inverted ? -1 : 1);
-	const float softband = 0.01f * (inverted ? -1 : 1);
+	if ((previous_value < target_value && current_value >= target_value) ||
+			(previous_value > target_value && current_value <= target_value))
+	{
+		deadbanding = true;
+	}
+
+	if (!deadbanding)
+	{
+		if ((current_value > target_value) ^ (inverted)) {
+			control.GoTo(-1.01);
+		} else if ((current_value < target_value) ^ (inverted)) {
+			control.GoTo(1.01);
+		} else {
+			control.GoTo(0);
+		}
+	}
+
+	if (deadbanding)
+	{
 
 	// if the sign changed (crossed the target)
 	if ((current_value > (target_value + softband)) ^ (inverted)) {
@@ -77,6 +97,7 @@ void LinearActuator::Tick(float seconds) {
 		control.GoTo(0.25);
 	} else {
 		control.GoTo(0);
+	}
 	}
 	previous_value = current_value;
 }
@@ -102,6 +123,15 @@ void LinearActuator::GoTo(float point) {
 		target_value = range.min;
 	} else if (target_value > range.max) {
 		target_value = range.max;
+	}
+	float diff = target_value - current_value;
+	if (diff < 0)
+	{
+		diff = -diff;
+	}
+	if (diff > softband)
+	{
+		deadbanding = false;
 	}
 }
 /*
