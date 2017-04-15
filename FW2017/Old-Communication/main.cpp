@@ -66,6 +66,13 @@ void main(void) {
 	MAP_GPIO_setAsPeripheralModuleFunctionOutputPin(GPIO_PORT_P7, GPIO_PIN5,
 	GPIO_PRIMARY_MODULE_FUNCTION);
 
+	// UCB1SCL (P6.4) I2CSDA
+		MAP_GPIO_setAsPeripheralModuleFunctionOutputPin(GPIO_PORT_P6, GPIO_PIN4,
+		GPIO_PRIMARY_MODULE_FUNCTION);
+		// UCB1SCL (P6.5) I2CSCL
+		MAP_GPIO_setAsPeripheralModuleFunctionOutputPin(GPIO_PORT_P6, GPIO_PIN5,
+		GPIO_PRIMARY_MODULE_FUNCTION);
+
 	//EUSCI_A1->STATW |= UCLISTEN;
 
 	NVIC_EnableIRQ(EUSCIA2_IRQn);
@@ -87,12 +94,12 @@ void main(void) {
 //		ArmUpper.Tick(0);
 //	}
 
-//	ClawPitch.GoTo(0);
-//	ClawPitch.Resume();
-//	ClawPitch.Suspend();
-//	while (1) {
-////		ClawPitch.Tick(0);
-//	}
+	ClawPitch.GoTo(0);
+	ClawPitch.Resume();
+	ClawPitch.Center();
+	while (1) {
+//		ClawPitch.Tick(0);
+	}
 
 	Left.Center();
 	Right.Center();
@@ -111,8 +118,8 @@ void main(void) {
 //	ArmLower.Resume();
 //	ClawPan.Resume();
 //	ClawPitch.Resume();
-	CameraPan.Resume();
-	CameraPitch.Resume();
+//	CameraPan.Resume();
+//	CameraPitch.Resume();
 
 	int last_time = Peripherials::GetTA3().GetOverflowCount();
 	int current_time = last_time;
@@ -133,6 +140,8 @@ void main(void) {
 			ArmLower.Suspend();
 			ClawPan.Suspend();
 			ClawPitch.Suspend();
+			CameraPitch.Suspend();
+			CameraPan.Suspend();
 			suspended = true;
 		}
 
@@ -164,6 +173,8 @@ void main(void) {
 					ClawPitch.Resume();
 					ArmUpper.Resume();
 					ArmLower.Resume();
+					CameraPitch.Resume();
+					CameraPan.Resume();
 					suspended = false;
 				}
 //				Right.GoTo(uart_data[5]);

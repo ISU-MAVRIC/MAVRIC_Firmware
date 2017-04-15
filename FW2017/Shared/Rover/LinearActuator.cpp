@@ -28,7 +28,11 @@ void InitADC14() {
 		GPIO_TERTIARY_MODULE_FUNCTION);
 		MAP_GPIO_setAsOutputPin(GPIO_PORT_P1, GPIO_PIN6);
 
-		MAP_ADC14_configureMultiSequenceMode(ADC_MEM0, ADC_MEM1, true);
+		/* Configuring GPIOs (8.5 A20) SS Temperature Sensor */
+		MAP_GPIO_setAsPeripheralModuleFunctionInputPin(GPIO_PORT_P8, GPIO_PIN5,
+		GPIO_TERTIARY_MODULE_FUNCTION);
+
+		MAP_ADC14_configureMultiSequenceMode(ADC_MEM0, ADC_MEM2, true);
 
 		/* Configuring ADC Memory 0 */
 		MAP_ADC14_configureConversionMemory(ADC_MEM0,
@@ -39,6 +43,11 @@ void InitADC14() {
 		MAP_ADC14_configureConversionMemory(ADC_MEM1,
 		ADC_VREFPOS_AVCC_VREFNEG_VSS,
 		ADC_INPUT_A4, false);
+
+		/* Configuring ADC Memory 2 for SS temp */
+		MAP_ADC14_configureConversionMemory(ADC_MEM2,
+		ADC_VREFPOS_AVCC_VREFNEG_VSS,
+		ADC_INPUT_A20, false);
 
 		/* Configuring Sample Timer */
 		MAP_ADC14_enableSampleTimer(ADC_AUTOMATIC_ITERATION);

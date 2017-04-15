@@ -15,11 +15,11 @@ void InitI2C(EUSCI_B_Type* target)
   
   
   // master I2C mode, retain SWRST
-  target->CTLW0 = UCMST | UCMODE_3 | UCSWRST | UCSSEL_2;
+  target->CTLW0 = UCMST | UCMODE_3 | UCSWRST | UCSSEL__SMCLK;
   
   // default baud rate. ~1 MHz, conforms to I2C fast mode plus standard
   //target->BRW = 50;
-  target->BRW = 30;
+  target->BRW = 60;
   
   //default to manual Stop condition
   target->TBCNT = 0;
