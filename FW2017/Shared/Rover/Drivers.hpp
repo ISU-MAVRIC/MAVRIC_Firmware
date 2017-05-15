@@ -15,13 +15,22 @@
 extern Servo& Left;
 extern Servo& Right;
 
-extern LinearActuator& ArmUpper;
-extern LinearActuator& ArmLower;
+extern H_Bridge& ArmUpper;
+extern H_Bridge& ArmLower;
 
 extern Servo& ClawPan;
 extern Servo& ClawPitch;
+extern Servo& ClawRotation;
 
 extern Servo& CameraPitch;
 extern Servo& CameraPan;
+
+extern LinearActuator& Claw;
+
+extern H_Bridge& SS_Arm;
+extern H_Bridge& SS_Depth;
+extern H_Bridge& SS_Drill;
+
+void InitializePeripherialPorts();
 
 #endif /* ROVER_DRIVERS_HPP_ */

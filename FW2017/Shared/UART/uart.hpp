@@ -11,6 +11,8 @@
 #include "Buffers.hpp"
 #include "msp.h"
 
+extern void (*U3Handler)();
+
 namespace Peripherials
 {
 class UART

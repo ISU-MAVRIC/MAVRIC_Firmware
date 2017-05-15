@@ -16,19 +16,54 @@
 #include "timer.hpp"
 #include "Drivers.hpp"
 #include <../../driverlib/driverlib/msp432p4xx/driverlib.h>
+#include "I2C.hpp"
 
 #include <stdio.h>
+float rate = 0;
 
-void testCameraStep();
+void HandleU3()
+{
+	int currentTime = Peripherials::GetTA3().GetOverflowCount();
+	static int lastTime = currentTime - 500;
+	static int interArrivalTimes[20];
+	static int writeIndex = 0;
+	static bool full = false;
+
+	int delta = currentTime - lastTime;
+	interArrivalTimes[writeIndex] = delta;
+	if (!full && writeIndex == 20)
+	{
+		full = true;
+	}
+	writeIndex = (writeIndex + 1) % 20;
+
+	int limit = 20;
+	if (!full)
+	{
+		limit = writeIndex;
+	}
+
+	int total = 0;
+	for (int i = 0; i < limit; i++)
+	{
+		total += interArrivalTimes[i];
+	}
+
+	rate = 50/total; // Average hits per second
+
+	lastTime = currentTime;
+}
 
 void main(void) {
 
 	WDTCTL = WDTPW | WDTHOLD;
+
+	P6->DIR |= 1 << 6;
+	P6->OUT |= 1 << 6;
+	P6->OUT &= ~(1 << 6);
 	// Stop watchdog tim2
 	//<left right # # # # # # # # # # # # #>
 	//Peripherials::UART uart(*EUSCI_A1, 9600, txQueue);
-
-
 
 	P2->DIR |= 7;
 
@@ -44,35 +79,9 @@ void main(void) {
 	P5->DIR |= (1 << 7);
 	P5->SEL0 |= (1 << 7);
 
-	// Linear Actuator direction pins
-	MAP_GPIO_setAsOutputPin(GPIO_PORT_P1, GPIO_PIN6);
-	MAP_GPIO_setAsOutputPin(GPIO_PORT_P1, GPIO_PIN7);
+	U3Handler = HandleU3;
 
-	// TA2.3 (P6.6)
-	MAP_GPIO_setAsPeripheralModuleFunctionOutputPin(GPIO_PORT_P6, GPIO_PIN6,
-	GPIO_PRIMARY_MODULE_FUNCTION);
-
-	// TA0.1 (P2.4)
-	MAP_GPIO_setAsPeripheralModuleFunctionOutputPin(GPIO_PORT_P2, GPIO_PIN4,
-	GPIO_PRIMARY_MODULE_FUNCTION);
-	// TA0.2 (P2.5) ClawPitch
-	MAP_GPIO_setAsPeripheralModuleFunctionOutputPin(GPIO_PORT_P2, GPIO_PIN5,
-	GPIO_PRIMARY_MODULE_FUNCTION);
-
-	// TA1.4 (P7.4) Camera pan
-	MAP_GPIO_setAsPeripheralModuleFunctionOutputPin(GPIO_PORT_P7, GPIO_PIN4,
-	GPIO_PRIMARY_MODULE_FUNCTION);
-	// TA1.3 (P7.5) Camera tilt
-	MAP_GPIO_setAsPeripheralModuleFunctionOutputPin(GPIO_PORT_P7, GPIO_PIN5,
-	GPIO_PRIMARY_MODULE_FUNCTION);
-
-	// UCB1SCL (P6.4) I2CSDA
-	MAP_GPIO_setAsPeripheralModuleFunctionOutputPin(GPIO_PORT_P6, GPIO_PIN4,
-	GPIO_PRIMARY_MODULE_FUNCTION);
-	// UCB1SCL (P6.5) I2CSCL
-	MAP_GPIO_setAsPeripheralModuleFunctionOutputPin(GPIO_PORT_P6, GPIO_PIN5,
-	GPIO_PRIMARY_MODULE_FUNCTION);
-
+	InitializePeripherialPorts();
 	//EUSCI_A1->STATW |= UCLISTEN;
 
 	NVIC_EnableIRQ(EUSCIA2_IRQn);
@@ -86,7 +95,6 @@ void main(void) {
 	NVIC_EnableIRQ(TA3_N_IRQn);
 	NVIC_EnableIRQ(ADC14_IRQn);
 
-
 //	ArmUpper.GoTo(0.5);
 //	ArmUpper.Resume();
 //	while (1)
@@ -94,17 +102,34 @@ void main(void) {
 //		ArmUpper.Tick(0);
 //	}
 
-	ClawPitch.GoTo(0);
-	ClawPitch.Resume();
-	ClawPitch.Center();
-	while (1) {
-//		ClawPitch.Tick(0);
-	}
+//	{
+//		ClawPan.Resume();
+//		volatile int val = 127;
+//		while (1) {
+//			ClawPan.GoTo(val);
+//		}
+//	}
+
+//	{
+//		ClawRotation.Resume();
+//		volatile int val = 100;
+//		while (1) {
+//			ClawRotation.GoTo(val);
+//		}
+//	}
+
+//	Claw.GoTo(0.5);
+//	Claw.Resume();
+//	while (1)
+//	{
+//		Claw.Tick(0.020);
+//	}
 
 	Left.Center();
 	Right.Center();
 
 	ArmUpper.Center();
+	ArmLower.Center();
 	ArmLower.GoTo(1);
 	ClawPan.Center();
 	ClawPitch.Center();
@@ -128,6 +153,23 @@ void main(void) {
 	unsigned char* uart_data = RFD900.GetBuffer().GetData();
 	bool suspended = true;
 
+//	bool automation = 1;
+//	if (automation)
+//	{
+////		__delay_cycles(3000000);
+////		WDTCTL = WDTPW | WDTSSEL__ACLK | WDTIS_3 | WDTCNTCL;
+//		InitI2C(EUSCI_B1);
+//		Right.Resume();
+//		Left.Resume();
+//		unsigned char packet[4] = {0, 0, 0, 0};
+//		while (1)
+//		{
+//			ReadI2C(EUSCI_B1, 13, packet, 4, 1);
+//			Right.GoTo(packet[1]);
+//			Left.GoTo(packet[2]);
+////			WDTCTL |= WDTCNTCL;
+//		}
+//	}
 	while (1) {
 		current_time = Peripherials::GetTA3().GetOverflowCount();
 		////////////////////////////////////////////////////////
@@ -142,20 +184,26 @@ void main(void) {
 			ClawPitch.Suspend();
 			CameraPitch.Suspend();
 			CameraPan.Suspend();
+			Claw.Suspend();
+			ClawRotation.Suspend();
+			SS_Arm.Suspend();
+			SS_Depth.Suspend();
+			SS_Drill.Suspend();
 			suspended = true;
 		}
 
 		if (uart_data[0] == '<') {
-			if (RFD900.GetBufferLength() >= 10) {
+			if (RFD900.GetBufferLength() >= 15) {
 				message_time = Peripherials::GetTA3().GetOverflowCount();
-				unsigned char data[10];
+				unsigned char data[15];
 				memcpy(data, RFD900.GetBuffer().GetData(), sizeof(data));
 				RFD900.ClearBuffer();
-				float olower = (data[3]) / 255.0f;
-				float oupper = (data[4]) / 255.0f;
+				float olower = (data[3] - 127) / 127.0f;
+				float oupper = (data[4] - 127) / 127.0f;
 
-
-				printf("%c%3d, %3d, %3d, %3d, %3d, %3d, %3d, %3d%c\n", data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9]);
+//				printf("%c%3d, %3d, %3d, %3d, %3d, %3d, %3d, %3d, %3d, %3d%c\n", data[0],
+//						data[1], data[2], data[3], data[4], data[5], data[6],
+//						data[7], data[8], data[9], data[10], data[11]);
 
 				Right.GoTo(data[1]);
 				Left.GoTo(data[2]);
@@ -165,16 +213,26 @@ void main(void) {
 				ArmUpper.GoTo(oupper);
 				CameraPan.GoTo(data[7]);
 				CameraPitch.GoTo(data[8]);
+				ClawRotation.GoTo(data[9]);
+//				Claw.GoTo(data[10]);
+				SS_Arm.GoTo((data[11]-127) / 127.0f);
+				SS_Depth.GoTo((data[12]-127) / 127.0f);
+				SS_Drill.GoTo((data[13]-127) / 127.0f);
 
 				if (suspended) {
 					Right.Resume();
 					Left.Resume();
-					ClawPan.Resume();
-					ClawPitch.Resume();
+//					ClawPan.Resume();
+//					ClawPitch.Resume();
 					ArmUpper.Resume();
 					ArmLower.Resume();
 					CameraPitch.Resume();
 					CameraPan.Resume();
+//					Claw.Resume();
+//					ClawRotation.Resume();
+					SS_Arm.Resume();
+					SS_Depth.Resume();
+					SS_Drill.Resume();
 					suspended = false;
 				}
 //				Right.GoTo(uart_data[5]);
@@ -183,16 +241,15 @@ void main(void) {
 			}
 		} else {
 			RFD900.ClearBuffer();
+			uart_data[0] = '\0';
 		}
 
 		//testCameraStep();
 
-		if (!suspended) {
-			float delta = 0.020f * (current_time - last_time);
-//			Left.Tick(delta);
-//			Right.Tick(delta);
-			ArmLower.Tick(delta);
-			ArmUpper.Tick(delta);
+		if (last_time != current_time) {
+			// SS is in channel 2 (see ADC_Init)
+			int SS_temp_val = MAP_ADC14_getResult(1 << 2);
+			//printf("%d\n", SS_temp_val);
 		}
 
 		last_time = current_time;

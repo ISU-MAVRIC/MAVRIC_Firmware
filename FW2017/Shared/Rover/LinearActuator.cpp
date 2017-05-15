@@ -28,11 +28,23 @@ void InitADC14() {
 		GPIO_TERTIARY_MODULE_FUNCTION);
 		MAP_GPIO_setAsOutputPin(GPIO_PORT_P1, GPIO_PIN6);
 
+		/* Configuring GPIOs (8.6 A19) SS Arm Fdbk */
+		MAP_GPIO_setAsPeripheralModuleFunctionInputPin(GPIO_PORT_P8, GPIO_PIN6,
+		GPIO_TERTIARY_MODULE_FUNCTION);
+
+		/* Configuring GPIOs (8.7 A19) SS Depth Fdbk */
+		MAP_GPIO_setAsPeripheralModuleFunctionInputPin(GPIO_PORT_P8, GPIO_PIN7,
+		GPIO_TERTIARY_MODULE_FUNCTION);
+
 		/* Configuring GPIOs (8.5 A20) SS Temperature Sensor */
 		MAP_GPIO_setAsPeripheralModuleFunctionInputPin(GPIO_PORT_P8, GPIO_PIN5,
 		GPIO_TERTIARY_MODULE_FUNCTION);
 
-		MAP_ADC14_configureMultiSequenceMode(ADC_MEM0, ADC_MEM2, true);
+		/* Configuring GPIOs (5.0 A5) Claw Fdbk*/
+		MAP_GPIO_setAsPeripheralModuleFunctionInputPin(GPIO_PORT_P5, GPIO_PIN0,
+		GPIO_TERTIARY_MODULE_FUNCTION);
+
+		MAP_ADC14_configureMultiSequenceMode(ADC_MEM0, ADC_MEM5, true);
 
 		/* Configuring ADC Memory 0 */
 		MAP_ADC14_configureConversionMemory(ADC_MEM0,
@@ -48,6 +60,21 @@ void InitADC14() {
 		MAP_ADC14_configureConversionMemory(ADC_MEM2,
 		ADC_VREFPOS_AVCC_VREFNEG_VSS,
 		ADC_INPUT_A20, false);
+
+		/* Configuring ADC Memory 3 for SS Arm Fdbk */
+		MAP_ADC14_configureConversionMemory(ADC_MEM3,
+		ADC_VREFPOS_AVCC_VREFNEG_VSS,
+		ADC_INPUT_A19, false);
+
+		/* Configuring ADC Memory 4 for SS Depth Fdbk */
+		MAP_ADC14_configureConversionMemory(ADC_MEM4,
+		ADC_VREFPOS_AVCC_VREFNEG_VSS,
+		ADC_INPUT_A18, false);
+
+		/* Configuring ADC Memory 4 for SS Depth Fdbk */
+		MAP_ADC14_configureConversionMemory(ADC_MEM5,
+		ADC_VREFPOS_AVCC_VREFNEG_VSS,
+		ADC_INPUT_A5, false);
 
 		/* Configuring Sample Timer */
 		MAP_ADC14_enableSampleTimer(ADC_AUTOMATIC_ITERATION);

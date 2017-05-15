@@ -8,6 +8,8 @@
 #include "uart.hpp"
 #include "clocks.h"
 
+void (*U3Handler)() = 0;
+
 namespace Peripherials {
 
 Buffers::AutoBuffer<300> A1_rawTx;
@@ -86,13 +88,8 @@ void UART::OnInterrupt() {
 		break;
 	case 2:
 		if (rxIndex < rxBuffer.GetSize()) {
-			volatile char stat = regs.STATW;
 			char c = regs.RXBUF;
 			rxBuffer.GetData()[rxIndex++] = c;
-			if (c != 255)
-			{
-				__no_operation();
-			}
 		}
 		else
 		{
@@ -127,7 +124,11 @@ void EUSCIA2_IRQHandler() {
 	UART_A2.OnInterrupt();
 }
 void EUSCIA3_IRQHandler() {
-	UART_A3.OnInterrupt();
+//	UART_A3.OnInterrupt();
+	if (U3Handler != 0)
+	{
+		U3Handler();
+	}
 }
 }
 }
