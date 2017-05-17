@@ -21,8 +21,7 @@
 #include <stdio.h>
 float rate = 0;
 
-void HandleU3()
-{
+void HandleU3() {
 	int currentTime = Peripherials::GetTA3().GetOverflowCount();
 	static int lastTime = currentTime - 500;
 	static int interArrivalTimes[20];
@@ -31,25 +30,22 @@ void HandleU3()
 
 	int delta = currentTime - lastTime;
 	interArrivalTimes[writeIndex] = delta;
-	if (!full && writeIndex == 20)
-	{
+	if (!full && writeIndex == 20) {
 		full = true;
 	}
 	writeIndex = (writeIndex + 1) % 20;
 
 	int limit = 20;
-	if (!full)
-	{
+	if (!full) {
 		limit = writeIndex;
 	}
 
 	int total = 0;
-	for (int i = 0; i < limit; i++)
-	{
+	for (int i = 0; i < limit; i++) {
 		total += interArrivalTimes[i];
 	}
 
-	rate = 50/total; // Average hits per second
+	rate = 50 / total; // Average hits per second
 
 	lastTime = currentTime;
 }
@@ -103,16 +99,16 @@ void main(void) {
 //	}
 
 //	{
-//		ClawPan.Resume();
+//		ClawPitch.Resume();
 //		volatile int val = 127;
 //		while (1) {
-//			ClawPan.GoTo(val);
+//			ClawPitch.GoTo(val);
 //		}
 //	}
 
 //	{
 //		ClawRotation.Resume();
-//		volatile int val = 100;
+//		volatile int val = 127;
 //		while (1) {
 //			ClawRotation.GoTo(val);
 //		}
@@ -124,27 +120,6 @@ void main(void) {
 //	{
 //		Claw.Tick(0.020);
 //	}
-
-	Left.Center();
-	Right.Center();
-
-	ArmUpper.Center();
-	ArmLower.Center();
-	ArmLower.GoTo(1);
-	ClawPan.Center();
-	ClawPitch.Center();
-
-	CameraPan.Center();
-	CameraPitch.Center();
-
-//	Left.Resume();
-//	Right.Resume();
-//	ArmUpper.Resume();
-//	ArmLower.Resume();
-//	ClawPan.Resume();
-//	ClawPitch.Resume();
-//	CameraPan.Resume();
-//	CameraPitch.Resume();
 
 	int last_time = Peripherials::GetTA3().GetOverflowCount();
 	int current_time = last_time;
@@ -165,11 +140,12 @@ void main(void) {
 //		while (1)
 //		{
 //			ReadI2C(EUSCI_B1, 13, packet, 4, 1);
-//			Right.GoTo(packet[1]);
-//			Left.GoTo(packet[2]);
+////			Right.GoTo(packet[1]);
+////			Left.GoTo(packet[2]);
 ////			WDTCTL |= WDTCNTCL;
 //		}
 //	}
+//	InitI2C(EUSCI_B1);
 	while (1) {
 		current_time = Peripherials::GetTA3().GetOverflowCount();
 		////////////////////////////////////////////////////////
@@ -180,6 +156,7 @@ void main(void) {
 			Right.Suspend();
 			ArmUpper.Suspend();
 			ArmLower.Suspend();
+			ArmBase.Suspend();
 			ClawPan.Suspend();
 			ClawPitch.Suspend();
 			CameraPitch.Suspend();
@@ -195,7 +172,7 @@ void main(void) {
 		if (uart_data[0] == '<') {
 			if (RFD900.GetBufferLength() >= 15) {
 				message_time = Peripherials::GetTA3().GetOverflowCount();
-				unsigned char data[15];
+				unsigned char data[16];
 				memcpy(data, RFD900.GetBuffer().GetData(), sizeof(data));
 				RFD900.ClearBuffer();
 				float olower = (data[3] - 127) / 127.0f;
@@ -211,32 +188,32 @@ void main(void) {
 				ClawPitch.GoTo(data[6]);
 				ArmLower.GoTo(olower);
 				ArmUpper.GoTo(oupper);
+				ArmBase.GoTo((data[14] - 127) / 127.0f);
 				CameraPan.GoTo(data[7]);
 				CameraPitch.GoTo(data[8]);
 				ClawRotation.GoTo(data[9]);
-//				Claw.GoTo(data[10]);
-				SS_Arm.GoTo((data[11]-127) / 127.0f);
-				SS_Depth.GoTo((data[12]-127) / 127.0f);
-				SS_Drill.GoTo((data[13]-127) / 127.0f);
+				Claw.GoTo(data[10]/255.0f);
+				SS_Arm.GoTo((data[11] - 127) / 127.0f);
+				SS_Depth.GoTo((data[12] - 127) / 127.0f);
+				SS_Drill.GoTo((data[13] - 127) / 127.0f);
 
 				if (suspended) {
 					Right.Resume();
 					Left.Resume();
-//					ClawPan.Resume();
-//					ClawPitch.Resume();
+					ClawPan.Resume();
+					ClawPitch.Resume();
 					ArmUpper.Resume();
 					ArmLower.Resume();
+					ArmBase.Resume();
 					CameraPitch.Resume();
 					CameraPan.Resume();
-//					Claw.Resume();
-//					ClawRotation.Resume();
+					Claw.Resume();
+					ClawRotation.Resume();
 					SS_Arm.Resume();
 					SS_Depth.Resume();
 					SS_Drill.Resume();
 					suspended = false;
 				}
-//				Right.GoTo(uart_data[5]);
-//				Right.GoTo(uart_data[6]);
 				uart_data[0] = '\0';
 			}
 		} else {
@@ -246,10 +223,19 @@ void main(void) {
 
 		//testCameraStep();
 
+		if (!suspended)
+		{
+			Claw.Tick((current_time - last_time) * 0.020f);
+		}
+
 		if (last_time != current_time) {
 			// SS is in channel 2 (see ADC_Init)
 			int SS_temp_val = MAP_ADC14_getResult(1 << 2);
 			//printf("%d\n", SS_temp_val);
+			unsigned char SS_MoisturePacket[2] = {0, 0};
+//			WriteI2C(EUSCI_B1, 0x0D, SS_MoisturePacket, 1, 0);
+//			ReadI2C(EUSCI_B1, 0x0D, SS_MoisturePacket, 5, 1);
+			__no_operation();
 		}
 
 		last_time = current_time;

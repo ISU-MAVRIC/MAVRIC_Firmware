@@ -17,6 +17,7 @@ extern Servo& Right;
 
 extern H_Bridge& ArmUpper;
 extern H_Bridge& ArmLower;
+extern H_Bridge& ArmBase;
 
 extern Servo& ClawPan;
 extern Servo& ClawPitch;

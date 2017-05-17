@@ -99,6 +99,7 @@ LinearActuator::LinearActuator(H_Bridge& output, int fb_channel, PinID fb_pin,
 void LinearActuator::Tick(float seconds) {
 	int result = MAP_ADC14_getResult(1 << sequence_num);
 	current_value = ((float) result) / (2 << 13);
+	current_value = (previous_value + current_value)/2;
 
 	if ((previous_value < target_value && current_value >= target_value) ||
 			(previous_value > target_value && current_value <= target_value))

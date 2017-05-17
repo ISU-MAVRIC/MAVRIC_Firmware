@@ -19,7 +19,7 @@ void InitI2C(EUSCI_B_Type* target)
   
   // default baud rate. ~1 MHz, conforms to I2C fast mode plus standard
   //target->BRW = 50;
-  target->BRW = 30;
+  target->BRW = 30 * 4;
   
   //default to manual Stop condition
   target->TBCNT = 0;

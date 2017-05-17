@@ -29,11 +29,7 @@ Servo& Right = RightActual;
 internal_servo_cal_point arm_upper_low = { 0, 0 };
 internal_servo_cal_point arm_upper_high = { 1, 0.020 };
 
-PinID upper_fb = { 5, 2 };
 PinID upper_dir = { 1, 7 };
-
-//ActuatorRange arm_upper_range = { 0.27450980392156862745098039215686, 1 };
-ActuatorRange arm_upper_range = { 0.27450980392156862745098039215686, 0.8 };
 
 InternalServoControl ArmUpperServo = InternalServoControl(
 		Peripherials::GetTA2(), Peripherials::CC3, arm_upper_low,
@@ -45,10 +41,7 @@ H_Bridge& ArmUpper = ArmUpperActual;
 internal_servo_cal_point arm_lower_low = { 0, 0 };
 internal_servo_cal_point arm_lower_high = { 1, 0.020 };
 
-PinID lower_fb = { 5, 1 };
 PinID lower_dir = { 1, 6 };
-
-ActuatorRange arm_lower_range = { 0.45, 0.9 };
 
 InternalServoControl ArmLowerServo = InternalServoControl(
 		Peripherials::GetTA2(), Peripherials::CC2, arm_lower_low,
@@ -56,6 +49,15 @@ InternalServoControl ArmLowerServo = InternalServoControl(
 
 H_Bridge_2Line ArmLowerActual(ArmLowerServo, lower_dir);
 H_Bridge& ArmLower = ArmLowerActual;
+
+internal_servo_cal_point arm_base_low = { 0, 0.0012 };
+internal_servo_cal_point arm_base_high = { 1, 0.0017 };
+
+InternalServoControl ArmBaseServo = InternalServoControl(Peripherials::GetTA2(),
+		Peripherials::CC1, arm_base_low, arm_base_high);
+
+H_Bridge_1Line ArmBaseActual(ArmBaseServo);
+H_Bridge& ArmBase = ArmBaseActual;
 
 /////////////////////////////End Arm Drivers//////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
@@ -69,7 +71,7 @@ internal_servo_cal_point claw_high = { 1, 0.0201 };
 PinID claw_fb = { 5, 0 };
 PinID claw_dir = { 3, 5 };
 
-ActuatorRange claw_range = { 0.27450980392156862745098039215686, 0.8 };
+ActuatorRange claw_range = { 0.49, 1 };
 
 InternalServoControl ClawServo = InternalServoControl(Peripherials::GetTA0(),
 		Peripherials::CC4, claw_low, claw_high);
@@ -78,8 +80,8 @@ LinearActuator ClawActual = LinearActuator(Claw_H_Bridge, 5, claw_fb, 5,
 		claw_range, true);
 LinearActuator& Claw = ClawActual;
 
-internal_servo_cal_point claw_pan_low = { 0, 0.0013 };
-internal_servo_cal_point claw_pan_high = { 255, 0.00157 };
+internal_servo_cal_point claw_pan_low = { 0, 0.00133 };
+internal_servo_cal_point claw_pan_high = { 255, 0.0016 };
 
 //	internal_servo_cal_point claw_pan_low = { 0, 0.001 };
 //	internal_servo_cal_point claw_pan_high = { 255, 0.002 };
@@ -92,8 +94,8 @@ Servo& ClawPan = ClawPanActual;
 //		*new InternalServoControl(Peripherials::GetTA3(), Peripherials::CC2,
 //				wheels_low, wheels_high), 255, 0, 0.3);
 
-internal_servo_cal_point claw_pitch_low = { 0, 0.00095 };
-internal_servo_cal_point claw_pitch_high = { 255, 0.0015 };
+internal_servo_cal_point claw_pitch_low = { 0, 0.00115 };
+internal_servo_cal_point claw_pitch_high = { 255, 0.00155 };
 
 //	internal_servo_cal_point claw_pan_low = { 0, 0.001 };
 //	internal_servo_cal_point claw_pan_high = { 255, 0.002 };
@@ -108,7 +110,7 @@ Servo& ClawPitch = ClawPitchActual;
 //				wheels_low, wheels_high), 255, 0, 0.3);
 
 internal_servo_cal_point claw_rot_low = { 0, 0.001 };
-internal_servo_cal_point claw_rot_high = { 255, 0.002 };
+internal_servo_cal_point claw_rot_high = { 255, 0.00205 };
 
 //	internal_servo_cal_point claw_rot_low = { 0, 0.001 };
 //	internal_servo_cal_point claw_rot_high = { 255, 0.002 };
@@ -184,7 +186,6 @@ H_Bridge_2Line SS_DepthActual(SS_DepthServo, ss_depth_dir);
 
 H_Bridge& SS_Depth = SS_DepthActual;
 
-
 internal_servo_cal_point ss_drill_low = { 0, 0.001 };
 internal_servo_cal_point ss_drill_high = { 1, 0.002 };
 
@@ -200,6 +201,9 @@ H_Bridge& SS_Drill = SS_DrillActual;
 void InitializePeripherialPorts() {
 	// TA2.3 (P6.6)
 	MAP_GPIO_setAsPeripheralModuleFunctionOutputPin(GPIO_PORT_P6, GPIO_PIN6,
+	GPIO_PRIMARY_MODULE_FUNCTION);
+	// TA2.1 (P5.6) Base Rotation
+	MAP_GPIO_setAsPeripheralModuleFunctionOutputPin(GPIO_PORT_P5, GPIO_PIN6,
 	GPIO_PRIMARY_MODULE_FUNCTION);
 	// TA0.1 (P2.4)
 	MAP_GPIO_setAsPeripheralModuleFunctionOutputPin(GPIO_PORT_P2, GPIO_PIN4,
